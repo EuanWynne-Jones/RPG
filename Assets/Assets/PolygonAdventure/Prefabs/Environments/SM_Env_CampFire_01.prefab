@@ -127,6 +127,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_Fire_02
       objectReference: {fileID: 0}
+    - target: {fileID: 4058247641177626, guid: 96cd83e2840f4a74f9f822a87d1dd3ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.61
+      objectReference: {fileID: 0}
     - target: {fileID: 4948187264311908, guid: 96cd83e2840f4a74f9f822a87d1dd3ef, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -173,11 +177,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 108446888157424544, guid: 96cd83e2840f4a74f9f822a87d1dd3ef, type: 3}
       propertyPath: m_Range
-      value: 40
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 108446888157424544, guid: 96cd83e2840f4a74f9f822a87d1dd3ef, type: 3}
       propertyPath: m_Intensity
-      value: 2
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 108446888157424544, guid: 96cd83e2840f4a74f9f822a87d1dd3ef, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108446888157424544, guid: 96cd83e2840f4a74f9f822a87d1dd3ef, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 108446888157424544, guid: 96cd83e2840f4a74f9f822a87d1dd3ef, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 9.403955e-38
+      objectReference: {fileID: 0}
+    - target: {fileID: 108446888157424544, guid: 96cd83e2840f4a74f9f822a87d1dd3ef, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 4.5905e-41
+      objectReference: {fileID: 0}
+    - target: {fileID: 108446888157424544, guid: 96cd83e2840f4a74f9f822a87d1dd3ef, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: -3.3502093e-30
+      objectReference: {fileID: 0}
+    - target: {fileID: 108446888157424544, guid: 96cd83e2840f4a74f9f822a87d1dd3ef, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 4.5905e-41
+      objectReference: {fileID: 0}
+    - target: {fileID: 198594114592226508, guid: 96cd83e2840f4a74f9f822a87d1dd3ef, type: 3}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 1023683172623222493}
+    - target: {fileID: 198594114592226508, guid: 96cd83e2840f4a74f9f822a87d1dd3ef, type: 3}
+      propertyPath: LightsModule.ratio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198594114592226508, guid: 96cd83e2840f4a74f9f822a87d1dd3ef, type: 3}
+      propertyPath: LightsModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198594114592226508, guid: 96cd83e2840f4a74f9f822a87d1dd3ef, type: 3}
+      propertyPath: LightsModule.maxLights
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 198594114592226508, guid: 96cd83e2840f4a74f9f822a87d1dd3ef, type: 3}
+      propertyPath: LightsModule.rangeCurve.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198594114592226508, guid: 96cd83e2840f4a74f9f822a87d1dd3ef, type: 3}
+      propertyPath: LightsModule.intensityCurve.scalar
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 199354578178017814, guid: 96cd83e2840f4a74f9f822a87d1dd3ef, type: 3}
       propertyPath: m_Materials.Array.size
@@ -192,5 +244,10 @@ PrefabInstance:
 --- !u!4 &1127036718641696537 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4948187264311908, guid: 96cd83e2840f4a74f9f822a87d1dd3ef, type: 3}
+  m_PrefabInstance: {fileID: 1131984283131325821}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &1023683172623222493 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 108446888157424544, guid: 96cd83e2840f4a74f9f822a87d1dd3ef, type: 3}
   m_PrefabInstance: {fileID: 1131984283131325821}
   m_PrefabAsset: {fileID: 0}
