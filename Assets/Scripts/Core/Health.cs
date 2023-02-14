@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.UI;
 
 
 namespace RPG.Core
@@ -20,7 +21,18 @@ namespace RPG.Core
         {
 
             health = Mathf.Max(health - damage, 0);
-            if(health == 0)
+            if(gameObject.tag != "Player")
+            {
+                foreach (Transform t in transform)
+                {
+                    if (t.GetComponent<DamageNumbers>() != null)
+                    {
+                        t.GetComponent<DamageNumbers>().StartTextPopup(damage);
+                    }
+                }
+            }
+
+            if (health == 0)
             {
                 DeathBehaviour();
             }
