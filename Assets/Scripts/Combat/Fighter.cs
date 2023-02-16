@@ -8,14 +8,11 @@ namespace RPG.Combat
 {
     public class Fighter : MonoBehaviour, IAction
     {
-        [SerializeField] float weaponDamage;
-        [SerializeField] float weaponRange = .5f;
         [SerializeField] float timeBetweenAttacks;
 
-        [SerializeField] GameObject weaponPrefab = null;
+        [SerializeField] Weapon weapon = null;
         [SerializeField] Transform handTrasform = null;
 
-        [SerializeField] AnimatorOverrideController attackOverrite = null;
         [SerializeField] AnimatorOverrideController enemyOverride = null;
 
 
@@ -26,7 +23,7 @@ namespace RPG.Combat
 
         private void Start()
         {
-            if(weaponPrefab != null)
+            if(weapon != null)
             {
             SpawnWeapon();
             }
@@ -81,10 +78,9 @@ namespace RPG.Combat
         }
         private void SpawnWeapon()
         {
-
-                Instantiate(weaponPrefab, handTrasform);
-                Animator animator = GetComponent<Animator>();
-                animator.runtimeAnimatorController = attackOverrite;
+            if (weapon == null) return;
+            Animator animator = GetComponent<Animator>();
+            weapon.Spawn(handTrasform, animator);
         }
 
         private void TriggerAttack()
@@ -96,18 +92,14 @@ namespace RPG.Combat
         void Hit()
         {
             if (target == null) return;
-            GetRandomDamage();
-            target.TakeDamage(weaponDamage);
+            target.TakeDamage(weapon.GetWeaponDamage());
             //target.GetComponent<Animator>().SetTrigger("Impact");
         }
-        private float GetRandomDamage()
-        {
-            return weaponDamage = Random.Range(3, 7);
-        }
+
 
         private bool GetIsInRange()
         {
-            return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
+            return Vector3.Distance(transform.position, target.transform.position) < weapon.GetWeaponRange();
         }
 
         public void Attack(GameObject combatTarget)
