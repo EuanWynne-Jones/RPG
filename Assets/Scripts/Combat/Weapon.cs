@@ -9,7 +9,7 @@ namespace RPG.Combat
     {
 
 
-        [SerializeField] GameObject equiptPrefab = null;
+        [SerializeField] public GameObject equiptPrefab = null;
 
         [Range(1f, 20f)]
         [SerializeField] float minWeaponDamage = 1f;
@@ -18,20 +18,33 @@ namespace RPG.Combat
 
         float weaponDamage;
         [SerializeField] float weaponRange = .5f;
+        [SerializeField] bool isRightHanded = true;
 
         [SerializeField] AnimatorOverrideController attackOverrite = null;
 
-        public void Spawn(Transform handTransform, Animator animator)
+        public void Spawn(Transform rightHand,Transform leftHand, Animator animator)
         {
             if(equiptPrefab != null)
             {
-            Instantiate(equiptPrefab, handTransform);
+                Transform handTrasform;
+                if (isRightHanded)
+                {
+                    handTrasform = rightHand;
+                }
+                else
+                {
+                    handTrasform = leftHand; 
+                }
+                Instantiate(equiptPrefab, handTrasform);
+                
+            
             }
             if(attackOverrite != null)
             {
             animator.runtimeAnimatorController = attackOverrite;
             }
         }
+
 
         public float GetWeaponDamage()
         {

@@ -16,4 +16,4 @@ MonoBehaviour:
   minWeaponDamage: 1
   maxWeaponDamage: 3
   weaponRange: 1.5
-  attackOverrite: {fileID: 22100000, guid: 9e61ae16d05241b4cb4e485f07f5fd17, type: 2}
+  attackOverrite: {fileID: 0}

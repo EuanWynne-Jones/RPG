@@ -52,6 +52,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 22100000, guid: 9e61ae16d05241b4cb4e485f07f5fd17, type: 2}
     - target: {fileID: 8377449688706189458, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: leftHandTrasform
+      value: 
+      objectReference: {fileID: 6639534163247360679}
+    - target: {fileID: 8377449688706189458, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: rightHandTrasform
+      value: 
+      objectReference: {fileID: 6639534163247335143}
+    - target: {fileID: 8377449688706189458, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: timeBetweenAttacks
       value: 2.5
       objectReference: {fileID: 0}
@@ -282,5 +290,10 @@ PrefabInstance:
 --- !u!4 &6639534163247335143 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 488436, guid: 6ce00d049846e914a8a16bd9125ce5c3, type: 3}
+  m_PrefabInstance: {fileID: 6639534163247166739}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6639534163247360679 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 466868, guid: 6ce00d049846e914a8a16bd9125ce5c3, type: 3}
   m_PrefabInstance: {fileID: 6639534163247166739}
   m_PrefabAsset: {fileID: 0}

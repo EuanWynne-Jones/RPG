@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &575608338949816291
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2673671428499960035}
-  m_Layer: 0
-  m_Name: Equipt Item (L)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2673671428499960035
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575608338949816291}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2996813629122086531}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2996813629121704255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,6 +100,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2095157066972700068, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}
     - target: {fileID: 8377449688706189458, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c458d0e70cdfc146b03e7c582f6464d, type: 2}
+    - target: {fileID: 8377449688706189458, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: enemyOverride
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377449688706189458, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: attackOverrite
       value: 
       objectReference: {fileID: 22100000, guid: 0737ef7438298864e9cbbf43a74025c6, type: 2}
@@ -138,6 +115,14 @@ PrefabInstance:
       propertyPath: weaponOverride
       value: 
       objectReference: {fileID: 22100000, guid: 0737ef7438298864e9cbbf43a74025c6, type: 2}
+    - target: {fileID: 8377449688706189458, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: leftHandTrasform
+      value: 
+      objectReference: {fileID: 2996813629122086531}
+    - target: {fileID: 8377449688706189458, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: rightHandTrasform
+      value: 
+      objectReference: {fileID: 2996813629122027189}
     - target: {fileID: 8377449688706189458, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: timeBetweenAttacks
       value: 1.5

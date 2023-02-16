@@ -127,6 +127,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3217679343690687960, guid: 6af34a2a7dbe4094f8ba5b816c737b2c, type: 3}
     - target: {fileID: 8576271466948551050, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: e24b1f3f9b3f0434c90be61b65c6b7f2, type: 2}
+    - target: {fileID: 8576271466948551050, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
       propertyPath: enemyOverride
       value: 
       objectReference: {fileID: 22100000, guid: 6d476087f6cece3429274abdeeb5855c, type: 2}
