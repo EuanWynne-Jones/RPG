@@ -109,6 +109,10 @@ MonoBehaviour:
   weaponDamage: 5
   weaponRange: 1
   timeBetweenAttacks: 4
+  weaponPrefab: {fileID: 0}
+  handTrasform: {fileID: 0}
+  attackOverrite: {fileID: 0}
+  enemyOverride: {fileID: 22100000, guid: 9e61ae16d05241b4cb4e485f07f5fd17, type: 2}
 --- !u!114 &8377449688706189459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,9 +145,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8383446708011306486}
     m_Modifications:
+    - target: {fileID: 11744316688580146, guid: 55a5c89f507b27d459622b9c63777c13, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6991137239494881086, guid: 55a5c89f507b27d459622b9c63777c13, type: 3}
       propertyPath: m_Name
       value: DestroyCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6991137239494881086, guid: 55a5c89f507b27d459622b9c63777c13, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8476353792873130182, guid: 55a5c89f507b27d459622b9c63777c13, type: 3}
       propertyPath: m_Pivot.x

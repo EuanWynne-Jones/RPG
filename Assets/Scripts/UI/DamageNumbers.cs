@@ -34,7 +34,7 @@ namespace RPG.UI
         public void StartTextPopup(float damage)
         {
             text.gameObject.transform.position = new Vector3(text.gameObject.transform.position.x, startPos.y, text.gameObject.transform.position.z);
-            Debug.Log("Starting Text popup");
+            //Debug.Log("Starting Text popup");
             text.gameObject.SetActive(true);
             if (transform.parent.GetComponent<Health>() != null)
             {
@@ -65,7 +65,7 @@ namespace RPG.UI
                 Color32 trans = new Color(text.color.r, text.color.g, text.color.b, Mathf.Lerp(text.color.a, 0f, speed * Time.deltaTime));
 
                 text.color = trans;
-                Debug.Log(text.color.a);
+                //Debug.Log(text.color.a);
 
 
                 text.gameObject.transform.position = new Vector3(text.gameObject.transform.position.x, newPos, text.gameObject.transform.position.z);

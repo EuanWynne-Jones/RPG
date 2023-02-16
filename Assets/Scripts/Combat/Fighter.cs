@@ -8,9 +8,15 @@ namespace RPG.Combat
 {
     public class Fighter : MonoBehaviour, IAction
     {
-        [SerializeField] float weaponDamage = 5f;
+        [SerializeField] float weaponDamage;
         [SerializeField] float weaponRange = .5f;
         [SerializeField] float timeBetweenAttacks;
+
+        [SerializeField] GameObject weaponPrefab = null;
+        [SerializeField] Transform handTrasform = null;
+
+        [SerializeField] AnimatorOverrideController attackOverrite = null;
+        [SerializeField] AnimatorOverrideController enemyOverride = null;
 
 
         Health target;
@@ -18,10 +24,19 @@ namespace RPG.Combat
 
         bool canAttack;
 
-        
+        private void Start()
+        {
+            if(weaponPrefab != null)
+            {
+            SpawnWeapon();
+            }
+        }
+
+
 
         private void Update()
         {
+            
             timeSinceLastAttack += Time.deltaTime;
 
             if (target == null) return;
@@ -29,6 +44,8 @@ namespace RPG.Combat
             CheckDistanceAndMove();
 
         }
+
+
 
         private void CheckDistanceAndMove()
         {
@@ -53,9 +70,21 @@ namespace RPG.Combat
                 transform.LookAt(target.transform);
                 //This will trigger the attack animation event
                 TriggerAttack();
+                if(gameObject.tag != "Player" && enemyOverride != null)
+                {
+                    Animator animator = GetComponent<Animator>();
+                    animator.runtimeAnimatorController = enemyOverride;
+                }
                 timeSinceLastAttack = 0;
 
             }
+        }
+        private void SpawnWeapon()
+        {
+
+                Instantiate(weaponPrefab, handTrasform);
+                Animator animator = GetComponent<Animator>();
+                animator.runtimeAnimatorController = attackOverrite;
         }
 
         private void TriggerAttack()
@@ -67,8 +96,13 @@ namespace RPG.Combat
         void Hit()
         {
             if (target == null) return;
+            GetRandomDamage();
             target.TakeDamage(weaponDamage);
             //target.GetComponent<Animator>().SetTrigger("Impact");
+        }
+        private float GetRandomDamage()
+        {
+            return weaponDamage = Random.Range(3, 7);
         }
 
         private bool GetIsInRange()

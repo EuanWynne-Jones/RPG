@@ -32,9 +32,17 @@ PrefabInstance:
       value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 8377449688706189458, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: weaponRange
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377449688706189458, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: weaponDamage
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8377449688706189458, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: attackOverrite
+      value: 
+      objectReference: {fileID: 22100000, guid: 9e61ae16d05241b4cb4e485f07f5fd17, type: 2}
     - target: {fileID: 8377449688706189458, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: timeBetweenAttacks
       value: 2.5
