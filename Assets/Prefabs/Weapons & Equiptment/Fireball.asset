@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bdaf4e851b99eb43a812b25545f324c, type: 3}
   m_Name: Fireball
   m_EditorClassIdentifier: 
-  equiptPrefab: {fileID: 0}
+  equiptPrefab: {fileID: 2095157066972700068, guid: beb2a5be056b51442b43f16fb6c0af64, type: 3}
   minWeaponDamage: 2
   maxWeaponDamage: 5
   weaponRange: 12

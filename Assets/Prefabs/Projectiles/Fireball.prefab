@@ -60,6 +60,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4774191652708088744, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
+      propertyPath: hitEffect
+      value: 
+      objectReference: {fileID: 3425272033213525006, guid: 33ef4f90f1f7f9945a069e8dd6cdcb69, type: 3}
+    - target: {fileID: 4774191652708088744, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
       propertyPath: followToPlayer
       value: 1
       objectReference: {fileID: 0}

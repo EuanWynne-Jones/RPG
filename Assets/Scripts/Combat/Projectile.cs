@@ -13,6 +13,7 @@ namespace RPG.Combat
 
         float projectileLifetime = 10f;
         [SerializeField ]bool followToPlayer = false;
+        [SerializeField] GameObject hitEffect = null;
 
         private void Start()
         {
@@ -54,6 +55,10 @@ namespace RPG.Combat
             if (other.GetComponent<Health>() != target) return;
             if (target.IsDead()) return;
             target.TakeDamage(damage);
+            if (hitEffect != null)
+            {
+            Instantiate(hitEffect, GetAimLocation(), transform.rotation);
+            }
             //target.GetComponent<Animator>().SetTrigger("Impact");
             StartCoroutine(WaitBeforeDestory(0.3f));
             
