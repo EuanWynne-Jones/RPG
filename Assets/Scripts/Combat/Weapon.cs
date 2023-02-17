@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Core;
 
 namespace RPG.Combat
 {
@@ -18,33 +19,67 @@ namespace RPG.Combat
 
         float weaponDamage;
         [SerializeField] float weaponRange = .5f;
-        [SerializeField] bool isRightHanded = true;
+        [SerializeField] public bool isRightHanded = true;
+        [SerializeField] Projectile projectile = null;
 
         [SerializeField] AnimatorOverrideController attackOverrite = null;
 
+        const string weaponName = "Weapon";
+
         public void Spawn(Transform rightHand,Transform leftHand, Animator animator)
         {
-            if(equiptPrefab != null)
-            {
-                Transform handTrasform;
-                if (isRightHanded)
-                {
-                    handTrasform = rightHand;
-                }
-                else
-                {
-                    handTrasform = leftHand; 
-                }
-                Instantiate(equiptPrefab, handTrasform);
-                
             
-            }
-            if(attackOverrite != null)
+            if (equiptPrefab != null)
             {
-            animator.runtimeAnimatorController = attackOverrite;
+                Transform handTrasform = GetHand(rightHand, leftHand);
+                GameObject weapon = Instantiate(equiptPrefab, handTrasform);
+                weapon.name = weaponName;
+
+            }
+            if (attackOverrite != null)
+            {
+                animator.runtimeAnimatorController = attackOverrite;
             }
         }
 
+        public void DestroyOldWeapon(Transform rightHand, Transform leftHand)
+        {
+            Transform oldWeapon = rightHand.Find(weaponName);
+            if(oldWeapon == null)
+            {
+                oldWeapon = leftHand.Find(weaponName);
+            }
+            if (oldWeapon == null) return;
+
+            oldWeapon.name = "DESTROYING";
+            Destroy(oldWeapon.gameObject);
+        }
+
+        public Transform GetHand(Transform rightHand, Transform leftHand)
+        {
+            Transform handTrasform;
+            if (isRightHanded)
+            {
+                handTrasform = rightHand;
+            }
+            else
+            {
+                handTrasform = leftHand;
+            }
+
+            return handTrasform;
+        }
+
+        public bool HasProjectile()
+        {
+            return projectile != null;
+        }
+
+        public void LaunchProjectile(Transform rightHand, Transform leftHand, Health target)
+        {
+            Projectile projectileInstance = Instantiate(projectile, GetHand(rightHand, leftHand).position, Quaternion.identity);
+            projectileInstance.SetTarget(target,GetWeaponDamage());
+        }
 
         public float GetWeaponDamage()
         {

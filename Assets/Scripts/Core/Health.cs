@@ -10,7 +10,7 @@ namespace RPG.Core
     {
         [SerializeField] float health = 100f;
         bool isDead = false;
-       
+
 
         public bool IsDead()
         {
@@ -19,7 +19,6 @@ namespace RPG.Core
 
         public void TakeDamage(float damage)
         {
-
             health = Mathf.Max(health - damage, 0);
             if(gameObject.tag != "Player")
             {

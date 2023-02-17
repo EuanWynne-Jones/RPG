@@ -11,12 +11,13 @@ namespace RPG.Combat
         [SerializeField] float timeBetweenAttacks;
 
         [SerializeField] Weapon defaultWeapon = null;
-        [SerializeField] Transform rightHandTrasform = null;
-        [SerializeField] Transform leftHandTrasform = null;
+        [HideInInspector]
+        [SerializeField] public Transform rightHandTrasform = null;
+        [HideInInspector]
+        [SerializeField] public Transform leftHandTrasform = null;
 
-        [SerializeField] AnimatorOverrideController enemyOverride = null;
-
-        Weapon currentWeapon;
+        [HideInInspector]
+        public Weapon currentWeapon;
         Health target;
         float timeSinceLastAttack = Mathf.Infinity;
 
@@ -24,7 +25,6 @@ namespace RPG.Combat
 
         private void Start()
         {
-
             EquipWeapon(defaultWeapon);
         }
 
@@ -38,7 +38,6 @@ namespace RPG.Combat
             if (target == null) return;
             if (target.IsDead()) return;
             CheckDistanceAndMove();
-
         }
 
 
@@ -58,6 +57,8 @@ namespace RPG.Combat
             }
         }
 
+
+
         private void AttackBehaviour()
         {
             if(timeSinceLastAttack > timeBetweenAttacks)
@@ -66,11 +67,6 @@ namespace RPG.Combat
                 transform.LookAt(target.transform);
                 //This will trigger the attack animation event
                 TriggerAttack();
-                if(gameObject.tag != "Player" && enemyOverride != null)
-                {
-                    Animator animator = GetComponent<Animator>();
-                    animator.runtimeAnimatorController = enemyOverride;
-                }
                 timeSinceLastAttack = 0;
 
             }
@@ -91,8 +87,20 @@ namespace RPG.Combat
         void Hit()
         {
             if (target == null) return;
+            if (currentWeapon.HasProjectile())
+            {
+                currentWeapon.LaunchProjectile(rightHandTrasform, leftHandTrasform,target);
+            }
+            else
+            {
             target.TakeDamage(currentWeapon.GetWeaponDamage());
+            }
             //target.GetComponent<Animator>().SetTrigger("Impact");
+        }
+
+        void Shoot()
+        {
+            Hit();
         }
 
 

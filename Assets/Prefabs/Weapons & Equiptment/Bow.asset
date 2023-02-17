@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equiptPrefab: {fileID: 3078927085896722766, guid: d5e1c0c7d149cd14c832d8e04560e7b7, type: 3}
   minWeaponDamage: 2
-  maxWeaponDamage: 10
-  weaponRange: 10
+  maxWeaponDamage: 5
+  weaponRange: 15
   isRightHanded: 0
+  projectile: {fileID: 4774191652708088744, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
   attackOverrite: {fileID: 22100000, guid: bbcae82f4b0847a4fad9510def377a73, type: 2}
