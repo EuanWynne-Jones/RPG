@@ -11,10 +11,23 @@ namespace RPG.Combat
         Health target = null;
         float damage = 0;
 
+        float projectileLifetime = 10f;
+        [SerializeField ]bool followToPlayer = false;
+
+        private void Start()
+        {
+            if(!followToPlayer) 
+            {
+            transform.LookAt(GetAimLocation());
+            }
+        }
         private void Update()
         {
             if (target == null) return;
-            transform.LookAt(GetAimLocation());
+            if (followToPlayer && !target.IsDead())
+            {
+                transform.LookAt(GetAimLocation());
+            }
             transform.Translate(Vector3.forward * projectileSpeed * Time.deltaTime);
 
         }
@@ -38,7 +51,8 @@ namespace RPG.Combat
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.GetComponent<Health>() != target) return; 
+            if (other.GetComponent<Health>() != target) return;
+            if (target.IsDead()) return;
             target.TakeDamage(damage);
             //target.GetComponent<Animator>().SetTrigger("Impact");
             StartCoroutine(WaitBeforeDestory(0.3f));

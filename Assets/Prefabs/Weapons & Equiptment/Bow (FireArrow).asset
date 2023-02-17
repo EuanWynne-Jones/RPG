@@ -17,5 +17,5 @@ MonoBehaviour:
   maxWeaponDamage: 7
   weaponRange: 10
   isRightHanded: 0
-  projectile: {fileID: 9176514274437700434, guid: 1e3a79490bdcfad43aa8da077f988f78, type: 3}
+  projectile: {fileID: 8056472778644372659, guid: 8fef504f776136e4cac4dd8f6b363253, type: 3}
   attackOverrite: {fileID: 22100000, guid: bbcae82f4b0847a4fad9510def377a73, type: 2}
