@@ -57,7 +57,7 @@ namespace RPG.Combat
             target.TakeDamage(damage);
             if (hitEffect != null)
             {
-            Instantiate(hitEffect, GetAimLocation(), transform.rotation);
+            //Instantiate(hitEffect, GetAimLocation(), transform.rotation);
             }
             //target.GetComponent<Animator>().SetTrigger("Impact");
             StartCoroutine(WaitBeforeDestory(0.3f));

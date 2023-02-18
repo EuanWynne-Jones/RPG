@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Fireball
   m_EditorClassIdentifier: 
   equiptPrefab: {fileID: 2095157066972700068, guid: beb2a5be056b51442b43f16fb6c0af64, type: 3}
+  dropPrefab: {fileID: 7950626079806878769, guid: f3bb296eba068a946972063e019af501, type: 3}
   minWeaponDamage: 2
   maxWeaponDamage: 5
   weaponRange: 12

@@ -11,6 +11,7 @@ namespace RPG.Combat
 
 
         [SerializeField] public GameObject equiptPrefab = null;
+        [SerializeField] public GameObject dropPrefab = null;
 
         [Range(1f, 20f)]
         [SerializeField] float minWeaponDamage = 1f;
@@ -54,6 +55,7 @@ namespace RPG.Combat
 
             oldWeapon.name = "DESTROYING";
             Destroy(oldWeapon.gameObject);
+
         }
 
         public Transform GetHand(Transform rightHand, Transform leftHand)
@@ -92,6 +94,7 @@ namespace RPG.Combat
         {
             return weaponRange;
         }
+
     }
 
 }

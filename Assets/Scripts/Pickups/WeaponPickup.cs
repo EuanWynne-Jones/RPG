@@ -14,18 +14,46 @@ namespace RPG.Combat
         [SerializeField] AnimatorOverrideController leftHandPickupOverrite = null;
 
         Weapon currentWeapon;
+        Weapon oldWeapon;
+
+        GameObject droppedInstantiation = null;
+
+        bool hasDropped;
+        public bool canPickup = true;
         private void OnTriggerEnter(Collider other)
         {
+            
             if (other.gameObject.tag == "Player")
             {
-                
-                other.gameObject.GetComponent<ActionSchedueler>().CancelCurrentAction();
-                LookAtObject(other.gameObject);
-                TriggerLooting(other.gameObject);
-                StartCoroutine(WaitToDestoryOldWeapon(0.5f,other.gameObject));
-                StartCoroutine(PickupAnimationTime(0.855f,other.gameObject));
+                if (canPickup)
+                {
+                    oldWeapon = GetPlayersCurrentWeapon(currentWeapon);
+                    other.gameObject.GetComponent<ActionSchedueler>().CancelCurrentAction();
+                    LookAtObject(other.gameObject);
+                    TriggerLooting(other.gameObject);
+                    StartCoroutine(WaitToDestoryOldWeapon(0.5f,other.gameObject));
+                    StartCoroutine(PickupAnimationTime(0.855f,other.gameObject));
+                }
 
             }
+        
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (hasDropped)
+            {
+                canPickup = true;  
+            }
+        }
+        private void DropCurrentWeapon()
+        {
+            GetPlayersCurrentWeapon(currentWeapon);
+            GameObject Instantiated = Instantiate(oldWeapon.dropPrefab, GetPlayerDropPostion(), Quaternion.identity);
+            Instantiated.GetComponent<WeaponPickup>().canPickup = false;
+            droppedInstantiation = Instantiated;
+            droppedInstantiation.GetComponent<WeaponPickup>().hasDropped = true;
+
         }
 
         private Weapon GetPlayersCurrentWeapon(Weapon weapon)
@@ -33,7 +61,14 @@ namespace RPG.Combat
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             currentWeapon =  player.GetComponent<Fighter>().currentWeapon;
             return weapon = currentWeapon;
-        }   
+        } 
+        
+        private Vector3 GetPlayerDropPostion()
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            Vector3 playerPosition = player.transform.position; 
+            return playerPosition; 
+        }
 
 
         IEnumerator PickupAnimationTime(float pickupWaitTime, GameObject player)
@@ -44,6 +79,7 @@ namespace RPG.Combat
 
             player.GetComponent<Fighter>().EquipWeapon(weaponToPickup);
             Destroy(gameObject);
+            DropCurrentWeapon();
 
         }
 
@@ -55,6 +91,9 @@ namespace RPG.Combat
             currentWeapon.DestroyOldWeapon(player.GetComponent<Fighter>().rightHandTrasform, player.GetComponent<Fighter>().leftHandTrasform);
 
         }
+
+
+        
         
 
         

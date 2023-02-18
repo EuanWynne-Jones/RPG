@@ -11,9 +11,7 @@ namespace RPG.Combat
         [SerializeField] float timeBetweenAttacks;
 
         [SerializeField] Weapon defaultWeapon = null;
-        [HideInInspector]
         [SerializeField] public Transform rightHandTrasform = null;
-        [HideInInspector]
         [SerializeField] public Transform leftHandTrasform = null;
 
         [HideInInspector]

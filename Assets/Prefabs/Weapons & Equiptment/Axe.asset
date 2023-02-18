@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Axe
   m_EditorClassIdentifier: 
   equiptPrefab: {fileID: 2815799175941782211, guid: 766afc1ee3733bb4289d7ddc7e604e2e, type: 3}
+  dropPrefab: {fileID: 8404444941251974021, guid: ffab5a76717841d4da98e2a37f9942bc, type: 3}
   minWeaponDamage: 4
   maxWeaponDamage: 6
   weaponRange: 1.5
+  isRightHanded: 1
+  projectile: {fileID: 0}
   attackOverrite: {fileID: 22100000, guid: 0737ef7438298864e9cbbf43a74025c6, type: 2}
