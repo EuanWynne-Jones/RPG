@@ -8,12 +8,12 @@ namespace RPG.Combat
     public class Projectile : MonoBehaviour
     {
         [SerializeField] float projectileSpeed = 1;
-        Health target = null;
-        float damage = 0;
-
-        float projectileLifetime = 10f;
+        [SerializeField] float projectileLifetime = 3f;
         [SerializeField ]bool followToPlayer = false;
         [SerializeField] GameObject hitEffect = null;
+
+        Health target = null;
+        float damage = 0;
 
         private void Start()
         {
@@ -30,6 +30,7 @@ namespace RPG.Combat
                 transform.LookAt(GetAimLocation());
             }
             transform.Translate(Vector3.forward * projectileSpeed * Time.deltaTime);
+            Destroy(gameObject, projectileLifetime);
 
         }
 
@@ -57,10 +58,10 @@ namespace RPG.Combat
             target.TakeDamage(damage);
             if (hitEffect != null)
             {
-            //Instantiate(hitEffect, GetAimLocation(), transform.rotation);
+            Instantiate(hitEffect, GetAimLocation(), transform.rotation);
             }
             //target.GetComponent<Animator>().SetTrigger("Impact");
-            StartCoroutine(WaitBeforeDestory(0.3f));
+            StartCoroutine(WaitBeforeDestory(0.1f));
             
         }
 

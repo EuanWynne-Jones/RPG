@@ -33,6 +33,7 @@ namespace RPG.Combat
                     TriggerLooting(other.gameObject);
                     StartCoroutine(WaitToDestoryOldWeapon(0.5f,other.gameObject));
                     StartCoroutine(PickupAnimationTime(0.855f,other.gameObject));
+                    hasDropped = false;
                 }
 
             }
@@ -48,11 +49,14 @@ namespace RPG.Combat
         }
         private void DropCurrentWeapon()
         {
+            if (!hasDropped)
+            {
             GetPlayersCurrentWeapon(currentWeapon);
             GameObject Instantiated = Instantiate(oldWeapon.dropPrefab, GetPlayerDropPostion(), Quaternion.identity);
             Instantiated.GetComponent<WeaponPickup>().canPickup = false;
             droppedInstantiation = Instantiated;
             droppedInstantiation.GetComponent<WeaponPickup>().hasDropped = true;
+            }
 
         }
 
@@ -80,6 +84,7 @@ namespace RPG.Combat
             player.GetComponent<Fighter>().EquipWeapon(weaponToPickup);
             Destroy(gameObject);
             DropCurrentWeapon();
+
 
         }
 
