@@ -11,6 +11,8 @@ namespace RPG.Combat
         [SerializeField] float projectileLifetime = 3f;
         [SerializeField ]bool followToPlayer = false;
         [SerializeField] GameObject hitEffect = null;
+        [SerializeField] float lifetimeAfterImpact = 0.1f;
+        [SerializeField] GameObject[] destroyOnHit = null;
 
         Health target = null;
         float damage = 0;
@@ -30,7 +32,9 @@ namespace RPG.Combat
                 transform.LookAt(GetAimLocation());
             }
             transform.Translate(Vector3.forward * projectileSpeed * Time.deltaTime);
-            Destroy(gameObject, projectileLifetime);
+            
+  
+            
 
         }
 
@@ -48,6 +52,7 @@ namespace RPG.Combat
         {
             this.target = target;
             this.damage = damage;
+            Destroy(gameObject, projectileLifetime);
 
         }
 
@@ -56,19 +61,19 @@ namespace RPG.Combat
             if (other.GetComponent<Health>() != target) return;
             if (target.IsDead()) return;
             target.TakeDamage(damage);
+            projectileSpeed = 0;
             if (hitEffect != null)
             {
             Instantiate(hitEffect, GetAimLocation(), transform.rotation);
             }
-            //target.GetComponent<Animator>().SetTrigger("Impact");
-            StartCoroutine(WaitBeforeDestory(0.1f));
+            foreach (GameObject toDestory in destroyOnHit)
+            {  
+                 Destroy(toDestory);
+            }
+            Destroy(gameObject,lifetimeAfterImpact);
             
         }
 
-        private IEnumerator WaitBeforeDestory(float waitTime)
-        {
-            yield return new WaitForSeconds(waitTime);
-            Destroy(gameObject);
-        }
+
     }
 }
