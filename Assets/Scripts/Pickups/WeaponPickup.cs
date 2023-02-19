@@ -52,6 +52,7 @@ namespace RPG.Combat
             if (!hasDropped)
             {
             GetPlayersCurrentWeapon(currentWeapon);
+            if (oldWeapon.dropPrefab == null) return;
             GameObject Instantiated = Instantiate(oldWeapon.dropPrefab, GetPlayerDropPostion(), Quaternion.identity);
             Instantiated.GetComponent<WeaponPickup>().canPickup = false;
             droppedInstantiation = Instantiated;

@@ -24,6 +24,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3723999615712328059}
     - target: {fileID: 8576271466948551050, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: defaultWeaponName
+      value: BigClub
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576271466948551050, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
       propertyPath: rightHandTrasform
       value: 
       objectReference: {fileID: 3724490260378975709}

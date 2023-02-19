@@ -139,6 +139,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 22100000, guid: 6d476087f6cece3429274abdeeb5855c, type: 2}
     - target: {fileID: 8576271466948551050, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: defaultWeaponName
+      value: Club
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576271466948551050, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
       propertyPath: timeBetweenAttacks
       value: 3
       objectReference: {fileID: 0}

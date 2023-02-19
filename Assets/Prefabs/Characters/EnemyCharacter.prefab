@@ -60,6 +60,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6639534163247360679}
     - target: {fileID: 8377449688706189458, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: defaultWeaponName
+      value: SavageUnarmed
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377449688706189458, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: rightHandTrasform
       value: 
       objectReference: {fileID: 6639534163247335143}
