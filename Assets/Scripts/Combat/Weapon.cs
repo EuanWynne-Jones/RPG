@@ -37,10 +37,16 @@ namespace RPG.Combat
                 weapon.name = weaponName;
 
             }
+            var overrideController = animator.runtimeAnimatorController as AnimatorOverrideController;
             if (attackOverrite != null)
             {
                 animator.runtimeAnimatorController = attackOverrite;
             }
+            else if (overrideController != null)
+            {
+                animator.runtimeAnimatorController = overrideController.runtimeAnimatorController;
+            }
+            
         }
 
 
