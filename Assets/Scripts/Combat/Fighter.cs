@@ -59,7 +59,10 @@ namespace RPG.Combat
             }
         }
 
-
+        public Health GetTarget()
+        {
+            return target;
+        }
 
         private void AttackBehaviour()
         {
