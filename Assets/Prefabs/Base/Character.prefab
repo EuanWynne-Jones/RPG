@@ -14,8 +14,10 @@ GameObject:
   - component: {fileID: 8377449688706189463}
   - component: {fileID: 8377449688706189458}
   - component: {fileID: 8377449688706189459}
-  - component: {fileID: 6785506434871971097}
   - component: {fileID: 7995480164410023182}
+  - component: {fileID: 6845435970402624569}
+  - component: {fileID: 2225400171380218362}
+  - component: {fileID: 161997662531045564}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -109,8 +111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 4
   defaultWeapon: {fileID: 11400000, guid: 7c458d0e70cdfc146b03e7c582f6464d, type: 2}
-  handTrasform: {fileID: 0}
-  enemyOverride: {fileID: 22100000, guid: 9e61ae16d05241b4cb4e485f07f5fd17, type: 2}
+  rightHandTrasform: {fileID: 0}
+  leftHandTrasform: {fileID: 0}
   currentWeapon: {fileID: 0}
 --- !u!114 &8377449688706189459
 MonoBehaviour:
@@ -124,19 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e61aae4e8443c54ebf95fde891197b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6785506434871971097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8377449688706189462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 263d7e8ad36f10a42a8fdb510678d688, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
 --- !u!54 &7995480164410023182
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -153,6 +142,47 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6845435970402624569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8377449688706189462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea9374b509b70f4bba37e4a2ca8cf00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: 
+--- !u!114 &2225400171380218362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8377449688706189462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae005c347e204843a3e708af898eae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingLevel: 1
+  characterClass: 1
+  progression: {fileID: 11400000, guid: 514846b4547e80e4586f246fb2333cbe, type: 2}
+--- !u!114 &161997662531045564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8377449688706189462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96082043c3bf17c409fbaef548ba2a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 30
 --- !u!1001 &7187602194761122175
 PrefabInstance:
   m_ObjectHideFlags: 0

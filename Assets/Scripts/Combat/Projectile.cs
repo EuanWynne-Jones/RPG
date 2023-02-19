@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RPG.Core;
+using RPG.Attributes;
 
 namespace RPG.Combat
 {
@@ -11,6 +11,7 @@ namespace RPG.Combat
         [SerializeField] float projectileLifetime = 3f;
         [SerializeField ]bool followToPlayer = false;
         [SerializeField] GameObject hitEffect = null;
+
         [SerializeField] float lifetimeAfterImpact = 0.1f;
         [SerializeField] GameObject[] destroyOnHit = null;
 

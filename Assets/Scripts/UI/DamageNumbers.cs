@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using RPG.Core;
-using static System.Net.Mime.MediaTypeNames;
+using RPG.Attributes;
 
 namespace RPG.UI
 {

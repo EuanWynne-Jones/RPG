@@ -55,6 +55,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 161997662531045564, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 196746997449289281, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -74,6 +78,14 @@ PrefabInstance:
     - target: {fileID: 1940227706928944457, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2225400171380218362, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: characterClass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845435970402624569, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: uniqueIdentifier
+      value: player
       objectReference: {fileID: 0}
     - target: {fileID: 8377449688706189456, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: m_Enabled

@@ -70,9 +70,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 105886727689216420, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1538779368328888481, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2136274971821175010, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: characterClass
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2418309581172901054, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
       propertyPath: m_Height
