@@ -19,4 +19,6 @@ MonoBehaviour:
   weaponRange: 2
   isRightHanded: 1
   projectile: {fileID: 0}
+  attackOverrites:
+  - {fileID: 22100000, guid: 0737ef7438298864e9cbbf43a74025c6, type: 2}
   attackOverrite: {fileID: 22100000, guid: 0737ef7438298864e9cbbf43a74025c6, type: 2}

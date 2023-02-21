@@ -15,11 +15,12 @@ namespace RPG.Combat
         [SerializeField] Weapon defaultWeapon = null;
         [SerializeField] public Transform rightHandTrasform = null;
         [SerializeField] public Transform leftHandTrasform = null;
+
         [HideInInspector]
         public Weapon currentWeapon;
         Health target;
         float timeSinceLastAttack = Mathf.Infinity;
-
+        public AnimatorOverrideController currentControllerOverrite = null;
         bool canAttack;
 
         private void Awake()
@@ -71,6 +72,8 @@ namespace RPG.Combat
                 //Looks at the enemy when attacking
                 transform.LookAt(target.transform);
                 //This will trigger the attack animation event
+                
+                GetAttackOverrite(GetComponent<Animator>());
                 TriggerAttack();
                 timeSinceLastAttack = 0;
 
@@ -141,6 +144,20 @@ namespace RPG.Combat
         {
             GetComponent<Animator>().SetTrigger("StopAttack");
             GetComponent<Animator>().ResetTrigger("Attack");
+        }
+        public void GetAttackOverrite(Animator animator)
+        {
+            
+            if (currentWeapon.attackOverrites == null || currentWeapon.attackOverrites.Count == 0)
+            {
+                return;
+            }
+            int randomIndex = Random.Range(0, currentWeapon.attackOverrites.Count);
+            currentWeapon.attackOverrite = currentWeapon.attackOverrites[randomIndex];
+            animator.runtimeAnimatorController = currentWeapon.attackOverrite;
+            
+           
+
         }
 
         public object CaptureState()
