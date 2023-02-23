@@ -9,26 +9,57 @@ namespace RPG.Stats
     {
         [SerializeField] ProgressionCharacterClass[] characterClasses = null;
 
-        public float GetHealth(CharacterClass characterClass, int level)
+        Dictionary<CharacterClass, Dictionary<Stat, float[]>> lookuptable = null;
+
+        public float GetStat(Stat stat, CharacterClass characterClass, int level)
         {
-            foreach(ProgressionCharacterClass progressionClass in characterClasses)
+            BuildLookup();
+            float[] levels = lookuptable[characterClass][stat];
+            if (levels.Length < level)
             {
-                if(progressionClass.characterClass == characterClass)
-                {
-                    return progressionClass.health[level - 1];
-                }
+                return 0;
             }
-            return 0f;
+            return levels[level -1];
         }
+
+        private  void BuildLookup()
+        {
+            if (lookuptable != null) return;
+            lookuptable = new Dictionary<CharacterClass, Dictionary<Stat, float[]>>();
+
+            foreach (ProgressionCharacterClass progressionClass in characterClasses)
+            {
+                var statLookupTable = new Dictionary<Stat, float[]>();
+
+                foreach(ProgressionStat progressionStat in progressionClass.stats)
+                {
+                    statLookupTable[progressionStat.stat] = progressionStat.Levels;
+                }
+
+                lookuptable[progressionClass.characterClass] = statLookupTable;
+            }
+
+        }
+
         [System.Serializable]
         class ProgressionCharacterClass 
         {
-             public CharacterClass characterClass;
-             public float[] health;
+            public CharacterClass characterClass;
+            public ProgressionStat[] stats;
+             
 
 
-        } 
+        }
+        [System.Serializable]
+        public class ProgressionStat
+        {
+            public Stat stat;
+            public float[] Levels;
+        }
+
         
-        
+
+
+
     }
 }
