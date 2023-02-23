@@ -19,8 +19,12 @@ namespace RPG.Attributes
 
         private void Update()
         {
+            //old way showing 70%
             healthIntValue = (int)Math.Round(health.GetPercentage());
             healthText.text = healthIntValue.ToString() + "%";
+
+            //showing 40/50 for health
+            //healthText.GetComponent<TMP_Text>().text = String.Format("{0:0}/{1:00}", health.GetHealth(), health.GetMaxHealth());
         }
     }
 }

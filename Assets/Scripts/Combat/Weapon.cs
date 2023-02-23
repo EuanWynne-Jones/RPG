@@ -14,9 +14,10 @@ namespace RPG.Combat
         [SerializeField] public GameObject dropPrefab = null;
 
         [Range(1f, 20f)]
-        [SerializeField] float minWeaponDamage = 1f;
+        [SerializeField] public float minWeaponDamage = 1f;
         [Range(1f, 20f)]
-        [SerializeField] float maxWeaponDamage = 10f;
+        [SerializeField] public float maxWeaponDamage = 10f;
+        [SerializeField] public float PercentageBonus = 0f;
 
         float weaponDamage;
         [SerializeField] float weaponRange = .5f;
@@ -86,10 +87,10 @@ namespace RPG.Combat
             return projectile != null;
         }
 
-        public void LaunchProjectile(Transform rightHand, Transform leftHand, Health target, GameObject instigator)
+        public void LaunchProjectile(Transform rightHand, Transform leftHand, Health target, GameObject instigator, float calculatedDamage)
         {
             Projectile projectileInstance = Instantiate(projectile, GetHand(rightHand, leftHand).position, Quaternion.identity);
-            projectileInstance.SetTarget(target,instigator,GetWeaponDamage());
+            projectileInstance.SetTarget(target,instigator, calculatedDamage);
         }
 
         public float GetWeaponDamage()
@@ -98,6 +99,10 @@ namespace RPG.Combat
             return Mathf.RoundToInt(weaponDamage);
         }
 
+        public float GetPercentageBonus()
+        {
+            return PercentageBonus;
+        }
         public float GetWeaponRange()
         {
             return weaponRange;

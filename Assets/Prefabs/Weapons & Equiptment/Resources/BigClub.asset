@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bdaf4e851b99eb43a812b25545f324c, type: 3}
   m_Name: BigClub
   m_EditorClassIdentifier: 
-  equiptPrefab: {fileID: 0}
-  minWeaponDamage: 1
-  maxWeaponDamage: 10
-  weaponRange: 0.5
+  equiptPrefab: {fileID: 3217679343690687960, guid: ffe5779b46bc1cd429449cb0a3c3e725, type: 3}
+  dropPrefab: {fileID: 0}
+  minWeaponDamage: 6
+  maxWeaponDamage: 8
+  weaponRange: 3
   isRightHanded: 1
   projectile: {fileID: 0}
-  attackOverrite: {fileID: 0}
+  attackOverrites: []
+  attackOverrite: {fileID: 22100000, guid: 6d476087f6cece3429274abdeeb5855c, type: 2}

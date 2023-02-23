@@ -16,6 +16,7 @@ MonoBehaviour:
   dropPrefab: {fileID: 4033740607761726150, guid: baa1176e0f46f4848b5ecaabd2308b33, type: 3}
   minWeaponDamage: 3
   maxWeaponDamage: 7
+  PercentageBonus: 10
   weaponRange: 2
   isRightHanded: 1
   projectile: {fileID: 0}

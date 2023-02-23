@@ -5,10 +5,11 @@ using RPG.Movement;
 using RPG.Core;
 using RPG.Saving;
 using RPG.Attributes;
+using RPG.Stats;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour, IAction, ISaveable
+    public class Fighter : MonoBehaviour, IAction, ISaveable, IModifierProvider
     {
         [SerializeField] float timeBetweenAttacks;
 
@@ -18,9 +19,9 @@ namespace RPG.Combat
 
         [HideInInspector]
         public Weapon currentWeapon;
+        float weaponDamage;
         Health target;
         float timeSinceLastAttack = Mathf.Infinity;
-        public AnimatorOverrideController currentControllerOverrite = null;
         bool canAttack;
 
         private void Awake()
@@ -95,16 +96,19 @@ namespace RPG.Combat
         void Hit()
         {
             if (target == null) return;
+            float damage = Mathf.Round(GetComponent<BaseStats>().GetStat(Stat.Damage));
+
             if (currentWeapon.HasProjectile())
             {
-                currentWeapon.LaunchProjectile(rightHandTrasform, leftHandTrasform,target,gameObject);
+                currentWeapon.LaunchProjectile(rightHandTrasform, leftHandTrasform, target, gameObject, damage);
             }
             else
             {
-            target.TakeDamage(gameObject,currentWeapon.GetWeaponDamage());
+
+                target.TakeDamage(gameObject, damage);
             }
-            //target.GetComponent<Animator>().SetTrigger("Impact");
         }
+
 
         void Shoot()
         {
@@ -140,6 +144,21 @@ namespace RPG.Combat
             target = null;
         }
 
+        public IEnumerable<float> GetAdditiveModifiers(Stat stat)
+        {
+            if(stat == Stat.Damage)
+            {
+                yield return currentWeapon.GetWeaponDamage();
+            }
+        }
+
+        public IEnumerable<float> GetPercentageModifiers(Stat stat)
+        {
+            if (stat == Stat.Damage)
+            {
+                yield return currentWeapon.GetPercentageBonus();
+            }
+        }
         private void StopAttack()
         {
             GetComponent<Animator>().SetTrigger("StopAttack");
@@ -171,6 +190,8 @@ namespace RPG.Combat
             Weapon weapon = Resources.Load<Weapon>(weaponName);
             EquipWeapon(weapon);
         }
+
+
     }
 }
 

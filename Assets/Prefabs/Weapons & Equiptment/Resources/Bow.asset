@@ -15,8 +15,9 @@ MonoBehaviour:
   equiptPrefab: {fileID: 3078927085896722766, guid: d5e1c0c7d149cd14c832d8e04560e7b7, type: 3}
   dropPrefab: {fileID: 6573241254229505835, guid: dcc57c8728228fc4ca318a710af314de, type: 3}
   minWeaponDamage: 2
-  maxWeaponDamage: 5
+  maxWeaponDamage: 7
   weaponRange: 15
   isRightHanded: 0
   projectile: {fileID: 2850794755163358140, guid: a1afbb6697ee897459a746a40a6a73c0, type: 3}
+  attackOverrites: []
   attackOverrite: {fileID: 22100000, guid: bbcae82f4b0847a4fad9510def377a73, type: 2}

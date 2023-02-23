@@ -53,7 +53,7 @@ namespace RPG.Combat
         public void SetTarget(Health target,GameObject instigator, float damage)
         {
             this.target = target;
-            this.damage = damage;
+            this.damage = damage ;
             this.instigator = instigator;
             Destroy(gameObject, projectileLifetime);
 

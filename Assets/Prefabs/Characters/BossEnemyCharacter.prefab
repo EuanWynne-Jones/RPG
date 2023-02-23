@@ -58,6 +58,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 95824196730489130, guid: 0d42bc61d684259409d481c6f5dd5d5c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0d42bc61d684259409d481c6f5dd5d5c, type: 3}
+--- !u!4 &584602467008783206 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4890375675795610, guid: 0d42bc61d684259409d481c6f5dd5d5c, type: 3}
+  m_PrefabInstance: {fileID: 580316868365614076}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &584739386372268486 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4743577955424826, guid: 0d42bc61d684259409d481c6f5dd5d5c, type: 3}
@@ -147,9 +152,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 22100000, guid: 6d476087f6cece3429274abdeeb5855c, type: 2}
     - target: {fileID: 8576271466948551050, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: leftHandTrasform
+      value: 
+      objectReference: {fileID: 584602467008783206}
+    - target: {fileID: 8576271466948551050, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
       propertyPath: defaultWeaponName
       value: Club
       objectReference: {fileID: 0}
+    - target: {fileID: 8576271466948551050, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: rightHandTrasform
+      value: 
+      objectReference: {fileID: 584739386372268486}
     - target: {fileID: 8576271466948551050, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
       propertyPath: timeBetweenAttacks
       value: 3

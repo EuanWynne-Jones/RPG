@@ -18,7 +18,7 @@ namespace RPG.Stats
         private void Update()
         {
 
-            levelText.text = stats.GetLevel().ToString();
+            levelText.text = stats.CalculateLevel().ToString();
         }
     }
 
