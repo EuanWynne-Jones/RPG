@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using RPG.Attributes;
+using GameDevTV.Utils;
 
 
 namespace RPG.Control
@@ -29,22 +30,31 @@ namespace RPG.Control
         
         float normalSpeed;
 
-        Vector3 guardPosition;
+        LazyValue<Vector3> guardPosition;
         float timeSinceLastSawPlayer = Mathf.Infinity;
 
         float timeSinceArrivedAtWaypoint = Mathf.Infinity;
         float waypointDwellTime;
         int currentWaypointIndex = 0;
 
-        private void Start()
+        private void Awake()
         {
-            normalSpeed = GetComponent<NavMeshAgent>().speed;
+            guardPosition = new LazyValue<Vector3>(GetInitialPosition);
             mover = GetComponent<Mover>();
             fighter = GetComponent<Fighter>();
             player = GameObject.FindWithTag("Player");
             health = GetComponent<Health>();
+            normalSpeed = GetComponent<NavMeshAgent>().speed;
+        }
 
-            guardPosition = transform.position;
+        private void Start()
+        {
+            guardPosition.ForceInit();
+        }
+
+        private Vector3 GetInitialPosition()
+        {
+            return transform.position;
         }
         private void Update()
         {
@@ -96,7 +106,7 @@ namespace RPG.Control
         {
 
             StopSuspicion();
-            Vector3 nextPosition = guardPosition;
+            Vector3 nextPosition = guardPosition.value;
             if(patrolPath != null)
             {
                 if (AtWaypoint())

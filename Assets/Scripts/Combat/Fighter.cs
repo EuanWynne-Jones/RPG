@@ -6,6 +6,7 @@ using RPG.Core;
 using RPG.Saving;
 using RPG.Attributes;
 using RPG.Stats;
+using GameDevTV.Utils;
 
 namespace RPG.Combat
 {
@@ -18,7 +19,7 @@ namespace RPG.Combat
         [SerializeField] public Transform leftHandTrasform = null;
 
         [HideInInspector]
-        public Weapon currentWeapon;
+        public LazyValue <Weapon> currentWeapon;
         float weaponDamage;
         Health target;
         float timeSinceLastAttack = Mathf.Infinity;
@@ -26,10 +27,17 @@ namespace RPG.Combat
 
         private void Awake()
         {
-            if(currentWeapon == null)
-            {
-                EquipWeapon(defaultWeapon);
-            }
+            currentWeapon = new LazyValue<Weapon>(SetupDefaultWeapon);
+        }
+
+        private void Start()
+        {
+            currentWeapon.ForceInit();
+        }
+        private Weapon SetupDefaultWeapon()
+        {
+            AttachWeapon(defaultWeapon);
+            return defaultWeapon;
         }
 
 
@@ -82,9 +90,14 @@ namespace RPG.Combat
         }
         public void EquipWeapon(Weapon weapon)
         {
-            currentWeapon = weapon;
+            currentWeapon.value = weapon;
+            AttachWeapon(weapon);
+        }
+
+        private void AttachWeapon(Weapon weapon)
+        {
             Animator animator = GetComponent<Animator>();
-            weapon.Spawn(rightHandTrasform,leftHandTrasform, animator);
+            weapon.Spawn(rightHandTrasform, leftHandTrasform, animator);
         }
 
         private void TriggerAttack()
@@ -98,9 +111,9 @@ namespace RPG.Combat
             if (target == null) return;
             float damage = Mathf.Round(GetComponent<BaseStats>().GetStat(Stat.Damage));
 
-            if (currentWeapon.HasProjectile())
+            if (currentWeapon.value.HasProjectile())
             {
-                currentWeapon.LaunchProjectile(rightHandTrasform, leftHandTrasform, target, gameObject, damage);
+                currentWeapon.value.LaunchProjectile(rightHandTrasform, leftHandTrasform, target, gameObject, damage);
             }
             else
             {
@@ -118,7 +131,7 @@ namespace RPG.Combat
 
         private bool GetIsInRange()
         {
-            return Vector3.Distance(transform.position, target.transform.position) < currentWeapon.GetWeaponRange();
+            return Vector3.Distance(transform.position, target.transform.position) < currentWeapon.value.GetWeaponRange();
         }
 
         public void Attack(GameObject combatTarget)
@@ -148,7 +161,7 @@ namespace RPG.Combat
         {
             if(stat == Stat.Damage)
             {
-                yield return currentWeapon.GetWeaponDamage();
+                yield return currentWeapon.value.GetWeaponDamage();
             }
         }
 
@@ -156,7 +169,7 @@ namespace RPG.Combat
         {
             if (stat == Stat.Damage)
             {
-                yield return currentWeapon.GetPercentageBonus();
+                yield return currentWeapon.value.GetPercentageBonus();
             }
         }
         private void StopAttack()
@@ -167,13 +180,13 @@ namespace RPG.Combat
         public void GetAttackOverrite(Animator animator)
         {
             
-            if (currentWeapon.attackOverrites == null || currentWeapon.attackOverrites.Count == 0)
+            if (currentWeapon.value.attackOverrites == null || currentWeapon.value.attackOverrites.Count == 0)
             {
                 return;
             }
-            int randomIndex = Random.Range(0, currentWeapon.attackOverrites.Count);
-            currentWeapon.attackOverrite = currentWeapon.attackOverrites[randomIndex];
-            animator.runtimeAnimatorController = currentWeapon.attackOverrite;
+            int randomIndex = Random.Range(0, currentWeapon.value.attackOverrites.Count);
+            currentWeapon.value.attackOverrite = currentWeapon.value.attackOverrites[randomIndex];
+            animator.runtimeAnimatorController = currentWeapon.value.attackOverrite;
             
            
 
@@ -181,7 +194,7 @@ namespace RPG.Combat
 
         public object CaptureState()
         {
-            return currentWeapon.name;
+            return currentWeapon.value.name;
         }
 
         public void RestoreState(object state)

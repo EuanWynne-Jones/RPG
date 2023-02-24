@@ -64,7 +64,7 @@ namespace RPG.Combat
         private Weapon GetPlayersCurrentWeapon(Weapon weapon)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-            currentWeapon =  player.GetComponent<Fighter>().currentWeapon;
+            currentWeapon =  player.GetComponent<Fighter>().currentWeapon.value;
             return weapon = currentWeapon;
         } 
         
