@@ -11,6 +11,18 @@ PrefabInstance:
       propertyPath: health
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 1538582562366616080, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961929684685140738, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961929684685140738, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.7670002
+      objectReference: {fileID: 0}
     - target: {fileID: 2136274971821175010, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
       propertyPath: startingLevel
       value: 2

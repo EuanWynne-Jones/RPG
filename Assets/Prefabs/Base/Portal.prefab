@@ -110,6 +110,6 @@ MonoBehaviour:
   sceneToLoad: -1
   spawnPoint: {fileID: 1137932911480594020}
   destination: 0
-  fadeOutTime: 0.5
-  fadeInTime: 0.7
-  fadeWaitTime: 0.3
+  fadeOutTime: 1
+  fadeInTime: 1
+  fadeWaitTime: 0.5

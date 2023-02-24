@@ -8,7 +8,7 @@ namespace RPG.SceneManagement
     public class SavingWrapper : MonoBehaviour
     {
         const string defaultSaveFile = "save";
-        [SerializeField] float fadeInTime = 0.2f;
+        [SerializeField] float fadeInTime = 1f;
 
         private void Awake()
         {

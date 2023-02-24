@@ -86,7 +86,7 @@ PrefabInstance:
     - target: {fileID: 2225400171380218362, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: levelUpEffect
       value: 
-      objectReference: {fileID: 912069314314297091, guid: b2dfbd2c6ba9f56408de22d64fb74b7e, type: 3}
+      objectReference: {fileID: 1624714524768532, guid: c9eb15264aa6c4348b00d5b9b3daab2a, type: 3}
     - target: {fileID: 2225400171380218362, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: startingLevel
       value: 2
@@ -94,6 +94,14 @@ PrefabInstance:
     - target: {fileID: 2225400171380218362, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: characterClass
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902291580224496548, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5267149164089094075, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6845435970402624569, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: uniqueIdentifier
@@ -265,6 +273,8 @@ MonoBehaviour:
   - type: 4
     texture: {fileID: 2800000, guid: 8d61ce1a04c250b4799438ca6642dfde, type: 3}
     hotspot: {x: 0, y: 0}
+  maxNavmeshProjectionDistance: 1
+  maxNavPathLength: 40
 --- !u!114 &9084476331250012325
 MonoBehaviour:
   m_ObjectHideFlags: 0
