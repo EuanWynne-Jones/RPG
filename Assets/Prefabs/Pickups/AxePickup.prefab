@@ -77,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 3212077923661533347}
     - target: {fileID: 9033557454912107359, guid: f20acfca5f42b31409bc91c64bd8fe4b, type: 3}
       propertyPath: m_Name
-      value: AxePickup 1
+      value: AxePickup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f20acfca5f42b31409bc91c64bd8fe4b, type: 3}

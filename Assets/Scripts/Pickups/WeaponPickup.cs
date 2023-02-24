@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RPG.Combat;
 using RPG.Core;
-
+using RPG.Control;
+using RPG.Movement;
 
 namespace RPG.Combat
 {
-    public class WeaponPickup : MonoBehaviour
+    public class WeaponPickup : MonoBehaviour, IRaycastable
     {
         
         [SerializeField] Weapon weaponToPickup = null;
@@ -27,17 +27,22 @@ namespace RPG.Combat
             {
                 if (canPickup)
                 {
-                    oldWeapon = GetPlayersCurrentWeapon(currentWeapon);
-                    other.gameObject.GetComponent<ActionSchedueler>().CancelCurrentAction();
-                    LookAtObject(other.gameObject);
-                    TriggerLooting(other.gameObject);
-                    StartCoroutine(WaitToDestoryOldWeapon(0.5f,other.gameObject));
-                    StartCoroutine(PickupAnimationTime(0.855f,other.gameObject));
-                    hasDropped = false;
+                    Pickup(other.GetComponent<Fighter>());
                 }
 
             }
         
+        }
+
+        private void Pickup(Fighter fighter)
+        {
+            oldWeapon = GetPlayersCurrentWeapon(currentWeapon);
+            fighter.gameObject.GetComponent<ActionSchedueler>().CancelCurrentAction();
+            LookAtObject(fighter.gameObject);
+            TriggerLooting(fighter.gameObject);
+            StartCoroutine(WaitToDestoryOldWeapon(0.5f, fighter.gameObject));
+            StartCoroutine(PickupAnimationTime(0.855f, fighter.gameObject));
+            hasDropped = false;
         }
 
         private void OnTriggerExit(Collider other)
@@ -122,7 +127,20 @@ namespace RPG.Combat
             player.transform.LookAt(this.transform.position);
         }
 
+        public bool HandleRaycast(PlayerController callingController)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                callingController.GetComponent<Mover>().MoveTo(gameObject.transform.position, 1);
+                
+            }
+            return true;
+        }
 
+        public CursorType GetCursorType()
+        {
+            return CursorType.Pickup;
+        }
     }
 
 }
