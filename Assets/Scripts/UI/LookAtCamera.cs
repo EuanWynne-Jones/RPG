@@ -7,7 +7,7 @@ namespace RPG.UI
 {
     public class LookAtCamera : MonoBehaviour
     {
-        void Update()
+        void LateUpdate()
         {
             Camera cam = Camera.main;
             transform.LookAt(transform.position + cam.transform.rotation * Vector3.back, cam.transform.rotation * Vector3.up);

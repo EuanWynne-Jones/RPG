@@ -16,10 +16,12 @@ namespace RPG.Combat
         Weapon currentWeapon;
         Weapon oldWeapon;
 
-        GameObject droppedInstantiation = null;
+        [HideInInspector]
+        public GameObject droppedInstantiation = null;
 
         bool hasDropped;
         public bool canPickup = true;
+
         private void OnTriggerEnter(Collider other)
         {
             
@@ -62,9 +64,14 @@ namespace RPG.Combat
             Instantiated.GetComponent<WeaponPickup>().canPickup = false;
             droppedInstantiation = Instantiated;
             droppedInstantiation.GetComponent<WeaponPickup>().hasDropped = true;
+            
+
+
             }
 
         }
+
+    
 
         private Weapon GetPlayersCurrentWeapon(Weapon weapon)
         {
