@@ -119,6 +119,7 @@ namespace RPG.Combat
             {
 
                 target.TakeDamage(gameObject, damage);
+                GetComponent<CharacterSFX>().PlayVoiceGetHit();
             }
         }
 

@@ -107,6 +107,7 @@ namespace RPG.Attributes
 
             isDead = true;
             GetComponent<Animator>().SetTrigger("Death");
+            GetComponent<CharacterSFX>().PlayDeathScream();
             GetComponent<ActionSchedueler>().CancelCurrentAction();
         }
 

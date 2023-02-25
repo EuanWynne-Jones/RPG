@@ -16,8 +16,11 @@ MonoBehaviour:
   dropPrefab: {fileID: 0}
   minWeaponDamage: 6
   maxWeaponDamage: 8
+  PercentageBonus: 0
   weaponRange: 3
   isRightHanded: 1
   projectile: {fileID: 0}
   attackOverrites: []
   attackOverrite: {fileID: 22100000, guid: 6d476087f6cece3429274abdeeb5855c, type: 2}
+  weaponSFXConfig: {fileID: 11400000, guid: 9fd1c645b0c88674b9d3b5afd771128d, type: 2}
+  audioOverrite: {fileID: 11400000, guid: a5c589246408f7042bed9d9d0a267ff8, type: 2}

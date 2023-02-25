@@ -27,6 +27,9 @@ namespace RPG.Combat
         [SerializeField] public List<AnimatorOverrideController> attackOverrites = null;
         [SerializeField] public AnimatorOverrideController attackOverrite = null;
 
+        [SerializeField] public SFXWeaponConfig weaponSFXConfig = null;
+        [SerializeField] public WeaponAudioOverrite audioOverrite = null;
+
         const string weaponName = "Weapon";
 
 

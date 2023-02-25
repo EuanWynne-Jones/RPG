@@ -13,7 +13,14 @@ MonoBehaviour:
   m_Name: Unarmed
   m_EditorClassIdentifier: 
   equiptPrefab: {fileID: 0}
+  dropPrefab: {fileID: 0}
   minWeaponDamage: 1
   maxWeaponDamage: 3
+  PercentageBonus: 0
   weaponRange: 1.5
+  isRightHanded: 1
+  projectile: {fileID: 0}
+  attackOverrites: []
   attackOverrite: {fileID: 0}
+  weaponSFXConfig: {fileID: 11400000, guid: 2fb16dfb52eb5de4282bd0c9594eaa36, type: 2}
+  audioOverrite: {fileID: 11400000, guid: a5c589246408f7042bed9d9d0a267ff8, type: 2}

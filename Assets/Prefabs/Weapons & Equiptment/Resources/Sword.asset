@@ -23,3 +23,5 @@ MonoBehaviour:
   attackOverrites:
   - {fileID: 22100000, guid: 0737ef7438298864e9cbbf43a74025c6, type: 2}
   attackOverrite: {fileID: 22100000, guid: 0737ef7438298864e9cbbf43a74025c6, type: 2}
+  weaponSFXConfig: {fileID: 11400000, guid: cab27d5d6b9bdcf4aba8db350a854eda, type: 2}
+  audioOverrite: {fileID: 11400000, guid: a5c589246408f7042bed9d9d0a267ff8, type: 2}

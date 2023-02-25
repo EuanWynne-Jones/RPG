@@ -13,9 +13,14 @@ MonoBehaviour:
   m_Name: Bow (FireArrow)
   m_EditorClassIdentifier: 
   equiptPrefab: {fileID: 3078927085896722766, guid: d5e1c0c7d149cd14c832d8e04560e7b7, type: 3}
+  dropPrefab: {fileID: 0}
   minWeaponDamage: 4
   maxWeaponDamage: 7
+  PercentageBonus: 0
   weaponRange: 10
   isRightHanded: 0
   projectile: {fileID: 8056472778644372659, guid: 8fef504f776136e4cac4dd8f6b363253, type: 3}
+  attackOverrites: []
   attackOverrite: {fileID: 22100000, guid: bbcae82f4b0847a4fad9510def377a73, type: 2}
+  weaponSFXConfig: {fileID: 11400000, guid: c295795ad2a813243a1f836256c1a89a, type: 2}
+  audioOverrite: {fileID: 11400000, guid: a5c589246408f7042bed9d9d0a267ff8, type: 2}
