@@ -152,6 +152,10 @@ PrefabInstance:
       propertyPath: destroyOnHit.Array.data[0]
       value: 
       objectReference: {fileID: 2413127658813256787}
+    - target: {fileID: 5889045790722530300, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7766582266847061707, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
       propertyPath: m_IsActive
       value: 1

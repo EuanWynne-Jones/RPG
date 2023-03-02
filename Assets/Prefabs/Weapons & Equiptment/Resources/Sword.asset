@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bdaf4e851b99eb43a812b25545f324c, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  equiptPrefab: {fileID: 2095157066972700068, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}
+  equiptPrefab: {fileID: 4874388588273744520, guid: 2281956121ded1b47bee123e0d964410, type: 3}
   dropPrefab: {fileID: 4033740607761726150, guid: baa1176e0f46f4848b5ecaabd2308b33, type: 3}
   minWeaponDamage: 3
   maxWeaponDamage: 7
@@ -22,6 +22,6 @@ MonoBehaviour:
   projectile: {fileID: 0}
   attackOverrites:
   - {fileID: 22100000, guid: 0737ef7438298864e9cbbf43a74025c6, type: 2}
+  - {fileID: 22100000, guid: ea8153abdb5322447b2dd7c268c8f2ee, type: 2}
+  - {fileID: 22100000, guid: a0fd4b086bb16a24a9994c083baa3117, type: 2}
   attackOverrite: {fileID: 22100000, guid: 0737ef7438298864e9cbbf43a74025c6, type: 2}
-  weaponSFXConfig: {fileID: 11400000, guid: cab27d5d6b9bdcf4aba8db350a854eda, type: 2}
-  audioOverrite: {fileID: 11400000, guid: a5c589246408f7042bed9d9d0a267ff8, type: 2}

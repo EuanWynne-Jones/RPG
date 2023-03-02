@@ -13,10 +13,7 @@ namespace RPG.Combat
             weaponSFX = GetComponentInChildren<WeaponSFX>();
             weaponSFX.SetupAudioSources();
         }
-        private void Update()
-        {
-            //weaponSFX = GetComponentInChildren<WeaponSFX>();
-        }
+
 
         private AudioClip AttackingSoundClip
         {
@@ -60,7 +57,6 @@ namespace RPG.Combat
             if (weaponSFX.ImpactSounds.Count > 0)
             {
                 PlayImpactSound(ImpactingSoundClip);
-                Debug.Log("impact");
             }
         }
         public void PlayAttacking()
@@ -68,7 +64,6 @@ namespace RPG.Combat
             if (weaponSFX.AttackSounds.Count > 0)
             {
                 PlayAttackSound(AttackingSoundClip);
-                Debug.Log("attack");
             }
         }
     }

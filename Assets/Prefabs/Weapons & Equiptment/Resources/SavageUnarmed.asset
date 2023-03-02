@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bdaf4e851b99eb43a812b25545f324c, type: 3}
   m_Name: SavageUnarmed
   m_EditorClassIdentifier: 
-  equiptPrefab: {fileID: 0}
+  equiptPrefab: {fileID: 504545318669963801, guid: b98edf36d7fc74e43ab4a8b9369240ca, type: 3}
   dropPrefab: {fileID: 0}
   minWeaponDamage: 1
   maxWeaponDamage: 3
@@ -22,5 +22,3 @@ MonoBehaviour:
   projectile: {fileID: 0}
   attackOverrites: []
   attackOverrite: {fileID: 22100000, guid: 9e61ae16d05241b4cb4e485f07f5fd17, type: 2}
-  weaponSFXConfig: {fileID: 11400000, guid: 2fb16dfb52eb5de4282bd0c9594eaa36, type: 2}
-  audioOverrite: {fileID: 11400000, guid: a5c589246408f7042bed9d9d0a267ff8, type: 2}

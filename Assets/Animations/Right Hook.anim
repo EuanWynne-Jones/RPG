@@ -46404,7 +46404,7 @@ AnimationClip:
   - time: 0.06666667
     functionName: PlayAttacking
     data: 
-    objectReferenceParameter: {fileID: 11400000, guid: 2fb16dfb52eb5de4282bd0c9594eaa36, type: 2}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
@@ -46418,7 +46418,7 @@ AnimationClip:
   - time: 0.3
     functionName: PlayImpacting
     data: 
-    objectReferenceParameter: {fileID: 11400000, guid: 2fb16dfb52eb5de4282bd0c9594eaa36, type: 2}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

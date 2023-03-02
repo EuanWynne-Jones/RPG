@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Attributes;
+using RPG.Core;
 
 namespace RPG.Combat
 {
@@ -19,12 +20,16 @@ namespace RPG.Combat
         GameObject instigator = null;
         float damage = 0;
 
+        WeaponSFXHandler weaponSFXHandler = null;
+
         private void Start()
         {
+            weaponSFXHandler = GetComponent<WeaponSFXHandler>();
             if(!followToPlayer) 
             {
             transform.LookAt(GetAimLocation());
             }
+            weaponSFXHandler.PlayAttacking();
         }
         private void Update()
         {
@@ -35,8 +40,9 @@ namespace RPG.Combat
             }
             transform.Translate(Vector3.forward * projectileSpeed * Time.deltaTime);
             
-  
-            
+
+
+
 
         }
 
@@ -61,9 +67,12 @@ namespace RPG.Combat
 
         private void OnTriggerEnter(Collider other)
         {
+            
             if (other.GetComponent<Health>() != target) return;
             if (target.IsDead()) return;
+            weaponSFXHandler.PlayImpacting();
             target.TakeDamage(instigator,damage);
+            target.GetComponent<CharacterSFX>().PlayVoiceGetHit();
             projectileSpeed = 0;
             if (hitEffect != null)
             {
