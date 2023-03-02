@@ -10,7 +10,9 @@ namespace RPG.Combat
         [field: SerializeField, Header("Weapon Audio Overrides")] public float SpacialBlend { get; private set; } = 1;
         [field: SerializeField] public float MaxDistance { get; private set; } = 100f;
         [field: SerializeField] public float WeaponVolume { get; private set; } = 1;
-        [field: SerializeField] public float PlayerMaxDistance { get; private set; } = 50f;
-        [field: SerializeField] public float EnemyMaxDistance { get; private set; } = 50f;
+        [field: SerializeField] public bool playOnAwake { get; private set; } = false;
+
+
+
     }
 }

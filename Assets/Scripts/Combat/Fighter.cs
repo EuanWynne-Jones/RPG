@@ -25,20 +25,24 @@ namespace RPG.Combat
         float timeSinceLastAttack = Mathf.Infinity;
         bool canAttack;
 
+
         private void Awake()
         {
             currentWeapon = new LazyValue<Weapon>(SetupDefaultWeapon);
+            
         }
 
         private void Start()
         {
             currentWeapon.ForceInit();
+
         }
         private Weapon SetupDefaultWeapon()
         {
             AttachWeapon(defaultWeapon);
             return defaultWeapon;
         }
+
 
 
 
@@ -92,6 +96,7 @@ namespace RPG.Combat
         {
             currentWeapon.value = weapon;
             AttachWeapon(weapon);
+
         }
 
         private void AttachWeapon(Weapon weapon)

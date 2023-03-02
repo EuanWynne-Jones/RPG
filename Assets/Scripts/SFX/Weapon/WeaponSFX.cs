@@ -7,24 +7,28 @@ namespace RPG.Combat
 {
     public class WeaponSFX : MonoBehaviour
     {
-        [SerializeField] WeaponAudioOverrite audioOverrite = null;
+
 
         [Header("WeaponAttack")]
-        [SerializeField] private string WeaponAttackName = "Attack";
-        [SerializeField] private AudioSource WeaponAttackSource;
+        private string WeaponAttackName = "Attack";
+        [SerializeField] public AudioSource WeaponAttackSource;
+        [SerializeField] public List<AudioClip> AttackSounds;
 
         [Header("WeaponImpact")]
-        [SerializeField] private string WeaponImpactname = "Impact";
-        [SerializeField] private AudioSource WeaponImpactSource;
+        private string WeaponImpactname = "Impact";
+        [SerializeField] public AudioSource WeaponImpactSource;
+        [SerializeField] public List<AudioClip> ImpactSounds;
 
-        PlayerController playerCharacter = null;
-        
-        private void SetupAudioSources()
+        [Header("AudioSourceOverrite")]
+        [SerializeField] WeaponAudioOverrite audioOverrite = null;
+
+
+        public void SetupAudioSources()
         {
             Transform[] transforms = GetComponentsInChildren<Transform>();
 
-            if (WeaponAttackName == "") Debug.LogError(name + " missing VoiceSourceBoneName.");
-            if (WeaponImpactname == "") Debug.LogError(name + " missing DeathVoiceSourceBoneName.");
+            if (WeaponAttackName == "") Debug.LogError(name + " missing WeaponAttackName.");
+            if (WeaponImpactname == "") Debug.LogError(name + " missing WeaponImpactname.");
             if (transforms.Length > 0)
             {
                 foreach (Transform t in transforms)
@@ -53,49 +57,30 @@ namespace RPG.Combat
                         }
                     }
                 }
-                if (WeaponAttackSource == null) Debug.LogError(name + " VoiceSource not set.");
-                if (WeaponImpactSource == null) Debug.LogError(name + " DeathVoiceSource not set.");
+                if (WeaponAttackSource == null) Debug.LogError(name + " WeaponAttackSource not set.");
+                if (WeaponImpactSource == null) Debug.LogError(name + " WeaponImpactSource not set.");
 
                 if (WeaponAttackSource != null)
                 {
+                    WeaponAttackSource.playOnAwake = audioOverrite.playOnAwake;
                     WeaponAttackSource.spatialBlend = audioOverrite.SpacialBlend;
                     WeaponAttackSource.maxDistance = audioOverrite.MaxDistance;
                     WeaponAttackSource.volume = audioOverrite.WeaponVolume;
-                    if (isPlayer)
-                    {
-                        WeaponAttackSource.maxDistance = audioOverrite.PlayerMaxDistance;
-                    }
-                    else
-                    {
-                        WeaponAttackSource.maxDistance = audioOverrite.EnemyMaxDistance;
-                    }
+                    
                 }
 
                 if (WeaponImpactSource != null)
                 {
+                    WeaponImpactSource.playOnAwake = audioOverrite.playOnAwake;
                     WeaponImpactSource.spatialBlend = audioOverrite.SpacialBlend;
                     WeaponImpactSource.maxDistance = audioOverrite.MaxDistance;
                     WeaponImpactSource.volume = audioOverrite.WeaponVolume;
-                    if (isPlayer)
-                    {
-                        WeaponImpactSource.maxDistance = audioOverrite.PlayerMaxDistance;
-                    }
-                    else
-                    {
-                        WeaponImpactSource.maxDistance = audioOverrite.EnemyMaxDistance;
-                    }
+
                 }
             }
 
         }
-        private bool isPlayer
-        {
-            get
-            {
-               PlayerController player = playerCharacter.GetComponent<PlayerController>();
-               return player != null;
-            }
-        }
+
     }
 }
 

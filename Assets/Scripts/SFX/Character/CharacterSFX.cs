@@ -155,7 +155,7 @@ namespace RPG.Core
             }
         }
 
-        public void PlayBody(AudioClip audioClip)
+        private void PlayBody(AudioClip audioClip)
         {
             if (BodySource != null && audioClip != null)
             {

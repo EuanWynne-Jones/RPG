@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2095157066972700068, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}
       propertyPath: m_Name
-      value: BaseWeapon
+      value: Unarmed
       objectReference: {fileID: 0}
     - target: {fileID: 7004464169721813608, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}
       propertyPath: m_RootOrder
@@ -55,5 +55,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8074516040036319967, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}
+      propertyPath: AttackSounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8074516040036319967, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}
+      propertyPath: ImpactSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8074516040036319967, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}
+      propertyPath: AttackSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 36b9299f0376d164fbb0ec0475917d48, type: 3}
+    - target: {fileID: 8074516040036319967, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}
+      propertyPath: AttackSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 860b894d79f06794c99a800422602318, type: 3}
+    - target: {fileID: 8074516040036319967, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}
+      propertyPath: AttackSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2719afdc0b4593a4b93d8354d70a5f5c, type: 3}
+    - target: {fileID: 8074516040036319967, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}
+      propertyPath: AttackSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 198ffa5715b5ae240ba5a937fe8689a5, type: 3}
+    - target: {fileID: 8074516040036319967, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}
+      propertyPath: AttackSounds.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: cceb9bfe041033a4c81ccdc640a3a090, type: 3}
+    - target: {fileID: 8074516040036319967, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}
+      propertyPath: ImpactSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3006368d8b5cf5b4297933e84b1f9e85, type: 3}
+    - target: {fileID: 8074516040036319967, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}
+      propertyPath: ImpactSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 320f25d3c73516c4c948d15b71acaeea, type: 3}
+    - target: {fileID: 8074516040036319967, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}
+      propertyPath: ImpactSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: c899fcbf6c375ae469c759a6ff283988, type: 3}
+    - target: {fileID: 8074516040036319967, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}
+      propertyPath: ImpactSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 576ef837581cc67498847fcc3a4ff242, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}

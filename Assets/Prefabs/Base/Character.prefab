@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 2225400171380218362}
   - component: {fileID: 161997662531045564}
   - component: {fileID: 3630728069893916002}
+  - component: {fileID: 2001056742863367265}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -114,6 +115,7 @@ MonoBehaviour:
   defaultWeapon: {fileID: 11400000, guid: 7c458d0e70cdfc146b03e7c582f6464d, type: 2}
   rightHandTrasform: {fileID: 0}
   leftHandTrasform: {fileID: 0}
+  currentWeaponSFX: {fileID: 0}
 --- !u!114 &8377449688706189459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +233,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: baa7bdf925f040d44b201b3ccabed34b, type: 3}
   - {fileID: 8300000, guid: 001562a670938664f87e5ddf199e6876, type: 3}
   - {fileID: 8300000, guid: faa2d87bcae73914f8e84a0b79ca78e1, type: 3}
+--- !u!114 &2001056742863367265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8377449688706189462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8dd70dc5b34c574ab387cd4fe9cbc0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7187618578056049614
 PrefabInstance:
   m_ObjectHideFlags: 0

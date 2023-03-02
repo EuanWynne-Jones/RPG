@@ -27,11 +27,10 @@ namespace RPG.Combat
         [SerializeField] public List<AnimatorOverrideController> attackOverrites = null;
         [SerializeField] public AnimatorOverrideController attackOverrite = null;
 
-        [SerializeField] public SFXWeaponConfig weaponSFXConfig = null;
-        [SerializeField] public WeaponAudioOverrite audioOverrite = null;
 
         const string weaponName = "Weapon";
 
+        
 
         public void Spawn(Transform rightHand,Transform leftHand, Animator animator)
         {
@@ -41,6 +40,8 @@ namespace RPG.Combat
                 Transform handTrasform = GetHand(rightHand, leftHand);
                 GameObject weapon = Instantiate(equiptPrefab, handTrasform);
                 weapon.name = weaponName;
+                
+
 
             }
             var overrideController = animator.runtimeAnimatorController as AnimatorOverrideController;
@@ -53,8 +54,8 @@ namespace RPG.Combat
                 animator.runtimeAnimatorController = overrideController.runtimeAnimatorController;
             }
             
-        }
 
+        }
 
         public void DestroyOldWeapon(Transform rightHand, Transform leftHand)
         {
