@@ -96,7 +96,7 @@ namespace RPG.Combat
         {
             currentWeapon.value = weapon;
             AttachWeapon(weapon);
-            GetComponent<WeaponSFXHandler>().weaponSFX = GetComponentInChildren<WeaponSFX>();
+            GetComponent<SFXHandler>().weaponSFX = GetComponentInChildren<WeaponSFX>();
 
         }
 

@@ -10,71 +10,133 @@ namespace RPG.Combat
 
 
         [Header("WeaponAttack")]
-        private string WeaponAttackName = "Attack";
-        [SerializeField] public AudioSource WeaponAttackSource;
-        [SerializeField] public List<AudioClip> AttackSounds;
+        private string weaponAttackName = "Attack";
+        [SerializeField] public AudioSource weaponAttackSource;
+        [SerializeField] public List<AudioClip> attackSounds;
 
         [Header("WeaponImpact")]
-        private string WeaponImpactname = "Impact";
-        [SerializeField] public AudioSource WeaponImpactSource;
-        [SerializeField] public List<AudioClip> ImpactSounds;
+        private string weaponImpactname = "Impact";
+        [SerializeField] public AudioSource weaponImpactSource;
+        [SerializeField] public List<AudioClip> impactSounds;
 
         [Header("AudioSourceOverrite")]
         [SerializeField] WeaponAudioOverrite audioOverrite = null;
 
+        SFXHandler SFXHandler = null;
 
-        public void SetupAudioSources()
+        private void Start()
+        {
+            SFXHandler = GetComponentInParent<SFXHandler>();
+            SFXHandler.weaponSFX = gameObject.GetComponent<WeaponSFX>();
+            SetupAudioSources();
+        }
+
+        private AudioClip attackingSoundClip
+        {
+            get
+            {
+                return attackSounds[Random.Range(0, attackSounds.Count)];
+
+            }
+        }
+        private AudioClip impactingSoundClip
+        {
+            get
+            {
+                return impactSounds[Random.Range(0, impactSounds.Count)];
+            }
+        }
+
+        private void PlayAttackSound(AudioClip audioClip)
+        {
+            if (weaponAttackSource != null && audioClip != null)
+            {
+                if (weaponAttackSource.isPlaying) weaponAttackSource.Stop();
+                weaponAttackSource.clip = audioClip;
+                weaponAttackSource.Play();
+            }
+        }
+
+        private void PlayImpactSound(AudioClip audioClip)
+        {
+            if (weaponImpactSource != null && audioClip != null)
+            {
+                if (weaponImpactSource.isPlaying) weaponImpactSource.Stop();
+                weaponImpactSource.clip = audioClip;
+                weaponImpactSource.Play();
+            }
+        }
+
+        public void PlayImpacting()
+        {
+
+            if (impactSounds.Count > 0)
+            {
+                PlayImpactSound(impactingSoundClip);
+            }
+            else Debug.Log("No audioclips found");
+        }
+        public void PlayAttacking()
+        {
+            if (attackSounds.Count > 0)
+            {
+                PlayAttackSound(attackingSoundClip);
+            }
+            else Debug.Log("No audioclips found");
+        }
+    
+    public void SetupAudioSources()
         {
             Transform[] transforms = GetComponentsInChildren<Transform>();
 
-            if (WeaponAttackName == "") Debug.LogError(name + " missing WeaponAttackName.");
-            if (WeaponImpactname == "") Debug.LogError(name + " missing WeaponImpactname.");
+            if (weaponAttackName == "") Debug.LogError(name + " missing WeaponAttackName.");
+            if (weaponImpactname == "") Debug.LogError(name + " missing WeaponImpactname.");
             if (transforms.Length > 0)
             {
                 foreach (Transform t in transforms)
                 {
-                    if (WeaponAttackSource == null && t.name == WeaponAttackName)
+                    if (weaponAttackSource == null && t.name == weaponAttackName)
                     {
                         if (t.TryGetComponent<AudioSource>(out AudioSource audioSource))
                         {
-                            WeaponAttackSource = audioSource;
+                            weaponAttackSource = audioSource;
                         }
                         else
                         {
-                            WeaponAttackSource = t.gameObject.AddComponent<AudioSource>();
+                            weaponAttackSource = t.gameObject.AddComponent<AudioSource>();
                         }
                     }
 
-                    if (WeaponImpactSource == null && t.name == WeaponImpactname)
+                    if (weaponImpactSource == null && t.name == weaponImpactname)
                     {
                         if (t.TryGetComponent<AudioSource>(out AudioSource audioSource))
                         {
-                            WeaponImpactSource = audioSource;
+                            weaponImpactSource = audioSource;
                         }
                         else
                         {
-                            WeaponImpactSource = t.gameObject.AddComponent<AudioSource>();
+                            weaponImpactSource = t.gameObject.AddComponent<AudioSource>();
                         }
                     }
                 }
-                if (WeaponAttackSource == null) Debug.LogError(name + " WeaponAttackSource not set.");
-                if (WeaponImpactSource == null) Debug.LogError(name + " WeaponImpactSource not set.");
+                if (weaponAttackSource == null) Debug.LogError(name + " WeaponAttackSource not set.");
+                if (weaponImpactSource == null) Debug.LogError(name + " WeaponImpactSource not set.");
 
-                if (WeaponAttackSource != null)
+                if (weaponAttackSource != null)
                 {
-                    WeaponAttackSource.playOnAwake = audioOverrite.playOnAwake;
-                    WeaponAttackSource.spatialBlend = audioOverrite.SpacialBlend;
-                    WeaponAttackSource.maxDistance = audioOverrite.MaxDistance;
-                    WeaponAttackSource.volume = audioOverrite.WeaponVolume;
+                    weaponAttackSource.playOnAwake = audioOverrite.playOnAwake;
+                    weaponAttackSource.spatialBlend = audioOverrite.spacialBlend;
+                    weaponAttackSource.maxDistance = audioOverrite.maxDistance;
+                    weaponAttackSource.volume = audioOverrite.weaponVolume;
                     
                 }
 
-                if (WeaponImpactSource != null)
+                if (weaponImpactSource != null)
                 {
-                    WeaponImpactSource.playOnAwake = audioOverrite.playOnAwake;
-                    WeaponImpactSource.spatialBlend = audioOverrite.SpacialBlend;
-                    WeaponImpactSource.maxDistance = audioOverrite.MaxDistance;
-                    WeaponImpactSource.volume = audioOverrite.WeaponVolume;
+                    weaponImpactSource.playOnAwake = audioOverrite.playOnAwake;
+                    weaponImpactSource.spatialBlend = audioOverrite.spacialBlend;
+                    weaponImpactSource.maxDistance = audioOverrite.maxDistance;
+                    weaponImpactSource.volume = audioOverrite.weaponVolume;
 
                 }
             }

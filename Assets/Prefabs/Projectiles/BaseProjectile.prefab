@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 235537263935255396}
   - component: {fileID: 4774191652708088744}
+  - component: {fileID: 6591811681854211273}
+  - component: {fileID: 5808193436579363024}
   - component: {fileID: 2119932324820647983}
   - component: {fileID: 1773924596561505833}
-  - component: {fileID: 6975765612608527417}
-  - component: {fileID: 1855359254547954366}
   m_Layer: 2
   m_Name: BaseProjectile
   m_TagString: Untagged
@@ -61,6 +61,36 @@ MonoBehaviour:
   lifetimeAfterImpact: 0.1
   destroyOnHit:
   - {fileID: 483911710019519091}
+--- !u!114 &6591811681854211273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483911710019519091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c94cba71a1a1043bfa3716f0ed81a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileLaunchSource: {fileID: 0}
+  projectileLaunchSounds: []
+  projectileImpactSource: {fileID: 0}
+  projectileImpactSounds: []
+  audioOverrite: {fileID: 11400000, guid: 56dfaed2fea68864288c9472e36c8873, type: 2}
+--- !u!114 &5808193436579363024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483911710019519091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a52af367ad16a4babf57d9410855c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSFX: {fileID: 0}
 --- !u!65 &2119932324820647983
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -90,36 +120,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6975765612608527417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 483911710019519091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6999e9572a16103408b9b76f7194bce0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WeaponAttackSource: {fileID: 0}
-  AttackSounds: []
-  WeaponImpactSource: {fileID: 0}
-  ImpactSounds: []
-  audioOverrite: {fileID: 11400000, guid: 56dfaed2fea68864288c9472e36c8873, type: 2}
---- !u!114 &1855359254547954366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 483911710019519091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8dd70dc5b34c574ab387cd4fe9cbc0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponSFX: {fileID: 6975765612608527417}
 --- !u!1 &703455808376975466
 GameObject:
   m_ObjectHideFlags: 0

@@ -63,6 +63,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1855359254547954366, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
+      propertyPath: weaponSFX
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2119932324820647983, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -87,38 +91,46 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6975765612608527417, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
-      propertyPath: AttackSounds.Array.size
-      value: 1
+    - target: {fileID: 6591811681854211273, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
+      propertyPath: projectileImpactSounds.Array.size
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 6975765612608527417, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
-      propertyPath: ImpactSounds.Array.size
-      value: 5
+    - target: {fileID: 6591811681854211273, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
+      propertyPath: projectileLaunchSounds.Array.size
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 6975765612608527417, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
-      propertyPath: AttackSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 3acc6561a17f9ff449841184b3d10488, type: 3}
-    - target: {fileID: 6975765612608527417, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
-      propertyPath: ImpactSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: d5f6f11077d3172458113dd1221f5358, type: 3}
-    - target: {fileID: 6975765612608527417, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
-      propertyPath: ImpactSounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 39ae45694461e32438a7852923d2a430, type: 3}
-    - target: {fileID: 6975765612608527417, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
-      propertyPath: ImpactSounds.Array.data[2]
+    - target: {fileID: 6591811681854211273, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
+      propertyPath: projectileImpactSounds.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 19bc688f4f89b5949984485f2d90062a, type: 3}
-    - target: {fileID: 6975765612608527417, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
-      propertyPath: ImpactSounds.Array.data[3]
+    - target: {fileID: 6591811681854211273, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
+      propertyPath: projectileImpactSounds.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: 0ee49a3ee0050fb4683b886c2d2138b3, type: 3}
-    - target: {fileID: 6975765612608527417, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
-      propertyPath: ImpactSounds.Array.data[4]
+    - target: {fileID: 6591811681854211273, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
+      propertyPath: projectileImpactSounds.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: 893e4dff69c328e45bcb70930b2dffa9, type: 3}
+      objectReference: {fileID: 8300000, guid: 39ae45694461e32438a7852923d2a430, type: 3}
+    - target: {fileID: 6591811681854211273, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
+      propertyPath: projectileImpactSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: d5f6f11077d3172458113dd1221f5358, type: 3}
+    - target: {fileID: 6591811681854211273, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
+      propertyPath: projectileLaunchSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: b15daccfba913c046af8ff844fb8b666, type: 3}
+    - target: {fileID: 6591811681854211273, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
+      propertyPath: projectileLaunchSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: c7f03483f5ddf7b44a007308948cdbc2, type: 3}
+    - target: {fileID: 6591811681854211273, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
+      propertyPath: projectileLaunchSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: ecd63c6e8394f08429283e650ea1d2f7, type: 3}
+    - target: {fileID: 6591811681854211273, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
+      propertyPath: projectileLaunchSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 29277b0a1656da54b8571973e05ed53b, type: 3}
     - target: {fileID: 7766582266847061707, guid: 30630b2b0362eed41aea4a7008614017, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -140,9 +152,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3acc6561a17f9ff449841184b3d10488, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -151,7 +163,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -186,7 +198,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

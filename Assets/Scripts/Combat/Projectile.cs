@@ -20,16 +20,16 @@ namespace RPG.Combat
         GameObject instigator = null;
         float damage = 0;
 
-        WeaponSFXHandler weaponSFXHandler = null;
+        ProjectileSFXHandler projectileSFXHandler = null;
 
         private void Start()
         {
-            weaponSFXHandler = GetComponent<WeaponSFXHandler>();
+            projectileSFXHandler = GetComponent<ProjectileSFXHandler>();
             if(!followToPlayer) 
             {
             transform.LookAt(GetAimLocation());
             }
-            weaponSFXHandler.PlayAttacking();
+            projectileSFXHandler.PlayLaunching();
         }
         private void Update()
         {
@@ -70,7 +70,7 @@ namespace RPG.Combat
             
             if (other.GetComponent<Health>() != target) return;
             if (target.IsDead()) return;
-            weaponSFXHandler.PlayImpacting();
+            projectileSFXHandler.PlayProjectileImpacting();
             target.TakeDamage(instigator,damage);
             target.GetComponent<CharacterSFX>().PlayVoiceGetHit();
             projectileSpeed = 0;
