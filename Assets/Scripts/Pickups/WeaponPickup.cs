@@ -10,11 +10,11 @@ namespace RPG.Combat
     public class WeaponPickup : MonoBehaviour, IRaycastable
     {
         
-        [SerializeField] Weapon weaponToPickup = null;
+        [SerializeField] WeaponConfig weaponToPickup = null;
         [SerializeField] AnimatorOverrideController leftHandPickupOverrite = null;
 
-        Weapon currentWeapon;
-        Weapon oldWeapon;
+        WeaponConfig currentWeapon;
+        WeaponConfig oldWeapon;
 
         [HideInInspector]
         public GameObject droppedInstantiation = null;
@@ -73,10 +73,10 @@ namespace RPG.Combat
 
     
 
-        private Weapon GetPlayersCurrentWeapon(Weapon weapon)
+        private WeaponConfig GetPlayersCurrentWeapon(WeaponConfig weapon)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-            currentWeapon =  player.GetComponent<Fighter>().currentWeapon.value;
+            currentWeapon =  player.GetComponent<Fighter>().currentWeaponConfig;
             return weapon = currentWeapon;
         } 
         

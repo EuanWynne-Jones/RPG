@@ -67,6 +67,11 @@ namespace RPG.Attributes
             }
         }
 
+        public void Heal(float amountToHeal)
+        {
+            health.value = Mathf.Min(health.value + amountToHeal, GetMaxHealth());
+        }
+
         public float GetHealth()
         {
             return health.value;
@@ -99,6 +104,8 @@ namespace RPG.Attributes
         {
             return health.value / GetComponent<BaseStats>().GetStat(Stat.Health);
         }
+
+
 
 
         public void DeathBehaviour()

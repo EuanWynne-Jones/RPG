@@ -40,8 +40,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7004464169721813608}
-  - component: {fileID: -460319230036652289}
+  - component: {fileID: 1564017806929974333}
   - component: {fileID: 8074516040036319967}
+  - component: {fileID: -460319230036652289}
   m_Layer: 0
   m_Name: BaseWeapon
   m_TagString: Untagged
@@ -66,6 +67,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1564017806929974333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095157066972700068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9ee58e3bd1e0448a623c8a8db58ce5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8074516040036319967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095157066972700068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6999e9572a16103408b9b76f7194bce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponAttackSource: {fileID: 0}
+  attackSounds: []
+  weaponImpactSource: {fileID: 0}
+  impactSounds: []
+  audioOverrite: {fileID: 11400000, guid: a5c589246408f7042bed9d9d0a267ff8, type: 2}
 --- !u!114 &-460319230036652289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,23 +109,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uniqueIdentifier: 
---- !u!114 &8074516040036319967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095157066972700068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6999e9572a16103408b9b76f7194bce0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WeaponAttackSource: {fileID: 0}
-  AttackSounds: []
-  WeaponImpactSource: {fileID: 0}
-  ImpactSounds: []
-  audioOverrite: {fileID: 11400000, guid: a5c589246408f7042bed9d9d0a267ff8, type: 2}
 --- !u!1 &8661058729450135698
 GameObject:
   m_ObjectHideFlags: 0
