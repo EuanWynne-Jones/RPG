@@ -38,7 +38,6 @@ namespace RPG.UI
             if (transform.parent.GetComponent<Health>() != null)
             {
                 text.text = damage.ToString();
-
                 if (damage >= criticalRequirment)
                 {
                     text.color = critColour;

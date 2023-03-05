@@ -74,15 +74,16 @@ namespace RPG.Combat
             {
                 PlayImpactSound(impactingSoundClip);
             }
-            else Debug.Log("No audioclips found");
+            else return;
         }
         public void PlayAttacking()
         {
+
             if (attackSounds.Count > 0)
             {
                 PlayAttackSound(attackingSoundClip);
             }
-            else Debug.Log("No audioclips found");
+            else return;
         }
     
     public void SetupAudioSources()

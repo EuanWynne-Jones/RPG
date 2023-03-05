@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equiptPrefab: {fileID: 2458249030188081367, guid: d5e1c0c7d149cd14c832d8e04560e7b7, type: 3}
   dropPrefab: {fileID: 6573241254229505835, guid: dcc57c8728228fc4ca318a710af314de, type: 3}
-  minWeaponDamage: 4
-  maxWeaponDamage: 7
+  minWeaponDamage: 2
+  maxWeaponDamage: 5
   PercentageBonus: 0
   weaponRange: 10
   isRightHanded: 0

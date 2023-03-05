@@ -110,12 +110,13 @@ namespace RPG.Combat
         {
             GetComponent<Animator>().ResetTrigger("StopAttack");
             GetComponent<Animator>().SetTrigger("Attack");
+            GetComponent<CharacterSFX>().PlayVoiceAttacking();
         }
 
         void Hit()
         {
             if (target == null) return;
-            float damage = Mathf.Round(GetComponent<BaseStats>().GetStat(Stat.Damage));
+            float damage = Mathf.Round(GetComponent<BaseStats>().GetStat(Stat.Damage)) + currentWeaponConfig.GetWeaponDamage();
 
             if(currentWeapon.value != null)
             {
@@ -130,7 +131,7 @@ namespace RPG.Combat
             {
 
                 target.TakeDamage(gameObject, damage);
-                GetComponent<CharacterSFX>().PlayVoiceGetHit();
+                
             }
         }
 

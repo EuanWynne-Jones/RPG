@@ -94,7 +94,11 @@ MonoBehaviour:
   weaponAttackSource: {fileID: 0}
   attackSounds: []
   weaponImpactSource: {fileID: 0}
-  impactSounds: []
+  impactSounds:
+  - {fileID: 8300000, guid: 3006368d8b5cf5b4297933e84b1f9e85, type: 3}
+  - {fileID: 8300000, guid: 320f25d3c73516c4c948d15b71acaeea, type: 3}
+  - {fileID: 8300000, guid: c899fcbf6c375ae469c759a6ff283988, type: 3}
+  - {fileID: 8300000, guid: 576ef837581cc67498847fcc3a4ff242, type: 3}
   audioOverrite: {fileID: 11400000, guid: a5c589246408f7042bed9d9d0a267ff8, type: 2}
 --- !u!114 &-460319230036652289
 MonoBehaviour:

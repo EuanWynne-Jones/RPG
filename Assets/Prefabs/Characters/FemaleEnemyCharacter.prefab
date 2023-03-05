@@ -11,6 +11,74 @@ PrefabInstance:
       propertyPath: health
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3541316532113140858, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: VoiceDeathClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3541316532113140858, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: VoiceGetHitClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3541316532113140858, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: VoiceDeathClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f15d8b0188ef9f94998c15d82bdc456c, type: 3}
+    - target: {fileID: 3541316532113140858, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: VoiceAttackingClips.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3541316532113140858, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: VoiceGetHitClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 18fcd7a841c511c45af110d49c790438, type: 3}
+    - target: {fileID: 3541316532113140858, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: VoiceGetHitClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 52a676697f5ca3f419d3bcbe1ee4c356, type: 3}
+    - target: {fileID: 3541316532113140858, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: VoiceGetHitClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: cffd633b91e0d5947b01e76349236d64, type: 3}
+    - target: {fileID: 3541316532113140858, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: VoiceGetHitClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: cffd633b91e0d5947b01e76349236d64, type: 3}
+    - target: {fileID: 3541316532113140858, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: VoiceGetHitClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: cffd633b91e0d5947b01e76349236d64, type: 3}
+    - target: {fileID: 3541316532113140858, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: VoiceAttackingClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 027c2e017ac25af4babf5450e364d199, type: 3}
+    - target: {fileID: 3541316532113140858, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: VoiceAttackingClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: df586e97cc8ffee4f97182ab5bed501a, type: 3}
+    - target: {fileID: 3541316532113140858, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: VoiceAttackingClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f8ee620411ea124880618bcf7f7ff59, type: 3}
+    - target: {fileID: 3541316532113140858, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: VoiceAttackingClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7232877bca51753419ecf2c5a286bc80, type: 3}
+    - target: {fileID: 3541316532113140858, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: VoiceAttackingClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2950affae52da464c8eb8c457688e7c5, type: 3}
+    - target: {fileID: 3541316532113140858, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: VoiceAttackingClips.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 13722ae304d5acc4a964b04347e132f3, type: 3}
+    - target: {fileID: 3541316532113140858, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: VoiceAttackingClips.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2291790f6ae0c62489fb0732b50d2b80, type: 3}
+    - target: {fileID: 3541316532113140858, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
+      propertyPath: VoiceAttackingClips.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 614672c0b85441142b7ce4a167519665, type: 3}
     - target: {fileID: 6639534163246999371, guid: e691d461a3214f346ac17bc9ada3b068, type: 3}
       propertyPath: m_IsActive
       value: 0

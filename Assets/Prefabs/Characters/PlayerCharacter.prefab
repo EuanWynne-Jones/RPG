@@ -95,6 +95,62 @@ PrefabInstance:
       propertyPath: characterClass
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3630728069893916002, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: VoiceGetHitClips.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3630728069893916002, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: VoiceAttackingClips.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3630728069893916002, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: VoiceGetHitClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c67b8f28ccb1a184cba5b958315fb75f, type: 3}
+    - target: {fileID: 3630728069893916002, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: VoiceGetHitClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: e7a068fc894ced2438c719feae89ea40, type: 3}
+    - target: {fileID: 3630728069893916002, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: VoiceGetHitClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3298d4d468badd044b2ca8930315e21d, type: 3}
+    - target: {fileID: 3630728069893916002, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: VoiceGetHitClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: da4f5695bff34bf4b88959334d31f55f, type: 3}
+    - target: {fileID: 3630728069893916002, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: VoiceGetHitClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2ebf38d5081e6024eb5214ce611bd747, type: 3}
+    - target: {fileID: 3630728069893916002, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: VoiceAttackingClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 236bc0bd4dc397146808b0b8bc45063d, type: 3}
+    - target: {fileID: 3630728069893916002, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: VoiceAttackingClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 546225d58690a3d4f826bc431124edb2, type: 3}
+    - target: {fileID: 3630728069893916002, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: VoiceAttackingClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: aec86edcef53e5246b71109a69c880c9, type: 3}
+    - target: {fileID: 3630728069893916002, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: VoiceAttackingClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 59d7be27a59552f4186d6edb7e297278, type: 3}
+    - target: {fileID: 3630728069893916002, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: VoiceAttackingClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: f1adf5e5d2c638a428a60f8d92819863, type: 3}
+    - target: {fileID: 3630728069893916002, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: VoiceAttackingClips.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: b34ea3ab4a425264f87f02cbe8c8cbf7, type: 3}
+    - target: {fileID: 3630728069893916002, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: VoiceAttackingClips.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 43f83c1f448b0bf4a9b76aecb3e560a5, type: 3}
     - target: {fileID: 4902291580224496548, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -106,6 +162,10 @@ PrefabInstance:
     - target: {fileID: 6845435970402624569, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: uniqueIdentifier
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175980673488735740, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8377449688706189456, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: m_Enabled

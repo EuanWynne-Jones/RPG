@@ -49,7 +49,12 @@ namespace RPG.Attributes
         {
             //print(gameObject.name + "Took Damage:" + damage);
             health.value = Mathf.Max(health.value - damage, 0);
-            if(gameObject.tag != "Player")
+            GetComponent<CharacterSFX>().PlayVoiceGetHit();
+            if(damage < 1)
+            {
+                damage = 0;
+            }
+            if (gameObject.tag != null)
             {
                 foreach (Transform t in transform)
                 {
@@ -118,6 +123,16 @@ namespace RPG.Attributes
             GetComponent<ActionSchedueler>().CancelCurrentAction();
         }
 
+        public void DeathBehaviourOnRestore()
+        {
+            if (isDead) return;
+
+            isDead = true;
+            GetComponent<Animator>().Play("Death", 0, 1);
+            GetComponent<ActionSchedueler>().CancelCurrentAction();
+        }
+
+
         public object CaptureState()
         {
             return health.value;
@@ -128,7 +143,7 @@ namespace RPG.Attributes
             health.value = (float)state;
             if (health.value == 0)
             {
-                DeathBehaviour();
+                DeathBehaviourOnRestore();
             }
         }
     }

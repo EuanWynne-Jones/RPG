@@ -136,19 +136,19 @@ Material:
     - _WaterSpeed: 0.042
     - _ZWrite: 1
     - __dirty: 1
-    - _edgeFoamAmount: 18.89
+    - _edgeFoamAmount: 19.05
     - _edgeFoamCutoff: 0.32
     - _fakeSpecular: -40
-    - _waterDepth: 1.6
-    - _waterSmoothness: 1.29
+    - _waterDepth: 6.8
+    - _waterSmoothness: 0.98
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _WaterDeepColor: {r: 0.14901961, g: 0.28235295, b: 0.29411766, a: 0}
     - _WaterShallowColor: {r: 0.3019608, g: 0.427451, b: 0.41960788, a: 0}
-    - _deepColor: {r: 0, g: 0.41691345, b: 0.509434, a: 1}
+    - _deepColor: {r: 0, g: 0, b: 0, a: 1}
     - _edgeFoamColor: {r: 1, g: 1, b: 1, a: 1}
-    - _shallowColor: {r: 0.04338732, g: 0.3679245, b: 0.33547083, a: 1}
+    - _shallowColor: {r: 0.05653673, g: 0.04552332, b: 0.2924528, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &1375831791048549522
 MonoBehaviour:
