@@ -215,11 +215,11 @@ MonoBehaviour:
   DeathVoiceSourceBoneName: Neck
   DeathVoiceSource: {fileID: 0}
   VoiceDeathClips:
-  - {fileID: 8300000, guid: 6e60ad64e34fc624ea76483921551c25, type: 3}
-  - {fileID: 8300000, guid: cc33d42442263404f9c18723ddf25ef7, type: 3}
-  - {fileID: 8300000, guid: 677a588867b19234ba2e66c09d82ba28, type: 3}
-  - {fileID: 8300000, guid: 1bf9ee80f2374534b80d6c5880558f5e, type: 3}
-  - {fileID: 8300000, guid: 0a490d2ac2e526246ab488aed902f6f1, type: 3}
+  - {fileID: 8300000, guid: b95878ea4629653449569cbd0be3a690, type: 3}
+  - {fileID: 8300000, guid: 96efb215f573c294f89eaba70948792d, type: 3}
+  - {fileID: 8300000, guid: bfb3b179c422bb545b1b9a9c65b63fc0, type: 3}
+  - {fileID: 8300000, guid: 34129da96baa4a04692ebe396c168306, type: 3}
+  - {fileID: 8300000, guid: c66d28b3ec193a946b847b5d3586ccfc, type: 3}
   BodySourceBoneName: Spine_03
   BodySource: {fileID: 0}
   BodyGetHitClips: []

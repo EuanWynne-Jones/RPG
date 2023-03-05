@@ -116,7 +116,7 @@ namespace RPG.Combat
         void Hit()
         {
             if (target == null) return;
-            float damage = Mathf.Round(GetComponent<BaseStats>().GetStat(Stat.Damage)) + currentWeaponConfig.GetWeaponDamage();
+            float damage = Mathf.Round(GetComponent<BaseStats>().GetStat(Stat.Damage)) + currentWeaponConfig.GetWeaponDamage(); 
 
             if(currentWeapon.value != null)
             {
