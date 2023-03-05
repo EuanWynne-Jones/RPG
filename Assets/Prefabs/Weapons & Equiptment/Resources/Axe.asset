@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bdaf4e851b99eb43a812b25545f324c, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
-  equiptPrefab: {fileID: 2815799175941782211, guid: 766afc1ee3733bb4289d7ddc7e604e2e, type: 3}
+  equiptPrefab: {fileID: 3437449133657699162, guid: 766afc1ee3733bb4289d7ddc7e604e2e, type: 3}
   dropPrefab: {fileID: 8404444941251974021, guid: ffab5a76717841d4da98e2a37f9942bc, type: 3}
   minWeaponDamage: 4
   maxWeaponDamage: 6
@@ -24,4 +24,4 @@ MonoBehaviour:
   - {fileID: 22100000, guid: 7d192b93f5c8f9a4fbd5c22b711ee399, type: 2}
   - {fileID: 22100000, guid: a0fd4b086bb16a24a9994c083baa3117, type: 2}
   - {fileID: 22100000, guid: ea8153abdb5322447b2dd7c268c8f2ee, type: 2}
-  attackOverrite: {fileID: 22100000, guid: ea8153abdb5322447b2dd7c268c8f2ee, type: 2}
+  attackOverrite: {fileID: 22100000, guid: 7d192b93f5c8f9a4fbd5c22b711ee399, type: 2}

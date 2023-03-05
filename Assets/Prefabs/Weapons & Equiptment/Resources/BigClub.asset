@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bdaf4e851b99eb43a812b25545f324c, type: 3}
   m_Name: BigClub
   m_EditorClassIdentifier: 
-  equiptPrefab: {fileID: 3217679343690687960, guid: ffe5779b46bc1cd429449cb0a3c3e725, type: 3}
+  equiptPrefab: {fileID: 2594216289399958593, guid: ffe5779b46bc1cd429449cb0a3c3e725, type: 3}
   dropPrefab: {fileID: 0}
   minWeaponDamage: 6
   maxWeaponDamage: 8
@@ -22,5 +22,3 @@ MonoBehaviour:
   projectile: {fileID: 0}
   attackOverrites: []
   attackOverrite: {fileID: 22100000, guid: 6d476087f6cece3429274abdeeb5855c, type: 2}
-  weaponSFXConfig: {fileID: 11400000, guid: 9fd1c645b0c88674b9d3b5afd771128d, type: 2}
-  audioOverrite: {fileID: 11400000, guid: a5c589246408f7042bed9d9d0a267ff8, type: 2}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bdaf4e851b99eb43a812b25545f324c, type: 3}
   m_Name: SavageUnarmed
   m_EditorClassIdentifier: 
-  equiptPrefab: {fileID: 504545318669963801, guid: b98edf36d7fc74e43ab4a8b9369240ca, type: 3}
+  equiptPrefab: {fileID: 1128009747611786112, guid: b98edf36d7fc74e43ab4a8b9369240ca, type: 3}
   dropPrefab: {fileID: 0}
   minWeaponDamage: 1
   maxWeaponDamage: 3

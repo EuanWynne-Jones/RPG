@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bdaf4e851b99eb43a812b25545f324c, type: 3}
   m_Name: Fireball
   m_EditorClassIdentifier: 
-  equiptPrefab: {fileID: 2095157066972700068, guid: beb2a5be056b51442b43f16fb6c0af64, type: 3}
+  equiptPrefab: {fileID: 8029729891904996658, guid: dc1dbc4a99b6e52418e938017130ecc9, type: 3}
   dropPrefab: {fileID: 7950626079806878769, guid: f3bb296eba068a946972063e019af501, type: 3}
   minWeaponDamage: 2
   maxWeaponDamage: 5
@@ -22,5 +22,3 @@ MonoBehaviour:
   projectile: {fileID: 6347207744093554892, guid: 374b759e0afdd1343b2cde2d06210fee, type: 3}
   attackOverrites: []
   attackOverrite: {fileID: 0}
-  weaponSFXConfig: {fileID: 11400000, guid: b6cd53490758bc04586e148925c4d82d, type: 2}
-  audioOverrite: {fileID: 11400000, guid: a5c589246408f7042bed9d9d0a267ff8, type: 2}

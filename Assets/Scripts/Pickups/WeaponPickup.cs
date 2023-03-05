@@ -97,6 +97,7 @@ namespace RPG.Combat
             player.GetComponent<Fighter>().EquipWeapon(weaponToPickup);
             Destroy(gameObject);
             DropCurrentWeapon();
+            player.GetComponent<PlayerController>().enabled = true;
 
 
         }
@@ -118,6 +119,7 @@ namespace RPG.Combat
 
         private void TriggerLooting(GameObject player)
         {
+            player.GetComponent<PlayerController>().enabled = false;
             if (weaponToPickup.isRightHanded == false && leftHandPickupOverrite != null)
             {
                 player.GetComponent<Animator>().runtimeAnimatorController = leftHandPickupOverrite;
