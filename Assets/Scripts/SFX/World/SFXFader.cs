@@ -14,7 +14,7 @@ namespace RPG.SceneManagement
         private void Awake()
         {
             audioSource = GetComponent<AudioSource>();
-            audioSource.volume = 1;
+            audioSource.volume = .3f;
         }
 
         public void FadeOutImmediate()
@@ -24,7 +24,7 @@ namespace RPG.SceneManagement
 
         public Coroutine FadeIn(float time)
         {
-            return Fade(1, time);
+            return Fade(.3f, time);
         }
         public Coroutine FadeOut(float time)
         {

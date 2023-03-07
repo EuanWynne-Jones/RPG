@@ -32,26 +32,30 @@ namespace RPG.UI
 
         public void StartTextPopup(float damage)
         {
-            text.gameObject.transform.position = new Vector3(text.gameObject.transform.position.x, startPos.y, text.gameObject.transform.position.z);
-            //Debug.Log("Starting Text popup");
-            text.gameObject.SetActive(true);
-            if (transform.parent.GetComponent<Health>() != null)
+
+            if(gameObject.tag != "Player")
             {
-                text.text = damage.ToString();
-                if (damage >= criticalRequirment)
+                text.gameObject.transform.position = new Vector3(text.gameObject.transform.position.x, startPos.y, text.gameObject.transform.position.z);
+                //Debug.Log("Starting Text popup");
+                text.gameObject.SetActive(true);
+                if (transform.parent.GetComponent<Health>() != null)
                 {
-                    text.color = critColour;
-                    text.font = critFont;
-                }
-                else
-                {
-                    text.font = textFont;
-                    int rand = Random.Range(0, colors.Count);
-                    text.color = colors[rand];
-                }
+                    text.text = damage.ToString();
+                    if (damage >= criticalRequirment)
+                    {
+                        text.color = critColour;
+                        text.font = critFont;
+                    }
+                    else
+                    {
+                        text.font = textFont;
+                        int rand = Random.Range(0, colors.Count);
+                        text.color = colors[rand];
+                    }
 
 
-                hasStarted = true;
+                    hasStarted = true;
+                }
             }
         }
 
