@@ -43,10 +43,11 @@ namespace RPG.SceneManagement
                 DontDestroyOnLoad(gameObject);
 
                 Fader fader = FindObjectOfType<Fader>();
+                SFXFader sfxFader = FindObjectOfType<SFXFader>();
                 SavingWrapper wrapper = FindObjectOfType<SavingWrapper>();
                 PlayerController player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
                 player.enabled = false;
-
+                sfxFader.FadeOut(fadeOutTime);
                 yield return fader.FadeOut(fadeOutTime);
                 
                 //Save Current Level
@@ -64,6 +65,7 @@ namespace RPG.SceneManagement
                 wrapper.Save();
 
                 yield return new WaitForSeconds(fadeWaitTime);
+                sfxFader.FadeIn(fadeInTime);
                 fader.FadeIn(fadeInTime);
 
                 newplayer.enabled = true;

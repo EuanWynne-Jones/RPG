@@ -11,9 +11,10 @@ namespace RPG.Core
         private void Start()
         {
             worldSFX = FindObjectOfType<WorldSFX>();
-            worldSFX.SetupAudioSources();
             worldSFX.soundscapeSetter = this;
             worldSFX.worldSFXConfig = currentWorldSFXConfig;
+            worldSFX.SetupAudioSources();
+            worldSFX.worldSFXConfig.SoundtrackTrigger();
         }
     }
 }

@@ -107,7 +107,7 @@ namespace RPG.Core
         public void SoundtrackTrigger()
         {
 ;
-            if (soundtrackClips.Count > 0 && soundtrackSource.isPlaying == false)
+            if (soundtrackClips.Count > 0)
             {
                 PlaySoundtrack(soundtrackClip);
             }
@@ -132,6 +132,7 @@ namespace RPG.Core
                 Playweather(weatherClip);
             }
         }
+
 
 
     }
