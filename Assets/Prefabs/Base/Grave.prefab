@@ -49,8 +49,8 @@ GameObject:
   m_Component:
   - component: {fileID: 658577536419939442}
   m_Layer: 0
-  m_Name: RespawnPosition
-  m_TagString: Untagged
+  m_Name: ResurrectLocation
+  m_TagString: ResurrectLocation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

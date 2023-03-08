@@ -13,18 +13,18 @@ namespace RPG.Core
 
         [Header("Voice")]
         [SerializeField] private string VoiceSourceBoneName = "Head";
-        [SerializeField] private AudioSource VoiceSource;
+        [SerializeField] public AudioSource VoiceSource;
         [SerializeField] private List<AudioClip> VoiceGetHitClips;
         [SerializeField] private List<AudioClip> VoiceAttackingClips;
 
         [Header("Death Voice")]
         [SerializeField] private string DeathVoiceSourceBoneName = "Neck";
-        [SerializeField] private AudioSource DeathVoiceSource;
+        [SerializeField] public AudioSource DeathVoiceSource;
         [SerializeField] private List<AudioClip> VoiceDeathClips;
 
         [Header("BodySounds")]
         [SerializeField] private string BodySourceBoneName = "Spine_03";
-        [SerializeField] private AudioSource BodySource;
+        [SerializeField] public AudioSource BodySource;
         [SerializeField] private List<AudioClip> BodyGetHitClips;
 
         [Header("Footsteps")]

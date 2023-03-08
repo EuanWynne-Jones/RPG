@@ -27,25 +27,37 @@ namespace RPG.Combat
 
         [Header("Spirit-Mode")]
         [SerializeField] public VolumeProfile resurrectProfile;
-        [SerializeField] public Transform resurrectLocation;
+        [SerializeField] public GameObject resurrectLocation;
         [SerializeField] public AudioSource resurrectAudioSource;
-        [SerializeField] private SoundscapeSetter soundscapeSetter;
+        [SerializeField] private GameObject soundscapeSetter;
         [SerializeField] public Color resurrectFogColour;
         [SerializeField] public ParticleSystem resurrectionFX;
 
         [Header("UI")]
-        [SerializeField] private Button resurrectUIButton;
+        [SerializeField] public GameObject resurrectUIButton;
+        private GameObject player;
 
-        private void Start()
+        private void Awake()
         {
-            resurrectUIButton.enabled = true;
-            soundscapeSetter = FindObjectOfType<SoundscapeSetter>();
+            soundscapeSetter = GameObject.FindWithTag("Soundscape");
+            resurrectLocation = GameObject.FindWithTag("ResurrectLocation");
+            player = GameObject.FindWithTag("Player");
+            resurrectUIButton.SetActive(false);
+        }
+
+
+        private void Update()
+        { 
+            if(player.GetComponent<Health>().isDead == true)
+            {
+                resurrectUIButton.SetActive(true);
+            }
         }
 
         public void EnableResurrectMode()
         {
-            resurrectUIButton.enabled = false;
-            
+            resurrectUIButton.SetActive(false);
+
             camera = Camera.main;
             volume = camera.GetComponent<Volume>();
             currentProfile = volume.profile;
@@ -65,16 +77,19 @@ namespace RPG.Combat
             currentProfile = volume.profile;
             volume.profile = defaultProfile;
             StopResurrectAudio();
-            soundscapeSetter.worldSFX.worldSFXConfig.SoundtrackTrigger();
+            soundscapeSetter.GetComponent<SoundscapeSetter>().worldSFX.worldSFXConfig.SoundtrackTrigger();
             ResetFog();
         }
 
         private void InsantiatePlayerDeadCopy()
         {
-            GameObject player = GameObject.FindWithTag("Player");
             GameObject deadPlayerCopy = Instantiate(player, player.transform.position, Quaternion.identity);
+            deadPlayerCopy.GetComponent<CharacterSFX>().DeathVoiceSource.enabled = false;
+            deadPlayerCopy.GetComponent<CharacterSFX>().VoiceSource.enabled = false;
+            deadPlayerCopy.GetComponent<CharacterSFX>().BodySource.enabled = false;
             deadPlayerCopy.AddComponent<ResurrectPlayer>();
             deadPlayerCopy.AddComponent<SphereCollider>();
+            deadPlayerCopy.GetComponent<CharacterSFX>().enabled = false;
             UpdateSphereColider(deadPlayerCopy);
             deadPlayerCopy.GetComponent<Animator>().Play("Death", 0, 1);
             deadPlayerCopy.GetComponent<PlayerController>().enabled = false;
@@ -90,29 +105,25 @@ namespace RPG.Combat
 
         private void UpdatePlayerPostion()
         {
-            GameObject player = GameObject.FindWithTag("Player");
-            player.GetComponent<NavMeshAgent>().Warp(resurrectLocation.position);
-            player.transform.rotation = resurrectLocation.rotation;
+            player.GetComponent<NavMeshAgent>().Warp(resurrectLocation.transform.position);
+            player.transform.rotation = resurrectLocation.transform.rotation;
             player.GetComponent<Animator>().SetTrigger("Resurrect");
         }
 
         private void DisableComponents()
         {
-            GameObject player = GameObject.FindWithTag("Player");
             player.GetComponent<Health>().inSpiritWorld = true;
             player.GetComponent<Fighter>().enabled = false;
         }
 
         public void EnableComponents()
         {
-            GameObject player = GameObject.FindWithTag("Player");
             player.GetComponent<Health>().inSpiritWorld = false;
             player.GetComponent<Fighter>().enabled = true;
         }
 
         private void IsNotDead()
         {
-            GameObject player = GameObject.FindWithTag("Player");
             player.GetComponent<Health>().isDead = false;
         }
 
@@ -126,13 +137,11 @@ namespace RPG.Combat
         }
         public void PlayResurrectAudio()
         {
-            soundscapeSetter.worldSFX.worldSFXConfig.soundtrackSource.Stop();
+            soundscapeSetter.GetComponent<SoundscapeSetter>().worldSFX.worldSFXConfig.soundtrackSource.Stop();
             resurrectAudioSource.Play();
         }
         public void StopResurrectAudio()
         {
-
-            soundscapeSetter.worldSFX.worldSFXConfig.soundtrackSource.Stop();
             resurrectAudioSource.Stop();
         }
     }

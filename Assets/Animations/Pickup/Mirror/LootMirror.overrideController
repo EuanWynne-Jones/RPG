@@ -9,7 +9,7 @@ AnimatorOverrideController:
   m_Name: LootMirror
   m_Controller: {fileID: 9100000, guid: 083a375fbf7dba649bf7ac5964d0e529, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: a5ce989349553504e8e3ba17848855ed, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: c76650522dfe3fc49b3b6963aa0ae970, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 9b305c3fbe83db84e9689d70b9f8fd1c, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 7bd898fa6f4412a41a157520358190cb, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e09eebe0e9141614c8bee655e465ea4d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6a89fd34100c3fa44ad61cc5def1386f, type: 2}

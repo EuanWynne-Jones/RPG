@@ -15,7 +15,6 @@ namespace RPG.Attributes
     {
         [SerializeField] float restorePercentage = 100;
         LazyValue<float> health;
-        [SerializeField] UnityEvent onDie;
         public bool isDead = false;
         public bool inSpiritWorld = false;
 
@@ -69,10 +68,10 @@ namespace RPG.Attributes
             }
 
             if (health.value == 0)
-            {
-                onDie.Invoke();
+            { 
                 DeathBehaviour();
                 AwardExperience(instigator);
+                
             }
         }
 
@@ -113,9 +112,6 @@ namespace RPG.Attributes
         {
             return health.value / GetComponent<BaseStats>().GetStat(Stat.Health);
         }
-
-
-
 
         public void DeathBehaviour()
         {

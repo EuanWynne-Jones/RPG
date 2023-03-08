@@ -10,7 +10,6 @@ namespace RPG.Combat
     public class ResurrectPlayer : MonoBehaviour
     {
         Resurrect resurrect = null;
-        AudioSource AudioSource = null;
         private void Start()
         {
         resurrect = FindObjectOfType<Resurrect>();
@@ -20,31 +19,25 @@ namespace RPG.Combat
             if (other.gameObject.tag == "Player")
             {
                 other.GetComponent<Health>().isDead = false;
-                StartCoroutine(WaitForAnim(2.8f));
                 other.GetComponent<Animator>().SetTrigger("Revive");
-                StartCoroutine(WaitForFX(1f));
-
-                other.GetComponent<Health>().RestoreHealth();
                 DisableControl();
+                StartCoroutine(WaitToResurrect(2.2f));
+                Instantiate(resurrect.resurrectionFX, other.transform.position, Quaternion.identity);
+                
 
 
 
             }
         }
-        IEnumerator WaitForFX(float animationTime)
+        IEnumerator WaitToResurrect(float animTime)
         {
-            yield return new WaitForSecondsRealtime(animationTime);
             GameObject player = GameObject.FindWithTag("Player");
-            Instantiate(resurrect.resurrectionFX, player.transform.position, Quaternion.identity);
-
-        }
-        IEnumerator WaitForAnim(float animationTime)
-        {
-            yield return new WaitForSecondsRealtime(animationTime);
+            yield return new WaitForSecondsRealtime(animTime);
             resurrect = FindObjectOfType<Resurrect>();
             resurrect.DisableResurrectMode();
             Destroy(resurrect.playerDeadBody);
             resurrect.EnableComponents();
+            player.GetComponent<Health>().RestoreHealth();
             EnableControl();
 
         }

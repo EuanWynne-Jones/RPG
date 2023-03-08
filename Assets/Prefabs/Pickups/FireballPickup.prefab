@@ -73,10 +73,6 @@ PrefabInstance:
       propertyPath: weaponToPickup
       value: 
       objectReference: {fileID: 11400000, guid: 0ca280f236a2e764c9b969c7d192f89c, type: 2}
-    - target: {fileID: 670823250819373464, guid: f20acfca5f42b31409bc91c64bd8fe4b, type: 3}
-      propertyPath: leftHandPickupOverrite
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 799031210810000586, guid: f20acfca5f42b31409bc91c64bd8fe4b, type: 3}
       propertyPath: m_RootOrder
       value: 0
