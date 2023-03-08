@@ -14,6 +14,7 @@ namespace RPG.Attributes
     public class Health : MonoBehaviour, ISaveable
     {
         [SerializeField] float restorePercentage = 100;
+        [SerializeField] float restorePercentageOnResurrect = 70;
         LazyValue<float> health;
         public bool isDead = false;
         public bool inSpiritWorld = false;
@@ -100,6 +101,12 @@ namespace RPG.Attributes
         public void RestoreHealth()
         {
             float restoreHealth = GetComponent<BaseStats>().GetStat(Stat.Health) * (restorePercentage/100);
+            health.value = Mathf.Max(health.value, restoreHealth);
+        }
+
+        public void RestoreHealthOnResurrect()
+        {
+            float restoreHealth = GetComponent<BaseStats>().GetStat(Stat.Health) * (restorePercentageOnResurrect / 100);
             health.value = Mathf.Max(health.value, restoreHealth);
         }
 

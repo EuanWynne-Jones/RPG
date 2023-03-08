@@ -1858,6 +1858,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.041856993
       objectReference: {fileID: 0}
+    - target: {fileID: 7608308434408213998, guid: 69f2e59160e2d4b4dbe498cda7649f11, type: 3}
+      propertyPath: restorePercentageOnResurrect
+      value: 70
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69f2e59160e2d4b4dbe498cda7649f11, type: 3}
 --- !u!1 &6542992009626046537 stripped
@@ -1894,6 +1898,10 @@ PrefabInstance:
     - target: {fileID: 1011988999589266638, guid: 8bda7416916ab274980b12541a245177, type: 3}
       propertyPath: m_Name
       value: Spirit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3738406670918035145, guid: 8bda7416916ab274980b12541a245177, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6888150772325499146, guid: 8bda7416916ab274980b12541a245177, type: 3}
       propertyPath: m_RootOrder

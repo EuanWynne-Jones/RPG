@@ -37,7 +37,7 @@ namespace RPG.Combat
             resurrect.DisableResurrectMode();
             Destroy(resurrect.playerDeadBody);
             resurrect.EnableComponents();
-            player.GetComponent<Health>().RestoreHealth();
+            player.GetComponent<Health>().RestoreHealthOnResurrect();
             EnableControl();
 
         }

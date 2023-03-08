@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 using RPG.Saving;
+using RPG.Attributes;
 using RPG.Control;
 
 namespace RPG.SceneManagement
@@ -33,7 +34,7 @@ namespace RPG.SceneManagement
         }
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Player")
+            if (other.tag == "Player" && other.GetComponent<Health>().inSpiritWorld == false)
             {
                 StartCoroutine(Transition());
             }
