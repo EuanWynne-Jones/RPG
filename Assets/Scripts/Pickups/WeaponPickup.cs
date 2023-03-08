@@ -4,6 +4,7 @@ using UnityEngine;
 using RPG.Core;
 using RPG.Control;
 using RPG.Movement;
+using RPG.Attributes;
 
 namespace RPG.Combat
 {
@@ -24,8 +25,8 @@ namespace RPG.Combat
 
         private void OnTriggerEnter(Collider other)
         {
-            
-            if (other.gameObject.tag == "Player")
+
+            if (other.gameObject.tag == "Player" && other.GetComponent<Health>().inSpiritWorld == false)
             {
                 if (canPickup)
                 {

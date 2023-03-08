@@ -6,6 +6,7 @@ using RPG.Saving;
 using RPG.Stats;
 using RPG.Core;
 using GameDevTV.Utils;
+using UnityEngine.Events;
 
 
 namespace RPG.Attributes
@@ -14,7 +15,9 @@ namespace RPG.Attributes
     {
         [SerializeField] float restorePercentage = 100;
         LazyValue<float> health;
-        bool isDead = false;
+        [SerializeField] UnityEvent onDie;
+        public bool isDead = false;
+        public bool inSpiritWorld = false;
 
         private void Awake()
         {
@@ -67,6 +70,7 @@ namespace RPG.Attributes
 
             if (health.value == 0)
             {
+                onDie.Invoke();
                 DeathBehaviour();
                 AwardExperience(instigator);
             }
@@ -94,7 +98,7 @@ namespace RPG.Attributes
             experience.GainExperience(GetComponent<BaseStats>().GetStat(Stat.Experience));
         }
 
-        private void RestoreHealth()
+        public void RestoreHealth()
         {
             float restoreHealth = GetComponent<BaseStats>().GetStat(Stat.Health) * (restorePercentage/100);
             health.value = Mathf.Max(health.value, restoreHealth);
