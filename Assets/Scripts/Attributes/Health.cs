@@ -15,10 +15,14 @@ namespace RPG.Attributes
     {
         [SerializeField] float restorePercentage = 100;
         [SerializeField] float restorePercentageOnResurrect = 70;
-        LazyValue<float> health;
+        [SerializeField] UnityEvent TakenDamage;
+
+        [HideInInspector]
         public bool isDead = false;
+        [HideInInspector]
         public bool inSpiritWorld = false;
 
+        LazyValue<float> health;
         private void Awake()
         {
             health = new LazyValue<float>(GetInitialHealth);
@@ -52,6 +56,7 @@ namespace RPG.Attributes
         {
             //print(gameObject.name + "Took Damage:" + damage);
             health.value = Mathf.Max(health.value - damage, 0);
+            TakenDamage.Invoke();
             GetComponent<CharacterSFX>().PlayVoiceGetHit();
             if(damage < 1)
             {

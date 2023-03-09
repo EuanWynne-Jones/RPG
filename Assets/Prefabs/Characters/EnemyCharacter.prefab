@@ -7,6 +7,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 161997662531045564, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: TakenDamage.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 161997662531045564, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: TakenDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 161997662531045564, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: TakenDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8691086729088533773}
+    - target: {fileID: 161997662531045564, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: TakenDamage.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 161997662531045564, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: TakenDamage.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Aggrevate
+      objectReference: {fileID: 0}
+    - target: {fileID: 161997662531045564, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: TakenDamage.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RPG.Control.AIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 161997662531045564, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: TakenDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1593553814088247737, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -198,8 +226,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaseDistance: 5
   suspicionTime: 5
+  AggrevateCooldownTime: 10
   patrolPath: {fileID: 0}
   waypointTolerence: 1
+  shoutDistance: 3
   patrolSpeedFraction: 0.5
 --- !u!4 &8579457568763405550 stripped
 Transform:

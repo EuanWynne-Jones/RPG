@@ -35,6 +35,7 @@ namespace RPG.SceneManagement
         {
             if (currentlyActiveFade != null)
             {
+                audioSource = GetComponent<AudioSource>();
                 StopCoroutine(currentlyActiveFade);
             }
             currentlyActiveFade = StartCoroutine(FadeRoutine(target, time));
