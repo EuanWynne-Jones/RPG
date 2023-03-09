@@ -86,7 +86,7 @@ namespace RPG.Core
             if (worldSFXConfig.ambienceSource == null) Debug.LogError(name + " ambienceSource not set.");
             if (worldSFXConfig.weatherSource == null) Debug.LogError(name + " weatherSource not set.");
 
-
+            DontDestroyOnLoad(worldSFXConfig.soundtrackSource);
 
         }
 

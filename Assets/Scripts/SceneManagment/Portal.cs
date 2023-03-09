@@ -27,7 +27,6 @@ namespace RPG.SceneManagement
         [SerializeField] float fadeInTime;
         [SerializeField] float fadeWaitTime;
 
-
         private void Awake()
         {
             PlayerController player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
@@ -44,11 +43,10 @@ namespace RPG.SceneManagement
                 DontDestroyOnLoad(gameObject);
 
                 Fader fader = FindObjectOfType<Fader>();
-                SFXFader sfxFader = FindObjectOfType<SFXFader>();
                 SavingWrapper wrapper = FindObjectOfType<SavingWrapper>();
                 PlayerController player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
                 player.enabled = false;
-                sfxFader.FadeOut(fadeOutTime);
+                
                 yield return fader.FadeOut(fadeOutTime);
                 
                 //Save Current Level
@@ -56,6 +54,8 @@ namespace RPG.SceneManagement
 
                 yield return SceneManager.LoadSceneAsync(sceneToLoad);
                 PlayerController newplayer = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+                SFXFader sfxFader = FindObjectOfType<SFXFader>();
+                sfxFader.FadeOut(fadeOutTime);
                 newplayer.enabled = false;
                 //Load Current Level
                 wrapper.Load();
@@ -66,11 +66,14 @@ namespace RPG.SceneManagement
                 wrapper.Save();
 
                 yield return new WaitForSeconds(fadeWaitTime);
-                sfxFader.FadeIn(fadeInTime);
-                fader.FadeIn(fadeInTime);
 
+                fader.FadeIn(fadeInTime);
+                sfxFader.FadeIn(fadeInTime);
                 newplayer.enabled = true;
                 Destroy(gameObject);
+                
+                
+
             }
 
             private void UpdatePlayer(Portal otherPortal)

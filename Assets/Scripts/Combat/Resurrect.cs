@@ -129,6 +129,7 @@ namespace RPG.Combat
 
         private void UpdateFog()
         {
+            RenderSettings.fog = true;
             RenderSettings.fogColor = resurrectFogColour;
         }
         private void ResetFog()
