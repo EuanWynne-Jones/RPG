@@ -181,13 +181,14 @@ namespace RPG.Inventories
         void ISaveable.RestoreState(object state)
         {
             var slotStrings = (string[])state;
-            for (int i = 0; i < inventorySize; i++)
+            int arrayLength = inventorySize;
+            if (slotStrings.Length < inventorySize)
+            {
+                arrayLength = slotStrings.Length;
+            }
+            for (int i = 0; i < arrayLength; i++)
             {
                 slots[i] = InventoryItem.GetFromID(slotStrings[i]);
-            }
-            if (inventoryUpdated != null)
-            {
-                inventoryUpdated();
             }
         }
     }

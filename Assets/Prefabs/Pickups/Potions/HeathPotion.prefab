@@ -69,6 +69,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c083af3a21689ee4d96f7f0547e6d992, type: 3}
+--- !u!23 &958765816980214286 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2391754, guid: c083af3a21689ee4d96f7f0547e6d992, type: 3}
+  m_PrefabInstance: {fileID: 958765816977878212}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1081528220762883883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132,6 +137,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7903785522081572083, guid: ab73185f2dadf4445ae07e78eb669c1f, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903785522099934235, guid: ab73185f2dadf4445ae07e78eb669c1f, type: 3}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903785522099934235, guid: ab73185f2dadf4445ae07e78eb669c1f, type: 3}
+      propertyPath: LightsModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903785522099934235, guid: ab73185f2dadf4445ae07e78eb669c1f, type: 3}
+      propertyPath: ShapeModule.m_MeshRenderer
+      value: 
+      objectReference: {fileID: 958765816980214286}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab73185f2dadf4445ae07e78eb669c1f, type: 3}
 --- !u!4 &6321577571313420972 stripped
