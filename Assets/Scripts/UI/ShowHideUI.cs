@@ -12,6 +12,11 @@ namespace RPG.UI
         // Start is called before the first frame update
         void Start()
         {
+            Disable();
+        }
+
+        public void Disable()
+        {
             uiContainer.SetActive(false);
         }
 
