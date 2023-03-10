@@ -91,13 +91,12 @@ namespace RPG.Combat
 
         IEnumerator PickupAnimationTime(float pickupWaitTime, GameObject player)
         {
-           
             yield return new WaitForSeconds(pickupWaitTime);
             player = GameObject.FindGameObjectWithTag("Player");
-
             player.GetComponent<Fighter>().EquipWeapon(weaponToPickup);
             Destroy(gameObject);
             DropCurrentWeapon();
+            player.GetComponent<Animator>().ResetTrigger("Loot");
             player.GetComponent<PlayerController>().enabled = true;
 
 

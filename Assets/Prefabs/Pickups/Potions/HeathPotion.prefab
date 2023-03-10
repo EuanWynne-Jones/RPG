@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 453130, guid: c083af3a21689ee4d96f7f0547e6d992, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 453130, guid: c083af3a21689ee4d96f7f0547e6d992, type: 3}
       propertyPath: m_LocalScale.x
@@ -33,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 453130, guid: c083af3a21689ee4d96f7f0547e6d992, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.075
       objectReference: {fileID: 0}
     - target: {fileID: 453130, guid: c083af3a21689ee4d96f7f0547e6d992, type: 3}
       propertyPath: m_LocalPosition.z
@@ -79,6 +79,14 @@ PrefabInstance:
     - target: {fileID: 1222577395524571727, guid: ab73185f2dadf4445ae07e78eb669c1f, type: 3}
       propertyPath: m_Name
       value: HeathPotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234298646590780238, guid: ab73185f2dadf4445ae07e78eb669c1f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239512187534433468, guid: ab73185f2dadf4445ae07e78eb669c1f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6393032711310101895, guid: ab73185f2dadf4445ae07e78eb669c1f, type: 3}
       propertyPath: m_RootOrder
