@@ -19,7 +19,7 @@ namespace RPG.Combat
             if (other.gameObject.tag == "Player")
             {
                 other.GetComponent<Health>().isDead = false;
-                other.GetComponent<Animator>().SetTrigger("Revive");
+                other.GetComponent<Animator>().SetTrigger("Resurrect");
                 DisableControl();
                 StartCoroutine(WaitToResurrect(2.2f));
                 Instantiate(resurrect.resurrectionFX, other.transform.position, Quaternion.identity);
@@ -35,6 +35,7 @@ namespace RPG.Combat
             yield return new WaitForSecondsRealtime(animTime);
             resurrect = FindObjectOfType<Resurrect>();
             resurrect.DisableResurrectMode();
+            player.GetComponent<Animator>().ResetTrigger("Resurrect");
             Destroy(resurrect.playerDeadBody);
             resurrect.EnableComponents();
             player.GetComponent<Health>().RestoreHealthOnResurrect();
