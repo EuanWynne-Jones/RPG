@@ -6,6 +6,7 @@ using RPG.Attributes;
 using UnityEngine.EventSystems;
 using System;
 using UnityEngine.AI;
+using RPG.Inventories;
 
 namespace RPG.Control
 {
@@ -33,6 +34,8 @@ namespace RPG.Control
         }
         private void Update()
         {
+            CheckSpecialAbilityKeys();
+
             if (InteractWithComponent()) return;
             if (interactWithUI()) return;
             
@@ -135,6 +138,35 @@ namespace RPG.Control
             Cursor.SetCursor(mapping.texture, mapping.hotspot, CursorMode.Auto);
         }
 
+        private void CheckSpecialAbilityKeys()
+        {
+            var actionStore = GetComponent<ActionStore>();
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                actionStore.Use(0, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                actionStore.Use(1, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                actionStore.Use(2, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                actionStore.Use(3, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                actionStore.Use(4, gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                actionStore.Use(5, gameObject);
+            }
+
+        }
         private CursorMapping GetCursorMapping(CursorType type)
         {
             foreach(CursorMapping mapping in cursorMappings)

@@ -13,7 +13,7 @@ namespace RPG.Inventories
     /// In practice, you are likely to use a subclass such as `ActionItem` or
     /// `EquipableItem`.
     /// </remarks>
-    [CreateAssetMenu(menuName = ("RPG/Inventory/Item"))]
+    [CreateAssetMenu(menuName = ("Inventory/New Item"))]
     public class InventoryItem : ScriptableObject, ISerializationCallbackReceiver    {
         // CONFIG DATA
         [Tooltip("Auto-generated UUID for saving/loading. Clear this field if you want to generate a new one.")]
