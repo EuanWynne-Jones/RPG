@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace RPG.Inventories
 {
@@ -8,8 +9,13 @@ namespace RPG.Inventories
     /// </summary>
     public class Pickup : MonoBehaviour
     {
+
+        [SerializeField] float canPickupTime = 5f;
         // STATE
-        InventoryItem item;
+        [HideInInspector]
+        public InventoryItem item;
+
+        public bool ableToPickup = false;
         int number = 1;
 
         // CACHED REFERENCE
@@ -21,8 +27,15 @@ namespace RPG.Inventories
         {
             var player = GameObject.FindGameObjectWithTag("Player");
             inventory = player.GetComponent<Inventory>();
+            StartCoroutine(ChangeHasJustDropped(canPickupTime));
         }
 
+
+        private IEnumerator ChangeHasJustDropped(float waitTime)
+        {
+            yield return new WaitForSeconds(waitTime);
+            ableToPickup = true;
+        }
         // PUBLIC
 
         /// <summary>
@@ -39,7 +52,6 @@ namespace RPG.Inventories
             }
             this.number = number;
         }
-
         public InventoryItem GetItem()
         {
             return item;

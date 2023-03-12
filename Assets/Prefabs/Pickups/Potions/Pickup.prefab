@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6393032711310101895}
   - component: {fileID: 6997811445119991105}
   - component: {fileID: 6494234044896430859}
-  - component: {fileID: 4330385709828658071}
+  - component: {fileID: 1478897689618628150}
   m_Layer: 0
   m_Name: Pickup
   m_TagString: Untagged
@@ -61,7 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91f208ba0dbe65d478b628ca24b59c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4330385709828658071
+  canPickupTime: 5
+--- !u!114 &1478897689618628150
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,7 +71,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1222577395524571727}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06b38b424d8abf947ab0f86ca8990ce9, type: 3}
+  m_Script: {fileID: 11500000, guid: 03eec878f4d74164d8a9d6ce66901260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &4238732584681420870

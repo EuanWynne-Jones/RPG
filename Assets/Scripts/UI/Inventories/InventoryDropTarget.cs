@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using RPG.Core.UI.Dragging;
 using RPG.Inventories;
+using RPG.Control;
+using RPG.Core;
 
 namespace RPG.UI.Inventories
 {
@@ -19,8 +21,26 @@ namespace RPG.UI.Inventories
         {
             var player = GameObject.FindGameObjectWithTag("Player");
             player.GetComponent<ItemDropper>().DropItem(item, number);
+            TriggerLooting(player);
+
+        }
+        private void TriggerLooting(GameObject player)
+        {
+            player.GetComponent<ActionSchedueler>().CancelCurrentAction();
+            player.GetComponent<PlayerController>().enabled = false;
+            player.GetComponent<Animator>().SetTrigger("Loot");
+            StartCoroutine(PickupAnimationTime(1.7f, player));
         }
 
+        IEnumerator PickupAnimationTime(float pickupWaitTime, GameObject player)
+        {
+            yield return new WaitForSeconds(pickupWaitTime);
+            player = GameObject.FindGameObjectWithTag("Player");
+            player.GetComponent<Animator>().ResetTrigger("Loot");
+            player.GetComponent<PlayerController>().enabled = true;
+
+
+        }
         public int MaxAcceptable(InventoryItem item)
         {
             return int.MaxValue;

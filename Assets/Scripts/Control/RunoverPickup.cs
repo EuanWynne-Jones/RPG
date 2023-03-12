@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Core;
 using RPG.Inventories;
 using RPG.Movement;
 using UnityEngine;
@@ -33,6 +34,7 @@ namespace RPG.Control
             if (other.gameObject.tag == "Player")
             {
                 TriggerLooting(other.gameObject);
+                other.GetComponent<ActionSchedueler>().CancelCurrentAction();
                 StartCoroutine(WaitToPickup(0.855f, other.gameObject));
                 other.GetComponent<PlayerController>().enabled = true;
             }

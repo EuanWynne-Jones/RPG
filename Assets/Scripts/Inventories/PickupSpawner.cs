@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using RPG.Saving;
+using System.Collections;
 
 namespace RPG.Inventories
 {
@@ -12,12 +13,15 @@ namespace RPG.Inventories
         // CONFIG DATA
         [SerializeField] InventoryItem item = null;
         [SerializeField] int number = 1;
+        
+        
 
         // LIFECYCLE METHODS
         private void Awake()
         {
             // Spawn in Awake so can be destroyed by save system after.
             SpawnPickup();
+            
         }
 
         // PUBLIC
@@ -46,6 +50,9 @@ namespace RPG.Inventories
             var spawnedPickup = item.SpawnPickup(transform.position, number);
             spawnedPickup.transform.SetParent(transform);
         }
+
+
+
 
         private void DestroyPickup()
         {
