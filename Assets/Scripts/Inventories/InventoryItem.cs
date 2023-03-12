@@ -12,7 +12,7 @@ namespace RPG.Inventories
     /// In practice, you are likely to use a subclass such as `ActionItem` or
     /// `EquipableItem`.
     /// </remarks>
-    [CreateAssetMenu(menuName = ("GameDevTV/Inventory/Item"))]
+    [CreateAssetMenu(menuName = ("RPG/Inventory/Item"))]
     public class InventoryItem : ScriptableObject, ISerializationCallbackReceiver    {
         // CONFIG DATA
         [Tooltip("Auto-generated UUID for saving/loading. Clear this field if you want to generate a new one.")]
@@ -52,7 +52,7 @@ namespace RPG.Inventories
                 {
                     if (itemLookupCache.ContainsKey(item.itemID))
                     {
-                        Debug.LogError(string.Format("Looks like there's a duplicate RPG.UI.InventorySystem ID for objects: {0} and {1}", itemLookupCache[item.itemID], item));
+                        Debug.LogError(string.Format("Looks like there's a duplicate GameDevTV.UI.InventorySystem ID for objects: {0} and {1}", itemLookupCache[item.itemID], item));
                         continue;
                     }
 
@@ -68,12 +68,13 @@ namespace RPG.Inventories
         /// Spawn the pickup gameobject into the world.
         /// </summary>
         /// <param name="position">Where to spawn the pickup.</param>
+        /// <param name="number">How many instances of the item does the pickup represent.</param>
         /// <returns>Reference to the pickup object spawned.</returns>
-        public Pickup SpawnPickup(Vector3 position)
+        public Pickup SpawnPickup(Vector3 position, int number)
         {
             var pickup = Instantiate(this.pickup);
             pickup.transform.position = position;
-            pickup.Setup(this);
+            pickup.Setup(this, number);
             return pickup;
         }
 
