@@ -64,6 +64,11 @@ namespace RPG.Inventories
             }
         }
 
+        public IEnumerable<EquipLocation> GetAllPopulatedSlots()
+        {
+            return equippedItems.Keys;
+        }
+
         // PRIVATE
 
         object ISaveable.CaptureState()

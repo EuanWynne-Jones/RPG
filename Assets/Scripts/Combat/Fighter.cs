@@ -7,10 +7,11 @@ using RPG.Saving;
 using RPG.Attributes;
 using RPG.Stats;
 using GameDevTV.Utils;
+using RPG.Inventories;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour, IAction, ISaveable, IModifierProvider
+    public class Fighter : MonoBehaviour, IAction, ISaveable
     {
         [SerializeField] float timeBetweenAttacks;
         [SerializeField] WeaponConfig defaultWeapon = null;
@@ -22,6 +23,8 @@ namespace RPG.Combat
         [HideInInspector]
         public LazyValue<Weapon> currentWeapon;
         Health target;
+
+        Equipment equipment;
         float timeSinceLastAttack = Mathf.Infinity;
         float weaponDamage;
         bool canAttack;
@@ -31,6 +34,11 @@ namespace RPG.Combat
         {
             currentWeaponConfig = defaultWeapon;
             currentWeapon = new LazyValue<Weapon>(SetupDefaultWeapon);
+            equipment = GetComponent<Equipment>();
+            if (equipment)
+            {
+                equipment.equipmentUpdated += UpdateWeapon;
+            }
         }
         private Weapon SetupDefaultWeapon()
         {
@@ -100,6 +108,18 @@ namespace RPG.Combat
 
         }
 
+        private void UpdateWeapon()
+        {
+            var weapon = equipment.GetItemInSlot(EquipLocation.Weapon) as WeaponConfig;
+            if (weapon == null)
+            {
+                EquipWeapon(defaultWeapon);
+            }
+            else
+            {
+                EquipWeapon(weapon);
+            }
+        }
         private Weapon AttachWeapon(WeaponConfig weapon)
         {
             Animator animator = GetComponent<Animator>();
@@ -168,21 +188,6 @@ namespace RPG.Combat
             target = null;
         }
 
-        public IEnumerable<float> GetAdditiveModifiers(Stat stat)
-        {
-            if(stat == Stat.Damage)
-            {
-                yield return currentWeaponConfig.GetWeaponDamage();
-            }
-        }
-
-        public IEnumerable<float> GetPercentageModifiers(Stat stat)
-        {
-            if (stat == Stat.Damage)
-            {
-                yield return currentWeaponConfig.GetPercentageBonus();
-            }
-        }
         private void StopAttack()
         {
             GetComponent<Animator>().SetTrigger("StopAttack");

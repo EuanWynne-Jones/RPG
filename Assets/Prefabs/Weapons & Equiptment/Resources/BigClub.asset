@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bdaf4e851b99eb43a812b25545f324c, type: 3}
   m_Name: BigClub
   m_EditorClassIdentifier: 
+  itemID: b3306089-1c23-4fc2-b2e0-97af3d44e5d2
+  displayName: Big Club
+  description: 
+  icon: {fileID: 0}
+  pickup: {fileID: 0}
+  stackable: 0
+  allowedEquipLocation: 5
   equiptPrefab: {fileID: 2594216289399958593, guid: ffe5779b46bc1cd429449cb0a3c3e725, type: 3}
   dropPrefab: {fileID: 0}
   minWeaponDamage: 6

@@ -26,7 +26,8 @@ namespace RPG.Control
         [SerializeField] CursorMapping[] cursorMappings = null;
         [SerializeField] float maxNavmeshProjectionDistance = 1f;
         [SerializeField] float raycastRadius = 1f;
-        
+
+        bool isDraggingUI = false;
 
         private void Awake()
         {
@@ -84,9 +85,21 @@ namespace RPG.Control
 
         private bool interactWithUI()
         {
+            if (Input.GetMouseButtonUp(0))
+            {
+                isDraggingUI = false;
+            }
             if (EventSystem.current.IsPointerOverGameObject())
             {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    isDraggingUI = true;
+                }
                 SetCursor(CursorType.UI);
+                return true;
+            }
+            if (isDraggingUI)
+            {
                 return true;
             }
             return false;

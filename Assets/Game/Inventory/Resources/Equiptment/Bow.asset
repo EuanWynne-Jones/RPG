@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: cdb6fce1-e2cd-4131-99b9-3f9990d436b8
   displayName: Bow
-  description: This is a Bow
+  description: Shoot them with the pointy end!
   icon: {fileID: 21300000, guid: 13419f4132dbc314996b97c58ef65159, type: 3}
-  pickup: {fileID: 6494234044896430859, guid: ab73185f2dadf4445ae07e78eb669c1f, type: 3}
+  pickup: {fileID: 5068208418066899602, guid: 383fdaee6c46b6b468a3e6e6eae50259, type: 3}
   stackable: 0
   allowedEquipLocation: 5

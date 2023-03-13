@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dc047c233344664c9996be4c36379e2, type: 3}
+  m_Script: {fileID: 11500000, guid: f20eb1792e8048a46bf5c7c520a3ea3b, type: 3}
   m_Name: FireballSpellbook
   m_EditorClassIdentifier: 
-  itemID: 46559986-9f7d-458a-85b8-409e73e74333
-  displayName: Fireball Spell
+  itemID: da008380-295e-4fd3-963f-a75562adacc1
+  displayName: Fireball Spellbook
   description: Feel the magic flowing through your firey veins
   icon: {fileID: 21300000, guid: 36b0ba71561ced24ab00725a83568a07, type: 3}
+  pickup: {fileID: 8462001207748328040, guid: 5f1c8f57e2aa310499da7451b1750b18, type: 3}
   stackable: 0
+  allowedEquipLocation: 5

@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bdaf4e851b99eb43a812b25545f324c, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
+  itemID: a5218624-8eec-481e-baca-42db4c542d82
+  displayName: Iron Sword
+  description: The most basic utencil of any adventurer
+  icon: {fileID: 21300000, guid: dddd0e74634b7e44fa8aadbb04b8b8a8, type: 3}
+  pickup: {fileID: 42820555755159629, guid: 56fd9e4c1f466f54c85f992363d03837, type: 3}
+  stackable: 0
+  allowedEquipLocation: 5
   equiptPrefab: {fileID: 5405077325546713873, guid: 2281956121ded1b47bee123e0d964410, type: 3}
   dropPrefab: {fileID: 4033740607761726150, guid: baa1176e0f46f4848b5ecaabd2308b33, type: 3}
   minWeaponDamage: 1

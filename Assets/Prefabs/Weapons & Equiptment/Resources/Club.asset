@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bdaf4e851b99eb43a812b25545f324c, type: 3}
   m_Name: Club
   m_EditorClassIdentifier: 
+  itemID: bb102f58-e66e-4c83-817b-d6a594246c6d
+  displayName: Club
+  description: 
+  icon: {fileID: 0}
+  pickup: {fileID: 0}
+  stackable: 0
+  allowedEquipLocation: 5
   equiptPrefab: {fileID: 2594216289399958593, guid: 6af34a2a7dbe4094f8ba5b816c737b2c, type: 3}
   dropPrefab: {fileID: 0}
   minWeaponDamage: 3

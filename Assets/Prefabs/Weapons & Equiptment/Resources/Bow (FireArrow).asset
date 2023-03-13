@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bdaf4e851b99eb43a812b25545f324c, type: 3}
   m_Name: Bow (FireArrow)
   m_EditorClassIdentifier: 
+  itemID: 00d82052-ee93-4b5c-9a6a-250ac794fdad
+  displayName: Bow
+  description: Shoot them with the flaming pointy end!
+  icon: {fileID: 21300000, guid: 13419f4132dbc314996b97c58ef65159, type: 3}
+  pickup: {fileID: 5068208418066899602, guid: 383fdaee6c46b6b468a3e6e6eae50259, type: 3}
+  stackable: 0
+  allowedEquipLocation: 5
   equiptPrefab: {fileID: 2458249030188081367, guid: d5e1c0c7d149cd14c832d8e04560e7b7, type: 3}
   dropPrefab: {fileID: 6573241254229505835, guid: dcc57c8728228fc4ca318a710af314de, type: 3}
   minWeaponDamage: 2

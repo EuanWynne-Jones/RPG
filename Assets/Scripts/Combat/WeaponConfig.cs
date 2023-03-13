@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Attributes;
+using RPG.Inventories;
+using RPG.Stats;
 
 namespace RPG.Combat
 {
     [CreateAssetMenu(fileName ="Weapon", menuName = "Weapons/ Make New Weapon", order = 0)]
-    public class WeaponConfig : ScriptableObject
+    public class WeaponConfig : EquipableItem, IModifierProvider
     {
 
 
@@ -101,7 +103,7 @@ namespace RPG.Combat
 
         public float GetWeaponDamage()
         {
-            weaponDamage = Random.Range(minWeaponDamage, maxWeaponDamage);
+            weaponDamage = Random.Range(minWeaponDamage, maxWeaponDamage) + GetPercentageBonus();
             return Mathf.RoundToInt(weaponDamage);
         }
 
@@ -114,6 +116,22 @@ namespace RPG.Combat
             return weaponRange;
         }
 
+        public IEnumerable<float> GetAdditiveModifiers(Stat stat)
+        {
+            if(stat == Stat.Damage)
+            {
+                 
+                yield return  weaponDamage;
+            }
+        }
+
+        public IEnumerable<float> GetPercentageModifiers(Stat stat)
+        {
+            if (stat == Stat.Damage)
+            {
+                yield return PercentageBonus;
+            }
+        }
     }
 
 }
