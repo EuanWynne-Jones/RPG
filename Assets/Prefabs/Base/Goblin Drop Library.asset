@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ada23c209c27a43a17aee80310bb40, type: 3}
+  m_Name: Goblin Drop Library
+  m_EditorClassIdentifier: 
+  potentialDrops:
+  - item: {fileID: 11400000, guid: 58446ad0f7bb3d948aa6844fa22e9011, type: 2}
+    relativeChance:
+    - 10
+    minNumber: 0100000001000000010000000100000001000000
+    maxNumber: 0100000001000000020000000200000003000000
+  - item: {fileID: 11400000, guid: 13282c6cc627fb349971b8e0c6518a15, type: 2}
+    relativeChance:
+    - 2
+    minNumber: 0100000001000000010000000100000001000000
+    maxNumber: 0100000001000000010000000100000001000000
+  - item: {fileID: 11400000, guid: a4a60aeae90ccfe459903478df267a6d, type: 2}
+    relativeChance:
+    - 2
+    minNumber: 0100000001000000010000000100000001000000
+    maxNumber: 0100000001000000010000000100000001000000
+  dropChancePercentage:
+  - 100
+  minDrops: 0100000001000000020000000200000003000000
+  maxDrops: 0300000003000000030000000400000004000000

@@ -1,3 +1,4 @@
+using RPG.Stats;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,18 +11,21 @@ namespace RPG.Inventories
 
         //CONFIG DATA
         [SerializeField] float scatterDistance = 2f;
-        [SerializeField] InventoryItem[] dropLibary;
-        [SerializeField] int numberOfDrops = 2;
+        [SerializeField] DropLibrary dropLibary;
+
         //CONSTANTS
         const int attempts = 30;
 
         public void RandomDrop()
         {
-            for(int i= 0; i < numberOfDrops; i++)
+            var baseStats = GetComponent<BaseStats>();
+            
+                var drops = dropLibary.GetRandomDrops(baseStats.GetLevel());
+            foreach (var drop in drops)
             {
-                var item = dropLibary[Random.Range(0, dropLibary.Length)];
-                DropItem(item, 1);
+                DropItem(drop.item, drop.number);
             }
+            
         }
         protected override Vector3 GetDropLocation()
         {
