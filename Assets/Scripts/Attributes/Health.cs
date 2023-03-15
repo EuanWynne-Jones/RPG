@@ -16,6 +16,7 @@ namespace RPG.Attributes
         [SerializeField] float restorePercentage = 100;
         [SerializeField] float restorePercentageOnResurrect = 70;
         [SerializeField] UnityEvent TakenDamage;
+        [SerializeField] UnityEvent OnDie;
 
         [HideInInspector]
         public bool isDead = false;
@@ -133,6 +134,7 @@ namespace RPG.Attributes
             GetComponent<Animator>().SetTrigger("Death");
             GetComponent<CharacterSFX>().PlayDeathScream();
             GetComponent<ActionSchedueler>().CancelCurrentAction();
+            OnDie.Invoke();
         }
 
         public void DeathBehaviourOnRestore()

@@ -110,6 +110,7 @@ namespace RPG.Combat
 
         private void UpdateWeapon()
         {
+            currentWeaponConfig.DestroyOldWeapon(rightHandTrasform, leftHandTrasform);
             var weapon = equipment.GetItemInSlot(EquipLocation.Weapon) as WeaponConfig;
             if (weapon == null)
             {
