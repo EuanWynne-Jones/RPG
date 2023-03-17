@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using RPG.Attributes;
-using GameDevTV.Utils;
+using RPG.Utils;
 
 
 namespace RPG.Control

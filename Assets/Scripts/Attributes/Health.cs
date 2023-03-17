@@ -5,7 +5,8 @@ using RPG.UI;
 using RPG.Saving;
 using RPG.Stats;
 using RPG.Core;
-using GameDevTV.Utils;
+using RPG.Utils;
+using RPG.Control;
 using UnityEngine.Events;
 
 
@@ -84,6 +85,7 @@ namespace RPG.Attributes
 
         public void Heal(float amountToHeal)
         {
+            
             health.value = Mathf.Min(health.value + amountToHeal, GetMaxHealth());
         }
 
@@ -97,7 +99,7 @@ namespace RPG.Attributes
             return health.value / GetComponent<BaseStats>().GetStat(Stat.Health);
         }
 
-        private  void AwardExperience(GameObject instigator)
+        private void AwardExperience(GameObject instigator)
         {
             Experience experience = instigator.GetComponent<Experience>();
             if (experience == null) return;
