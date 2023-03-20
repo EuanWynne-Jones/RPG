@@ -3,6 +3,8 @@ using RPG.Inventories;
 using RPG.Control;
 using RPG.Movement;
 using System.Collections;
+using RPG.Core;
+using RPG.Attributes;
 
 namespace RPG.Control
 {
@@ -20,8 +22,9 @@ namespace RPG.Control
         private void Update()
         {
             float dist = GetDistancetoObject();
-            if (dist <= 1f && pickup.ableToPickup == true)
+            if (dist <= .5f && pickup.ableToPickup == true && player.GetComponent<Health>().inSpiritWorld == false)
             {
+                player.GetComponent<ActionSchedueler>().CancelCurrentAction();
                 TriggerLooting(player.gameObject);
                 pickup.PickupItem();
                 StartCoroutine(WaitForAnim(1.6f));

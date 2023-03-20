@@ -20,10 +20,10 @@ MonoBehaviour:
   stackable: 0
   allowedEquipLocation: 5
   equiptPrefab: {fileID: 3437449133657699162, guid: 766afc1ee3733bb4289d7ddc7e604e2e, type: 3}
-  dropPrefab: {fileID: 8404444941251974021, guid: ffab5a76717841d4da98e2a37f9942bc, type: 3}
+  dropPrefab: {fileID: 4373496851736562120, guid: 5bf8bf060ad3bd44cbfd7d41ccdbcaa5, type: 3}
   minWeaponDamage: 1
   maxWeaponDamage: 4
-  PercentageBonus: 0
+  PercentageBonus: 5
   weaponRange: 1.5
   isRightHanded: 1
   projectile: {fileID: 0}
