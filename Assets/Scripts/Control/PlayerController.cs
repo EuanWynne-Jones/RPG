@@ -7,16 +7,17 @@ using UnityEngine.EventSystems;
 using System;
 using UnityEngine.AI;
 using RPG.Inventories;
+using UnityEngine.UI;
+using RPG.Combat;
 
 namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour
     {
         Health health;
+        Transform lastEnemy = null;
 
-
-
-        [System.Serializable]
+        [Serializable]
         struct CursorMapping
         {
             public CursorType type;
@@ -37,7 +38,20 @@ namespace RPG.Control
         {
             CheckSpecialAbilityKeys();
 
-            if (InteractWithComponent()) return;
+            if (InteractWithComponent())
+            {
+                if (lastEnemy != null)
+                {
+                lastEnemy.GetComponent<Outline>().enabled = true;
+                return;
+                }
+
+            }
+            if(lastEnemy != null)
+            {
+                lastEnemy.GetComponent<Outline>().enabled = false;
+                lastEnemy = null;
+            }
             if (interactWithUI()) return;
             
             if (health.IsDead())
@@ -62,12 +76,18 @@ namespace RPG.Control
                     {
                         if (raycastable.HandleRaycast(this))
                         {
+                            
                             SetCursor(raycastable.GetCursorType());
+                            if(raycastable.GetCursorType() == CursorType.Combat)
+                            {
+                                lastEnemy = hit.transform;
+                            }
                             return true;
                         }
                     }
                 }
             }
+            
             return false;
         }
 

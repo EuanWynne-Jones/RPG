@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Attributes;
 using RPG.Control;
+using UnityEngine.UI;
 
 namespace RPG.Combat
 {
@@ -19,6 +20,7 @@ namespace RPG.Combat
             if (!callingController.GetComponent<Fighter>().CanAttack(gameObject))
             {
                 return false;
+
             }
             if (Input.GetMouseButton(0))
             {
@@ -27,6 +29,8 @@ namespace RPG.Combat
             }
             return true;
         }
+
+
     }
 }
 
