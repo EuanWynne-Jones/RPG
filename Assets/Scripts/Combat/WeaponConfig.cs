@@ -103,7 +103,7 @@ namespace RPG.Combat
 
         public float GetWeaponDamage()
         {
-            weaponDamage = Random.Range(minWeaponDamage, maxWeaponDamage) + GetPercentageBonus();
+            weaponDamage = Random.Range(minWeaponDamage, maxWeaponDamage) + GetPercentageBonus()/100;
             return Mathf.RoundToInt(weaponDamage);
         }
 

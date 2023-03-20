@@ -15,8 +15,8 @@ namespace RPG.Control
     public class PlayerController : MonoBehaviour
     {
         Health health;
-        Transform lastEnemy = null;
-
+        //public Transform lastEnemy = null;
+        
         [Serializable]
         struct CursorMapping
         {
@@ -38,20 +38,9 @@ namespace RPG.Control
         {
             CheckSpecialAbilityKeys();
 
-            if (InteractWithComponent())
-            {
-                if (lastEnemy != null)
-                {
-                lastEnemy.GetComponent<Outline>().enabled = true;
-                return;
-                }
+            if (InteractWithComponent()) return;
 
-            }
-            if(lastEnemy != null)
-            {
-                lastEnemy.GetComponent<Outline>().enabled = false;
-                lastEnemy = null;
-            }
+            
             if (interactWithUI()) return;
             
             if (health.IsDead())
@@ -60,10 +49,14 @@ namespace RPG.Control
                 return;
             }
 
-            if(InteractWithMovement()) return;
+            if (InteractWithMovement()) 
+            {
+                return;
+            }
             SetCursor(CursorType.None);
 
         }
+
 
         private bool InteractWithComponent()
         {
@@ -78,10 +71,20 @@ namespace RPG.Control
                         {
                             
                             SetCursor(raycastable.GetCursorType());
-                            if(raycastable.GetCursorType() == CursorType.Combat)
-                            {
-                                lastEnemy = hit.transform;
-                            }
+                            //if(raycastable.GetCursorType() == CursorType.Combat && lastEnemy == null)
+                            //{
+                                
+                            //    lastEnemy = hit.transform;
+                            //    lastEnemy.GetComponent<Outline>().enabled = true;
+                            //}
+                            //else
+                            //{
+                            //    if(lastEnemy != null && raycastable.GetCursorType() != CursorType.Combat)
+                            //    {
+                            //        lastEnemy.GetComponent<Outline>().enabled = false;
+                            //        lastEnemy = null;
+                            //    }
+                            //}
                             return true;
                         }
                     }
