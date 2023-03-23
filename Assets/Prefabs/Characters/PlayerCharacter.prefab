@@ -519,6 +519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434dc59deb2366844a1a9c11a5078a3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: The Lone Adventurer
 --- !u!4 &2305368488332970148 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8383446708011306486, guid: 5ee468b9067046a48a3356c17f207143, type: 3}

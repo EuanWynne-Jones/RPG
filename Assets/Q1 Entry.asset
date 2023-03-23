@@ -37,16 +37,14 @@ MonoBehaviour:
   m_Name: 653a9eeb-01c7-4299-a300-f879a3ab3227
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  dialogueText: We were traveling to the nearby village when we were ambushed by
-    a group of goblins. They came out of nowhere and attacked us. We didn't stand
-    a chance. My friend was killed instantly. I managed to escape, but just barely.
+  dialogueText: but were ambushed by a group of goblins. They came out of nowhere
+    and attacked us. We didn't stand a chance.
   dialogueChildren:
-  - 4444af59-8349-4e5b-9b2b-8cbcb7dd0868
-  - c360533a-0502-48ea-b82c-4c6dc24ec1e0
+  - ab998f5f-c262-41d4-8ec6-195f059f9a90
   nodePosition:
     serializedVersion: 2
-    x: 851
-    y: 451
+    x: 659
+    y: 437
     width: 200
     height: 100
   onEntryAction: 
@@ -71,8 +69,32 @@ MonoBehaviour:
   - 14c8de1a-862d-401b-a86b-e4a14a338513
   nodePosition:
     serializedVersion: 2
-    x: 1094
-    y: 183
+    x: 1115
+    y: 391
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+--- !u!114 &-6546380193015168407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: d65b4ae8-3cfb-4ee3-af9b-48a181d5b88f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: 'We were traveling to the nearby village of Mournings-Rest. '
+  dialogueChildren:
+  - 653a9eeb-01c7-4299-a300-f879a3ab3227
+  nodePosition:
+    serializedVersion: 2
+    x: 440
+    y: 322
     width: 200
     height: 100
   onEntryAction: 
@@ -151,30 +173,6 @@ MonoBehaviour:
     height: 100
   onEntryAction: 
   onExitAction: 
---- !u!114 &-3405452148406896076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
-  m_Name: 6b0ccfc9-cc08-4477-878d-a1c369289154
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 1
-  dialogueText: Excuse me, are you okay?
-  dialogueChildren:
-  - e88dd49c-681b-44da-81ac-3dc419a80ef3
-  nodePosition:
-    serializedVersion: 2
-    x: 70
-    y: 221
-    width: 200
-    height: 100
-  onEntryAction: 
-  onExitAction: 
 --- !u!114 &-3283845724671196711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,13 +235,14 @@ MonoBehaviour:
   m_Name: e88dd49c-681b-44da-81ac-3dc419a80ef3
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  dialogueText: No, I'm not okay. They killed my friend. Those damn goblins
+  dialogueText: You there! Please help! They killed Jared. Those damn goblins...
+    Curse them all!
   dialogueChildren:
   - 0accff71-eb62-4468-81e4-a9a90be5e399
   nodePosition:
     serializedVersion: 2
-    x: 321
-    y: 221
+    x: 1
+    y: 353
     width: 200
     height: 100
   onEntryAction: 
@@ -263,11 +262,11 @@ MonoBehaviour:
   isPlayerSpeaking: 1
   dialogueText: What happened here?
   dialogueChildren:
-  - 653a9eeb-01c7-4299-a300-f879a3ab3227
+  - d65b4ae8-3cfb-4ee3-af9b-48a181d5b88f
   nodePosition:
     serializedVersion: 2
-    x: 572
-    y: 222
+    x: 228
+    y: 377
     width: 200
     height: 100
   onEntryAction: 
@@ -285,7 +284,6 @@ MonoBehaviour:
   m_Name: Q1 Entry
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: -3405452148406896076}
   - {fileID: -2658106672788427080}
   - {fileID: -1104929539899297133}
   - {fileID: -8232224635448389082}
@@ -306,6 +304,8 @@ MonoBehaviour:
   - {fileID: 8788462388361987680}
   - {fileID: 6421184679475846722}
   - {fileID: 2817499419380921504}
+  - {fileID: -6546380193015168407}
+  - {fileID: 4231866171698348340}
   newNodeOffset: {x: 250, y: 0}
 --- !u!114 &2817499419380921504
 MonoBehaviour:
@@ -426,6 +426,32 @@ MonoBehaviour:
     serializedVersion: 2
     x: 2072
     y: 225
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+--- !u!114 &4231866171698348340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: ab998f5f-c262-41d4-8ec6-195f059f9a90
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Jared... My Squire, was killed instantly. He didnt even see it coming...
+    *sobs*
+  dialogueChildren:
+  - 4444af59-8349-4e5b-9b2b-8cbcb7dd0868
+  - c360533a-0502-48ea-b82c-4c6dc24ec1e0
+  nodePosition:
+    serializedVersion: 2
+    x: 887
+    y: 517
     width: 200
     height: 100
   onEntryAction: 

@@ -8,6 +8,7 @@ namespace RPG.Dialogue
 {
     public class PlayerConversant : MonoBehaviour
     {
+        [SerializeField] string playerName;
         Dialogue currentDialogue;
         DialogueNode currendNode = null;
         bool isChoosing;
@@ -54,6 +55,14 @@ namespace RPG.Dialogue
             return currentDialogue.GetPlayerChildren(currendNode);
         }
 
+        public string GetCurrentConversentName()
+        {
+            if (isChoosing)
+            {
+                return playerName;
+            }
+            return currentConversant.GetName();
+        }
         public void SelectChoice(DialogueNode chosenNode)
         {
 
