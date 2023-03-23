@@ -109,6 +109,7 @@ namespace RPG.Dialogue
             foreach(DialogueTrigger trigger in currentConversant.GetComponents<DialogueTrigger>())
             {
                 trigger.Trigger(action);
+                Debug.Log(action);
             }
 
         }

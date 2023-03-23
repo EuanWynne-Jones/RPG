@@ -82,17 +82,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8383446708011306486, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
   m_PrefabInstance: {fileID: 2933966578000947280}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6698300796726370498 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8377449688706189458, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
-  m_PrefabInstance: {fileID: 2933966578000947280}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6698300796726370502}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59cc7e7e876b4e7488a948266e800c3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6698300796726370502 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8377449688706189462, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
@@ -124,34 +113,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60ab7dc25ac8e334aab125f88711558f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  action: Attack
-  onTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6698300796726370498}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  actionList:
+  - action: Attack
+    onTrigger:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1904583936328507212
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,553 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8790524293284521443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: cdb28ad4-8398-4c6f-acf7-a360b72f71d2
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: They were vicious little creatures, with sharp teeth and claws.
+  dialogueChildren:
+  - 35b8e255-cc8d-48eb-ad7a-0fa3afc8a63c
+  nodePosition:
+    serializedVersion: 2
+    x: 1373
+    y: 76
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+--- !u!114 &-8232224635448389082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 653a9eeb-01c7-4299-a300-f879a3ab3227
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: We were traveling to the nearby village when we were ambushed by
+    a group of goblins. They came out of nowhere and attacked us. We didn't stand
+    a chance. My friend was killed instantly. I managed to escape, but just barely.
+  dialogueChildren:
+  - 4444af59-8349-4e5b-9b2b-8cbcb7dd0868
+  - c360533a-0502-48ea-b82c-4c6dc24ec1e0
+  nodePosition:
+    serializedVersion: 2
+    x: 851
+    y: 451
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+--- !u!114 &-7446820005657130193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 4444af59-8349-4e5b-9b2b-8cbcb7dd0868
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: I'm so sorry for your loss. Can you tell me more about these goblins?
+  dialogueChildren:
+  - cdb28ad4-8398-4c6f-acf7-a360b72f71d2
+  - 331f288c-8647-4cf7-9173-f7b4d658d73d
+  - 14c8de1a-862d-401b-a86b-e4a14a338513
+  nodePosition:
+    serializedVersion: 2
+    x: 1094
+    y: 183
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+--- !u!114 &-6371587448970230715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: c360533a-0502-48ea-b82c-4c6dc24ec1e0
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: '*Spit on him*'
+  dialogueChildren:
+  - ba67bbae-26ed-4523-8671-71200390d5a6
+  nodePosition:
+    serializedVersion: 2
+    x: 2355
+    y: 451
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+--- !u!114 &-6328097965062272421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 8e45a3cf-2b0d-4c51-95d2-8212e610d720
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: lost everything in the attack. And if you do find those goblins,
+    please make them pay for what they did to my friend
+  dialogueChildren:
+  - 46899acf-818a-4a9f-a340-65f355ef4bc8
+  nodePosition:
+    serializedVersion: 2
+    x: 2375
+    y: 78
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+--- !u!114 &-3688142589320178911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 46899acf-818a-4a9f-a340-65f355ef4bc8
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: '"I''ll do everything in my power to make sure they pay for what
+    they''ve done.'
+  dialogueChildren:
+  - 58863830-cc25-43bf-a08a-7c54fce4b7e6
+  nodePosition:
+    serializedVersion: 2
+    x: 2625
+    y: 77
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+--- !u!114 &-3405452148406896076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 6b0ccfc9-cc08-4477-878d-a1c369289154
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Excuse me, are you okay?
+  dialogueChildren:
+  - e88dd49c-681b-44da-81ac-3dc419a80ef3
+  nodePosition:
+    serializedVersion: 2
+    x: 70
+    y: 221
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+--- !u!114 &-3283845724671196711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 331f288c-8647-4cf7-9173-f7b4d658d73d
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: I couldn't tell you where they came from, but they must have a camp
+    or hideout somewhere nearby
+  dialogueChildren:
+  - 35b8e255-cc8d-48eb-ad7a-0fa3afc8a63c
+  nodePosition:
+    serializedVersion: 2
+    x: 1359
+    y: 387
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+--- !u!114 &-3082808537434276777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: ec9eb369-ae9b-4b6e-aa63-17318ac423f2
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Sounds tempting, so be it.
+  dialogueChildren:
+  - 58863830-cc25-43bf-a08a-7c54fce4b7e6
+  nodePosition:
+    serializedVersion: 2
+    x: 2357
+    y: 197
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+--- !u!114 &-2658106672788427080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: e88dd49c-681b-44da-81ac-3dc419a80ef3
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: No, I'm not okay. They killed my friend. Those damn goblins
+  dialogueChildren:
+  - 0accff71-eb62-4468-81e4-a9a90be5e399
+  nodePosition:
+    serializedVersion: 2
+    x: 321
+    y: 221
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+--- !u!114 &-1104929539899297133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 0accff71-eb62-4468-81e4-a9a90be5e399
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: What happened here?
+  dialogueChildren:
+  - 653a9eeb-01c7-4299-a300-f879a3ab3227
+  nodePosition:
+    serializedVersion: 2
+    x: 572
+    y: 222
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96317b7a9fb5262439015062f9491ad8, type: 3}
+  m_Name: Q1 Entry
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -3405452148406896076}
+  - {fileID: -2658106672788427080}
+  - {fileID: -1104929539899297133}
+  - {fileID: -8232224635448389082}
+  - {fileID: -7446820005657130193}
+  - {fileID: -8790524293284521443}
+  - {fileID: 7362723093858877859}
+  - {fileID: -3283845724671196711}
+  - {fileID: 2974524334772689746}
+  - {fileID: 6069955312812309057}
+  - {fileID: 3330476493655397611}
+  - {fileID: -6328097965062272421}
+  - {fileID: -6371587448970230715}
+  - {fileID: 4631770486409376002}
+  - {fileID: -3688142589320178911}
+  - {fileID: 3507674411970299216}
+  - {fileID: 3970648673247843002}
+  - {fileID: -3082808537434276777}
+  - {fileID: 8788462388361987680}
+  - {fileID: 6421184679475846722}
+  - {fileID: 2817499419380921504}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &2817499419380921504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 14c8de1a-862d-401b-a86b-e4a14a338513
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: They have taken over the ravine to the north, beyond the river!
+  dialogueChildren:
+  - 35b8e255-cc8d-48eb-ad7a-0fa3afc8a63c
+  nodePosition:
+    serializedVersion: 2
+    x: 1364
+    y: 226
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+--- !u!114 &2974524334772689746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 6c35eb13-0a68-4808-9e85-c6908a6f9a23
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: I'll do my best to track them down and make sure they pay for what
+    they've done.
+  dialogueChildren:
+  - 17714c28-9fac-4f78-9cca-a45cfaff1a59
+  nodePosition:
+    serializedVersion: 2
+    x: 1845
+    y: 79
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+--- !u!114 &3330476493655397611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 17714c28-9fac-4f78-9cca-a45cfaff1a59
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Oh by the gods bless you kind sir!
+  dialogueChildren:
+  - 8e45a3cf-2b0d-4c51-95d2-8212e610d720
+  nodePosition:
+    serializedVersion: 2
+    x: 2122
+    y: 78
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+--- !u!114 &3507674411970299216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 58863830-cc25-43bf-a08a-7c54fce4b7e6
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Thank you. I don't know what I would do without your help. Please
+    be careful out there, those goblins are dangerous
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 2900
+    y: 190
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: MoveToRepeatDialogue
+--- !u!114 &3970648673247843002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 202feec0-2722-4362-a3c9-e74c2066cd72
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: I have gold! back in town, i have a shop I could reward you?
+  dialogueChildren:
+  - c360533a-0502-48ea-b82c-4c6dc24ec1e0
+  - ec9eb369-ae9b-4b6e-aa63-17318ac423f2
+  - 4a17c83f-f2c4-4ef4-8a3c-62f9ec064626
+  nodePosition:
+    serializedVersion: 2
+    x: 2072
+    y: 225
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+--- !u!114 &4631770486409376002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: ba67bbae-26ed-4523-8671-71200390d5a6
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: GAH!? Why...  * he cries to himself*
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 2602
+    y: 519
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: Attack
+--- !u!114 &6069955312812309057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 339b418e-fc02-49c7-9d90-704dcc5978ec
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Im sorry, but i've got my own problems. you're on your own...
+  dialogueChildren:
+  - 202feec0-2722-4362-a3c9-e74c2066cd72
+  nodePosition:
+    serializedVersion: 2
+    x: 1852
+    y: 224
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+--- !u!114 &6421184679475846722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 4c8131a5-9cd2-4a5e-97fb-242d6126221c
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: '"The injured man grumbles to himself'
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 2606
+    y: 318
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: MoveToNegativeOutcome
+--- !u!114 &7362723093858877859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 35b8e255-cc8d-48eb-ad7a-0fa3afc8a63c
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: They were armed with crude weapons and seemed to be working together.
+  dialogueChildren:
+  - 6c35eb13-0a68-4808-9e85-c6908a6f9a23
+  - 339b418e-fc02-49c7-9d90-704dcc5978ec
+  - c360533a-0502-48ea-b82c-4c6dc24ec1e0
+  nodePosition:
+    serializedVersion: 2
+    x: 1610
+    y: 224
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+--- !u!114 &8788462388361987680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 4a17c83f-f2c4-4ef4-8a3c-62f9ec064626
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Like I said, I have my own problems to deal with. Im sorry but youll
+    have to take them on yourself. Or Flee, its not my problem.
+  dialogueChildren:
+  - 4c8131a5-9cd2-4a5e-97fb-242d6126221c
+  nodePosition:
+    serializedVersion: 2
+    x: 2356
+    y: 318
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 

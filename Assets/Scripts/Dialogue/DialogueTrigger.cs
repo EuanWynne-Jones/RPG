@@ -7,15 +7,29 @@ namespace RPG.Dialogue
 {
     public class DialogueTrigger : MonoBehaviour
     {
-           [SerializeField] string action;
-           [SerializeField] UnityEvent onTrigger;
+        
+        [SerializeField] public Actions[] actionList;
             public void Trigger(string actionToTrigger)
             {
-                if (actionToTrigger == action)
+                foreach (Actions action in actionList)
                 {
-                    onTrigger.Invoke();
+                    if (actionToTrigger == action.action)
+                        {
+                            action.onTrigger.Invoke();
+                        }
                 }
-            }
+
+            }   
+
+        [System.Serializable]
+        public struct Actions
+        {
+
+            [SerializeField] public string action;
+            [SerializeField] public UnityEvent onTrigger;
+        }
+
+        
     }
 }
 
