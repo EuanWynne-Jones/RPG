@@ -11,7 +11,8 @@ namespace RPG.Control
         Movement,
         Combat,
         Pickup,
-        FullPickup
+        FullPickup,
+        Dialogue
     }
     
 }

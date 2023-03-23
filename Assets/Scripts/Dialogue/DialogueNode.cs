@@ -12,6 +12,8 @@ namespace RPG.Dialogue
         [SerializeField] private string dialogueText;
         [SerializeField] private List<string> dialogueChildren = new List<string>();
         [SerializeField] private Rect nodePosition = new Rect(0,0,200,100);
+        [SerializeField] string onEntryAction;
+        [SerializeField] string onExitAction;
 
 
 
@@ -71,6 +73,15 @@ namespace RPG.Dialogue
         public bool IsPlayerSpeaking()
         {
             return isPlayerSpeaking;
+        }
+
+        public string GetOnEntryAction()
+        {
+            return onEntryAction;
+        }
+        public string GetOnExitAction()
+        {
+            return onExitAction;
         }
     }
 }
