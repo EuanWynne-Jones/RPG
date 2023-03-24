@@ -1,9 +1,10 @@
 using RPG.Core.UI.Tooltips;
+using RPG.Quests;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RPG.UI
+namespace RPG.UI.Quests
 {
     public class QuestTooltipSpawner : TooltipSpawner
     {
@@ -14,6 +15,8 @@ namespace RPG.UI
 
         public override void UpdateTooltip(GameObject tooltip)
         {
+            QuestStatus questStatus = GetComponent<QuestItemUI>().GetQuestStatus();
+            tooltip.GetComponent<QuestTooltipUI>().Setup(questStatus);
         }
 
 

@@ -520,6 +520,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: The Lone Adventurer
+--- !u!114 &5929625677280642482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2299934417806937540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248a1c0e583d2a54f86cf5e44aa7ed64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questStatuses:
+  - quest: {fileID: 11400000, guid: 37d8a6b742369df47b1341702e66f349, type: 2}
+    completedObjectives:
+    - Find the Goblin camp
+  - quest: {fileID: 11400000, guid: e8e980b9d00ce70438ca541668554526, type: 2}
+    completedObjectives:
+    - Kill Bori
 --- !u!4 &2305368488332970148 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8383446708011306486, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
