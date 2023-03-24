@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ namespace RPG.Quests
     [CreateAssetMenu(fileName = "New Quest", menuName = "Quests",order = 0)]
     public class Quest : ScriptableObject
     {
-        [SerializeField] string[] objectives;
+        [SerializeField] List<string> objectives = new List<string>();
 
         public string GetTitle()
         {
@@ -16,13 +17,18 @@ namespace RPG.Quests
 
         public int GetObjectiveCount()
         {
-            return objectives.Length;
+            return objectives.Count;
         }
         
 
         public IEnumerable<string> GetObjectives()
         {
             return objectives;
+        }
+
+        public bool HasObjective(string objective)
+        {
+            return objectives.Contains(objective);
         }
     }
 }

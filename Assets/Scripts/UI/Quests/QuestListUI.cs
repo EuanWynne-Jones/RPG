@@ -20,10 +20,10 @@ namespace RPG.UI.Quests
 
         private void Redraw()
         {
-            foreach (QuestItemUI quest in transform)
-            {
-                Destroy(quest);
-            } 
+            //foreach (QuestItemUI quest in questList.GetStatuses().)
+            //{
+            //    Destroy(quest);
+            //} 
             foreach (QuestStatus questStatus in questList.GetStatuses())
             {
                 QuestItemUI uiInstance = Instantiate<QuestItemUI>(questPrefab, transform);
