@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bdaf4e851b99eb43a812b25545f324c, type: 3}
+  m_Name: Sword
+  m_EditorClassIdentifier: 
+  itemID: a5218624-8eec-481e-baca-42db4c542d82
+  displayName: Iron Sword
+  description: The most basic utencil of any adventurer
+  icon: {fileID: 21300000, guid: dddd0e74634b7e44fa8aadbb04b8b8a8, type: 3}
+  pickup: {fileID: 42820555755159629, guid: 56fd9e4c1f466f54c85f992363d03837, type: 3}
+  stackable: 0
+  allowedEquipLocation: 5
+  equiptPrefab: {fileID: 5405077325546713873, guid: 2281956121ded1b47bee123e0d964410, type: 3}
+  dropPrefab: {fileID: 5354623606481082633, guid: 56fd9e4c1f466f54c85f992363d03837, type: 3}
+  minWeaponDamage: 1
+  maxWeaponDamage: 4
+  PercentageBonus: 5
+  weaponRange: 2
+  isRightHanded: 1
+  projectile: {fileID: 0}
+  attackOverrites:
+  - {fileID: 22100000, guid: 0737ef7438298864e9cbbf43a74025c6, type: 2}
+  attackOverrite: {fileID: 22100000, guid: 0737ef7438298864e9cbbf43a74025c6, type: 2}

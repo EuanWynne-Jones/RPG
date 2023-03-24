@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bdaf4e851b99eb43a812b25545f324c, type: 3}
+  m_Name: Unarmed
+  m_EditorClassIdentifier: 
+  itemID: 2457186e-0c79-40a0-ad05-e9c4fc41f4b7
+  displayName: Unarmed
+  description: DEBUG SHOULD NOT SEE
+  icon: {fileID: 0}
+  pickup: {fileID: 0}
+  stackable: 0
+  allowedEquipLocation: 5
+  equiptPrefab: {fileID: 1128009747611786112, guid: b98edf36d7fc74e43ab4a8b9369240ca, type: 3}
+  dropPrefab: {fileID: 0}
+  minWeaponDamage: 1
+  maxWeaponDamage: 3
+  PercentageBonus: 0
+  weaponRange: 1.5
+  isRightHanded: 1
+  projectile: {fileID: 0}
+  attackOverrites:
+  - {fileID: 22100000, guid: 2a597854d2590f54a9a6902c07a64351, type: 2}
+  - {fileID: 22100000, guid: 58769d5c448549947b0ecf911c49f1ed, type: 2}
+  attackOverrite: {fileID: 22100000, guid: 58769d5c448549947b0ecf911c49f1ed, type: 2}
