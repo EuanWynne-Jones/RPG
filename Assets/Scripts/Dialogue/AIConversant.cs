@@ -52,5 +52,7 @@ namespace RPG.Dialogue
             Dialogue NPCDialogue = Resources.Load<Dialogue>(dialogue);
             ChangeDialogue(NPCDialogue);
         }
+
+
     }
 }

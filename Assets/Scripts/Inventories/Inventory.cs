@@ -117,6 +117,7 @@ namespace RPG.Inventories
         /// Remove a number of items from the given slot. Will never remove more
         /// that there are.
         /// </summary>
+
         public void RemoveFromSlot(int slot, int number)
         {
             slots[slot].number -= number;
@@ -161,6 +162,7 @@ namespace RPG.Inventories
             }
             return true;
         }
+
 
         // PRIVATE
 
@@ -218,6 +220,30 @@ namespace RPG.Inventories
                 }
             }
             return -1;
+        }
+        public void RemoveItem(InventoryItem item, int number)
+        {
+            if (item == null) return;
+            for (int i = 0; i < slots.Length; i++)
+            {
+                if (object.ReferenceEquals(slots[i].item, item))
+                {
+                    slots[i].number -= number;
+                    if (slots[i].number <= 0)
+                    {
+                        slots[i].item = null;
+                        slots[i].number = 0;
+                    }
+
+                    return;
+                }
+            }
+        }
+
+        public void RemoveItem(string itemID, int number)
+        {
+            InventoryItem item = InventoryItem.GetFromID(itemID);
+            RemoveItem(item, number);
         }
 
         [System.Serializable]

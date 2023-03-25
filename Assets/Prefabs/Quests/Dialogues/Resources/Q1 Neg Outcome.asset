@@ -1,5 +1,37 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8644766069049989820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: fb0f50fc-ce64-4829-aabe-f4a348dd9ccc
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: I brought you a potion to say sorry
+  dialogueChildren:
+  - 48c2633f-94cd-4288-96f9-ee5b7e14120f
+  nodePosition:
+    serializedVersion: 2
+    x: 499
+    y: 87
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: RemoveItem
+  condition:
+    and:
+    - or:
+      - predicate: 6
+        parameters:
+        - a71f370c-143f-45d8-bdc7-57f52d2c5a5c
+        - 
+        negate: 0
 --- !u!114 &-6687764234802673811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,15 +46,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
   dialogueText: Just leave me alone!
-  dialogueChildren: []
+  dialogueChildren:
+  - fb0f50fc-ce64-4829-aabe-f4a348dd9ccc
   nodePosition:
     serializedVersion: 2
-    x: 68
-    y: 150
+    x: 201
+    y: 243
     width: 200
     height: 100
   onEntryAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37,4 +72,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: -6687764234802673811}
+  - {fileID: -8644766069049989820}
+  - {fileID: 7441278316118781714}
   newNodeOffset: {x: 250, y: 0}
+--- !u!114 &7441278316118781714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 48c2633f-94cd-4288-96f9-ee5b7e14120f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Well this changes Everything!
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 799
+    y: 138
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: MoveToNeutralDialogue
+  condition:
+    and: []

@@ -19,5 +19,7 @@ namespace RPG.Quests
             questList.AddQuest(quest);
         }
 
+
+
     }
 }
