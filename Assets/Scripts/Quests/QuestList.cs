@@ -1,6 +1,6 @@
-using RPG.Core;
 using RPG.Inventories;
 using RPG.Saving;
+using RPG.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -103,16 +103,22 @@ namespace RPG.Quests
 
         }
 
-        public bool? Evaluate(string predicate, string[] parameters)
+        public bool? Evaluate(EPredicate predicate, string[] parameters)
         {
             switch (predicate)
             {
-                case "HasQuest":
+                case EPredicate.HasQuest:
                     return HasQuest(Quest.GetByName(parameters[0]));
-                case "CompletedQuest":
-                    return GetQuestStatus(Quest.GetByName(parameters[0])).IsComplete();
+                case EPredicate.CompletedQuest:
+                    QuestStatus status = GetQuestStatus(Quest.GetByName(parameters[0]));
+                    if (status == null) return false;
+                    return status.IsComplete();
+                return GetQuestStatus(Quest.GetByName(parameters[0])).IsComplete();
+                case EPredicate.CompletedObjective:
+                    QuestStatus teststatus = GetQuestStatus(Quest.GetByName(parameters[0]));
+                    if (teststatus == null) return false;
+                    return teststatus.IsObjectiveComplete(parameters[1]);
             }
-
             return null;
         }
 

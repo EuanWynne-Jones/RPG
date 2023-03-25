@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using RPG.Saving;
-using RPG.Core;
+using RPG.Utils;
 
 namespace RPG.Inventories
 {
@@ -255,12 +255,21 @@ namespace RPG.Inventories
             }
         }
 
-        public bool? Evaluate(string predicate, string[] parameters)
+        public bool? Evaluate(EPredicate predicate, string[] parameters)
         {
             switch (predicate)
             {
-                case "HasInventoryItem":
-                    return HasItem(InventoryItem.GetFromID(parameters[0])); 
+                case EPredicate.HasItem:
+                    return HasItem(InventoryItem.GetFromID(parameters[0]));
+                case EPredicate.HasItems: //Only works for stackable items.
+                    InventoryItem item = InventoryItem.GetFromID(parameters[0]);
+                    int stack = FindStack(item);
+                    if (stack == -1) return false;
+                    if (int.TryParse(parameters[1], out int result))
+                    {
+                        return slots[stack].number >= result;
+                    }
+                    return false;
             }
             return null;
         }

@@ -1,3 +1,4 @@
+using RPG.Utils;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,7 +46,7 @@ namespace RPG.Core
         class Predicate
         {
 
-            [SerializeField] string predicate;
+            [SerializeField] EPredicate predicate;
             [SerializeField] string[] parameters;
             [SerializeField] bool negate = false;
 

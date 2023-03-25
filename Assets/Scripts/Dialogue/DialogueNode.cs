@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using RPG.Core;
 using System;
+using RPG.Utils;
 
 namespace RPG.Dialogue
 {
