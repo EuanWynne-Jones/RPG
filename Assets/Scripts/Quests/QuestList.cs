@@ -71,28 +71,28 @@ namespace RPG.Quests
                 {
                     int given = 0;
 
-                    for (int i = 0; i < reward.number; i++)
+                    for (int i = 0; i < reward.amount; i++)
                     {
                         bool isGiven = GetComponent<Inventory>().AddToFirstEmptySlot(reward.item, 1);
                         if (!isGiven) break;
                         given++;
                     }
 
-                    if (given == reward.number) continue;
+                    if (given == reward.amount) continue;
 
-                    for (int i = given; i < reward.number; i++)
+                    for (int i = given; i < reward.amount; i++)
                     {
                         GetComponent<ItemDropper>().DropItem(reward.item, 1);
                     }
                 }
                 else
                 {
-                    bool isGiven = GetComponent<Inventory>().AddToFirstEmptySlot(reward.item, reward.number);
+                    bool isGiven = GetComponent<Inventory>().AddToFirstEmptySlot(reward.item, reward.amount);
                     if (!isGiven)
                     {
-                        for (int i = 0; i < reward.number; i++)
+                        for (int i = 0; i < reward.amount; i++)
                         {
-                            GetComponent<ItemDropper>().DropItem(reward.item, reward.number);
+                            GetComponent<ItemDropper>().DropItem(reward.item, reward.amount);
                         }
                     }
 

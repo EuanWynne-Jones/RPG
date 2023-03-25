@@ -17,4 +17,6 @@ MonoBehaviour:
     description: Kill Bori
   - reference: Join
     description: Join the goblins!
-  rewards: []
+  rewards:
+  - item: {fileID: 11400000, guid: 0ca280f236a2e764c9b969c7d192f89c, type: 2}
+    amount: 1

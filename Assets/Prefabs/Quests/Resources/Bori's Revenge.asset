@@ -15,6 +15,10 @@ MonoBehaviour:
   objectives:
   - reference: Find
     description: Find Bori's brother Dori
+  - reference: Find1
+    description: asdad
+  - reference: 2
+    description: aasd
   rewards:
-  - number: 1
-    item: {fileID: 11400000, guid: 59dc1b75514f69048a3dd964754be707, type: 2}
+  - item: {fileID: 11400000, guid: 59dc1b75514f69048a3dd964754be707, type: 2}
+    amount: 0

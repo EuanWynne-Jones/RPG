@@ -48,9 +48,9 @@ namespace RPG.UI.Quests
                 {
                     rewardText += ", ";
                 }
-                if (reward.number > 1)
+                if (reward.amount > 1)
                 {
-                    rewardText += reward.number + " ";
+                    rewardText += reward.amount + " ";
                 }
                 rewardText += reward.item.GetDisplayName();
             }

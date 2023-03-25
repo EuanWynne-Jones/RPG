@@ -1,12 +1,13 @@
 using RPG.Control;
 using RPG.Movement;
+using RPG.Saving;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace RPG.Dialogue
 {
-    public class AIConversant : MonoBehaviour, IRaycastable
+    public class AIConversant : MonoBehaviour, IRaycastable, ISaveable
     {
         [SerializeField] string conversantName;
         [SerializeField] public Dialogue NPCDialogue = null;
@@ -38,6 +39,18 @@ namespace RPG.Dialogue
         public string GetName()
         {
             return conversantName;
+        }
+
+        public object CaptureState()
+        {
+            return NPCDialogue.name;
+        }
+
+        public void RestoreState(object state)
+        {
+            string dialogue = (string)state;
+            Dialogue NPCDialogue = Resources.Load<Dialogue>(dialogue);
+            ChangeDialogue(NPCDialogue);
         }
     }
 }

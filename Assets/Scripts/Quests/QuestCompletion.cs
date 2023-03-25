@@ -7,12 +7,12 @@ namespace RPG.Quests
     public class QuestCompletion : MonoBehaviour
     {
         [SerializeField] Quest quest;
-        [SerializeField] string ObjectiveToComplete;
+        [SerializeField] string objectiveToComplete;
 
 
         public void CompleteObjective()
         {
-            if(ObjectiveToComplete == "")
+            if(objectiveToComplete == "")
             {
                 Debug.Log("Objective in QuestCompletion is Not Set!");
                 return;
@@ -20,7 +20,7 @@ namespace RPG.Quests
             QuestList questList = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestList>();
             if (questList.HasQuest(quest))
             {
-            questList.CompleteObjective(quest, ObjectiveToComplete);
+            questList.CompleteObjective(quest, objectiveToComplete);
             }
             
             else

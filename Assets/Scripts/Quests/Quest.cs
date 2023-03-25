@@ -15,9 +15,9 @@ namespace RPG.Quests
         [System.Serializable]
         public class Reward
         {
-            [Min(1)]
-            public int number;
             public InventoryItem item;
+            [Min(1)]
+            public int amount;
             
         }
 
