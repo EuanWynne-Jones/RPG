@@ -15,6 +15,6 @@ MonoBehaviour:
   objectives:
   - reference: Kill
     description: Kill Bori
-  - reference: Join the goblins!
-    description: 
+  - reference: Join
+    description: Join the goblins!
   rewards: []

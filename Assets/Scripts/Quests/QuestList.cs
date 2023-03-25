@@ -62,56 +62,59 @@ namespace RPG.Quests
             return null;
         }
 
+
         private void GiveReward(Quest quest)
         {
-            foreach (var reward in quest.GetRewards())
+            foreach (Quest.Reward reward in quest.GetRewards())
             {
-                bool success = GetComponent<Inventory>().AddToFirstEmptySlot(reward.item, reward.number);
-                if (!success)
+                if (!reward.item.IsStackable())
                 {
-                    GetComponent<ItemDropper>().DropItem(reward.item, reward.number);
+                    int given = 0;
+
+                    for (int i = 0; i < reward.number; i++)
+                    {
+                        bool isGiven = GetComponent<Inventory>().AddToFirstEmptySlot(reward.item, 1);
+                        if (!isGiven) break;
+                        given++;
+                    }
+
+                    if (given == reward.number) continue;
+
+                    for (int i = given; i < reward.number; i++)
+                    {
+                        GetComponent<ItemDropper>().DropItem(reward.item, 1);
+                    }
+                }
+                else
+                {
+                    bool isGiven = GetComponent<Inventory>().AddToFirstEmptySlot(reward.item, reward.number);
+                    if (!isGiven)
+                    {
+                        for (int i = 0; i < reward.number; i++)
+                        {
+                            GetComponent<ItemDropper>().DropItem(reward.item, reward.number);
+                        }
+                    }
+
                 }
             }
+
+
+
         }
-        //private void GiveReward(Quest quest)
-        //{
-        //    foreach (Quest.Reward reward in quest.GetRewards())
-        //    {
-        //        if (!reward.item.IsStackable())
-        //        {
-        //            int given = 0;
 
-        //            for (int i = 0; i < reward.number; i++)
-        //            {
-        //                bool isGiven = GetComponent<Inventory>().AddToFirstEmptySlot(reward.item, 1);
-        //                if (!isGiven) break;
-        //                given++;
-        //            }
+        public bool? Evaluate(string predicate, string[] parameters)
+        {
+            switch (predicate)
+            {
+                case "HasQuest":
+                    return HasQuest(Quest.GetByName(parameters[0]));
+                case "CompletedQuest":
+                    return GetQuestStatus(Quest.GetByName(parameters[0])).IsComplete();
+            }
 
-        //            if (given == reward.number) continue;
-
-        //            for (int i = given; i < reward.number; i++)
-        //            {
-        //                GetComponent<ItemDropper>().DropItem(reward.item, 1);
-        //            }
-        //        }
-        //        else
-        //        {
-        //            bool isGiven = GetComponent<Inventory>().AddToFirstEmptySlot(reward.item, reward.number);
-        //            if (!isGiven)
-        //            {
-        //                for(int i = 0; i <  reward.number; i++)
-        //                {
-        //                    GetComponent<ItemDropper>().DropItem(reward.item, reward.number);
-        //                }
-        //            }
-
-        //        }
-        //    }
-
-
-
-        //}
+            return null;
+        }
 
         public object CaptureState()
         {
@@ -137,17 +140,6 @@ namespace RPG.Quests
 
         }
 
-        public bool? Evaluate(string predicate, string[] parameters)
-        {
-            switch (predicate)
-            {
-                case "HasQuest":
-                    return HasQuest(Quest.GetByName(parameters[0]));
-                case "CompletedQuest":
-                    return GetQuestStatus(Quest.GetByName(parameters[0])).IsComplete();
-            }
 
-            return null;
-        }
     }
 }

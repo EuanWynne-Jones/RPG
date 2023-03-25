@@ -24,8 +24,7 @@ MonoBehaviour:
   onEntryAction: 
   onExitAction: 
   condition:
-    predicate: 
-    parameters: []
+    and: []
 --- !u!114 &-3226101901374951614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,15 +42,14 @@ MonoBehaviour:
   dialogueChildren: []
   nodePosition:
     serializedVersion: 2
-    x: 686
-    y: 292
+    x: 696
+    y: 402
     width: 200
     height: 100
   onEntryAction: 
   onExitAction: 
   condition:
-    predicate: 
-    parameters: []
+    and: []
 --- !u!114 &-1874658893539595488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,8 +76,7 @@ MonoBehaviour:
   onEntryAction: 
   onExitAction: 
   condition:
-    predicate: 
-    parameters: []
+    and: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,15 +114,14 @@ MonoBehaviour:
   - 5e9b9c91-00ae-4c70-bbdd-c8f4b876a59a
   nodePosition:
     serializedVersion: 2
-    x: 436
-    y: 292
+    x: 437
+    y: 404
     width: 200
     height: 100
   onEntryAction: 
   onExitAction: 
   condition:
-    predicate: 
-    parameters: []
+    and: []
 --- !u!114 &4367691379599563756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +147,14 @@ MonoBehaviour:
   onEntryAction: 
   onExitAction: Complete
   condition:
-    predicate: HasQuest
-    parameters:
-    - Bori's Revenge
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Bori's Revenge
+        negate: 0
+    - or:
+      - predicate: CompletedQuest
+        parameters:
+        - Bori's Revenge
+        negate: 1
