@@ -1,0 +1,156 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4123662904772133941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 7df12840-1c7b-4037-9123-8b468e88aff1
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Ok
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 680
+    y: 115
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    predicate: 
+    parameters: []
+--- !u!114 &-3226101901374951614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 5e9b9c91-00ae-4c70-bbdd-c8f4b876a59a
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Sad
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 686
+    y: 292
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    predicate: 
+    parameters: []
+--- !u!114 &-1874658893539595488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: c3ac53cf-616a-494b-93b2-d23e18545e9c
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: have you seen my brother? he looks quite alot like me?
+  dialogueChildren:
+  - 6cff13cc-05b9-4835-8673-4f05f274be13
+  - 8b291d26-1846-4634-a235-a13f68b2f907
+  nodePosition:
+    serializedVersion: 2
+    x: 164
+    y: 220
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    predicate: 
+    parameters: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96317b7a9fb5262439015062f9491ad8, type: 3}
+  m_Name: Finding Dori
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -1874658893539595488}
+  - {fileID: 4367691379599563756}
+  - {fileID: 2210240885201285512}
+  - {fileID: -4123662904772133941}
+  - {fileID: -3226101901374951614}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &2210240885201285512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 8b291d26-1846-4634-a235-a13f68b2f907
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: No sorry
+  dialogueChildren:
+  - 5e9b9c91-00ae-4c70-bbdd-c8f4b876a59a
+  nodePosition:
+    serializedVersion: 2
+    x: 436
+    y: 292
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    predicate: 
+    parameters: []
+--- !u!114 &4367691379599563756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 6cff13cc-05b9-4835-8673-4f05f274be13
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Yes, Hes very worries about you!
+  dialogueChildren:
+  - 7df12840-1c7b-4037-9123-8b468e88aff1
+  nodePosition:
+    serializedVersion: 2
+    x: 427
+    y: 119
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: Complete
+  condition:
+    predicate: HasQuest
+    parameters:
+    - Bori's Revenge

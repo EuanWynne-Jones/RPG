@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using RPG.Core;
+using System;
 
 namespace RPG.Dialogue
 {
@@ -14,6 +16,7 @@ namespace RPG.Dialogue
         [SerializeField] private Rect nodePosition = new Rect(0,0,200,100);
         [SerializeField] string onEntryAction;
         [SerializeField] string onExitAction;
+        [SerializeField] Condition condition;
 
 
 
@@ -82,6 +85,11 @@ namespace RPG.Dialogue
         public string GetOnExitAction()
         {
             return onExitAction;
+        }
+
+        public bool CheckCondition(IEnumerable<IPredicateEvaluator> evaluators)
+        {
+            return condition.Check(evaluators);
         }
     }
 }

@@ -13,6 +13,7 @@ namespace RPG.UI.Quests
 
         private void Start()
         {
+
             questList = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestList>();
             questList.onQuestListUpdated += Redraw;
             Redraw();
@@ -20,13 +21,15 @@ namespace RPG.UI.Quests
 
         private void Redraw()
         {
-            //foreach (QuestItemUI quest in questList.GetStatuses().)
-            //{
-            //    Destroy(quest);
-            //} 
+            foreach (Transform item in transform)
+            {
+                Destroy(item.gameObject);
+            }
             foreach (QuestStatus questStatus in questList.GetStatuses())
             {
-                QuestItemUI uiInstance = Instantiate<QuestItemUI>(questPrefab, transform);
+                //removes completed quests from list
+                if (questStatus.IsComplete()) continue;
+                QuestItemUI uiInstance =  Instantiate<QuestItemUI>(questPrefab, transform);
                 uiInstance.Setup(questStatus);
             }
         }

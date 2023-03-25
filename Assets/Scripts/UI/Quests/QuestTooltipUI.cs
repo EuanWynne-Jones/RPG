@@ -1,4 +1,5 @@
 using RPG.Quests;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -12,25 +13,53 @@ namespace RPG.UI.Quests
         [SerializeField] Transform objectiveContainer;
         [SerializeField] GameObject objectivePrefab;
         [SerializeField] GameObject IncompleteObjectivePrefab;
+        [SerializeField] TextMeshProUGUI rewardText;
+
         public void Setup(QuestStatus questStatus)
         {
+            Quest quest = questStatus.GetQuest();
             questName.text = questStatus.GetQuest().GetTitle();
-            foreach (GameObject objectivePrefab in objectiveContainer)
+
+            foreach (Transform item in objectiveContainer)
             {
-                Destroy(objectivePrefab);
+                Destroy(item.gameObject);
             }
-            foreach (string objective in questStatus.GetQuest().GetObjectives())
+            foreach (var objective in questStatus.GetQuest().GetObjectives())
             {
                 GameObject prefab = IncompleteObjectivePrefab;
-                if (questStatus.IsObjectiveComplete(objective))
+                if (questStatus.IsObjectiveComplete(objective.reference))
                 {
                     prefab = objectivePrefab;
                 }
-                GameObject objectiveInstance =  Instantiate(prefab, objectiveContainer);
+                GameObject objectiveInstance = Instantiate(prefab, objectiveContainer);
                 TextMeshProUGUI objectiveText = objectiveInstance.GetComponentInChildren<TextMeshProUGUI>();
-                objectiveText.text = objective;
+                objectiveText.text = objective.description;
 
             }
+            rewardText.text = GetRewardText(quest);
+        }
+
+        private string GetRewardText(Quest quest)
+        {
+            string rewardText = "";
+            foreach (var reward in quest.GetRewards())
+            {
+                if (rewardText != "")
+                {
+                    rewardText += ", ";
+                }
+                if (reward.number > 1)
+                {
+                    rewardText += reward.number + " ";
+                }
+                rewardText += reward.item.GetDisplayName();
+            }
+            if (rewardText == "")
+            {
+                rewardText = "No reward";
+            }
+            rewardText += ".";
+            return rewardText;
         }
     }
 }
