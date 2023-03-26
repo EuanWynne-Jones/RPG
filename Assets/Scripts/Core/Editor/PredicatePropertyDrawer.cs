@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using System.Linq;
+using RPG.Control;
 using RPG.Inventories;
 using RPG.Quests;
 using RPG.Utils;
 using UnityEditor;
 using UnityEngine;
 
-namespace GameDevTV.Utils.Editor
+namespace RPG.Utils.Editor
 {
     [CustomPropertyDrawer(typeof(Condition.Predicate))]
     public class PredicatePropertyDrawer : PropertyDrawer
@@ -14,6 +15,7 @@ namespace GameDevTV.Utils.Editor
 
         private Dictionary<string, Quest> quests;
         private Dictionary<string, InventoryItem> items;
+        private Dictionary<string, AIController> enemies;
 
 
 
@@ -58,6 +60,8 @@ namespace GameDevTV.Utils.Editor
             if(selectedPredicate == EPredicate.HasKilled)
             {
                 position.y += propHeight;
+                DrawEnemies(position, parameterZero);
+                position.y += propHeight;
                 DrawIntSlider(position, "Qty Needed", parameterOne, 1, 100);
             }
             //if (selectedPredicate == EPredicate.MinimumTrait)
@@ -85,6 +89,22 @@ namespace GameDevTV.Utils.Editor
                 element.stringValue = names[newIndex];
             }
 
+            EditorGUI.EndProperty();
+        }
+
+        private void DrawEnemies(Rect position, SerializedProperty element)
+        {
+            BuildEnemyList();
+            var names = enemies.Keys.ToList();
+            Debug.Log(names.Count());
+            int index = names.IndexOf(element.stringValue);
+
+            EditorGUI.BeginProperty(position, new GUIContent("Enemies:"), element);
+            int newIndex = EditorGUI.Popup(position, "Enemies:", index, names.ToArray());
+            if (newIndex != index)
+            {
+                element.stringValue = names[newIndex];
+            }
             EditorGUI.EndProperty();
         }
 
@@ -180,6 +200,18 @@ namespace GameDevTV.Utils.Editor
                 quests[quest.name] = quest;
             }
         }
+        void BuildEnemyList()
+        {
+            Debug.Log("BuildEnemies()");
+            if (enemies != null) return;
+            enemies = new Dictionary<string, AIController>();
+            foreach (AIController enemy in Object.FindObjectsOfType<AIController>())
+            {
+                Debug.Log($"Adding Enemy {enemy.name}");
+                enemies[enemy.name] = enemy;
+            }
+
+        }
 
         void BuildInventoryItemsList()
         {
@@ -209,6 +241,7 @@ namespace GameDevTV.Utils.Editor
                 case EPredicate.CompletedObjective: //All of these take 2 parameters
                 case EPredicate.HasItems:
                 case EPredicate.MinimumTrait:
+                case EPredicate.HasKilled:
                     return propHeight * 4.0f; //Predicate + 2 parameters + negate;
             }
             return propHeight * 2.0f;

@@ -24,6 +24,11 @@ namespace RPG.Quests
             }
         }
 
+        private void Update()
+        {
+            CompleteObjectivesByPredicates();
+        }
+
         public void CompleteObjective(Quest quest, string objective)
         {
             QuestStatus questStatus = GetQuestStatus(quest);
