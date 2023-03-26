@@ -9,10 +9,11 @@ using UnityEngine.AI;
 using RPG.Inventories;
 using UnityEngine.UI;
 using RPG.Combat;
+using RPG.Core;
 
 namespace RPG.Control
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour, IAction
     {
         Health health;
         //public Transform lastEnemy = null;
@@ -29,6 +30,7 @@ namespace RPG.Control
         [SerializeField] float raycastRadius = 1f;
 
         bool isDraggingUI = false;
+        bool CanInteractWithMovement = true;
 
         private void Awake()
         {
@@ -94,6 +96,7 @@ namespace RPG.Control
             return false;
         }
 
+
         RaycastHit[] RayCastAllSorted()
         {
             RaycastHit[] hits = Physics.SphereCastAll(GetMouseRay(), raycastRadius);
@@ -131,23 +134,27 @@ namespace RPG.Control
 
         private bool InteractWithMovement()
         {
-            //Ray ray = GetMouseRay();
-            //RaycastHit hit;
-            //bool hashit = Physics.Raycast(ray, out hit);
-            Vector3 target;
-            bool hasHit = RaycastNavmesh(out target);
-            if (hasHit)
+            if (CanInteractWithMovement)
             {
-                if (!GetComponent<Mover>().CanMoveTo(target)) return false;
-                if (Input.GetMouseButton(0))
+
+                //Ray ray = GetMouseRay();
+                //RaycastHit hit;
+                //bool hashit = Physics.Raycast(ray, out hit);
+                Vector3 target;
+                bool hasHit = RaycastNavmesh(out target);
+                if (hasHit)
                 {
-                    GetComponent<Mover>().StartMoveAction(target,1f);
+                    if (!GetComponent<Mover>().CanMoveTo(target)) return false;
+                    if (Input.GetMouseButton(0))
+                    {
+                        GetComponent<Mover>().StartMoveAction(target,1f);
+                    }
+                    SetCursor(CursorType.Movement);
+                    return true;
                 }
-                SetCursor(CursorType.Movement);
-                return true;
-            }
             
-            return false;
+            }
+                return false;
         }
         private bool RaycastNavmesh(out Vector3 target)
         {
@@ -218,6 +225,16 @@ namespace RPG.Control
         private static Ray GetMouseRay()
         {
             return Camera.main.ScreenPointToRay(Input.mousePosition);
+        }
+
+        public void EnableMovement()
+        {
+            CanInteractWithMovement = true;
+        }
+
+        public void Cancel()
+        {
+            CanInteractWithMovement = false;
         }
     }
 

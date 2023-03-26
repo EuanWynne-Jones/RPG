@@ -62,6 +62,13 @@ namespace RPG.Movement
             navMeshAgent.speed = maxSpeed * Mathf.Clamp01(speedFraction);
             navMeshAgent.isStopped = false;
         }
+
+        public void Stop()
+        {
+            GetComponent<NavMeshAgent>().isStopped = true;
+        }
+
+
         public void Cancel()
         {
             navMeshAgent.isStopped = true;

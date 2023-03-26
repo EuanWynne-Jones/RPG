@@ -6,6 +6,7 @@ using RPG.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace RPG.Dialogue
 {
@@ -14,7 +15,7 @@ namespace RPG.Dialogue
         [SerializeField] string conversantName;
         [SerializeField] public Dialogue NPCDialogue = null;
         [SerializeField] public Transform conversantHead;
-        [SerializeField] float dialogueTriggerDistance = 3f;
+        [SerializeField] float dialogueTriggerDistance = 3.5f;
 
         PlayerController player;
         bool dialogueIntention;
@@ -33,7 +34,6 @@ namespace RPG.Dialogue
             float dist = GetDistancetoConversant();
             if (dist <= dialogueTriggerDistance && !player.GetComponent<PlayerConversant>().isInDialogue && dialogueIntention)
             {
-                player.GetComponent<ActionSchedueler>().CancelCurrentAction();
                 player.GetComponent<PlayerConversant>().StartDialogue(this, NPCDialogue);
                 this.transform.LookAt(player.transform);
                 dialogueIntention = false;
@@ -90,10 +90,9 @@ namespace RPG.Dialogue
             {
                 dialogueIntention = true;
                 float dist = GetDistancetoConversant();
-                if (dist <= 2f && !player.GetComponent<PlayerConversant>().isInDialogue && dialogueIntention)
+                if (dist <= dialogueTriggerDistance && !player.GetComponent<PlayerConversant>().isInDialogue && dialogueIntention)
                 {
-                    player.GetComponent<ActionSchedueler>().CancelCurrentAction();
-                    player.GetComponent<PlayerController>().enabled = false;
+
                     player.GetComponent<PlayerConversant>().StartDialogue(this, NPCDialogue);
                     dialogueIntention = false;
                 }

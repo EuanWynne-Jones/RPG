@@ -1,10 +1,14 @@
+using RPG.Cinimatics;
 using RPG.Control;
+using RPG.Core;
+using RPG.Movement;
 using RPG.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace RPG.Dialogue
 {
@@ -20,10 +24,14 @@ namespace RPG.Dialogue
 
         AIConversant currentConversant = null;
         CameraTransition cameraTransition;
+        ActionSchedueler actionSchedueler;
         public void StartDialogue(AIConversant newConversant, Dialogue newDialogue)
         {
 
             isInDialogue = true;
+            actionSchedueler = GetComponent<ActionSchedueler>();
+            actionSchedueler.CancelCurrentAction();
+            GetComponent<PlayerController>().Cancel();
             cameraTransition = GetComponent<CameraTransition>();
             cameraTransition.SwitchCamera(cameraTransition.dialogueCamera);
             currentConversant = newConversant;
@@ -42,6 +50,7 @@ namespace RPG.Dialogue
         public void Quit()
         {
             isInDialogue = false;
+            GetComponent<PlayerController>().EnableMovement();
             cameraTransition = GetComponent<CameraTransition>();
             cameraTransition.SwitchCamera(cameraTransition.mainCamera);
             currentDialogue = null;
