@@ -103,6 +103,24 @@ namespace RPG.Quests
 
         }
 
+        private void CompleteObjectivesByPredicate()
+        {
+            foreach (QuestStatus status in questStatuses)
+            {
+                if (status.IsComplete()) continue;
+                Quest quest = status.GetQuest();
+                foreach (var objective in status.GetQuest().GetObjectives())
+                {
+                    if (status.IsObjectiveComplete(objective.reference)) continue;
+                    if (!objective.usesCondition) continue;
+                    if (objective.completionCondition.Check(GetComponents<IPredicateEvaluator>()))
+                    {
+                        CompleteObjective(quest, objective.reference);
+                    }
+                }
+            }
+        }
+
         public bool? Evaluate(EPredicate predicate, string[] parameters)
         {
             switch (predicate)

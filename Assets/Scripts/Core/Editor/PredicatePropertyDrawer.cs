@@ -55,6 +55,11 @@ namespace GameDevTV.Utils.Editor
                     DrawIntSlider(position, "Qty Needed", parameterOne, 1, 100);
                 }
             }
+            if(selectedPredicate == EPredicate.HasKilled)
+            {
+                position.y += propHeight;
+                DrawIntSlider(position, "Qty Needed", parameterOne, 1, 100);
+            }
             //if (selectedPredicate == EPredicate.MinimumTrait)
             //{
             //    position.y += propHeight;

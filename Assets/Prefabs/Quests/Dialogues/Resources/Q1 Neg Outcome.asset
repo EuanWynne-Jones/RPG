@@ -50,14 +50,20 @@ MonoBehaviour:
   - fb0f50fc-ce64-4829-aabe-f4a348dd9ccc
   nodePosition:
     serializedVersion: 2
-    x: 201
+    x: 202
     y: 243
     width: 200
     height: 100
   onEntryAction: 
   onExitAction: 
   condition:
-    and: []
+    and:
+    - or:
+      - predicate: 9
+        parameters:
+        - 
+        - 
+        negate: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

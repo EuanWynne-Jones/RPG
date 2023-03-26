@@ -121,13 +121,7 @@ MonoBehaviour:
   onEntryAction: 
   onExitAction: 
   condition:
-    and:
-    - or:
-      - predicate: 1
-        parameters:
-        - Bori's Revenge
-        - 
-        negate: 1
+    and: []
 --- !u!114 &4367691379599563756
 MonoBehaviour:
   m_ObjectHideFlags: 0

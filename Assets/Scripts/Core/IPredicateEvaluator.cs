@@ -15,7 +15,8 @@ namespace RPG.Utils
         MinimumTrait, //2, TraitStore needs the trait and the minimum level of the trait
         HasItem, //1, Inventory needs the ID of the item
         HasItems, //2, Inventory needs the ID of the item and the required quantity
-        HasItemEquipped //1, Equipment needs the ID of the item.
+        HasItemEquipped, //1, Equipment needs the ID of the item.
+        HasKilled //2 Needs Enemy and the required quantity
     }
 
     public interface IPredicateEvaluator 

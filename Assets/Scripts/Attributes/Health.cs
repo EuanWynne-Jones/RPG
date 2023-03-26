@@ -17,7 +17,7 @@ namespace RPG.Attributes
         [SerializeField] float restorePercentage = 100;
         [SerializeField] float restorePercentageOnResurrect = 70;
         [SerializeField] UnityEvent TakenDamage;
-        [SerializeField] UnityEvent OnDie;
+        [SerializeField] public UnityEvent OnDie;
 
         [HideInInspector]
         public bool isDead = false;
