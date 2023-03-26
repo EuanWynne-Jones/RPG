@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Soundscape
   - ResurrectLocation
+  - DialogueLookAt
   layers:
   - Default
   - TransparentFX

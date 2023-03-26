@@ -1,3 +1,4 @@
+using RPG.Control;
 using RPG.Utils;
 using System;
 using System.Collections;
@@ -12,13 +13,21 @@ namespace RPG.Dialogue
         [SerializeField] string playerName;
         Dialogue currentDialogue;
         DialogueNode currendNode = null;
+        [HideInInspector]
+        public bool isInDialogue = false;
         bool isChoosing;
         public event Action onConversationUpdated;
 
         AIConversant currentConversant = null;
+        CameraTransition cameraTransition;
         public void StartDialogue(AIConversant newConversant, Dialogue newDialogue)
         {
+
+            isInDialogue = true;
+            cameraTransition = GetComponent<CameraTransition>();
+            cameraTransition.SwitchCamera(cameraTransition.dialogueCamera);
             currentConversant = newConversant;
+            cameraTransition.dialogueCamera.LookAt = newConversant.conversantHead;
             currentDialogue = newDialogue;
             currendNode = currentDialogue.GetRootNode();
             TriggerEnterAction();
@@ -29,8 +38,12 @@ namespace RPG.Dialogue
             return currentDialogue != null;
         }
 
+
         public void Quit()
         {
+            isInDialogue = false;
+            cameraTransition = GetComponent<CameraTransition>();
+            cameraTransition.SwitchCamera(cameraTransition.mainCamera);
             currentDialogue = null;
             TriggerExitAction();
             currendNode = null;

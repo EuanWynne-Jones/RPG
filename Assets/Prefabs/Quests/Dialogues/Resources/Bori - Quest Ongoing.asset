@@ -1,0 +1,392 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9130732278335517388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 20421ca2-357d-4290-b0ef-31f681629614
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Please take this as a reward!
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 1204
+    y: 282
+    width: 200
+    height: 100
+  onEntryAction: CompleteQuest
+  onExitAction: MoveToQuestComplete
+  condition:
+    and: []
+--- !u!114 &-6854075721233625246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: cc24a050-d6c9-4840-a467-6ca5e14c0a88
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: '*Spit on him*'
+  dialogueChildren:
+  - ca5f93a7-3ed6-4ab7-b8c4-debf0ed2ab16
+  nodePosition:
+    serializedVersion: 2
+    x: 561
+    y: 385
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-2202252802599920256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 74c3fe16-80bd-40a6-a7b1-3e48d60976fb
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Thank the gods! I was trually blessed by our chance encounter
+  dialogueChildren:
+  - 20421ca2-357d-4290-b0ef-31f681629614
+  nodePosition:
+    serializedVersion: 2
+    x: 794
+    y: 563
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 2
+        parameters:
+        - Bori's Revenge
+        - Find
+        negate: 0
+    - or:
+      - predicate: 2
+        parameters:
+        - Bori's Revenge
+        - Kill
+        negate: 0
+--- !u!114 &-1991934206287623857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: a472f91d-672d-48e7-9371-43bb52da96a2
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Have you killed him yet?
+  dialogueChildren:
+  - 6420761d-899f-43b2-ba15-81966a52fc4f
+  - 454d1aed-ad1c-4ec9-b492-653204ab33c3
+  - cc24a050-d6c9-4840-a467-6ca5e14c0a88
+  - 68d7ecbb-1f20-4b06-b356-58be5af251ee
+  nodePosition:
+    serializedVersion: 2
+    x: 158
+    y: 305
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-520162465952652260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: cbdd7cef-8a00-426b-b8d9-fffa8fce2f1f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Have you found dori?
+  dialogueChildren:
+  - 34d005fe-b090-4f68-9e19-7199bb364fe1
+  - b5f605b1-fe00-4a95-ac17-11640e9bec9b
+  nodePosition:
+    serializedVersion: 2
+    x: 812
+    y: 803
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96317b7a9fb5262439015062f9491ad8, type: 3}
+  m_Name: Bori - Quest Ongoing
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -1991934206287623857}
+  - {fileID: 6890018319150848002}
+  - {fileID: 1173859471708031516}
+  - {fileID: -6854075721233625246}
+  - {fileID: 7740931875761183817}
+  - {fileID: 2805986348895613699}
+  - {fileID: 4054052486420170508}
+  - {fileID: 4001781644357593842}
+  - {fileID: -2202252802599920256}
+  - {fileID: -9130732278335517388}
+  - {fileID: -520162465952652260}
+  - {fileID: 8434362237050906212}
+  - {fileID: 5236672622315863314}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &1173859471708031516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 454d1aed-ad1c-4ec9-b492-653204ab33c3
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Ive changed my mind, deal with them yourself
+  dialogueChildren:
+  - 160c8953-3c26-44ef-ad63-f96be302cb7e
+  nodePosition:
+    serializedVersion: 2
+    x: 561
+    y: 234
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &2805986348895613699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 716e6cd0-45e0-496a-86d6-fc700b691106
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Please hurry!
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 901
+    y: 72
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &4001781644357593842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 68d7ecbb-1f20-4b06-b356-58be5af251ee
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Yes The goblin is dead, Jared is avenged!
+  dialogueChildren:
+  - 74c3fe16-80bd-40a6-a7b1-3e48d60976fb
+  - cbdd7cef-8a00-426b-b8d9-fffa8fce2f1f
+  nodePosition:
+    serializedVersion: 2
+    x: 557
+    y: 563
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 2
+        parameters:
+        - Bori's Revenge
+        - Kill
+        negate: 0
+--- !u!114 &4054052486420170508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 160c8953-3c26-44ef-ad63-f96be302cb7e
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: '*The injured man grumbles'
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 793
+    y: 234
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: MoveToNegativeOutcome
+  condition:
+    and: []
+--- !u!114 &5236672622315863314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: b5f605b1-fe00-4a95-ac17-11640e9bec9b
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: No, not yet
+  dialogueChildren:
+  - 716e6cd0-45e0-496a-86d6-fc700b691106
+  nodePosition:
+    serializedVersion: 2
+    x: 1215
+    y: 908
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &6890018319150848002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 6420761d-899f-43b2-ba15-81966a52fc4f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: No Ive not been able to find the camp
+  dialogueChildren:
+  - 716e6cd0-45e0-496a-86d6-fc700b691106
+  nodePosition:
+    serializedVersion: 2
+    x: 567
+    y: 72
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &7740931875761183817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: ca5f93a7-3ed6-4ab7-b8c4-debf0ed2ab16
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: GAH!? Why...  * he cries to himself*
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 786
+    y: 387
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: Attack
+  condition:
+    and: []
+--- !u!114 &8434362237050906212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 34d005fe-b090-4f68-9e19-7199bb364fe1
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Yes, hes right over there
+  dialogueChildren:
+  - 74c3fe16-80bd-40a6-a7b1-3e48d60976fb
+  nodePosition:
+    serializedVersion: 2
+    x: 1217
+    y: 728
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 2
+        parameters:
+        - Bori's Revenge
+        - Find
+        negate: 0
