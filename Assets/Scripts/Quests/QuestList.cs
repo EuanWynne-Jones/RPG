@@ -108,7 +108,7 @@ namespace RPG.Quests
 
         }
 
-        private void CompleteObjectivesByPredicate()
+        private void CompleteObjectivesByPredicates()
         {
             foreach (QuestStatus status in questStatuses)
             {

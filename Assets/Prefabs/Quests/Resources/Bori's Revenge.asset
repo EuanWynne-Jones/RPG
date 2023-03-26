@@ -24,16 +24,33 @@ MonoBehaviour:
           - 4c24568f-5b6b-4811-a32e-1d638a0c7c5f
           - 
           negate: 0
-  - reference: KillGoblins
-    description: Kill the Goblins that Murdered Jared!
+  - reference: Kill
+    description: Kill the Goblin that Murdered Jared!
     usesCondition: 1
     completionCondition:
       and:
       - or:
         - predicate: 9
           parameters:
-          - 
+          - EnemyCharacter
           - 2
+          negate: 0
+  - reference: Return
+    description: Return to Bori for a reward
+    usesCondition: 1
+    completionCondition:
+      and:
+      - or:
+        - predicate: 2
+          parameters:
+          - Bori's Revenge
+          - Find
+          negate: 0
+      - or:
+        - predicate: 2
+          parameters:
+          - Bori's Revenge
+          - KillGoblins
           negate: 0
   rewards:
   - item: {fileID: 11400000, guid: 59dc1b75514f69048a3dd964754be707, type: 2}

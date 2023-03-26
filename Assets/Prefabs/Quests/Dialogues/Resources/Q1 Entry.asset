@@ -45,7 +45,7 @@ MonoBehaviour:
   - ab998f5f-c262-41d4-8ec6-195f059f9a90
   nodePosition:
     serializedVersion: 2
-    x: 659
+    x: 661
     y: 437
     width: 200
     height: 100
@@ -100,7 +100,7 @@ MonoBehaviour:
   nodePosition:
     serializedVersion: 2
     x: 440
-    y: 322
+    y: 317
     width: 200
     height: 100
   onEntryAction: 
