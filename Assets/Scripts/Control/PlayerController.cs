@@ -10,6 +10,7 @@ using RPG.Inventories;
 using UnityEngine.UI;
 using RPG.Combat;
 using RPG.Core;
+using RPG.Dialogue;
 
 namespace RPG.Control
 {
@@ -62,35 +63,39 @@ namespace RPG.Control
 
         private bool InteractWithComponent()
         {
-            RaycastHit[] hits = RayCastAllSorted();
-            foreach (RaycastHit hit in hits)
+            if (!GetComponent<PlayerConversant>().isInDialogue)
             {
-                IRaycastable[] raycastables = hit.transform.GetComponents<IRaycastable>();
+
+                RaycastHit[] hits = RayCastAllSorted();
+                foreach (RaycastHit hit in hits)
                 {
-                    foreach(IRaycastable raycastable in raycastables)
+                    IRaycastable[] raycastables = hit.transform.GetComponents<IRaycastable>();
                     {
-                        if (raycastable.HandleRaycast(this))
+                        foreach(IRaycastable raycastable in raycastables)
                         {
+                            if (raycastable.HandleRaycast(this))
+                            {
                             
-                            SetCursor(raycastable.GetCursorType());
-                            //if(raycastable.GetCursorType() == CursorType.Combat && lastEnemy == null)
-                            //{
+                                SetCursor(raycastable.GetCursorType());
+                                //if(raycastable.GetCursorType() == CursorType.Combat && lastEnemy == null)
+                                //{
                                 
-                            //    lastEnemy = hit.transform;
-                            //    lastEnemy.GetComponent<Outline>().enabled = true;
-                            //}
-                            //else
-                            //{
-                            //    if(lastEnemy != null && raycastable.GetCursorType() != CursorType.Combat)
-                            //    {
-                            //        lastEnemy.GetComponent<Outline>().enabled = false;
-                            //        lastEnemy = null;
-                            //    }
-                            //}
-                            return true;
+                                //    lastEnemy = hit.transform;
+                                //    lastEnemy.GetComponent<Outline>().enabled = true;
+                                //}
+                                //else
+                                //{
+                                //    if(lastEnemy != null && raycastable.GetCursorType() != CursorType.Combat)
+                                //    {
+                                //        lastEnemy.GetComponent<Outline>().enabled = false;
+                                //        lastEnemy = null;
+                                //    }
+                                //}
+                                return true;
+                            }
                         }
                     }
-                }
+            }
             }
             
             return false;
