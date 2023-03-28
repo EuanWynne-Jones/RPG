@@ -448,6 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameras:
   - {fileID: 0}
+  - {fileID: 0}
   mainCamera: {fileID: 0}
   dialogueCamera: {fileID: 0}
   startCamera: {fileID: 0}
@@ -474,6 +475,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 248a1c0e583d2a54f86cf5e44aa7ed64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6994533409415867200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2299934417806937540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dccedaa099908b459750766b17aa0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7293770104779229520
@@ -550,18 +563,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: The Lone Adventurer
   isInDialogue: 0
---- !u!114 &6994533409415867200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2299934417806937540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dccedaa099908b459750766b17aa0bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2305368488332970148 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8383446708011306486, guid: 5ee468b9067046a48a3356c17f207143, type: 3}

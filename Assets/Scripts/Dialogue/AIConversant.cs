@@ -19,6 +19,7 @@ namespace RPG.Dialogue
 
         PlayerController player;
         bool dialogueIntention;
+        float lookSpeed = 1f;
 
         private void Awake()
         {
@@ -64,6 +65,29 @@ namespace RPG.Dialogue
             return headTransform;
         }
 
+        public void startRotation()
+        {
+            Coroutine LookCoroutine = null;
+            if (LookCoroutine != null)
+            {
+                StopCoroutine(LookCoroutine);
+            }
+            LookCoroutine = StartCoroutine(LookAt());
+        }
+
+        private IEnumerator LookAt()
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(player.transform.position - transform.position);
+            float time = 0;
+            while (time < 1)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, time);
+                time += Time.deltaTime * lookSpeed;
+                yield return null;
+            }
+
+
+        }
 
         private float GetDistancetoConversant()
         {

@@ -25,6 +25,32 @@ namespace RPG.Dialogue
         AIConversant currentConversant = null;
         CameraTransition cameraTransition;
         ActionSchedueler actionSchedueler;
+
+        float lookSpeed = 1f;
+        private Coroutine LookCoroutine;
+
+        private void startRotation()
+        {
+            if (LookCoroutine != null)
+            {
+                StopCoroutine(LookCoroutine);
+            }
+            LookCoroutine = StartCoroutine(LookAt());
+        }
+
+        private IEnumerator LookAt()
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(currentConversant.transform.position - transform.position);
+            float time = 0;
+            while (time < 1)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, time);
+                time += Time.deltaTime * lookSpeed;
+                yield return null;
+            }
+
+            
+        }
         public void StartDialogue(AIConversant newConversant, Dialogue newDialogue)
         {
 
@@ -33,9 +59,11 @@ namespace RPG.Dialogue
             actionSchedueler.CancelCurrentAction();
             GetComponent<PlayerController>().Cancel();
             cameraTransition = GetComponent<CameraTransition>();
+            cameraTransition.dialogueCamera.LookAt = newConversant.conversantHead;
             cameraTransition.SwitchCamera(cameraTransition.dialogueCamera);
             currentConversant = newConversant;
-            cameraTransition.dialogueCamera.LookAt = newConversant.conversantHead;
+            newConversant.startRotation();
+            startRotation();
             currentDialogue = newDialogue;
             currendNode = currentDialogue.GetRootNode();
             TriggerEnterAction();
@@ -161,6 +189,7 @@ namespace RPG.Dialogue
             }
 
         }
+
 
 
 
