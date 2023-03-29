@@ -29,9 +29,9 @@ namespace RPG.Combat
         float weaponDamage;
         bool canAttack;
 
-
         private void Awake()
         {
+
             currentWeaponConfig = defaultWeapon;
             currentWeapon = new LazyValue<Weapon>(SetupDefaultWeapon);
             equipment = GetComponent<Equipment>();
@@ -40,6 +40,8 @@ namespace RPG.Combat
                 equipment.equipmentUpdated += UpdateWeapon;
             }
         }
+
+        
         private Weapon SetupDefaultWeapon()
         {
             return AttachWeapon(defaultWeapon);
