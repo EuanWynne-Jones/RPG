@@ -13,7 +13,7 @@ namespace RPG.Stats
 
 
         [SerializeField] CharacterClass characterClass;
-        [SerializeField] Progression progression = null;
+        [SerializeField] public Progression progression = null;
         [SerializeField] GameObject levelUpEffect = null;
         [SerializeField] bool useModifiers = false;
 

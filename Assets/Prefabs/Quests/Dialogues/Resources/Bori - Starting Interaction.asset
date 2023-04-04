@@ -508,8 +508,8 @@ MonoBehaviour:
   dialogueChildren: []
   nodePosition:
     serializedVersion: 2
-    x: 2602
-    y: 519
+    x: 2614
+    y: 513
     width: 200
     height: 100
   onEntryAction: 
@@ -559,7 +559,7 @@ MonoBehaviour:
   dialogueChildren: []
   nodePosition:
     serializedVersion: 2
-    x: 2606
+    x: 2607
     y: 318
     width: 200
     height: 100
@@ -615,7 +615,7 @@ MonoBehaviour:
   nodePosition:
     serializedVersion: 2
     x: 2356
-    y: 318
+    y: 314
     width: 200
     height: 100
   onEntryAction: 

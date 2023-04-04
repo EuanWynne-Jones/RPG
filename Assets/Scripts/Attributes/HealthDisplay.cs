@@ -3,13 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 namespace RPG.Attributes
 {
     public class HealthDisplay : MonoBehaviour
     {
         Health health;
-        [SerializeField] public TMP_Text healthText;
+        //[SerializeField] public TMP_Text healthText;
+        [SerializeField] public Slider healthSlider;
         int healthIntValue;
 
         private void Awake()
@@ -21,7 +23,8 @@ namespace RPG.Attributes
         {
             //old way showing 70%
             healthIntValue = (int)Math.Round(health.GetPercentage());
-            healthText.text = healthIntValue.ToString() + "%";
+            //healthText.text = healthIntValue.ToString() + "%";
+            healthSlider.value = healthIntValue;
 
             //showing 40/50 for health
             //healthText.GetComponent<TMP_Text>().text = String.Format("{0:0}/{1:00}", health.GetHealth(), health.GetMaxHealth());

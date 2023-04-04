@@ -63,6 +63,7 @@ namespace RPG.Control
 
         private bool InteractWithComponent()
         {
+            if (GetComponent<Health>().inSpiritWorld) return false;
             if (!GetComponent<PlayerConversant>().isInDialogue)
             {
 

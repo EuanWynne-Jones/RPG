@@ -15,6 +15,7 @@ namespace RPG.Attributes
     public class Health : MonoBehaviour, ISaveable
     {
         [SerializeField] float restorePercentage = 100;
+        private float healthToGain;
         [SerializeField] float restorePercentageOnResurrect = 70;
         [SerializeField] UnityEvent TakenDamage;
         [SerializeField] public UnityEvent OnDie;
@@ -112,10 +113,24 @@ namespace RPG.Attributes
             health.value = Mathf.Max(health.value, restoreHealth);
         }
 
-        public void RestoreHealthOnResurrect()
+        public void RestoreHealthOnResurrect(float restoreTime)
         {
             float restoreHealth = GetComponent<BaseStats>().GetStat(Stat.Health) * (restorePercentageOnResurrect / 100);
-            health.value = Mathf.Max(health.value, restoreHealth);
+            StartCoroutine(SlerpHealthRestore(restoreHealth, restoreTime));
+        }
+
+        private IEnumerator SlerpHealthRestore(float restoreHealth, float restoreTime)
+        {
+            float time = 0;
+            float initialHealth = health.value;
+            while (time < restoreTime)
+            {
+                time += Time.deltaTime;
+                float t = time / restoreTime;
+                health.value = Mathf.Lerp(initialHealth, restoreHealth, Mathf.Sin(t * Mathf.PI * 0.5f));
+                yield return null;
+            }
+            health.value = restoreHealth;
         }
 
         public float GetPercentage()

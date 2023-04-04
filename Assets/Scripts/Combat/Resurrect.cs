@@ -35,6 +35,7 @@ namespace RPG.Combat
 
         [Header("UI")]
         [SerializeField] public GameObject resurrectUIButton;
+        [SerializeField] public GameObject reviveUIButton;
         private GameObject player;
 
         private void Awake()
@@ -43,6 +44,7 @@ namespace RPG.Combat
             resurrectLocation = GameObject.FindWithTag("ResurrectLocation");
             player = GameObject.FindWithTag("Player");
             resurrectUIButton.SetActive(false);
+            reviveUIButton.SetActive(false);
         }
 
 
@@ -54,10 +56,17 @@ namespace RPG.Combat
             }
         }
 
+        public void onReviveButton()
+        {
+            player.GetComponent<Health>().isDead = false;
+            player.GetComponent<Animator>().SetTrigger("Resurrect");
+            DisableControl();
+            StartCoroutine(WaitToResurrect(2.2f));
+            Instantiate(resurrectionFX, player.transform.position, Quaternion.identity);
+        }
         public void EnableResurrectMode()
         {
             resurrectUIButton.SetActive(false);
-
             camera = Camera.main;
             volume = camera.GetComponent<Volume>();
             currentProfile = volume.profile;
@@ -72,6 +81,7 @@ namespace RPG.Combat
 
         public void DisableResurrectMode()
         {
+            reviveUIButton.SetActive(false);
             camera = Camera.main;
             volume = camera.GetComponent<Volume>();
             currentProfile = volume.profile;
@@ -144,6 +154,30 @@ namespace RPG.Combat
         public void StopResurrectAudio()
         {
             resurrectAudioSource.Stop();
+        }
+        void DisableControl()
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            player.GetComponent<ActionSchedueler>().CancelCurrentAction();
+            player.GetComponent<PlayerController>().enabled = false;
+        }
+
+        void EnableControl()
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            player.GetComponent<PlayerController>().enabled = true;
+        }
+        IEnumerator WaitToResurrect(float animTime)
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            player.GetComponent<Health>().RestoreHealthOnResurrect(animTime);
+            yield return new WaitForSecondsRealtime(animTime);
+            player.GetComponent<Animator>().ResetTrigger("Resurrect");
+            DisableResurrectMode();
+            EnableComponents();
+            Destroy(playerDeadBody);
+            EnableControl();
+
         }
     }
 }

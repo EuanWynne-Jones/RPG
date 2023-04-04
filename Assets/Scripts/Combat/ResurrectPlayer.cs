@@ -18,41 +18,16 @@ namespace RPG.Combat
         {
             if (other.gameObject.tag == "Player")
             {
-                other.GetComponent<Health>().isDead = false;
-                other.GetComponent<Animator>().SetTrigger("Resurrect");
-                DisableControl();
-                StartCoroutine(WaitToResurrect(2.2f));
-                Instantiate(resurrect.resurrectionFX, other.transform.position, Quaternion.identity);
-                
-
-
-
+                FindObjectOfType<Resurrect>().reviveUIButton.SetActive(true);
             }
         }
-        IEnumerator WaitToResurrect(float animTime)
+        private void OnTriggerExit(Collider other)
         {
-            GameObject player = GameObject.FindWithTag("Player");
-            yield return new WaitForSecondsRealtime(animTime);
-            resurrect = FindObjectOfType<Resurrect>();
-            resurrect.DisableResurrectMode();
-            player.GetComponent<Animator>().ResetTrigger("Resurrect");
-            Destroy(resurrect.playerDeadBody);
-            resurrect.EnableComponents();
-            player.GetComponent<Health>().RestoreHealthOnResurrect();
-            EnableControl();
-
-        }
-        void DisableControl()
-        {
-            GameObject player = GameObject.FindWithTag("Player");
-            player.GetComponent<ActionSchedueler>().CancelCurrentAction();
-            player.GetComponent<PlayerController>().enabled = false;
+            if (other.gameObject.tag == "Player")
+            {
+                FindObjectOfType<Resurrect>().reviveUIButton.SetActive(false);
+            }
         }
 
-        void EnableControl()
-        {
-            GameObject player = GameObject.FindWithTag("Player");
-            player.GetComponent<PlayerController>().enabled = true;
-        }
     }
 }

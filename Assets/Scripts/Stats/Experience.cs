@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Saving;
+using RPG.Attributes;
 
 namespace RPG.Stats
 {
@@ -23,6 +24,14 @@ namespace RPG.Stats
             return experiencePoints;
         }
 
+        public float GetPercentage()
+        {
+            return 100 * GetFraction();
+        }
+        public float GetFraction()
+        {
+            return experiencePoints / GetComponent<BaseStats>().GetStat(Stat.ExperienceToLevelUp);
+        }
 
         public void RestoreState(object state)
         {
