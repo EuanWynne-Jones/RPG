@@ -36,17 +36,20 @@ namespace RPG.Combat
                 healthSliderGO.SetActive(false);
                 return;
             }
-            Health health = fighter.GetTarget();
-            healthSliderGO.SetActive(true);
-            healthIntValue = (int)Math.Round(health.GetPercentage());
-            healthSlider.value = healthIntValue;
 
-            //healthText.text = healthIntValue.ToString() + "%";
-            //healthText.text = String.Format("{0:0}%", health.GetPercentage());
-            if(fighter.GetTarget().GetComponent<Health>().isDead == true)
-            {
-                healthSliderGO.SetActive(false);
-            }
+                Health health = fighter.GetTarget();
+                healthSliderGO.SetActive(true);
+                healthIntValue = (int)Math.Round(health.GetPercentage());
+                healthSlider.value = healthIntValue;
+
+                //healthText.text = healthIntValue.ToString() + "%";
+                //healthText.text = String.Format("{0:0}%", health.GetPercentage());
+                if(fighter.GetTarget().GetComponent<Health>().isDead == true)
+                {
+                    healthSliderGO.SetActive(false);
+                }
+
+           
             // showing 40/50 for health
             //healthText.GetComponent<TMP_Text>().text = String.Format("{0:0}/{1:00}", health.GetHealth(), health.GetMaxHealth());
         }
