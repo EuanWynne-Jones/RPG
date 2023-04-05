@@ -36,7 +36,7 @@ namespace RPG.Dialogue
             if (dist <= dialogueTriggerDistance && !player.GetComponent<PlayerConversant>().isInDialogue && dialogueIntention)
             {
                 player.GetComponent<PlayerConversant>().StartDialogue(this, NPCDialogue);
-                this.transform.LookAt(player.transform);
+                //this.transform.LookAt(player.transform);
                 dialogueIntention = false;
             }
         }

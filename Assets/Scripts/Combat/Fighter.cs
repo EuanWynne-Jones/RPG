@@ -22,12 +22,14 @@ namespace RPG.Combat
         public WeaponConfig currentWeaponConfig;
         [HideInInspector]
         public LazyValue<Weapon> currentWeapon;
-        public Health target;
+        Health target;
 
         Equipment equipment;
         float timeSinceLastAttack = Mathf.Infinity;
         float weaponDamage;
         bool canAttack;
+        float lookSpeed = 1f;
+        Coroutine LookCoroutine;
 
         private void Awake()
         {
@@ -93,14 +95,36 @@ namespace RPG.Combat
             if(timeSinceLastAttack > timeBetweenAttacks)
             {
                 //Looks at the enemy when attacking
-                transform.LookAt(target.transform);
+                startRotation();
                 //This will trigger the attack animation event
-                
+
                 GetAttackOverrite(GetComponent<Animator>());
                 TriggerAttack();
                 timeSinceLastAttack = 0;
 
             }
+        }
+        private void startRotation()
+        {
+            if (LookCoroutine != null)
+            {
+                StopCoroutine(LookCoroutine);
+            }
+            LookCoroutine = StartCoroutine(LookAt());
+        }
+
+        private IEnumerator LookAt()
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(target.transform.position - transform.position);
+            float time = 0;
+            while (time < 1)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, time);
+                time += Time.deltaTime * lookSpeed;
+                yield return null;
+            }
+
+
         }
         public void EquipWeapon(WeaponConfig weapon)
         {
