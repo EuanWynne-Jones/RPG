@@ -14,13 +14,14 @@ namespace RPG.Combat
         Fighter fighter;
         //[SerializeField] public TMP_Text healthText;
         [SerializeField] public Slider healthSlider;
-        private GameObject healthSliderGO;
+        GameObject healthSliderGO = null;
         int healthIntValue;
 
         private void Awake()
         {
             fighter = GameObject.FindGameObjectWithTag("Player").GetComponent<Fighter>();
             healthSliderGO = healthSlider.gameObject;
+            
             
         }
         private void Start()

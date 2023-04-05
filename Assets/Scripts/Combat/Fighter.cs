@@ -22,7 +22,7 @@ namespace RPG.Combat
         public WeaponConfig currentWeaponConfig;
         [HideInInspector]
         public LazyValue<Weapon> currentWeapon;
-        Health target;
+        public Health target;
 
         Equipment equipment;
         float timeSinceLastAttack = Mathf.Infinity;

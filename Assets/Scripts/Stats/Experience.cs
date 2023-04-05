@@ -33,7 +33,14 @@ namespace RPG.Stats
             return experiencePoints / GetComponent<BaseStats>().GetStat(Stat.ExperienceToLevelUp);
         }
 
-        public void RestoreState(object state)
+        public float GetPercentRemaining()
+        {
+            float percentageToLevelUp = ((float)experiencePoints / GetComponent<BaseStats>().GetStat(Stat.ExperienceToLevelUp) * 100f);
+            return percentageToLevelUp;
+            
+        }
+
+            public void RestoreState(object state)
         {
             experiencePoints = (float)state;
         }

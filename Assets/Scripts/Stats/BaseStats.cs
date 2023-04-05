@@ -55,6 +55,7 @@ namespace RPG.Stats
             if(newLevel > currentLevel.value)
             {
                 currentLevel.value = newLevel;
+                GetComponent<Experience>().experiencePoints = 0;
                 LevelUpEffect();
                 onLevelUp();
             }

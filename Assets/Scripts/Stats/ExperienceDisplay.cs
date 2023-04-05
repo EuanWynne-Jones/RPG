@@ -21,7 +21,7 @@ namespace RPG.Stats
         {
             
             //experienceText.text = experience.experiencePoints.ToString();
-            experienceSlider.value = experience.GetPercentage();
+            experienceSlider.value = experience.GetPercentRemaining();
         }
     }
 }
