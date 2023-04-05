@@ -57,6 +57,7 @@ namespace RPG.Attributes
 
         public void TakeDamage(GameObject instigator, float damage)
         {
+           
             //print(gameObject.name + "Took Damage:" + damage);
             health.value = Mathf.Max(health.value - damage, 0);
             TakenDamage.Invoke();
@@ -67,13 +68,7 @@ namespace RPG.Attributes
             }
             if (gameObject.tag != null)
             {
-                foreach (Transform t in transform)
-                {
-                    if (t.GetComponent<DamageNumbers>() != null)
-                    {
-                        t.GetComponent<DamageNumbers>().StartTextPopup(damage);
-                    }
-                }
+                GetComponent<DamageValues>().SpawnDamageNumbers(damage,this.gameObject.transform);
             }
 
             if (health.value == 0)

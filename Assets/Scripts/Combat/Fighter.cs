@@ -20,6 +20,8 @@ namespace RPG.Combat
 
         [HideInInspector]
         public WeaponConfig currentWeaponConfig;
+        public float currentWeaponMinDamage;
+        public float currentWeaponMaxDamage;
         [HideInInspector]
         public LazyValue<Weapon> currentWeapon;
         Health target;
@@ -30,10 +32,11 @@ namespace RPG.Combat
         bool canAttack;
         float lookSpeed = 1f;
         Coroutine LookCoroutine;
+        BaseStats baseStats = null;
 
         private void Awake()
         {
-
+            baseStats = GetComponent<BaseStats>();
             currentWeaponConfig = defaultWeapon;
             currentWeapon = new LazyValue<Weapon>(SetupDefaultWeapon);
             equipment = GetComponent<Equipment>();
@@ -163,7 +166,7 @@ namespace RPG.Combat
         void Hit()
         {
             if (target == null) return;
-            float damage = Mathf.Round(GetComponent<BaseStats>().GetStat(Stat.Damage)) + currentWeaponConfig.GetWeaponDamage(); 
+            float damage = Mathf.Round(baseStats.GetStat(Stat.Damage)) + currentWeaponConfig.GetWeaponDamage(); 
 
             if(currentWeapon.value != null)
             {
@@ -235,6 +238,16 @@ namespace RPG.Combat
 
         }
 
+        public float GetCurrentWeaponMinDamage()
+        {
+            return currentWeaponConfig.minWeaponDamage + currentWeaponConfig.GetPercentageBonus()/100 + baseStats.GetStat(Stat.Damage);
+        }
+        public float GetCurrentWeaponMaxDamage()
+        {
+            return currentWeaponConfig.maxWeaponDamage + currentWeaponConfig.GetPercentageBonus()/100 + baseStats.GetStat(Stat.Damage);
+        }
+
+
         public object CaptureState()
         {
             return currentWeaponConfig.name;
@@ -247,6 +260,7 @@ namespace RPG.Combat
             EquipWeapon(weapon);
         }
 
+        
 
     }
 }

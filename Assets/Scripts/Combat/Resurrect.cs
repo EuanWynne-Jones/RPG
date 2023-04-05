@@ -58,6 +58,7 @@ namespace RPG.Combat
 
         public void onReviveButton()
         {
+            reviveUIButton.SetActive(false);
             player.GetComponent<Health>().isDead = false;
             player.GetComponent<Animator>().SetTrigger("Resurrect");
             DisableControl();
