@@ -16,7 +16,7 @@ MonoBehaviour:
   displayName: Health Potion
   description: at death's door? never fear a trusty health potion will always sort
     you out!
-  icon: {fileID: 21300000, guid: 8e68e2c82665d1e4a8f819dc405280f3, type: 3}
+  icon: {fileID: 21300000, guid: 4ecee2eabf6698449b6735435886e0e7, type: 3}
   pickup: {fileID: 6134601275140803616, guid: 9860487dbb40d8f4f99f97ceb2210041, type: 3}
   stackable: 1
   consumable: 1
