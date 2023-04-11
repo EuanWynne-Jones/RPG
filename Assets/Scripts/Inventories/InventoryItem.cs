@@ -18,19 +18,33 @@ namespace RPG.Inventories
         // CONFIG DATA
         [Tooltip("Auto-generated UUID for saving/loading. Clear this field if you want to generate a new one.")]
         [SerializeField] string itemID = null;
+        [Header("In-Game Item Details")]
         [Tooltip("Item name to be displayed in UI.")]
         [SerializeField] string displayName = null;
-        [Tooltip("Item description to be displayed in UI.")]
-        [SerializeField][TextArea] string description = null;
         [Tooltip("The UI icon to represent this item in the inventory.")]
         [SerializeField] Sprite icon = null;
+        [Tooltip("The Quality of the item")]
+        [SerializeField] EItemQuality Quality;
+        [Tooltip("Item description to be displayed in UI.")]
+        [SerializeField][TextArea] string description = null;
+
+        [Header("Pickup settings")]
         [Tooltip("The prefab that should be spawned when this item is dropped.")]
         [SerializeField] Pickup pickup = null;
+
+
+        [Header("Item Value")]
+        [SerializeField] public int goldValue = 0;
+        [Range(0,99)]
+        [SerializeField] public int silverValue = 0;
+        [Range(0, 99)]
+        [SerializeField] public int copperValue = 0;
+
+        [Header("Additional Options")]
         [Tooltip("If true, multiple items of this type can be stacked in the same inventory slot.")]
         [SerializeField] bool stackable = false;
 
 
-        
 
         // STATE
         static Dictionary<string, InventoryItem> itemLookupCache;
@@ -107,8 +121,48 @@ namespace RPG.Inventories
             return description;
         }
 
+        public string GetItemQuality()
+        {
+            return Quality.ToString();
+        }
+
+
+        public int GetGoldValue()
+        {
+            if(goldValue >= 1)
+            {
+            return goldValue;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        public int GetSilveValue()
+        {
+            if (silverValue >= 1)
+            {
+                return silverValue;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        public int GetCopperValue()
+        {
+            if (copperValue >= 1)
+            {
+                return copperValue;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
         // PRIVATE
-        
+
         void ISerializationCallbackReceiver.OnBeforeSerialize()
         {
             // Generate and save a new UUID if this is blank.

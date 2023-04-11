@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20eb1792e8048a46bf5c7c520a3ea3b, type: 3}
+  m_Name: BigClub
+  m_EditorClassIdentifier: 
+  itemID: dd6ad603-4119-4cfd-be07-db411dfecdd7
+  displayName: 
+  icon: {fileID: 0}
+  Quality: 0
+  description: 
+  pickup: {fileID: 0}
+  goldValue: 0
+  silverValue: 0
+  copperValue: 0
+  stackable: 0
+  allowedEquipLocation: 5

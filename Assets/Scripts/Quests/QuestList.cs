@@ -70,7 +70,7 @@ namespace RPG.Quests
 
         private void GiveReward(Quest quest)
         {
-            foreach (Quest.Reward reward in quest.GetRewards())
+            foreach (Quest.Reward reward in quest.GetItemRewards())
             {
                 if (!reward.item.IsStackable())
                 {

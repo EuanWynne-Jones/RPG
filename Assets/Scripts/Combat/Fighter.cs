@@ -226,13 +226,13 @@ namespace RPG.Combat
         public void GetAttackOverrite(Animator animator)
         {
             
-            if (currentWeaponConfig.attackOverrites == null || currentWeaponConfig.attackOverrites.Count == 0)
+            if (currentWeaponConfig.AdditionalAttackOverrites == null || currentWeaponConfig.AdditionalAttackOverrites.Count == 0)
             {
                 return;
             }
-            int randomIndex = Random.Range(0, currentWeaponConfig.attackOverrites.Count);
-            currentWeaponConfig.attackOverrite = currentWeaponConfig.attackOverrites[randomIndex];
-            animator.runtimeAnimatorController = currentWeaponConfig.attackOverrite;
+            int randomIndex = Random.Range(0, currentWeaponConfig.AdditionalAttackOverrites.Count);
+            currentWeaponConfig.WeaponOverriteController = currentWeaponConfig.AdditionalAttackOverrites[randomIndex];
+            animator.runtimeAnimatorController = currentWeaponConfig.WeaponOverriteController;
             
            
 

@@ -12,6 +12,7 @@ namespace RPG.Quests
     {
         [SerializeField] List<Objective> objectives = new List<Objective>();
         [SerializeField] List<Reward> rewards = new List<Reward>();
+        [SerializeField] List<CurrencyReward> currencyRewards = new List<CurrencyReward>();    
 
         [System.Serializable]
         public class Reward
@@ -20,6 +21,16 @@ namespace RPG.Quests
             [Min(1)]
             public int amount;
             
+        }
+
+        [System.Serializable]
+        public class CurrencyReward
+        {
+            public ECurrency currencyType;
+            [Range(0,99)]
+            public int amount;
+
+
         }
 
         [System.Serializable]
@@ -45,9 +56,14 @@ namespace RPG.Quests
         {
             return objectives;
         }
-
-        public IEnumerable<Reward> GetRewards()
+        public IEnumerable<CurrencyReward> GetCurrencyRewards()
         {
+
+            return currencyRewards;
+        }
+        public IEnumerable<Reward> GetItemRewards()
+        {
+            
             return rewards;
         }
 

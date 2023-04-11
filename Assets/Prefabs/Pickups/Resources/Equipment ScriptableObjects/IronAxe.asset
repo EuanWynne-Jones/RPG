@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 44bcda3d-afb4-435c-9c48-b10e98ac124f
   displayName: Iron Axe
+  Quality: 4
   description: A basic handaxe, commonly used by farmers
   icon: {fileID: 21300000, guid: 6baaebf3508a9ef40a257ebc5f276434, type: 3}
   pickup: {fileID: 8531674676482199692, guid: 5bf8bf060ad3bd44cbfd7d41ccdbcaa5, type: 3}

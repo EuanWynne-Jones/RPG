@@ -14,9 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: bb102f58-e66e-4c83-817b-d6a594246c6d
   displayName: Club
+  icon: {fileID: 21300000, guid: f393f667fd7f2224a8216430c50e2c39, type: 3}
+  Quality: 2
   description: 
-  icon: {fileID: 0}
   pickup: {fileID: 0}
+  goldValue: 0
+  silverValue: 0
+  copperValue: 33
   stackable: 0
   allowedEquipLocation: 5
   equiptPrefab: {fileID: 2594216289399958593, guid: 6af34a2a7dbe4094f8ba5b816c737b2c, type: 3}
@@ -27,5 +31,6 @@ MonoBehaviour:
   weaponRange: 3
   isRightHanded: 1
   projectile: {fileID: 0}
-  attackOverrites: []
-  attackOverrite: {fileID: 22100000, guid: 6d476087f6cece3429274abdeeb5855c, type: 2}
+  WeaponOverriteController: {fileID: 22100000, guid: 6d476087f6cece3429274abdeeb5855c, type: 2}
+  AdditionalAttackOverrites:
+  - {fileID: 22100000, guid: 6d476087f6cece3429274abdeeb5855c, type: 2}

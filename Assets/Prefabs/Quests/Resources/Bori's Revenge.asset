@@ -55,3 +55,12 @@ MonoBehaviour:
   rewards:
   - item: {fileID: 11400000, guid: 59dc1b75514f69048a3dd964754be707, type: 2}
     amount: 1
+  - item: {fileID: 11400000, guid: 58446ad0f7bb3d948aa6844fa22e9011, type: 2}
+    amount: 2
+  currencyRewards:
+  - currencyType: 0
+    amount: 11
+  - currencyType: 1
+    amount: 9
+  - currencyType: 2
+    amount: 23

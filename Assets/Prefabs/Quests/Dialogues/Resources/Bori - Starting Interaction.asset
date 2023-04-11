@@ -125,8 +125,8 @@ MonoBehaviour:
   - ba67bbae-26ed-4523-8671-71200390d5a6
   nodePosition:
     serializedVersion: 2
-    x: 2355
-    y: 451
+    x: 2354
+    y: 450
     width: 200
     height: 100
   onEntryAction: 
@@ -152,8 +152,8 @@ MonoBehaviour:
   - 46899acf-818a-4a9f-a340-65f355ef4bc8
   nodePosition:
     serializedVersion: 2
-    x: 2375
-    y: 78
+    x: 2373
+    y: 72
     width: 200
     height: 100
   onEntryAction: 
@@ -179,8 +179,8 @@ MonoBehaviour:
   - 58863830-cc25-43bf-a08a-7c54fce4b7e6
   nodePosition:
     serializedVersion: 2
-    x: 2625
-    y: 77
+    x: 2624
+    y: 76
     width: 200
     height: 100
   onEntryAction: 
@@ -232,8 +232,8 @@ MonoBehaviour:
   - 58863830-cc25-43bf-a08a-7c54fce4b7e6
   nodePosition:
     serializedVersion: 2
-    x: 2357
-    y: 197
+    x: 2356
+    y: 196
     width: 200
     height: 100
   onEntryAction: 
@@ -376,11 +376,11 @@ MonoBehaviour:
   nodePosition:
     serializedVersion: 2
     x: 1845
-    y: 79
+    y: 77
     width: 200
     height: 100
   onEntryAction: 
-  onExitAction: Give Quest
+  onExitAction: 
   condition:
     and: []
 --- !u!114 &3330476493655397611
@@ -402,7 +402,7 @@ MonoBehaviour:
   nodePosition:
     serializedVersion: 2
     x: 2122
-    y: 78
+    y: 77
     width: 200
     height: 100
   onEntryAction: 
@@ -427,11 +427,11 @@ MonoBehaviour:
   dialogueChildren: []
   nodePosition:
     serializedVersion: 2
-    x: 2926
+    x: 2924
     y: 206
     width: 200
     height: 100
-  onEntryAction: 
+  onEntryAction: Give Quest
   onExitAction: MoveToRepeatDialogue
   condition:
     and: []
@@ -560,7 +560,7 @@ MonoBehaviour:
   nodePosition:
     serializedVersion: 2
     x: 2607
-    y: 318
+    y: 317
     width: 200
     height: 100
   onEntryAction: 

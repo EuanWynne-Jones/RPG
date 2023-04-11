@@ -14,9 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: b09cc05c-56e8-4767-bcbf-e5c44a0a47d7
   displayName: Goblin Unarmed
-  description: DEGUB SHOULD NOT SEE
   icon: {fileID: 0}
+  Quality: 0
+  description: DEGUG SHOULD NOT SEE
   pickup: {fileID: 0}
+  goldValue: 0
+  silverValue: 0
+  copperValue: 0
   stackable: 0
   allowedEquipLocation: 5
   equiptPrefab: {fileID: 1128009747611786112, guid: b98edf36d7fc74e43ab4a8b9369240ca, type: 3}
@@ -27,7 +31,7 @@ MonoBehaviour:
   weaponRange: 1.5
   isRightHanded: 1
   projectile: {fileID: 0}
-  attackOverrites:
-  - {fileID: 22100000, guid: 2a597854d2590f54a9a6902c07a64351, type: 2}
+  WeaponOverriteController: {fileID: 22100000, guid: 2a597854d2590f54a9a6902c07a64351, type: 2}
+  AdditionalAttackOverrites:
   - {fileID: 22100000, guid: 58769d5c448549947b0ecf911c49f1ed, type: 2}
-  attackOverrite: {fileID: 22100000, guid: 58769d5c448549947b0ecf911c49f1ed, type: 2}
+  - {fileID: 22100000, guid: 2a597854d2590f54a9a6902c07a64351, type: 2}

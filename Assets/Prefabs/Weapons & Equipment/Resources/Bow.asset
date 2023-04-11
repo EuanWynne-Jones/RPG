@@ -14,9 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 285c3415-54e4-427c-86cb-5d23a20f1c3f
   displayName: Bow
+  icon: {fileID: 21300000, guid: fdcf9bce2c2b14a428e6c374a5ce8f6d, type: 3}
+  Quality: 1
   description: Shoot them with the pointy end!
-  icon: {fileID: 21300000, guid: 13419f4132dbc314996b97c58ef65159, type: 3}
   pickup: {fileID: 5068208418066899602, guid: 383fdaee6c46b6b468a3e6e6eae50259, type: 3}
+  goldValue: 1
+  silverValue: 10
+  copperValue: 55
   stackable: 0
   allowedEquipLocation: 5
   equiptPrefab: {fileID: 2458249030188081367, guid: d5e1c0c7d149cd14c832d8e04560e7b7, type: 3}
@@ -27,5 +31,6 @@ MonoBehaviour:
   weaponRange: 15
   isRightHanded: 0
   projectile: {fileID: 2850794755163358140, guid: a1afbb6697ee897459a746a40a6a73c0, type: 3}
-  attackOverrites: []
-  attackOverrite: {fileID: 22100000, guid: bbcae82f4b0847a4fad9510def377a73, type: 2}
+  WeaponOverriteController: {fileID: 22100000, guid: bbcae82f4b0847a4fad9510def377a73, type: 2}
+  AdditionalAttackOverrites:
+  - {fileID: 22100000, guid: bbcae82f4b0847a4fad9510def377a73, type: 2}

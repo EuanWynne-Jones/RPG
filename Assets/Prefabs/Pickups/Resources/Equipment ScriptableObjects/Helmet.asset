@@ -14,14 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 4c24568f-5b6b-4811-a32e-1d638a0c7c5f
   displayName: Helmet
-  description: Keeps ya gnogin' safe
   icon: {fileID: 21300000, guid: 7a704c5f161380f438bfabaf93560dc3, type: 3}
+  Quality: 1
+  description: Keeps ya gnogin' safe
   pickup: {fileID: 4145746223182947368, guid: 5be5eb19733960240a50733d626357cb, type: 3}
+  goldValue: 0
+  silverValue: 0
+  copperValue: 0
   stackable: 0
   allowedEquipLocation: 0
   addativeModifier:
   - stat: 0
     value: 30
-  percentageModifier:
-  - stat: 3
-    value: 10
+  percentageModifier: []

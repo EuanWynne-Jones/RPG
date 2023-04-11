@@ -436,8 +436,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Equipment
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3a14842dd5345e842b6c89dacaeb8586, type: 2}
+  m_sharedMaterial: {fileID: -2558113699976910923, guid: 3a14842dd5345e842b6c89dacaeb8586, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -861,7 +861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4038404352597279827, guid: 9b29a67be720a984c9830c33f6234c87, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 6.890596e+22
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4038404352597279827, guid: 9b29a67be720a984c9830c33f6234c87, type: 3}
       propertyPath: m_BoundingSphereOverride.x
@@ -869,11 +869,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4038404352597279827, guid: 9b29a67be720a984c9830c33f6234c87, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 4.1877786e-11
+      value: 3.0477792e+32
       objectReference: {fileID: 0}
     - target: {fileID: 4038404352597279827, guid: 9b29a67be720a984c9830c33f6234c87, type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 4.753707e+30
+      value: 9.31679e-39
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b29a67be720a984c9830c33f6234c87, type: 3}

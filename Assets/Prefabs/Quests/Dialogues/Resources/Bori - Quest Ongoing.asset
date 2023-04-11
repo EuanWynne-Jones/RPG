@@ -17,8 +17,8 @@ MonoBehaviour:
   dialogueChildren: []
   nodePosition:
     serializedVersion: 2
-    x: 1204
-    y: 282
+    x: 1266
+    y: 275
     width: 200
     height: 100
   onEntryAction: CompleteQuest
@@ -69,8 +69,8 @@ MonoBehaviour:
   - 20421ca2-357d-4290-b0ef-31f681629614
   nodePosition:
     serializedVersion: 2
-    x: 794
-    y: 563
+    x: 672
+    y: 570
     width: 200
     height: 100
   onEntryAction: 
@@ -137,8 +137,8 @@ MonoBehaviour:
   - b5f605b1-fe00-4a95-ac17-11640e9bec9b
   nodePosition:
     serializedVersion: 2
-    x: 812
-    y: 803
+    x: 669
+    y: 909
     width: 200
     height: 100
   onEntryAction: 
@@ -242,8 +242,8 @@ MonoBehaviour:
   - cbdd7cef-8a00-426b-b8d9-fffa8fce2f1f
   nodePosition:
     serializedVersion: 2
-    x: 557
-    y: 563
+    x: 425
+    y: 676
     width: 200
     height: 100
   onEntryAction: 
@@ -299,8 +299,8 @@ MonoBehaviour:
   - 716e6cd0-45e0-496a-86d6-fc700b691106
   nodePosition:
     serializedVersion: 2
-    x: 1215
-    y: 908
+    x: 1321
+    y: 903
     width: 200
     height: 100
   onEntryAction: 
@@ -326,13 +326,19 @@ MonoBehaviour:
   nodePosition:
     serializedVersion: 2
     x: 567
-    y: 72
+    y: 71
     width: 200
     height: 100
   onEntryAction: 
   onExitAction: 
   condition:
-    and: []
+    and:
+    - or:
+      - predicate: 2
+        parameters:
+        - Bori's Revenge
+        - Kill
+        negate: 1
 --- !u!114 &7740931875761183817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,13 +377,13 @@ MonoBehaviour:
   m_Name: 34d005fe-b090-4f68-9e19-7199bb364fe1
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
-  dialogueText: Yes, hes right over there
+  dialogueText: Yes, hes on his way to you now!
   dialogueChildren:
   - 74c3fe16-80bd-40a6-a7b1-3e48d60976fb
   nodePosition:
     serializedVersion: 2
-    x: 1217
-    y: 728
+    x: 949
+    y: 721
     width: 200
     height: 100
   onEntryAction: 

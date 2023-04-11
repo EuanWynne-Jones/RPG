@@ -14,9 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 3a49f3e9-3a38-4b78-857c-cd45e02ecb22
   displayName: Iron Axe
+  icon: {fileID: 21300000, guid: 813bbc7822a9c6e498156010f3677976, type: 3}
+  Quality: 1
   description: A basic handaxe, commonly used by farmers
-  icon: {fileID: 21300000, guid: 6baaebf3508a9ef40a257ebc5f276434, type: 3}
   pickup: {fileID: 8531674676482199692, guid: 5bf8bf060ad3bd44cbfd7d41ccdbcaa5, type: 3}
+  goldValue: 0
+  silverValue: 30
+  copperValue: 10
   stackable: 0
   allowedEquipLocation: 5
   equiptPrefab: {fileID: 3437449133657699162, guid: 766afc1ee3733bb4289d7ddc7e604e2e, type: 3}
@@ -27,5 +31,6 @@ MonoBehaviour:
   weaponRange: 1.5
   isRightHanded: 1
   projectile: {fileID: 0}
-  attackOverrites: []
-  attackOverrite: {fileID: 22100000, guid: 0737ef7438298864e9cbbf43a74025c6, type: 2}
+  WeaponOverriteController: {fileID: 22100000, guid: 7d192b93f5c8f9a4fbd5c22b711ee399, type: 2}
+  AdditionalAttackOverrites:
+  - {fileID: 22100000, guid: 7d192b93f5c8f9a4fbd5c22b711ee399, type: 2}

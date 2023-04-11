@@ -10,6 +10,7 @@ namespace RPG.Inventories
     public class EquipableItem : InventoryItem
     {
         // CONFIG DATA
+        [Header("Location")]
         [Tooltip("Where are we allowed to put this item.")]
         [SerializeField] EquipLocation allowedEquipLocation = EquipLocation.Weapon;
 

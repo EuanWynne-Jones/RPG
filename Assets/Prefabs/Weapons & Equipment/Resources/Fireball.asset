@@ -14,19 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 223e9bf2-2919-4bf1-9e43-5fb5bf22e60d
   displayName: Fireball Spellbook
+  icon: {fileID: 21300000, guid: 22155d8e5bb9e7d4c984c4d1c765ca0e, type: 3}
+  Quality: 2
   description: Feel the magic flowing through your firey veins
-  icon: {fileID: 21300000, guid: 36b0ba71561ced24ab00725a83568a07, type: 3}
   pickup: {fileID: 8462001207748328040, guid: 5f1c8f57e2aa310499da7451b1750b18, type: 3}
+  goldValue: 5
+  silverValue: 16
+  copperValue: 0
   stackable: 0
   allowedEquipLocation: 5
   equiptPrefab: {fileID: 8029729891904996658, guid: dc1dbc4a99b6e52418e938017130ecc9, type: 3}
-  dropPrefab: {fileID: 7950626079806878769, guid: f3bb296eba068a946972063e019af501, type: 3}
+  dropPrefab: {fileID: 4591491969383211820, guid: 5f1c8f57e2aa310499da7451b1750b18, type: 3}
   minWeaponDamage: 1
   maxWeaponDamage: 3
   PercentageBonus: 10
   weaponRange: 12
   isRightHanded: 1
   projectile: {fileID: 6347207744093554892, guid: 374b759e0afdd1343b2cde2d06210fee, type: 3}
-  attackOverrites:
+  WeaponOverriteController: {fileID: 22100000, guid: 315f20b6513cd894884e78f1720010d9, type: 2}
+  AdditionalAttackOverrites:
   - {fileID: 22100000, guid: 315f20b6513cd894884e78f1720010d9, type: 2}
-  attackOverrite: {fileID: 22100000, guid: 315f20b6513cd894884e78f1720010d9, type: 2}

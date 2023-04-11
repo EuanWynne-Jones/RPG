@@ -11,25 +11,33 @@ namespace RPG.Combat
     public class WeaponConfig : EquipableItem, IModifierProvider
     {
 
-
+        [Header("Prefab Information")]
         [SerializeField] public Weapon equiptPrefab = null;
         [SerializeField] public GameObject dropPrefab = null;
 
+        [Header("Damage")]
         [Range(1f, 20f)]
         [SerializeField] public float minWeaponDamage = 1f;
         [Range(1f, 20f)]
         [SerializeField] public float maxWeaponDamage = 10f;
+        [Header("Bonuses")]
         [SerializeField] public float PercentageBonus = 0f;
 
-        float weaponDamage;
+        [Header("Weapon Range")]
         [SerializeField] float weaponRange = .5f;
+
+        [Header("Equip Hand")]
         [SerializeField] public bool isRightHanded = true;
+
+        [Header("Projectile if applicable")]
         [SerializeField] Projectile projectile = null;
 
-        [SerializeField] public List<AnimatorOverrideController> attackOverrites = null;
-        [SerializeField] public AnimatorOverrideController attackOverrite = null;
+        [Header("Animations")]
+        [SerializeField] public AnimatorOverrideController WeaponOverriteController = null;
+        [SerializeField] public List<AnimatorOverrideController> AdditionalAttackOverrites = null;
 
 
+        float weaponDamage;
         const string weaponName = "Weapon";
 
         
@@ -48,9 +56,9 @@ namespace RPG.Combat
 
             }
             var overrideController = animator.runtimeAnimatorController as AnimatorOverrideController;
-            if (attackOverrite != null)
+            if (WeaponOverriteController != null)
             {
-                animator.runtimeAnimatorController = attackOverrite;
+                animator.runtimeAnimatorController = WeaponOverriteController;
             }
             else if (overrideController != null)
             {
