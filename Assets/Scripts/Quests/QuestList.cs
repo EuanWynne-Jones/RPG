@@ -36,14 +36,14 @@ namespace RPG.Quests
             if (questStatus.IsComplete())
             {
                 GiveReward(quest);
-                Debug.Log("Rewards given");
+                //Debug.Log("Rewards given");
             }
             if (onQuestListUpdated != null)
             {
                 onQuestListUpdated();
-                Debug.Log("UI updated");
+                //Debug.Log("UI updated");
             }
-            Debug.Log("Quest Completed");
+            //Debug.Log("Quest Completed");
         }
 
         public bool HasQuest(Quest quest)
