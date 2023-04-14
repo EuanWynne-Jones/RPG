@@ -861,7 +861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4038404352597279827, guid: 9b29a67be720a984c9830c33f6234c87, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 0
+      value: 8.5e-44
       objectReference: {fileID: 0}
     - target: {fileID: 4038404352597279827, guid: 9b29a67be720a984c9830c33f6234c87, type: 3}
       propertyPath: m_BoundingSphereOverride.x

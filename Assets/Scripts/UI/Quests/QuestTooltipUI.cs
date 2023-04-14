@@ -17,12 +17,14 @@ namespace RPG.UI.Quests
 
         [SerializeField] GameObject IncompleteObjectivePrefab;
 
-        //[SerializeField] TextMeshProUGUI rewardText;
         [SerializeField] Transform rewardItemTranform;
         [SerializeField] GameObject rewardItem;
 
         [SerializeField] Transform rewardCurrencyTranform;
         [SerializeField] GameObject rewardCurrency;
+
+        private bool rewardsInstantiated = false;
+        private bool currencyInstantiated = false;
 
         public void Setup(QuestStatus questStatus)
         {
@@ -45,32 +47,17 @@ namespace RPG.UI.Quests
                 objectiveText.text = objective.description;
 
             }
-            GetRewards(quest);
-            GetRewardCurrency(quest);
-            //rewardText.text = GetRewardText(quest);
-        }
+            if (!rewardsInstantiated)
+            {
+                GetRewards(quest);
+                rewardsInstantiated = true;
+            }
 
-        private string GetRewardText(Quest quest)
-        {
-            string rewardText = "";
-            foreach (var reward in quest.GetItemRewards())
+            if (!currencyInstantiated)
             {
-                if (rewardText != "")
-                {
-                    rewardText += ", ";
-                }
-                if (reward.amount > 1)
-                {
-                    rewardText += reward.amount + " ";
-                }
-                rewardText += reward.item.GetDisplayName();
+                GetRewardCurrency(quest);
+                currencyInstantiated = true;
             }
-            if (rewardText == "")
-            {
-                rewardText = "No reward";
-            }
-            rewardText += ".";
-            return rewardText;
         }
 
         private void GetRewards(Quest quest)
@@ -87,30 +74,26 @@ namespace RPG.UI.Quests
 
         private void GetRewardCurrency(Quest quest)
         {
-
-                foreach (Quest.CurrencyReward CR in quest.GetCurrencyRewards())
-                {
-                    GameObject instantiatedReward = Instantiate(rewardCurrency, rewardCurrencyTranform);
-                    QuestCurrencyReward QCR = instantiatedReward.GetComponent<QuestCurrencyReward>();
-                    Sprite currencyIcon = QCR.Icon.sprite;
+            foreach (Quest.CurrencyReward CR in quest.GetCurrencyRewards())
+            {
+                GameObject instantiatedReward = Instantiate(rewardCurrency, rewardCurrencyTranform);
+                QuestCurrencyReward QCR = instantiatedReward.GetComponent<QuestCurrencyReward>();
+                Sprite currencyIcon = QCR.Icon.sprite;
                 if (CR.currencyType == ECurrency.Gold)
-                        {
-                            currencyIcon = QCR.goldIcon;
-                        }
-                        if (CR.currencyType == ECurrency.Silver)
-                        {
-                            currencyIcon = QCR.silverIcon;
-                        }
-                        if (CR.currencyType == ECurrency.Copper)
-                        {
-                            currencyIcon = QCR.copperIcon;
-                        }
-                        QCR.GetComponentInChildren<Image>().sprite = currencyIcon;
-                        QCR.amount.text = CR.amount.ToString();
+                {
+                    currencyIcon = QCR.goldIcon;
                 }
-
-
-            
+                if (CR.currencyType == ECurrency.Silver)
+                {
+                    currencyIcon = QCR.silverIcon;
+                }
+                if (CR.currencyType == ECurrency.Copper)
+                {
+                    currencyIcon = QCR.copperIcon;
+                }
+                QCR.GetComponentInChildren<Image>().sprite = currencyIcon;
+                QCR.amount.text = CR.amount.ToString();
+            }
         }
     }
 }
