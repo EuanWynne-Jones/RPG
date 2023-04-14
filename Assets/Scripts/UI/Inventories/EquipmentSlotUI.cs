@@ -35,6 +35,10 @@ namespace RPG.UI.Inventories
         }
 
         // PUBLIC
+        public EquipLocation GetEquipLocation()
+        {
+            return equipLocation;
+        }
 
         public int MaxAcceptable(InventoryItem item)
         {

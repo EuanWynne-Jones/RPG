@@ -25,7 +25,7 @@ namespace RPG.Core.UI.Dragging
         // PRIVATE STATE
         Vector3 startPosition;
         Transform originalParent;
-        IDragSource<T> source;
+        public IDragSource<T> source;
 
         // CACHED REFERENCES
         Canvas parentCanvas;
@@ -87,7 +87,7 @@ namespace RPG.Core.UI.Dragging
             return null;
         }
 
-        private void DropItemIntoContainer(IDragDestination<T> destination)
+        protected void DropItemIntoContainer(IDragDestination<T> destination)
         {
             if (object.ReferenceEquals(destination, source)) return;
 
