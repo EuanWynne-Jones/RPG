@@ -49,15 +49,25 @@ namespace RPG.Stats
             }
         }
 
-        private void UpdateLevel()
+        public void UpdateLevel()
         {
             int newLevel = CalculateLevel();
             if(newLevel > currentLevel.value)
             {
                 currentLevel.value = newLevel;
-                GetComponent<Experience>().experiencePoints = 0;
+                if (experience.StoredExperiencePoints > 0)
+                {
+                    experience.experiencePoints = 0 + experience.StoredExperiencePoints;
+                    experience.StoredExperiencePoints = 0;
+                }
+                else
+                {
+                    experience.experiencePoints = 0;
+                }
+                //Debug.Log("Experience Points on next Level:" + experience.experiencePoints);
                 LevelUpEffect();
                 onLevelUp();
+               //Debug.Log("Player Level:" + currentLevel.value);
             }
         }
 

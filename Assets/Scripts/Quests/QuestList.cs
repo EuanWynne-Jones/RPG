@@ -1,5 +1,6 @@
 using RPG.Inventories;
 using RPG.Saving;
+using RPG.Stats;
 using RPG.Utils;
 using System;
 using System.Collections;
@@ -36,6 +37,7 @@ namespace RPG.Quests
             if (questStatus.IsComplete())
             {
                 GiveReward(quest);
+                //GiveExpReward(quest);
                 //Debug.Log("Rewards given");
             }
             if (onQuestListUpdated != null)
@@ -43,6 +45,7 @@ namespace RPG.Quests
                 onQuestListUpdated();
                 //Debug.Log("UI updated");
             }
+            GetComponent<BaseStats>().UpdateLevel();
             //Debug.Log("Quest Completed");
         }
 
@@ -67,7 +70,12 @@ namespace RPG.Quests
             return null;
         }
 
+        private void GiveExpReward(Quest quest)
+        {
+            float experienceToGive = quest.GetExpereienceReward();
+            GetComponent<Experience>().GainExperience(experienceToGive);
 
+        }
         private void GiveReward(Quest quest)
         {
             foreach (Quest.Reward reward in quest.GetItemRewards())

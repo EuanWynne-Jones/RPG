@@ -13,23 +13,24 @@ MonoBehaviour:
   m_Name: BigClub 1
   m_EditorClassIdentifier: 
   itemID: d536c40d-4bde-4bfa-858e-91d04bb6d070
-  displayName: 
+  displayName: Da Big Bonka'
   icon: {fileID: 0}
-  Quality: 0
-  description: 
-  pickup: {fileID: 0}
-  goldValue: 0
+  Quality: 5
+  description: Bonk Bonk'
+  pickup: {fileID: 5224861430647739290, guid: eeddb979c258af24c867e74e78df344d, type: 3}
+  goldValue: 500
   silverValue: 0
   copperValue: 0
   stackable: 0
   allowedEquipLocation: 5
-  equiptPrefab: {fileID: 0}
-  dropPrefab: {fileID: 0}
-  minWeaponDamage: 1
-  maxWeaponDamage: 10
+  equiptPrefab: {fileID: 2594216289399958593, guid: ffe5779b46bc1cd429449cb0a3c3e725, type: 3}
+  dropPrefab: {fileID: 168109919357307614, guid: eeddb979c258af24c867e74e78df344d, type: 3}
+  minWeaponDamage: 12
+  maxWeaponDamage: 15
   PercentageBonus: 0
-  weaponRange: 0.5
+  weaponRange: 1.2
   isRightHanded: 1
   projectile: {fileID: 0}
-  WeaponOverriteController: {fileID: 0}
-  AdditionalAttackOverrites: []
+  WeaponOverriteController: {fileID: 22100000, guid: 0737ef7438298864e9cbbf43a74025c6, type: 2}
+  AdditionalAttackOverrites:
+  - {fileID: 22100000, guid: 0737ef7438298864e9cbbf43a74025c6, type: 2}

@@ -64,3 +64,4 @@ MonoBehaviour:
     amount: 9
   - currencyType: 2
     amount: 23
+  experienceReward: 900

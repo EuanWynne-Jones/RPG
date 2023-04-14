@@ -5,7 +5,7 @@ using RPG.Stats;
 
 namespace RPG.Inventories
 {
-    [CreateAssetMenu(menuName = ("Inventory/New EquipableItem"))]
+    [CreateAssetMenu(menuName = ("Inventory/New Equipable Item with Modifiers"))]
     public class StatsEquipableItem : EquipableItem, IModifierProvider
     {
         [SerializeField]

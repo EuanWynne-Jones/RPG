@@ -12,7 +12,8 @@ namespace RPG.Quests
     {
         [SerializeField] List<Objective> objectives = new List<Objective>();
         [SerializeField] List<Reward> rewards = new List<Reward>();
-        [SerializeField] List<CurrencyReward> currencyRewards = new List<CurrencyReward>();    
+        [SerializeField] List<CurrencyReward> currencyRewards = new List<CurrencyReward>();
+        [SerializeField] float experienceReward = 0;
 
         [System.Serializable]
         public class Reward
@@ -51,6 +52,11 @@ namespace RPG.Quests
             return objectives.Count;
         }
         
+
+        public float GetExpereienceReward()
+        {
+            return experienceReward;
+        }
 
         public IEnumerable<Objective> GetObjectives()
         {

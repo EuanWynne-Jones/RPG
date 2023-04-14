@@ -25,9 +25,9 @@ namespace RPG.UI
         private void GetMaxMinDamage(Transform followedTransform)
         {
             float minDamage = followedTransform.gameObject.GetComponent<Fighter>().GetCurrentWeaponMinDamage();
-            Debug.Log(minDamage);
+            //Debug.Log(minDamage);
             float maxDamage = followedTransform.gameObject.GetComponent<Fighter>().GetCurrentWeaponMaxDamage();
-            Debug.Log(maxDamage);
+            //Debug.Log(maxDamage);
             numberPrefab.colorByNumberSettings.fromNumber = minDamage;
             numberPrefab.colorByNumberSettings.toNumber = maxDamage;
         }

@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: dd6ad603-4119-4cfd-be07-db411dfecdd7
   displayName: 
-  icon: {fileID: 0}
-  Quality: 0
-  description: 
+  icon: {fileID: 21300000, guid: f393f667fd7f2224a8216430c50e2c39, type: 3}
+  Quality: 5
+  description: Da Big Bonka'
   pickup: {fileID: 0}
-  goldValue: 0
-  silverValue: 0
-  copperValue: 0
+  goldValue: 500
+  silverValue: 8
+  copperValue: 23
   stackable: 0
   allowedEquipLocation: 5

@@ -248,8 +248,8 @@ MonoBehaviour:
   dialogueChildren: []
   nodePosition:
     serializedVersion: 2
-    x: 635
-    y: 278
+    x: 631
+    y: 237
     width: 200
     height: 100
   onEntryAction: 
