@@ -1,3 +1,4 @@
+using RPG.Attributes;
 using RPG.Control;
 using RPG.Core;
 using RPG.Movement;
@@ -33,7 +34,7 @@ namespace RPG.Dialogue
         private void Update()
         {
             float dist = GetDistancetoConversant();
-            if (dist <= dialogueTriggerDistance && !player.GetComponent<PlayerConversant>().isInDialogue && dialogueIntention)
+            if (dist <= dialogueTriggerDistance && !player.GetComponent<PlayerConversant>().isInDialogue && dialogueIntention && !this.GetComponent<Health>().isDead)
             {
                 player.GetComponent<PlayerConversant>().StartDialogue(this, NPCDialogue);
                 //this.transform.LookAt(player.transform);

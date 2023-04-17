@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace RPG.Quests
@@ -62,6 +63,19 @@ namespace RPG.Quests
             {
                 completedObjectives.Add(objective);
             }
+        }
+
+        public string GetCompletedObjectiveDescriptor(QuestStatus questStatus)
+        {
+            Quest quest = questStatus.GetQuest();
+            foreach (var objective in questStatus.GetQuest().GetObjectives())
+            {
+                if (questStatus.IsObjectiveComplete(objective.reference))
+                {
+                    return objective.description;
+                }
+            }
+            return null;
         }
 
         public object CaptureState()

@@ -38,10 +38,11 @@ namespace RPG.Quests
         [System.Serializable]
         public class Objective
         {
-            public string reference;
             public string description;
+            public string reference;
             public bool usesCondition = false;
             public Condition completionCondition;
+
         }
         public string GetTitle()
         {

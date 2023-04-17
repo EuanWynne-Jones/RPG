@@ -42,10 +42,14 @@ namespace RPG.Quests
         {
             QuestStatus questStatus = GetQuestStatus(quest);
             questStatus.CompleteObjective(objective);
-            popupHandler.SpawnObjectiveCompletePopup(GetObjectiveDescriptor(objective));
+            if (!questStatus.IsComplete())
+            {
+            popupHandler.SpawnObjectiveCompletePopup(GetCompletedObjectiveDescriptor(GetQuestStatus(quest)));
+            }
+            
             if (questStatus.IsComplete())
             {
-                popupHandler.SpawnQuestCompletePopup(objective);
+                popupHandler.SpawnQuestCompletePopup(quest.name);
                 GiveReward(quest);
                 //GiveExpReward(quest);
                 //Debug.Log("Rewards given");
@@ -59,19 +63,18 @@ namespace RPG.Quests
             //Debug.Log("Quest Completed");
         }
 
-        public string GetObjectiveDescriptor(string objectiveRef)
+
+        public string GetCompletedObjectiveDescriptor(QuestStatus questStatus)
         {
-            foreach (var objective in GetComponent<Quest>().GetObjectives())
+            Quest quest = questStatus.GetQuest();
+            foreach (var objective in questStatus.GetQuest().GetObjectives())
             {
-                if (objective.reference == objectiveRef)
+                if (questStatus.IsObjectiveComplete(objective.reference))
                 {
                     return objective.description;
                 }
             }
             return null;
-            {
-
-            }
         }
 
         public bool HasQuest(Quest quest)

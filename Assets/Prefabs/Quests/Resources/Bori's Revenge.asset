@@ -13,19 +13,13 @@ MonoBehaviour:
   m_Name: Bori's Revenge
   m_EditorClassIdentifier: 
   objectives:
-  - reference: Find
-    description: Find Bori's brother Dori
-    usesCondition: 1
+  - description: Find Bori's brother Dori
+    reference: Find
+    usesCondition: 0
     completionCondition:
-      and:
-      - or:
-        - predicate: 6
-          parameters:
-          - 4c24568f-5b6b-4811-a32e-1d638a0c7c5f
-          - 
-          negate: 0
-  - reference: Kill
-    description: Kill the Goblin that Murdered Jared!
+      and: []
+  - description: Kill the Goblin that Murdered Jared!
+    reference: Kill
     usesCondition: 1
     completionCondition:
       and:
@@ -33,10 +27,10 @@ MonoBehaviour:
         - predicate: 9
           parameters:
           - EnemyCharacter
-          - 2
+          - 1
           negate: 0
-  - reference: Return
-    description: Return to Bori for a reward
+  - description: Return to Bori for a reward
+    reference: Return
     usesCondition: 1
     completionCondition:
       and:
