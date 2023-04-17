@@ -98,7 +98,7 @@ MonoBehaviour:
   enableLeftText: 1
   leftText: 
   leftTextSettings:
-    bold: 1
+    bold: 0
     italic: 0
     underline: 0
     strike: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
     horizontal: 0
     vertical: 0
     characterSpacing: 0
-    size: 50
+    size: 30
   enableRightText: 0
   rightText: 
   rightTextSettings:
@@ -127,7 +127,7 @@ MonoBehaviour:
     vertical: 0
     characterSpacing: 0
     size: 0
-  enableTopText: 1
+  enableTopText: 0
   topText: 
   topTextSettings:
     bold: 1
@@ -531,20 +531,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '
-
-'
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3a14842dd5345e842b6c89dacaeb8586, type: 2}
-  m_sharedMaterial: {fileID: -2558113699976910923, guid: 3a14842dd5345e842b6c89dacaeb8586, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 901474e6e0607be41b462f2f0e989554, type: 2}
+  m_sharedMaterial: {fileID: 6094588799564112954, guid: 901474e6e0607be41b462f2f0e989554, type: 2}
   m_fontSharedMaterials:
-  - {fileID: -2558113699976910923, guid: 3a14842dd5345e842b6c89dacaeb8586, type: 2}
+  - {fileID: 6094588799564112954, guid: 901474e6e0607be41b462f2f0e989554, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278238207
-  m_fontColor: {r: 1, g: 0.7338941, b: 0, a: 1}
+    rgba: 4278314495
+  m_fontColor: {r: 1, g: 0.8969972, b: 0.0047169924, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -669,19 +667,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '
-
-'
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3a14842dd5345e842b6c89dacaeb8586, type: 2}
-  m_sharedMaterial: {fileID: -2558113699976910923, guid: 3a14842dd5345e842b6c89dacaeb8586, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 901474e6e0607be41b462f2f0e989554, type: 2}
+  m_sharedMaterial: {fileID: 6094588799564112954, guid: 901474e6e0607be41b462f2f0e989554, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278238207
-  m_fontColor: {r: 1, g: 0.7338941, b: 0, a: 1}
+    rgba: 4278314495
+  m_fontColor: {r: 1, g: 0.8969972, b: 0.0047169924, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

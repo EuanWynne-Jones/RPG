@@ -117,6 +117,8 @@ MonoBehaviour:
   rightHandTrasform: {fileID: 0}
   leftHandTrasform: {fileID: 0}
   currentWeaponConfig: {fileID: 0}
+  currentWeaponMinDamage: 0
+  currentWeaponMaxDamage: 0
 --- !u!114 &8377449688706189459
 MonoBehaviour:
   m_ObjectHideFlags: 0

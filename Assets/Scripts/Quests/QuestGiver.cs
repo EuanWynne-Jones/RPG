@@ -8,15 +8,27 @@ namespace RPG.Quests
     {
         [SerializeField] Quest quest;
         QuestList questList;
+        [SerializeField] Transform questMarkerTransform = null;
+        [SerializeField] GameObject questMarker = null;
+        private GameObject questMarkerGameObject;
 
         private void Start()
         {
+            SpawnQuestMarker();
             questList = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestList>();
         }
+
+        private void SpawnQuestMarker()
+        {
+            GameObject instantiatedQuestMarker = Instantiate(questMarker, questMarkerTransform);
+            questMarkerGameObject = instantiatedQuestMarker;
+        }
+
         public void GiveQuest()
         {
             
             questList.AddQuest(quest);
+            Destroy(questMarkerGameObject);
         }
 
 

@@ -13,7 +13,7 @@ namespace RPG.UI.Inventories
     {
         // CONFIG DATA
         [SerializeField] InventoryItemIcon icon = null;
-        [SerializeField] int index = 0;
+        [SerializeField] public int index = 0;
 
         // CACHE
         ActionStore store;

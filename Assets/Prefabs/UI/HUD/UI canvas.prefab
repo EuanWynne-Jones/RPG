@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hudObjects:
   - element: {fileID: 1034273193031051067}
-    toggleKey: 99
+    toggleKey: 9
     disableOthers:
     - {fileID: 7105271930523141274}
   - element: {fileID: 7105271930523141274}
@@ -211,8 +211,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0, y: 222}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -15, y: 222}
+  m_SizeDelta: {x: -15, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &8678204806552336259
 CanvasRenderer:
@@ -2073,11 +2073,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6316780503483868109, guid: b706f973607d99d44b437cdb18febbbe, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 837.0896
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 6316780503483868109, guid: b706f973607d99d44b437cdb18febbbe, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 624.0779
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 6316780503483868109, guid: b706f973607d99d44b437cdb18febbbe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2109,11 +2109,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6316780503483868109, guid: b706f973607d99d44b437cdb18febbbe, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 930
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6316780503483868109, guid: b706f973607d99d44b437cdb18febbbe, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1732
+      value: -500
       objectReference: {fileID: 0}
     - target: {fileID: 6316780503483868109, guid: b706f973607d99d44b437cdb18febbbe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

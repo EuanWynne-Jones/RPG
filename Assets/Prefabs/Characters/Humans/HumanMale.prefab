@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2113786626949143365, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113786626949143365, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8377449688706189458, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -21,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 4114793360535140462}
     - target: {fileID: 8377449688706189462, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: m_Name
-      value: NPC Character
+      value: HumanMale
       objectReference: {fileID: 0}
     - target: {fileID: 8377449688706189462, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: m_TagString
@@ -101,6 +109,34 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.88, z: 0}
+--- !u!114 &1559642563708728950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6698300796726370502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02f73be85c9a240498a3ca5c7bafcb60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversantName: 
+  NPCDialogue: {fileID: 11400000, guid: 82ecfeda61cc72e4687e5778dd24f625, type: 2}
+  conversantHead: {fileID: 0}
+  dialogueTriggerDistance: 3.5
+--- !u!114 &1904583936328507212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6698300796726370502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9777773f205dba04093dae60bce4601a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8305278576298627832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,31 +166,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1904583936328507212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6698300796726370502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9777773f205dba04093dae60bce4601a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1559642563708728950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6698300796726370502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02f73be85c9a240498a3ca5c7bafcb60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NPCDialogue: {fileID: 11400000, guid: 82ecfeda61cc72e4687e5778dd24f625, type: 2}
 --- !u!1001 &4114793360534943768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168,7 +179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 410126, guid: 72785d8b58b1e9f4da91bc96a21a1306, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 410126, guid: 72785d8b58b1e9f4da91bc96a21a1306, type: 3}
       propertyPath: m_LocalPosition.x
