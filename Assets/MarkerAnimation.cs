@@ -28,6 +28,7 @@ public class MarkerAnimation : MonoBehaviour
 
     private void Update()
     {
+
         startPoint = movingObject.TransformPoint(localStartPoint);
         endPoint = movingObject.TransformPoint(localEndPoint);
 
@@ -40,6 +41,8 @@ public class MarkerAnimation : MonoBehaviour
         lerpValue = Mathf.Clamp01(lerpValue);
 
         transform.position = Vector3.Lerp(startPoint, endPoint, lerpValue);
+
+        transform.LookAt(Camera.main.transform.position, Vector3.up);
 
         if (lerpValue == 1f)
         {
