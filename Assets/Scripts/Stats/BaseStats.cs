@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using RPG.Utils;
+using RPG.UI;
+using RPG.Control;
 
 namespace RPG.Stats
 {
@@ -21,11 +23,17 @@ namespace RPG.Stats
         public event Action onLevelUp;
         Experience experience;
 
+        GameObject player;
+
+
+       
         private void Awake()
         {
+            player = GameObject.FindGameObjectWithTag("Player");
             currentLevel = new LazyValue<int>(CalculateLevel);
             experience = GetComponent<Experience>();
         }
+
 
         private void Start()
         {
@@ -52,9 +60,11 @@ namespace RPG.Stats
         public void UpdateLevel()
         {
             int newLevel = CalculateLevel();
+            
             if(newLevel > currentLevel.value)
             {
                 currentLevel.value = newLevel;
+                GetComponent<PopupHandler>().SpawnLevelPopup(newLevel.ToString());
                 if (experience.StoredExperiencePoints > 0)
                 {
                     experience.experiencePoints = 0 + experience.StoredExperiencePoints;
@@ -66,6 +76,7 @@ namespace RPG.Stats
                 }
                 //Debug.Log("Experience Points on next Level:" + experience.experiencePoints);
                 LevelUpEffect();
+                
                 onLevelUp();
                //Debug.Log("Player Level:" + currentLevel.value);
             }
@@ -75,6 +86,7 @@ namespace RPG.Stats
 
         private void LevelUpEffect()
         {
+            
             Instantiate(levelUpEffect, transform);
         }
 

@@ -1,11 +1,13 @@
 using RPG.Inventories;
 using RPG.Saving;
 using RPG.Stats;
+using RPG.UI;
 using RPG.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static RPG.Quests.Quest;
 
 namespace RPG.Quests
 {
@@ -13,13 +15,19 @@ namespace RPG.Quests
     {
         List<QuestStatus> questStatuses = new List<QuestStatus>();
         public event Action onQuestListUpdated;
+        PopupHandler popupHandler = null;
+        private void Awake()
+        {
+            popupHandler = GetComponent<PopupHandler>();
+        }
         public void AddQuest(Quest quest)
         {
             if (HasQuest(quest)) return;
 
             QuestStatus newStatus = new QuestStatus(quest);
             questStatuses.Add(newStatus);
-            if(onQuestListUpdated != null)
+            popupHandler.SpawnQuestStartedPopup(quest.name);
+            if (onQuestListUpdated != null)
             {
             onQuestListUpdated();
             }
@@ -34,8 +42,10 @@ namespace RPG.Quests
         {
             QuestStatus questStatus = GetQuestStatus(quest);
             questStatus.CompleteObjective(objective);
+            popupHandler.SpawnObjectiveCompletePopup(GetObjectiveDescriptor(objective));
             if (questStatus.IsComplete())
             {
+                popupHandler.SpawnQuestCompletePopup(objective);
                 GiveReward(quest);
                 //GiveExpReward(quest);
                 //Debug.Log("Rewards given");
@@ -45,8 +55,23 @@ namespace RPG.Quests
                 onQuestListUpdated();
                 //Debug.Log("UI updated");
             }
-            GetComponent<BaseStats>().UpdateLevel();
+            //GetComponent<BaseStats>().UpdateLevel();
             //Debug.Log("Quest Completed");
+        }
+
+        public string GetObjectiveDescriptor(string objectiveRef)
+        {
+            foreach (var objective in GetComponent<Quest>().GetObjectives())
+            {
+                if (objective.reference == objectiveRef)
+                {
+                    return objective.description;
+                }
+            }
+            return null;
+            {
+
+            }
         }
 
         public bool HasQuest(Quest quest)

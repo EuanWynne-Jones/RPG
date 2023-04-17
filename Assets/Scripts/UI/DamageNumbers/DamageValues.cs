@@ -12,10 +12,7 @@ namespace RPG.UI
 
         public DamageNumber numberPrefab;
 
-        private void Update()
-        {
-            
-        }
+
         public void SpawnDamageNumbers(float damage, Transform followedTransform)
         {
             GetMaxMinDamage(followedTransform);
