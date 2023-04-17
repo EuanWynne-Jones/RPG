@@ -1,3 +1,4 @@
+using RPG.Control;
 using RPG.Quests;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ public class MarkerAnimation : MonoBehaviour
 
     private void Awake()
     {
-        movingObject = GetComponentInParent<QuestGiver>().transform;
+        movingObject = GetComponentInParent<AIController>().transform;
     }
     private void Start()
     {
