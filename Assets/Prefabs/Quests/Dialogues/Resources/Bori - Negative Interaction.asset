@@ -1,5 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7490162244353513709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: d0c33658-92b9-43a3-82dd-2040bdaa9c2a
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: You distgust me...
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 748
+    y: 114
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: Attack
+  condition:
+    and: []
 --- !u!114 &-6687764234802673811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,11 +39,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
   dialogueText: Just leave me alone!
-  dialogueChildren: []
+  dialogueChildren:
+  - eaa56537-6b0c-476c-821d-1825677df5b0
+  - 46b2ba4c-a658-47fe-b501-ab556c032df4
   nodePosition:
     serializedVersion: 2
     x: 247
     y: 195
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-1861781294100055810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 46b2ba4c-a658-47fe-b501-ab556c032df4
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: '*Walk away*'
+  dialogueChildren:
+  - bd347f9f-57b4-46cf-ad0e-393595cec24d
+  nodePosition:
+    serializedVersion: 2
+    x: 497
+    y: 241
     width: 200
     height: 100
   onEntryAction: 
@@ -39,4 +92,59 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: -6687764234802673811}
+  - {fileID: 685893366132474569}
+  - {fileID: -1861781294100055810}
+  - {fileID: -7490162244353513709}
+  - {fileID: 5429211317379767436}
   newNodeOffset: {x: 250, y: 0}
+--- !u!114 &685893366132474569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: eaa56537-6b0c-476c-821d-1825677df5b0
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: '*Split on Him*'
+  dialogueChildren:
+  - d0c33658-92b9-43a3-82dd-2040bdaa9c2a
+  nodePosition:
+    serializedVersion: 2
+    x: 500
+    y: 114
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &5429211317379767436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: bd347f9f-57b4-46cf-ad0e-393595cec24d
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: And dont come back!
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 747
+    y: 241
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []

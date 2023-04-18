@@ -37,6 +37,8 @@ namespace RPG.Quests
         }
 
         [System.Serializable]
+
+        
         public class Objective
         {
             public string description;
@@ -86,7 +88,7 @@ namespace RPG.Quests
             return isFailed = false;
         }
 
-        public bool GetIsFailed()
+        public bool GetIsFailed(Quest quest)
         {
             return isFailed;
         }

@@ -59,3 +59,5 @@ MonoBehaviour:
   - currencyType: 2
     amount: 23
   experienceReward: 900
+  isComplete: 0
+  isFailed: 1

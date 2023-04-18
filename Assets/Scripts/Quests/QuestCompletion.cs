@@ -18,7 +18,7 @@ namespace RPG.Quests
                 return;
             }
             QuestList questList = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestList>();
-            if (questList.HasQuest(quest))
+            if (questList.HasQuest(quest) && !quest.GetIsFailed(quest))
             {
             questList.CompleteObjective(quest, objectiveToComplete);
             }

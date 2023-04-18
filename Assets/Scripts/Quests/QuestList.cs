@@ -7,6 +7,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using static RPG.Quests.Quest;
 
 namespace RPG.Quests
@@ -20,6 +21,8 @@ namespace RPG.Quests
         {
             popupHandler = GetComponent<PopupHandler>();
         }
+
+        
         public void AddQuest(Quest quest)
         {
             if (HasQuest(quest)) return;

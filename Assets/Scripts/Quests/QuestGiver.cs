@@ -27,18 +27,17 @@ namespace RPG.Quests
 
         public void GiveQuest()
         {
-            
-            questList.AddQuest(quest);
+
             quest.QuestReset(quest);
+            questList.AddQuest(quest);
+            DestroyQuestMarker();
+        }
+
+        public void DestroyQuestMarker()
+        {
             Destroy(questMarkerGameObject);
         }
 
-
-        public void CompleteQuest()
-        {
-
-            //questList.CompleteObjective(quest);
-        }
 
 
     }

@@ -195,7 +195,7 @@ MonoBehaviour:
     width: 200
     height: 100
   onEntryAction: 
-  onExitAction: 
+  onExitAction: FailQuest
   condition:
     and: []
 --- !u!114 &2805986348895613699

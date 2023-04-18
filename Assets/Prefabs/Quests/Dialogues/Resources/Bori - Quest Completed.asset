@@ -205,7 +205,6 @@ MonoBehaviour:
   - {fileID: 2706461301237756051}
   - {fileID: 6985151498237349353}
   - {fileID: 7088878657151722582}
-  - {fileID: 7731422953847856036}
   newNodeOffset: {x: 250, y: 0}
 --- !u!114 &1040547847400139678
 MonoBehaviour:
@@ -246,8 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
   dialogueText: After all weve been through!
-  dialogueChildren:
-  - 0b28be7a-bd51-4e8f-b554-646e8b505b78
+  dialogueChildren: []
   nodePosition:
     serializedVersion: 2
     x: 631
@@ -276,8 +274,8 @@ MonoBehaviour:
   - be93af3b-8dae-4faf-a0a1-f5ea94f73c17
   nodePosition:
     serializedVersion: 2
-    x: 379
-    y: 237
+    x: 357
+    y: 233
     width: 200
     height: 100
   onEntryAction: 
@@ -304,31 +302,6 @@ MonoBehaviour:
     serializedVersion: 2
     x: 377
     y: 74
-    width: 200
-    height: 100
-  onEntryAction: 
-  onExitAction: 
-  condition:
-    and: []
---- !u!114 &7731422953847856036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
-  m_Name: 0b28be7a-bd51-4e8f-b554-646e8b505b78
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 1
-  dialogueText: 
-  dialogueChildren: []
-  nodePosition:
-    serializedVersion: 2
-    x: 881
-    y: 237
     width: 200
     height: 100
   onEntryAction: 

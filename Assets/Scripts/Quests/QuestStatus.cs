@@ -38,7 +38,7 @@ namespace RPG.Quests
 
         public bool IsFailed()
         {
-            return quest.GetIsFailed();
+            return quest.GetIsFailed(quest);
         }
         public bool IsComplete()
         {
