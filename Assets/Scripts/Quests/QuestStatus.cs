@@ -13,7 +13,7 @@ namespace RPG.Quests
 
 
         [System.Serializable]
-        class QuestStatusRecord
+        public class QuestStatusRecord
         {
             public string questName;
             public List<string> completedObjectives;
@@ -35,6 +35,11 @@ namespace RPG.Quests
             return quest;
         }
 
+
+        public bool IsFailed()
+        {
+            return quest.GetIsFailed();
+        }
         public bool IsComplete()
         {
             foreach (var objective in quest.GetObjectives())
@@ -46,6 +51,8 @@ namespace RPG.Quests
             }
             return true;
         }
+
+
 
         public bool IsObjectiveComplete(string objective)
         {

@@ -29,6 +29,7 @@ namespace RPG.UI.Quests
             {
                 //removes completed quests from list
                 if (questStatus.IsComplete()) continue;
+                if (questStatus.IsFailed()) continue;
                 QuestItemUI uiInstance =  Instantiate<QuestItemUI>(questPrefab, transform);
                 uiInstance.Setup(questStatus);
             }

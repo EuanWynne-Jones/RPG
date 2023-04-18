@@ -14,6 +14,8 @@ namespace RPG.Quests
         [SerializeField] List<Reward> rewards = new List<Reward>();
         [SerializeField] List<CurrencyReward> currencyRewards = new List<CurrencyReward>();
         [SerializeField] float experienceReward = 0;
+        [SerializeField] bool isComplete = false;
+        [SerializeField] bool isFailed = false;
 
         [System.Serializable]
         public class Reward
@@ -49,7 +51,6 @@ namespace RPG.Quests
         }
 
 
-
         public int GetObjectiveCount()
         {
             return objectives.Count;
@@ -75,7 +76,19 @@ namespace RPG.Quests
             
             return rewards;
         }
+        public bool FailQuest()
+        {
+            return isFailed = true;
+        }
 
+        public bool GetIsFailed()
+        {
+            return isFailed;
+        }
+        public bool GetIsComplete()
+        {
+            return isComplete;
+        }
 
 
         public bool HasObjective(string objectiveRef)

@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,6 +32,12 @@ namespace RPG.Quests
             Destroy(questMarkerGameObject);
         }
 
+
+        public void CompleteQuest()
+        {
+
+            //questList.CompleteObjective(quest);
+        }
 
 
     }

@@ -33,6 +33,19 @@ namespace RPG.Quests
             }
         }
 
+        public void RemoveQuest(Quest quest)
+        {
+            if (HasQuest(quest))
+            {
+                QuestStatus questStatus = new QuestStatus(quest);
+                questStatuses.Remove(questStatus);
+                popupHandler.SpawnQuestFailedPopup(quest.name);
+                quest.FailQuest();
+                onQuestListUpdated();
+                
+            }
+        }
+
         private void Update()
         {
             CompleteObjectivesByPredicates();
