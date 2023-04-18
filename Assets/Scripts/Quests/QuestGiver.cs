@@ -29,6 +29,7 @@ namespace RPG.Quests
         {
             
             questList.AddQuest(quest);
+            quest.QuestReset(quest);
             Destroy(questMarkerGameObject);
         }
 

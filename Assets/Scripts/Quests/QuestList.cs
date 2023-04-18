@@ -40,7 +40,7 @@ namespace RPG.Quests
                 QuestStatus questStatus = new QuestStatus(quest);
                 questStatuses.Remove(questStatus);
                 popupHandler.SpawnQuestFailedPopup(quest.name);
-                quest.FailQuest();
+                quest.FailQuest(quest);
                 onQuestListUpdated();
                 
             }

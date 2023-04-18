@@ -76,9 +76,14 @@ namespace RPG.Quests
             
             return rewards;
         }
-        public bool FailQuest()
+        public bool FailQuest(Quest quest)
         {
             return isFailed = true;
+        }
+
+        public bool QuestReset(Quest quest)
+        {
+            return isFailed = false;
         }
 
         public bool GetIsFailed()
