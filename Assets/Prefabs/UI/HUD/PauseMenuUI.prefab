@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 2500171970881887589}
+  UICanvas: {fileID: 0}
 --- !u!114 &5266138967160389160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1219,7 +1220,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5130960056859537436, guid: cee26c4cc36dc2a46a9950763344887f, type: 3}
         m_TargetAssemblyTypeName: RPG.SceneManagement.SavingWrapper, Assembly-CSharp
-        m_MethodName: Save
+        m_MethodName: Load
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

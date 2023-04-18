@@ -8,7 +8,7 @@ namespace RPG.Quests
     {
         [SerializeField] Quest quest;
         [SerializeField] string objectiveToComplete;
-
+        QuestStatus questStatus;
 
         public void CompleteObjective()
         {
