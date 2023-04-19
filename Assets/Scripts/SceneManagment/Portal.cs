@@ -33,7 +33,7 @@ namespace RPG.SceneManagement
         }
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Player" && other.GetComponent<Health>().inSpiritWorld == false)
+            if (other.tag == "Player" && other.GetComponent<Health>().isInSpiritRealm == false)
             {
                 StartCoroutine(Transition());
             }

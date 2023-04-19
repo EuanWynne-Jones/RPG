@@ -33,12 +33,27 @@ namespace RPG.Dialogue
         }
         private void Update()
         {
+
             float dist = GetDistancetoConversant();
-            if (dist <= dialogueTriggerDistance && !player.GetComponent<PlayerConversant>().isInDialogue && dialogueIntention && !this.GetComponent<Health>().isDead)
+            if (dist <= dialogueTriggerDistance && !player.GetComponent<PlayerConversant>().isInDialogue && dialogueIntention && GetIsDead())
             {
                 player.GetComponent<PlayerConversant>().StartDialogue(this, NPCDialogue);
                 //this.transform.LookAt(player.transform);
                 dialogueIntention = false;
+            }
+        }
+
+        private bool GetIsDead()
+        {
+            if (this.GetComponent<Health>() == null) return false;
+            return !this.GetComponent<Health>().isDead;
+        }
+
+        private void GetPlayerController()
+        {
+            if (player == null)
+            {
+                player = FindObjectOfType<PlayerController>();
             }
         }
 
@@ -91,7 +106,7 @@ namespace RPG.Dialogue
         }
 
         private float GetDistancetoConversant()
-        {
+        {   GetPlayerController();
             return Vector3.Distance(player.transform.position, transform.position);
         }
         public CursorType GetCursorType()

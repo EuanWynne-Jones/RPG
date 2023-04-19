@@ -16,6 +16,10 @@ namespace RPG.Quests
         private void Start()
         {
             SpawnQuestMarker();
+            if (quest.GetIsComplete())
+            {
+                DestroyQuestMarker();
+            }
             questList = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestList>();
         }
 

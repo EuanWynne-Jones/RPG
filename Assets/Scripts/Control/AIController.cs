@@ -61,7 +61,7 @@ namespace RPG.Control
         private void Update()
         {
             if (health.IsDead()) return;
-            if (IsAggrevated() && fighter.CanAttack(player) && player.GetComponent<Health>().inSpiritWorld == false)
+            if (IsAggrevated() && fighter.CanAttack(player) && player.GetComponent<Health>().isInSpiritRealm == false)
             {
 
                 //attack the player

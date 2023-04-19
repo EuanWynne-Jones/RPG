@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eba3fd1abf9bd8245aa3c8e8a149867d, type: 3}
+  m_Name: MainMenu
+  m_EditorClassIdentifier: 
+  sountrackSourceName: Soundtrack
+  soundtrackSource: {fileID: 0}
+  soundtrackClips:
+  - {fileID: 8300000, guid: 0ae9bd37a2ac9e148a266e2a81f7ee7b, type: 3}
+  ambienceSourceName: Ambience
+  ambienceSource: {fileID: 0}
+  ambienceClips:
+  - {fileID: 8300000, guid: 0b116e0322e321143a97d9b1f79324d1, type: 3}
+  - {fileID: 8300000, guid: 749397e33b508be49bec7855865e93e8, type: 3}
+  - {fileID: 8300000, guid: 2dda37117d968f446966de664300517f, type: 3}
+  weatherSourceName: Weather
+  weatherSource: {fileID: 0}
+  weatherClips:
+  - {fileID: 8300000, guid: 38a1453712b18d246a899c736841856e, type: 3}
+  - {fileID: 8300000, guid: bde027dc138c1d74f938be35ff7f8a34, type: 3}

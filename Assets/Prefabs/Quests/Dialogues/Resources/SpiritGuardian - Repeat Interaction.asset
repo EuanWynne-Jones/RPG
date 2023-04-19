@@ -1,0 +1,467 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6399569495603666305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: a86aacbb-fcac-4415-8a9f-24bb2eafb6d4
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: I can resurrect you, at a cost. Or you can search out your body to
+    return to the material world
+  dialogueChildren:
+  - 2e3c3a79-1cfa-4073-b53a-50a07bded2e5
+  nodePosition:
+    serializedVersion: 2
+    x: 687
+    y: 15
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-3661500112168635035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: f4b89e0b-8172-48fc-916a-7a8ce2672749
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Just Resurrect me already!
+  dialogueChildren:
+  - 38bdd02b-4b4a-4fc4-aa71-187ffa0b0424
+  nodePosition:
+    serializedVersion: 2
+    x: 360
+    y: 317
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-3233601108439838693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 19be6198-f332-4300-8e19-8ce60ed65aca
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Resurrect me
+  dialogueChildren:
+  - d0298422-f484-4c9c-b2a3-a8f14b280e0a
+  nodePosition:
+    serializedVersion: 2
+    x: 1196
+    y: 153
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-2932330912201334173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 9d4d1331-7e8e-4079-bcc0-8b255b1d146d
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: We meet again, and on such unfortunate terms...
+  dialogueChildren:
+  - f4b89e0b-8172-48fc-916a-7a8ce2672749
+  - 51940a3f-75d1-4c40-92e3-075662fb2e03
+  nodePosition:
+    serializedVersion: 2
+    x: 82
+    y: 210
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-298331913193324953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 38bdd02b-4b4a-4fc4-aa71-187ffa0b0424
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: As you wish...
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 779
+    y: 379
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: Resurrect
+  condition:
+    and: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96317b7a9fb5262439015062f9491ad8, type: 3}
+  m_Name: SpiritGuardian - Repeat Interaction
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 7104037255685094757}
+  - {fileID: 4059119347169316179}
+  - {fileID: 4153728719127173340}
+  - {fileID: 4048131568252637817}
+  - {fileID: -6399569495603666305}
+  - {fileID: 1925008830554351223}
+  - {fileID: -3233601108439838693}
+  - {fileID: 4389974484742975369}
+  - {fileID: 1598565951085113032}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &1598565951085113032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 83f5d79f-6f33-4d6a-bd1f-4d0d7f683112
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Be seeing you...
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 1486
+    y: 16
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &1925008830554351223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 2e3c3a79-1cfa-4073-b53a-50a07bded2e5
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: What will it be...?
+  dialogueChildren:
+  - 19be6198-f332-4300-8e19-8ce60ed65aca
+  - d4be4aa2-5868-46ca-aa59-c4d7bba35b67
+  nodePosition:
+    serializedVersion: 2
+    x: 937
+    y: 15
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &2197995477748583444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 05de4d62-2d63-4821-bb04-bd17215d097a
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Thanks
+  dialogueChildren:
+  - 34340d0f-7056-4d8b-ad21-3321c8f485cb
+  nodePosition:
+    serializedVersion: 2
+    x: 1086
+    y: 37
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &2855937820121148936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 34340d0f-7056-4d8b-ad21-3321c8f485cb
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Be seeing you...
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 1403
+    y: 38
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &3260458905215632360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 1445b05b-dd96-47b3-9d5f-a7db4baf2c45
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: 
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &3595829648817509908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 51940a3f-75d1-4c40-92e3-075662fb2e03
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Remind me how what I need to do?
+  dialogueChildren:
+  - c6d4abe7-ae32-42a4-bb64-4a77a867c96c
+  nodePosition:
+    serializedVersion: 2
+    x: 370
+    y: 102
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &4048131568252637817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 9e5275dc-3b32-471e-b307-d6ade4ec71ce
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: I dont know what to do?
+  dialogueChildren:
+  - a86aacbb-fcac-4415-8a9f-24bb2eafb6d4
+  nodePosition:
+    serializedVersion: 2
+    x: 338
+    y: 102
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &4059119347169316179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: a84cfe97-e7b2-475e-9702-eca7f0140ad1
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Just revive me already!
+  dialogueChildren:
+  - d0298422-f484-4c9c-b2a3-a8f14b280e0a
+  nodePosition:
+    serializedVersion: 2
+    x: 341
+    y: 278
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &4153728719127173340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: d0298422-f484-4c9c-b2a3-a8f14b280e0a
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: As you wish...
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 1494
+    y: 276
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: Resurrect
+  condition:
+    and: []
+--- !u!114 &4389974484742975369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: d4be4aa2-5868-46ca-aa59-c4d7bba35b67
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: I think ill take my chances
+  dialogueChildren:
+  - 83f5d79f-6f33-4d6a-bd1f-4d0d7f683112
+  nodePosition:
+    serializedVersion: 2
+    x: 1187
+    y: 15
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &7104037255685094757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: c456e3ee-c065-44aa-9a88-4e7090fcdea5
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: We meet again, and on such unfortunate terms...
+  dialogueChildren:
+  - a84cfe97-e7b2-475e-9702-eca7f0140ad1
+  - 9e5275dc-3b32-471e-b307-d6ade4ec71ce
+  nodePosition:
+    serializedVersion: 2
+    x: 30
+    y: 191
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &8407427411386914412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: c6d4abe7-ae32-42a4-bb64-4a77a867c96c
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: You have two options. Either find your physical body, or I can revive
+    you, but it will come at a cost.
+  dialogueChildren:
+  - 05de4d62-2d63-4821-bb04-bd17215d097a
+  nodePosition:
+    serializedVersion: 2
+    x: 785
+    y: 37
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []

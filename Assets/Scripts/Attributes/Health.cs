@@ -23,7 +23,7 @@ namespace RPG.Attributes
         [HideInInspector]
         public bool isDead = false;
         [HideInInspector]
-        public bool inSpiritWorld = false;
+        public bool isInSpiritRealm = false;
 
         LazyValue<float> health;
         private void Awake()

@@ -26,7 +26,7 @@ namespace RPG.Combat
         private void OnTriggerEnter(Collider other)
         {
 
-            if (other.gameObject.tag == "Player" && other.GetComponent<Health>().inSpiritWorld == false)
+            if (other.gameObject.tag == "Player" && other.GetComponent<Health>().isInSpiritRealm == false)
             {
                 if (canPickup)
                 {

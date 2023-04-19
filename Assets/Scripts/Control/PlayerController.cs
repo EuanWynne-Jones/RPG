@@ -40,11 +40,10 @@ namespace RPG.Control
         private void Update()
         {
             CheckSpecialAbilityKeys();
-
             if (InteractWithComponent()) return;
 
             
-            if (interactWithUI()) return;
+            if (InteractWithUI()) return;
             
             if (health.IsDead())
             {
@@ -61,12 +60,12 @@ namespace RPG.Control
         }
 
 
+
         private bool InteractWithComponent()
         {
-            if (GetComponent<Health>().inSpiritWorld) return false;
+            //if (GetComponent<Health>().isInSpiritRealm) return false;
             if (!GetComponent<PlayerConversant>().isInDialogue)
             {
-
                 RaycastHit[] hits = RayCastAllSorted();
                 foreach (RaycastHit hit in hits)
                 {
@@ -78,30 +77,16 @@ namespace RPG.Control
                             {
                             
                                 SetCursor(raycastable.GetCursorType());
-                                //if(raycastable.GetCursorType() == CursorType.Combat && lastEnemy == null)
-                                //{
-                                
-                                //    lastEnemy = hit.transform;
-                                //    lastEnemy.GetComponent<Outline>().enabled = true;
-                                //}
-                                //else
-                                //{
-                                //    if(lastEnemy != null && raycastable.GetCursorType() != CursorType.Combat)
-                                //    {
-                                //        lastEnemy.GetComponent<Outline>().enabled = false;
-                                //        lastEnemy = null;
-                                //    }
-                                //}
+
                                 return true;
                             }
                         }
                     }
-            }
+                }
             }
             
             return false;
         }
-
 
         RaycastHit[] RayCastAllSorted()
         {
@@ -115,7 +100,7 @@ namespace RPG.Control
             return hits;
         }
 
-        private bool interactWithUI()
+        private bool InteractWithUI()
         {
             if (Input.GetMouseButtonUp(0))
             {
@@ -142,10 +127,6 @@ namespace RPG.Control
         {
             if (CanInteractWithMovement)
             {
-
-                //Ray ray = GetMouseRay();
-                //RaycastHit hit;
-                //bool hashit = Physics.Raycast(ray, out hit);
                 Vector3 target;
                 bool hasHit = RaycastNavmesh(out target);
                 if (hasHit)

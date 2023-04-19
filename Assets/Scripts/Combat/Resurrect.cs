@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using RPG.Core;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using RPG.Control;
 using RPG.SceneManagement;
 using RPG.Attributes;
+using static UnityEditor.Rendering.BuiltIn.ShaderGraph.BuiltInBaseShaderGUI;
 
 namespace RPG.Combat
 {
@@ -38,13 +40,23 @@ namespace RPG.Combat
         [SerializeField] public GameObject reviveUIButton;
         private GameObject player;
 
+        [Header("NPC")]
+        [SerializeField] GameObject spiritGuardian;
+
+        [HideInInspector]
+        public Material playerMaterial;
+        private List<Material> originalMaterials = new List<Material>();
+
         private void Awake()
         {
             soundscapeSetter = GameObject.FindWithTag("Soundscape");
             resurrectLocation = GameObject.FindWithTag("ResurrectLocation");
             player = GameObject.FindWithTag("Player");
+            playerMaterial = player.GetComponentInChildren<SkinnedMeshRenderer>().material;
             resurrectUIButton.SetActive(false);
             reviveUIButton.SetActive(false);
+            spiritGuardian = GameObject.FindWithTag("SpiritGuardian");
+            spiritGuardian.SetActive(false);
         }
 
 
@@ -56,6 +68,15 @@ namespace RPG.Combat
             }
         }
 
+        public void onGuardianRevive()
+        {
+            player.GetComponent<Health>().isDead = false;
+            player.GetComponent<Animator>().SetTrigger("Resurrect");
+            DisableControl();
+            StartCoroutine(WaitToResurrect(2.2f));
+            RestoreOriginalMaterials();
+            Instantiate(resurrectionFX, player.transform.position, Quaternion.identity);
+        }
         public void onReviveButton()
         {
             reviveUIButton.SetActive(false);
@@ -63,8 +84,80 @@ namespace RPG.Combat
             player.GetComponent<Animator>().SetTrigger("Resurrect");
             DisableControl();
             StartCoroutine(WaitToResurrect(2.2f));
+            RestoreOriginalMaterials();
             Instantiate(resurrectionFX, player.transform.position, Quaternion.identity);
         }
+
+        private void ChangeMaterial()
+        {
+            // Get all MeshRenderers and SkinnedMeshRenderers in children of player object
+            MeshRenderer[] meshRenderers = player.GetComponentsInChildren<MeshRenderer>();
+            SkinnedMeshRenderer[] skinnedMeshRenderers = player.GetComponentsInChildren<SkinnedMeshRenderer>();
+
+            // Loop through the MeshRenderers and apply the transparent material
+            foreach (MeshRenderer renderer in meshRenderers)
+            {
+                ApplyTransparentMaterial(renderer);
+            }
+
+            // Loop through the SkinnedMeshRenderers and apply the transparent material
+            foreach (SkinnedMeshRenderer renderer in skinnedMeshRenderers)
+            {
+                ApplyTransparentMaterial(renderer);
+            }
+        }
+
+        void ApplyTransparentMaterial(Renderer renderer)
+        {
+            // Create a new instance of the original material
+            Material originalMaterial = renderer.material;
+            originalMaterials.Add(originalMaterial);
+
+            // Create a new instance of the player material
+            Material transparentMaterial = new Material(playerMaterial);
+
+            // Change surface type to transparent
+            transparentMaterial.SetFloat("_Surface", (float)SurfaceType.Transparent);
+
+            // Change blending mode to additive
+            transparentMaterial.SetInt("_BlendMode", (int)UnityEditor.BaseShaderGUI.BlendMode.Additive);
+
+            // Enable emission and set it to black
+            transparentMaterial.EnableKeyword("_EMISSION");
+            transparentMaterial.SetColor("_EmissionColor", Color.black);
+
+            // Set the shader to use the URP Lit shader
+            transparentMaterial.shader = Shader.Find("Universal Render Pipeline/Lit");
+
+            // Apply the new transparent material to the renderer
+            renderer.material = transparentMaterial;
+        }
+
+        private void RestoreOriginalMaterials()
+        {
+            // Get all MeshRenderers and SkinnedMeshRenderers in children of player object
+            MeshRenderer[] meshRenderers = player.GetComponentsInChildren<MeshRenderer>();
+            SkinnedMeshRenderer[] skinnedMeshRenderers = player.GetComponentsInChildren<SkinnedMeshRenderer>();
+
+            // Loop through the MeshRenderers and restore the original material
+            foreach (MeshRenderer renderer in meshRenderers)
+            {
+                RestoreOriginalMaterial(renderer);
+            }
+
+            // Loop through the SkinnedMeshRenderers and restore the original material
+            foreach (SkinnedMeshRenderer renderer in skinnedMeshRenderers)
+            {
+                RestoreOriginalMaterial(renderer);
+            }
+        }
+
+        void RestoreOriginalMaterial(Renderer renderer)
+        {
+            // Restore the original material on the renderer
+            renderer.material = playerMaterial;
+        }
+
         public void EnableResurrectMode()
         {
             resurrectUIButton.SetActive(false);
@@ -73,6 +166,8 @@ namespace RPG.Combat
             currentProfile = volume.profile;
             volume.profile = resurrectProfile;
             InsantiatePlayerDeadCopy();
+            spiritGuardian.SetActive(true);
+            ChangeMaterial();
             UpdatePlayerPostion();
             DisableComponents();
             IsNotDead();
@@ -123,13 +218,13 @@ namespace RPG.Combat
 
         private void DisableComponents()
         {
-            player.GetComponent<Health>().inSpiritWorld = true;
+            player.GetComponent<Health>().isInSpiritRealm = true;
             player.GetComponent<Fighter>().enabled = false;
         }
 
         public void EnableComponents()
         {
-            player.GetComponent<Health>().inSpiritWorld = false;
+            player.GetComponent<Health>().isInSpiritRealm = false;
             player.GetComponent<Fighter>().enabled = true;
         }
 

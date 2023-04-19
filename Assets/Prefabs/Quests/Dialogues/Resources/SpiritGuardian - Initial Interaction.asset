@@ -1,0 +1,207 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7568590669741337676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: b20cb58b-06b1-4f79-91c6-c765328cdb50
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Welcome.  You are in the realm of the dead. Your physical body has
+    been separated from your spirit.
+  dialogueChildren:
+  - fc3366ec-1bd6-40bc-977d-0a3823d2efd6
+  - b2a9d0ac-95c0-42b8-a092-550a27e51bbd
+  nodePosition:
+    serializedVersion: 2
+    x: 193
+    y: 236
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-7398814783482097758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: b2a9d0ac-95c0-42b8-a092-550a27e51bbd
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Just resurrect me already!
+  dialogueChildren:
+  - 65bfdf11-db49-44b9-8fec-b7e9e5e1d8df
+  nodePosition:
+    serializedVersion: 2
+    x: 467
+    y: 292
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-991891910621344999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 08d23464-2037-4b85-a249-00f9947fcd91
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Ill Sacrefice anything Please!
+  dialogueChildren:
+  - 65bfdf11-db49-44b9-8fec-b7e9e5e1d8df
+  nodePosition:
+    serializedVersion: 2
+    x: 1008
+    y: 171
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96317b7a9fb5262439015062f9491ad8, type: 3}
+  m_Name: SpiritGuardian - Initial Interaction
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -7568590669741337676}
+  - {fileID: -7398814783482097758}
+  - {fileID: 6702329872212870825}
+  - {fileID: 5087297391082140270}
+  - {fileID: 5053124738120473248}
+  - {fileID: -991891910621344999}
+  - {fileID: 4559930268147058307}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &4559930268147058307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 7bc94b80-53b2-4563-b585-3c766f746601
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Be seeing you...
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 1268
+    y: 25
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: MoveToRepeatDialogue
+  condition:
+    and: []
+--- !u!114 &5053124738120473248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: ce6c89ec-34a7-40d5-8faa-559eab7b707f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  dialogueText: Ill take my chances, Goodbye
+  dialogueChildren:
+  - 7bc94b80-53b2-4563-b585-3c766f746601
+  nodePosition:
+    serializedVersion: 2
+    x: 1011
+    y: 25
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &5087297391082140270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: ef637063-af11-4a86-840d-58bb34ed97e8
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: ou have two options. Either find your physical body, or I can revive
+    you, but it will come at a cost.
+  dialogueChildren:
+  - ce6c89ec-34a7-40d5-8faa-559eab7b707f
+  - 08d23464-2037-4b85-a249-00f9947fcd91
+  nodePosition:
+    serializedVersion: 2
+    x: 743
+    y: 72
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &6702329872212870825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 65bfdf11-db49-44b9-8fec-b7e9e5e1d8df
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: As you wish...
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 1343
+    y: 293
+    width: 200
+    height: 100
+  onEntryAction: 
+  onExitAction: Resurrect
+  condition:
+    and: []
