@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 223e9bf2-2919-4bf1-9e43-5fb5bf22e60d
   displayName: Fireball Spellbook
-  icon: {fileID: 21300000, guid: 22155d8e5bb9e7d4c984c4d1c765ca0e, type: 3}
+  icon: {fileID: 21300000, guid: ccd126cd69e1197439244f000d2cb913, type: 3}
   Quality: 2
   description: Feel the magic flowing through your firey veins
   pickup: {fileID: 8462001207748328040, guid: 5f1c8f57e2aa310499da7451b1750b18, type: 3}

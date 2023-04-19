@@ -9,16 +9,9 @@ namespace RPG.UI
 {
     public class Quitter : MonoBehaviour
     {
-        [SerializeField] int mainMenuScene = -1;
-        Fader fader;
 
-        private void Awake()
-        {
-            fader = FindObjectOfType<Fader>();
-        }
         public void QuitGame()
         {
-            fader.FadeOutImmediate();
             Application.Quit();
         }
     }

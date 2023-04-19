@@ -2,60 +2,107 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Saving;
+using UnityEngine.SceneManagement;
+using System;
 
 namespace RPG.SceneManagement
 {
     public class SavingWrapper : MonoBehaviour
     {
-        const string defaultSaveFile = "save";
+        private const string currentSaveKey = "CurrentSaveName";
         [SerializeField] float fadeInTime = 1f;
+        [SerializeField] float fadeOutTime = 1f;
+        [SerializeField] int firstFieldBuildIndex = 1;
 
-        private void Awake()
+        public void ContinueGame()
         {
+            if (!PlayerPrefs.HasKey(currentSaveKey)) return;
+            if (!GetComponent<SavingSystem>().SaveFileExists(GetCurrentSave())) return;
             StartCoroutine(LoadLastScene());
+        }
+
+        public void LoadGame(string saveFile)
+        {
+            SetCurrentSave(saveFile);
+            ContinueGame();
+        }
+
+        public void DeleteGame(string saveFile)
+        {
+            SetCurrentSave(saveFile);
+            Delete();
+        }
+
+        public void NewGame(string saveFile)
+        {
+            if (string.IsNullOrEmpty(saveFile)) return;
+            SetCurrentSave(saveFile);
+            StartCoroutine(LoadNewGameScene());
+        }
+
+        private void SetCurrentSave(string saveFile)
+        {
+            PlayerPrefs.SetString(currentSaveKey, saveFile);
+        }
+
+        private string GetCurrentSave()
+        {
+            return PlayerPrefs.GetString(currentSaveKey);
+        }
+        IEnumerator LoadNewGameScene()
+        {
+            Fader fader = FindObjectOfType<Fader>();
+            yield return fader.FadeOut(fadeOutTime);
+            yield return SceneManager.LoadSceneAsync(firstFieldBuildIndex);
+            yield return fader.FadeIn(fadeInTime);
         }
         IEnumerator LoadLastScene()
         {
-            yield return GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
             Fader fader = FindObjectOfType<Fader>();
-            fader.FadeOutImmediate();
+            yield return fader.FadeOut(fadeOutTime);
+            yield return GetComponent<SavingSystem>().LoadLastScene(GetCurrentSave());
             yield return fader.FadeIn(fadeInTime);
         }
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                print("loading");
-                Load();
-            }
+        //private void Update()
+        //{
+        //    if (Input.GetKeyDown(KeyCode.L))
+        //    {
+        //        print("loading");
+        //        Load();
+        //    }
 
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                print("saving");
-                Save();
-            }
+        //    if (Input.GetKeyDown(KeyCode.S))
+        //    {
+        //        print("saving");
+        //        Save();
+        //    }
 
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                print("Deleting save");
-                Delete();
-            }
+        //    if (Input.GetKeyDown(KeyCode.D))
+        //    {
+        //        print("Deleting save");
+        //        Delete();
+        //    }
 
-        }
+        //}
 
         public void Load()
         {
-            GetComponent<SavingSystem>().Load(defaultSaveFile);
+            GetComponent<SavingSystem>().Load(GetCurrentSave());
         }
 
         public void Save()
         {
-            GetComponent<SavingSystem>().Save(defaultSaveFile);
+            GetComponent<SavingSystem>().Save(GetCurrentSave());
         }
 
         public void Delete()
         {
-            GetComponent<SavingSystem>().Delete(defaultSaveFile);
+            GetComponent<SavingSystem>().Delete(GetCurrentSave());
+        }
+
+        public IEnumerable<string> ListSaves()
+        {
+            return GetComponent<SavingSystem>().ListSaves();
         }
     }
 }
