@@ -63,7 +63,7 @@ namespace RPG.Control
 
         private bool InteractWithComponent()
         {
-            //if (GetComponent<Health>().isInSpiritRealm) return false;
+            if (GetComponent<Health>().isInSpiritRealm) return false;
             if (!GetComponent<PlayerConversant>().isInDialogue)
             {
                 RaycastHit[] hits = RayCastAllSorted();

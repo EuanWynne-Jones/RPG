@@ -34,6 +34,7 @@ namespace RPG.Combat
         [SerializeField] private GameObject soundscapeSetter;
         [SerializeField] public Color resurrectFogColour;
         [SerializeField] public ParticleSystem resurrectionFX;
+        [SerializeField] public float spiritRealmFadeTime = 0.2f;
 
         [Header("UI")]
         [SerializeField] public GameObject resurrectUIButton;
@@ -160,6 +161,15 @@ namespace RPG.Combat
 
         public void EnableResurrectMode()
         {
+            StartCoroutine(Resurrection());
+        }
+
+        private IEnumerator Resurrection()
+        {
+            Fader fader = FindObjectOfType<Fader>();
+            Image faderImage = fader.GetComponent<Image>();
+            faderImage.color = Color.white;
+            yield return (fader.FadeOut(spiritRealmFadeTime));
             resurrectUIButton.SetActive(false);
             camera = Camera.main;
             volume = camera.GetComponent<Volume>();
@@ -173,6 +183,8 @@ namespace RPG.Combat
             IsNotDead();
             PlayResurrectAudio();
             UpdateFog();
+            yield return fader.FadeIn(spiritRealmFadeTime);
+            faderImage.color = Color.black ;
         }
 
         public void DisableResurrectMode()
