@@ -10,7 +10,7 @@ namespace RPG.SceneManagement
     public class SavingWrapper : MonoBehaviour
     {
         private const string currentSaveKey = "CurrentSaveName";
-        [SerializeField] float fadeInTime = 1f;
+        [SerializeField] float fadeInTime = 2f;
         [SerializeField] float fadeOutTime = 1f;
         [SerializeField] int firstLevelBuildIndex = 1;
         [SerializeField] int menuLevelBuildIndex = 0;
