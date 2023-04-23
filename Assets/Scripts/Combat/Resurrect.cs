@@ -9,7 +9,6 @@ using UnityEngine.UI;
 using RPG.Control;
 using RPG.SceneManagement;
 using RPG.Attributes;
-using static UnityEditor.Rendering.BuiltIn.ShaderGraph.BuiltInBaseShaderGUI;
 
 namespace RPG.Combat
 {
@@ -26,6 +25,7 @@ namespace RPG.Combat
         [Header("Default-Mode")]
         [SerializeField] public VolumeProfile defaultProfile;
         [SerializeField] public Color defaultFogColour;
+        private GameObject player;
 
         [Header("Spirit-Mode")]
         [SerializeField] public VolumeProfile resurrectProfile;
@@ -39,21 +39,21 @@ namespace RPG.Combat
         [Header("UI")]
         [SerializeField] public GameObject resurrectUIButton;
         [SerializeField] public GameObject reviveUIButton;
-        private GameObject player;
 
         [Header("NPC")]
         [SerializeField] GameObject spiritGuardian;
 
-        [HideInInspector]
-        public Material playerMaterial;
-        private List<Material> originalMaterials = new List<Material>();
+
+        [Header("Spirit Material")]
+        private Material playerMaterial;
+        [SerializeField] Material transparentMaterial;
 
         private void Awake()
         {
             soundscapeSetter = GameObject.FindWithTag("Soundscape");
             resurrectLocation = GameObject.FindWithTag("ResurrectLocation");
             player = GameObject.FindWithTag("Player");
-            playerMaterial = player.GetComponentInChildren<SkinnedMeshRenderer>().material;
+            playerMaterial = player.GetComponentInChildren<Renderer>().material;
             resurrectUIButton.SetActive(false);
             reviveUIButton.SetActive(false);
             spiritGuardian = GameObject.FindWithTag("SpiritGuardian");
@@ -85,79 +85,41 @@ namespace RPG.Combat
             player.GetComponent<Animator>().SetTrigger("Resurrect");
             DisableControl();
             StartCoroutine(WaitToResurrect(2.2f));
-            RestoreOriginalMaterials();
             Instantiate(resurrectionFX, player.transform.position, Quaternion.identity);
         }
 
         private void ChangeMaterial()
         {
-            // Get all MeshRenderers and SkinnedMeshRenderers in children of player object
-            MeshRenderer[] meshRenderers = player.GetComponentsInChildren<MeshRenderer>();
-            SkinnedMeshRenderer[] skinnedMeshRenderers = player.GetComponentsInChildren<SkinnedMeshRenderer>();
+            Renderer[] renderers = player.GetComponentsInChildren<Renderer>(); // get all the renders in the player's game object children
 
-            // Loop through the MeshRenderers and apply the transparent material
-            foreach (MeshRenderer renderer in meshRenderers)
+            foreach (Renderer renderer in renderers)
             {
-                ApplyTransparentMaterial(renderer);
-            }
+                Material originalMaterial = renderer.material; // save the original material
 
-            // Loop through the SkinnedMeshRenderers and apply the transparent material
-            foreach (SkinnedMeshRenderer renderer in skinnedMeshRenderers)
-            {
-                ApplyTransparentMaterial(renderer);
+                // create a new material based on the transparentMaterial with the base map and emission map from the original material
+                Material newMaterial = new Material(transparentMaterial);
+                newMaterial.SetTexture("_BaseMap", originalMaterial.GetTexture("_BaseMap"));
+                newMaterial.SetTexture("_EmissionMap", originalMaterial.GetTexture("_EmissionMap"));
+
+                renderer.material = newMaterial; // set the new material to the renderer
             }
         }
 
-        void ApplyTransparentMaterial(Renderer renderer)
-        {
-            // Create a new instance of the original material
-            Material originalMaterial = renderer.material;
-            originalMaterials.Add(originalMaterial);
-
-            // Create a new instance of the player material
-            Material transparentMaterial = new Material(playerMaterial);
-
-            // Change surface type to transparent
-            transparentMaterial.SetFloat("_Surface", (float)SurfaceType.Transparent);
-
-            // Change blending mode to additive
-            transparentMaterial.SetInt("_BlendMode", (int)UnityEditor.BaseShaderGUI.BlendMode.Additive);
-
-            // Enable emission and set it to black
-            transparentMaterial.EnableKeyword("_EMISSION");
-            transparentMaterial.SetColor("_EmissionColor", Color.black);
-
-            // Set the shader to use the URP Lit shader
-            transparentMaterial.shader = Shader.Find("Universal Render Pipeline/Lit");
-
-            // Apply the new transparent material to the renderer
-            renderer.material = transparentMaterial;
-        }
 
         private void RestoreOriginalMaterials()
         {
-            // Get all MeshRenderers and SkinnedMeshRenderers in children of player object
-            MeshRenderer[] meshRenderers = player.GetComponentsInChildren<MeshRenderer>();
-            SkinnedMeshRenderer[] skinnedMeshRenderers = player.GetComponentsInChildren<SkinnedMeshRenderer>();
+            Renderer[] renderers = player.GetComponentsInChildren<Renderer>(); // get all the renders in the player's game object children
 
-            // Loop through the MeshRenderers and restore the original material
-            foreach (MeshRenderer renderer in meshRenderers)
+            foreach (Renderer renderer in renderers)
             {
-                RestoreOriginalMaterial(renderer);
-            }
-
-            // Loop through the SkinnedMeshRenderers and restore the original material
-            foreach (SkinnedMeshRenderer renderer in skinnedMeshRenderers)
-            {
-                RestoreOriginalMaterial(renderer);
+                if (playerMaterial != null) // make sure playerMaterial is not null
+                {
+                    renderer.material = playerMaterial; // set the player's original material to the renderer
+                }
             }
         }
 
-        void RestoreOriginalMaterial(Renderer renderer)
-        {
-            // Restore the original material on the renderer
-            renderer.material = playerMaterial;
-        }
+
 
         public void EnableResurrectMode()
         {
@@ -280,6 +242,7 @@ namespace RPG.Combat
             GameObject player = GameObject.FindWithTag("Player");
             player.GetComponent<Health>().RestoreHealthOnResurrect(animTime);
             yield return new WaitForSecondsRealtime(animTime);
+            RestoreOriginalMaterials();
             player.GetComponent<Animator>().ResetTrigger("Resurrect");
             DisableResurrectMode();
             EnableComponents();
