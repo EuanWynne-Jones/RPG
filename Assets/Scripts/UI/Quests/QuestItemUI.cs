@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace RPG.UI.Quests
 {
@@ -10,6 +11,7 @@ namespace RPG.UI.Quests
     {
         [SerializeField] TextMeshProUGUI title;
         [SerializeField] TextMeshProUGUI progress;
+        [SerializeField] Toggle isActiveQuest;
         QuestStatus questStatus;
         public void Setup(QuestStatus questStatus)
         {
