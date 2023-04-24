@@ -17,13 +17,35 @@ namespace RPG.Combat
         GameObject healthSliderGO = null;
         int healthIntValue;
 
+        //[SerializeField] string ID;
+
+
+
         private void Awake()
         {
             fighter = GameObject.FindGameObjectWithTag("Player").GetComponent<Fighter>();
-            healthSliderGO = healthSlider.gameObject;
+            healthSliderGO = FindObjectOfType<EnemyHealthUI>().gameObject;
+            healthSlider = healthSliderGO.GetComponent<Slider>();
+
+            //UIEvents uieve = FindObjectOfType<UIEvents>();
+            //if (uieve != null)
+            //    uieve.MyEvent += MyEventListener;
             
             
         }
+
+        //private void OnDestroy()
+        //{
+        //    UIEvents uieve = FindObjectOfType<UIEvents>();
+        //    uieve.MyEvent -= MyEventListener;
+        //}
+
+        //void MyEventListener(string inputID)
+        //{
+        //    if(inputID == ID)
+        //        Debug.Log(this.name + " " + inputID);
+        //}
+
         private void Start()
         {
             healthSliderGO.SetActive(false);

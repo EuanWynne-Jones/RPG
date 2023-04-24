@@ -1097,6 +1097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5afee1a15128bc48bae67b05adceed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultTab: {fileID: 0}
   displayDropdown: {fileID: 8441994301571493915}
   resolutionDropdown: {fileID: 7090551737526796798}
   masterMixer: {fileID: 24100000, guid: 3267d40d19952ab43b743b080d434fa0, type: 2}
@@ -2816,6 +2817,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].dropdownListItem
+      value: ToolTip Popup
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].dropdownListItem
+      value: Detailed Quest Page
+      objectReference: {fileID: 0}
     - target: {fileID: 3523102002117617927, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.0000019073486
@@ -2827,6 +2840,10 @@ PrefabInstance:
     - target: {fileID: 4055962031998945458, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
       propertyPath: m_text
       value: Tooltip Popup
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979035467712226029, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6437647759138416104, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2858,7 +2875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8134373658264409343, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
       propertyPath: m_Options.m_Options.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8134373658264409343, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
       propertyPath: m_Options.m_Options.Array.data[0].m_Text
@@ -3017,6 +3034,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].dropdownListItem
+      value: Enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].dropdownListItem
+      value: Disabled
+      objectReference: {fileID: 0}
     - target: {fileID: 3523102002117617927, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.0000019073486
@@ -3028,6 +3057,10 @@ PrefabInstance:
     - target: {fileID: 4055962031998945458, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
       propertyPath: m_text
       value: Enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979035467712226029, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6437647759138416104, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3218,6 +3251,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].dropdownListItem
+      value: Enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].dropdownListItem
+      value: Disabled
+      objectReference: {fileID: 0}
     - target: {fileID: 3523102002117617927, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.0000019073486
@@ -3229,6 +3274,10 @@ PrefabInstance:
     - target: {fileID: 4055962031998945458, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
       propertyPath: m_text
       value: Enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979035467712226029, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6437647759138416104, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3260,7 +3309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8134373658264409343, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
       propertyPath: m_Options.m_Options.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8134373658264409343, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
       propertyPath: m_Options.m_Options.Array.data[0].m_Text
@@ -3419,6 +3468,66 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].dropdownListItem
+      value: Center Bottom
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].dropdownListItem
+      value: Outer Bottom
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].dropdownListItem
+      value: Upper Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444186440840516011, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3523102002117617927, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.0000019073486
@@ -3430,6 +3539,10 @@ PrefabInstance:
     - target: {fileID: 4055962031998945458, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
       propertyPath: m_text
       value: 'Center bottom '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979035467712226029, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6437647759138416104, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3457,6 +3570,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7528087688620643601, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134373658264409343, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}
+      propertyPath: m_Options.m_Options.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8134373658264409343, guid: 33792d3c6a6e5114ea0d7536d57dda39, type: 3}

@@ -9,7 +9,8 @@ namespace RPG.SceneManagement
 {
     public class SettingsMenuUI : MonoBehaviour
     {
-
+        [Header("DefaultTab")]
+        [SerializeField] GameObject defaultTab;
 
         [Header("Video Settings")]
         [SerializeField] public TMP_Dropdown displayDropdown;
@@ -45,14 +46,17 @@ namespace RPG.SceneManagement
         [SerializeField] TMP_Dropdown tutorialNotificationsDropdown;
 
 
+        
         private void OnEnable()
         {
+            defaultTab.SetActive(true);
             masterVolumeSlider.value = PlayerPrefs.GetFloat("MasterVolume");
             SoundtrackVolumeSlider.value = PlayerPrefs.GetFloat("SoundtrackVolume");
             AmbienceVolumeSlider.value = PlayerPrefs.GetFloat("AmbienceVolume");
             GameplayVolumeSlider.value = PlayerPrefs.GetFloat("GameplayVolume");
             DialogueVolumeSlider.value = PlayerPrefs.GetFloat("DialogueVolume");
         }
+
 
         public void SetMasterVolume()
         {
