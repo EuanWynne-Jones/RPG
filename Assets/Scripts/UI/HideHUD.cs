@@ -25,6 +25,7 @@ namespace RPG.UI
                 // Hide or show HUD elements based on the current state of the dialogue HUD
                 foreach (GameObject hudElement in hudElementsToHide)
                 {
+                    if (hudElement.activeInHierarchy == false) return;
                     hudElement.SetActive(!isDialogueActive);
                 }
             }
@@ -33,6 +34,7 @@ namespace RPG.UI
                 // Show HUD elements if the dialogue HUD is not active
                 foreach (GameObject hudElement in hudElementsToHide)
                 {
+                    if (hudElement.activeInHierarchy == false) return;
                     hudElement.SetActive(true);
                 }
             }

@@ -11,6 +11,8 @@ namespace RPG.UI
     {
         [SerializeField] private TMP_Dropdown dropdown;
         [SerializeField] private List<DropdownOptions> DropdownOptionsList = new List<DropdownOptions>();
+        private string firstOption = null;
+        private int lastSelectedOptionIndex = 0;
 
         [System.Serializable]
         public class DropdownOptions
@@ -27,17 +29,44 @@ namespace RPG.UI
         private void OnEnable()
         {
             Setup();
+            if (lastSelectedOptionIndex >= 0 && lastSelectedOptionIndex < DropdownOptionsList.Count)
+            {
+                dropdown.captionText.text = DropdownOptionsList[lastSelectedOptionIndex].dropdownListItem;
+                dropdown.value = lastSelectedOptionIndex;
+            }
+            else if (firstOption != null)
+            {
+                dropdown.captionText.text = firstOption;
+                dropdown.value = 0;
+            }
+            dropdown.RefreshShownValue();
+        }
+
+        private void OnDisable()
+        {
+            dropdown.ClearOptions();
+            dropdown.onValueChanged.RemoveAllListeners();
+            dropdown.captionText.text = "";
         }
 
         private void Setup()
         {
             dropdown.ClearOptions();
-
             foreach (DropdownOptions option in DropdownOptionsList)
             {
+                if (firstOption == null)
+                {
+                    firstOption = option.dropdownListItem;
+                }
                 dropdown.options.Add(new TMP_Dropdown.OptionData() { text = option.dropdownListItem });
             }
 
+            if (firstOption != null)
+            {
+                dropdown.captionText.text = firstOption;
+                dropdown.value = 0;
+            }
+            dropdown.RefreshShownValue();
             dropdown.onValueChanged.AddListener(delegate
             {
                 DropdownItemSelected(dropdown.value);
@@ -46,8 +75,15 @@ namespace RPG.UI
 
         private void DropdownItemSelected(int value)
         {
-            DropdownOptionsList[value].InvokeEvent();
+            if (value != lastSelectedOptionIndex)
+            {
+                DropdownOptionsList[value].InvokeEvent();
+                lastSelectedOptionIndex = value;
+            }
+            dropdown.Hide();
         }
+
 
     }
 }
+

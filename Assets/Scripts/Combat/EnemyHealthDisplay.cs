@@ -24,14 +24,19 @@ namespace RPG.Combat
         private void Awake()
         {
             fighter = GameObject.FindGameObjectWithTag("Player").GetComponent<Fighter>();
-            healthSliderGO = FindObjectOfType<EnemyHealthUI>().gameObject;
-            healthSlider = healthSliderGO.GetComponent<Slider>();
+            UpdateHealthDisplayUI();
 
             //UIEvents uieve = FindObjectOfType<UIEvents>();
             //if (uieve != null)
             //    uieve.MyEvent += MyEventListener;
-            
-            
+
+
+        }
+
+        public void UpdateHealthDisplayUI()
+        {
+            healthSliderGO = FindObjectOfType<EnemyHealthUI>().gameObject;
+            healthSlider = healthSliderGO.GetComponent<Slider>();
         }
 
         //private void OnDestroy()
