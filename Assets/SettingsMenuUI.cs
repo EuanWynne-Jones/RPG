@@ -1,3 +1,4 @@
+using RPG.UI.Inventories;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -5,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-namespace RPG.SceneManagement
+namespace RPG.UI
 {
     public class SettingsMenuUI : MonoBehaviour
     {
@@ -44,6 +45,7 @@ namespace RPG.SceneManagement
         [SerializeField] TMP_Dropdown questIndicationDropdown;
         [SerializeField] TMP_Dropdown onScreenObjectivesDropdown;
         [SerializeField] TMP_Dropdown tutorialNotificationsDropdown;
+
 
 
         
@@ -89,6 +91,9 @@ namespace RPG.SceneManagement
             masterMixer.SetFloat("Dialogue", dialogueValue);
             PlayerPrefs.SetFloat("DialogueVolume", dialogueValue);
         }
+
+
+
 
         public void SaveSettings()
         {

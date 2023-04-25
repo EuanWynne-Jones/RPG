@@ -14,6 +14,7 @@ namespace RPG.Inventories
         [Tooltip("Where are we allowed to put this item.")]
         [SerializeField] EquipLocation allowedEquipLocation = EquipLocation.Weapon;
 
+
         // PUBLIC
 
         public EquipLocation GetAllowedEquipLocation()

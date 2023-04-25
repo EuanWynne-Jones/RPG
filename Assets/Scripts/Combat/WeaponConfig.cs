@@ -124,6 +124,14 @@ namespace RPG.Combat
             return weaponRange;
         }
 
+        public float GetMinDamage()
+        {
+            return minWeaponDamage;
+        }
+        public float GetMaxDamage()
+        {
+            return maxWeaponDamage;
+        }
         public IEnumerable<float> GetAdditiveModifiers(Stat stat)
         {
             if(stat == Stat.Damage)

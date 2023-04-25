@@ -5,7 +5,7 @@ using UnityEngine;
 using TMPro;
 using RPG.Attributes;
 using UnityEngine.UI;
-
+using RPG.UI;
 
 namespace RPG.Combat
 {
@@ -16,6 +16,7 @@ namespace RPG.Combat
         [SerializeField] public Slider healthSlider;
         GameObject healthSliderGO = null;
         int healthIntValue;
+        SettingsHandler settingsHandler;
 
         //[SerializeField] string ID;
 
@@ -58,9 +59,11 @@ namespace RPG.Combat
 
         private void Update()
         {
-            if(fighter.GetTarget() == null)
+            settingsHandler = FindObjectOfType<SettingsHandler>();
+            if (settingsHandler.GetEnemyHealthDisplayStatus() == false) return;
+            
+                if (fighter.GetTarget() == null)
             {
-                //healthText.text = "N/A";
                 healthSliderGO.SetActive(false);
                 return;
             }
@@ -70,16 +73,16 @@ namespace RPG.Combat
                 healthIntValue = (int)Math.Round(health.GetPercentage());
                 healthSlider.value = healthIntValue;
 
-                //healthText.text = healthIntValue.ToString() + "%";
-                //healthText.text = String.Format("{0:0}%", health.GetPercentage());
                 if(fighter.GetTarget().GetComponent<Health>().isDead == true)
                 {
                     healthSliderGO.SetActive(false);
                 }
 
            
-            // showing 40/50 for health
-            //healthText.GetComponent<TMP_Text>().text = String.Format("{0:0}/{1:00}", health.GetHealth(), health.GetMaxHealth());
+                // showing 40/50 for health
+                //healthText.GetComponent<TMP_Text>().text = String.Format("{0:0}/{1:00}", health.GetHealth(), health.GetMaxHealth());
+                //healthText.text = healthIntValue.ToString() + "%";
+                //healthText.text = String.Format("{0:0}%", health.GetPercentage());
         }
     }
 }

@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8377449688706189462, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: m_Name
-      value: EnemyCharacter
+      value: GoblinMale
       objectReference: {fileID: 0}
     - target: {fileID: 8377449688706189462, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
       propertyPath: m_TagString
@@ -254,24 +254,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scatterDistance: 2
   dropLibary: {fileID: 11400000, guid: a0420e391635d8c44b9adc4951c861ab, type: 2}
---- !u!114 &7319668417278315426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8576271466948551054}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 1, g: 0, b: 0, a: 1}
-  outlineWidth: 3.31
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!114 &8691086729088533773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,9 +351,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health Bar
       objectReference: {fileID: 0}
+    - target: {fileID: 4718288427273299654, guid: 1b2c7fa201405ff4686b203551468670, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5506325822561839833, guid: 1b2c7fa201405ff4686b203551468670, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5506325822561839833, guid: 1b2c7fa201405ff4686b203551468670, type: 3}
       propertyPath: m_LocalPosition.x

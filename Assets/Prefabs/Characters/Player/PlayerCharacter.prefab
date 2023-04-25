@@ -578,6 +578,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: The Lone Adventurer
   isInDialogue: 0
+--- !u!114 &5610330048698132236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2299934417806937540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645d9248e6259e9428d78891c35ed00f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconOptionEnabled: 1
 --- !u!4 &2305368488332970148 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8383446708011306486, guid: 5ee468b9067046a48a3356c17f207143, type: 3}

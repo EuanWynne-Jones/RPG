@@ -3,6 +3,8 @@ using TMPro;
 using RPG.Inventories;
 using UnityEngine.UI;
 using System;
+using RPG.Combat;
+using RPG.SceneManagement;
 
 namespace RPG.UI.Inventories
 {
@@ -13,23 +15,51 @@ namespace RPG.UI.Inventories
     {
         // CONFIG DATA
         [SerializeField] TextMeshProUGUI titleText = null;
+        [SerializeField] TextMeshProUGUI damageText = null;
         [SerializeField] TextMeshProUGUI qualityText = null;
         [SerializeField] TextMeshProUGUI descriptionText = null;
         [SerializeField] GameObject valuePrefab = null;
         [SerializeField] Transform valueParent = null;
+        [SerializeField] GameObject itemIconPrefab;
+        [SerializeField] Transform itemIconTransform;
         [SerializeField] Sprite goldIcon;
         [SerializeField] Sprite silverIcon;
         [SerializeField] Sprite copperIcon;
+
+        SettingsHandler settingsHandler;
         // PUBLIC
 
         public void Setup(InventoryItem item)
         {
+            SetupItemvalue(item);
             titleText.text = item.GetDisplayName();
             qualityText.text = item.GetItemQuality();
             SetupQualityColour(item);
             descriptionText.text = item.GetDescription();
-            SetupItemvalue(item);
+            //SetupDamage(item);
+            SetupItemIcon(item);
         }
+
+        private void SetupItemIcon(InventoryItem item)
+        {
+            settingsHandler = FindObjectOfType<SettingsHandler>();
+            if (settingsHandler.GetIconOptionStatus() == true)
+            {
+                GameObject instantiatedIcon = Instantiate(itemIconPrefab, itemIconTransform);
+                instantiatedIcon.GetComponentInChildren<Image>().sprite = item.GetIcon();
+            }
+        }
+
+
+        //Inventory Items need significant overhaul to allow for damage numbers to be passed down to base script...
+
+        //private void SetupDamage(InventoryItem item)
+        //{
+        //    if(item)
+        //    if (item.GetAllowedEquipLocation() != EquipLocation.Weapon) damageText.enabled = false;
+        //    damageText.text = "Damage: " + item.GetMinDamage() + "- " + item.GetMaxDamage();
+        //}
+
 
         private void SetupQualityColour(InventoryItem item)
         {
