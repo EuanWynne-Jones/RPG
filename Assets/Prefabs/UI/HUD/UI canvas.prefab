@@ -777,6 +777,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1082519255790237945, guid: 09b2b1d1d27caec469a8eaf21c1d0f42, type: 3}
+      propertyPath: UIElement
+      value: 
+      objectReference: {fileID: 7105271930523141274}
     - target: {fileID: 1441140040154586417, guid: 09b2b1d1d27caec469a8eaf21c1d0f42, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1013,6 +1017,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7208661952088100064, guid: 09b2b1d1d27caec469a8eaf21c1d0f42, type: 3}
+      propertyPath: UIElement
+      value: 
+      objectReference: {fileID: 1034273193031051067}
     - target: {fileID: 7427364388222288151, guid: 09b2b1d1d27caec469a8eaf21c1d0f42, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1726,6 +1734,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2458173350975422472, guid: f7c6bb2d74efec74b80e2a1965a89d18, type: 3}
+      propertyPath: UIElement
+      value: 
+      objectReference: {fileID: 7105271930523141274}
     - target: {fileID: 2780703902303678561, guid: f7c6bb2d74efec74b80e2a1965a89d18, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -2828,6 +2840,10 @@ PrefabInstance:
     - target: {fileID: 6901602574635323526, guid: b706f973607d99d44b437cdb18febbbe, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910174957468159558, guid: b706f973607d99d44b437cdb18febbbe, type: 3}
+      propertyPath: m_Name
+      value: QuestList (With Tooltips)
       objectReference: {fileID: 0}
     - target: {fileID: 7113550683282606363, guid: b706f973607d99d44b437cdb18febbbe, type: 3}
       propertyPath: m_AnchorMax.y

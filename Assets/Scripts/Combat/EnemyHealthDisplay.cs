@@ -24,6 +24,7 @@ namespace RPG.Combat
 
         private void Awake()
         {
+            settingsHandler = FindObjectOfType<SettingsHandler>();
             fighter = GameObject.FindGameObjectWithTag("Player").GetComponent<Fighter>();
             UpdateHealthDisplayUI();
 
@@ -60,7 +61,11 @@ namespace RPG.Combat
         private void Update()
         {
             settingsHandler = FindObjectOfType<SettingsHandler>();
-            if (settingsHandler.GetEnemyHealthDisplayStatus() == false) return;
+            if (settingsHandler.GetEnemyHealthDisplayStatus() == false)
+            {
+                healthSliderGO.SetActive(false);
+                return;
+            }
             
                 if (fighter.GetTarget() == null)
             {

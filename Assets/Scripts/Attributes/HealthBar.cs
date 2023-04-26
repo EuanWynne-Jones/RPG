@@ -18,21 +18,25 @@ namespace RPG.Attributes
         }
         private void Update()
         {
+            if(settingsHandler == null) settingsHandler = FindObjectOfType<SettingsHandler>();
             if (settingsHandler.GetEnemyHealthOnCharDisplayStatus() == false)
-            {
-                this.gameObject.SetActive(false);
-                return;
-            }
-            this.gameObject.SetActive(true);
-            if (Mathf.Approximately(health.GetFraction(), 0)
-            || Mathf.Approximately(health.GetFraction(), 1))
             {
                 healthbarRoot.enabled = false;
                 return;
             }
+            else
+            {
+                if (Mathf.Approximately(health.GetFraction(), 0)
+                || Mathf.Approximately(health.GetFraction(), 1))
+                {
+                    healthbarRoot.enabled = false;
+                    return;
+                }
 
-            healthbarRoot.enabled = true;
-            healthbar.localScale = new Vector3(health.GetFraction(), 1, 1);
+                healthbarRoot.enabled = true;
+                healthbar.localScale = new Vector3(health.GetFraction(), 1, 1);
+
+            }
         }
 
        
