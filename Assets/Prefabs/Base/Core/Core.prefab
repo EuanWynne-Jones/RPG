@@ -4683,6 +4683,214 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[3].onDropdownSelect.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[3].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[3].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 647823246698429057}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 647823246698429057}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 647823246698429057}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 647823246698429057}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 647823246698429057}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 647823246698429057}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[3].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 647823246698429057}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[3].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 647823246698429057}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[3].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[3].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnableEnemyDamageNumbers
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EnablePlayerDamageNumbers
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnablePlayerDamageNumbers
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DisableEnemyDamageNumbers
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnableEnemyDamageNumbers
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DisablePlayerDamageNumbers
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[3].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DisablePlayerDamageNumbers
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[3].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DisableEnemyDamageNumbers
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RPG.UI.SettingsHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: RPG.UI.SettingsHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RPG.UI.SettingsHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: RPG.UI.SettingsHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RPG.UI.SettingsHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: RPG.UI.SettingsHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[3].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RPG.UI.SettingsHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[3].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: RPG.UI.SettingsHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[3].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280145764099498816, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[3].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7327732007013794952, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

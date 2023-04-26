@@ -10,8 +10,11 @@ namespace RPG.UI
         [Header("Options")]
         [SerializeField] public bool iconOptionEnabled = true;
 
-        [SerializeField] public bool E_HealthDisplay_OnHUD_OptionEnabled = true;
-        [SerializeField] public bool E_HealthDisplay_OnCHAR_OptionEnabled = true;
+        [SerializeField] public bool e_HealthDisplay_OnHUD_OptionEnabled = true;
+        [SerializeField] public bool e_HealthDisplay_OnCHAR_OptionEnabled = true;
+        [SerializeField] public bool p_DamageNumbers_OptionEnabled = true;
+        [SerializeField] public bool e_DamageNumbers_OptionEnabled = true;
+
 
 
         //Icon Options
@@ -34,31 +37,62 @@ namespace RPG.UI
         //EnemyHealthDisplay On HUD Options
         public void EnableEnemyHeathDisplay()
         {
-            E_HealthDisplay_OnHUD_OptionEnabled = true;
+            e_HealthDisplay_OnHUD_OptionEnabled = true;
         }
         public void DisableEnemyHeathDisplay()
         {
-            E_HealthDisplay_OnHUD_OptionEnabled = false;
+            e_HealthDisplay_OnHUD_OptionEnabled = false;
         }
 
         public bool GetEnemyHealthDisplayStatus()
         {
-            return E_HealthDisplay_OnHUD_OptionEnabled;
+            return e_HealthDisplay_OnHUD_OptionEnabled;
         }
 
         //EnemyHealthDisplay On CHAR Options
         public void EnableEnemyHeathOnCharDisplay()
         {
-            E_HealthDisplay_OnCHAR_OptionEnabled = true;
+            e_HealthDisplay_OnCHAR_OptionEnabled = true;
         }
         public void DisableEnemyHeathOnCharDisplay()
         {
-            E_HealthDisplay_OnCHAR_OptionEnabled = false;
+            e_HealthDisplay_OnCHAR_OptionEnabled = false;
         }
 
         public bool GetEnemyHealthOnCharDisplayStatus()
         {
-            return E_HealthDisplay_OnCHAR_OptionEnabled;
+            return e_HealthDisplay_OnCHAR_OptionEnabled;
+        }
+
+        //PlayerDamageNumbers options
+        public void EnablePlayerDamageNumbers()
+        {
+            p_DamageNumbers_OptionEnabled = true;
+        }
+        public void DisablePlayerDamageNumbers()
+        {
+            p_DamageNumbers_OptionEnabled = false;
+        }
+
+        public bool GetPlayerDamageNumbersStatus()
+        {
+            return p_DamageNumbers_OptionEnabled;
+        }
+
+        //EnemyDamageNumbers options
+
+        public void EnableEnemyDamageNumbers()
+        {
+            e_DamageNumbers_OptionEnabled = true;
+        }
+        public void DisableEnemyDamageNumbers()
+        {
+            e_DamageNumbers_OptionEnabled = false;
+        }
+
+        public bool GetEnemyDamageNumbersStatus()
+        {
+            return e_DamageNumbers_OptionEnabled;
         }
     }
 }
