@@ -3870,6 +3870,34 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4081175405012768198, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4081175405012768198, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4081175405012768198, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 245060492506130378}
+    - target: {fileID: 4081175405012768198, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4081175405012768198, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: GetHUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 4081175405012768198, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: RPG.UI.HideHUD, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4081175405012768198, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4088647291178842978, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6357,6 +6385,17 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5925678723868612665, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+--- !u!114 &245060492506130378 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6625450142735196044, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+  m_PrefabInstance: {fileID: 6382993706215389254}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b3a844b1c809044923b13b0d3ba348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1357369726310260778 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5351026662384474220, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}

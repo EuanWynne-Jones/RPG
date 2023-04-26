@@ -1259,6 +1259,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4871774650012510575, guid: 07dc30b6f1bbb4147acd5fd5555a18f5, type: 3}
   m_PrefabInstance: {fileID: 1052557794210253997}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6625450142735196044 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6154516824218293025, guid: 07dc30b6f1bbb4147acd5fd5555a18f5, type: 3}
+  m_PrefabInstance: {fileID: 1052557794210253997}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b3a844b1c809044923b13b0d3ba348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7950949581046120433 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6974982049919923036, guid: 07dc30b6f1bbb4147acd5fd5555a18f5, type: 3}
@@ -1434,11 +1445,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
       propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
       propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
       propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1465,6 +1476,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
       propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 6
       objectReference: {fileID: 0}
@@ -1475,6 +1490,10 @@ PrefabInstance:
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
       propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
       propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1501,6 +1520,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7950949581046120433}
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 6625450142735196044}
+    - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
       propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5550522197212603842}
@@ -1512,6 +1535,10 @@ PrefabInstance:
       propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 7950949581046120433}
+    - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 6625450142735196044}
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
       propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -1529,11 +1556,19 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
       propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
       propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
@@ -1561,6 +1596,10 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: GetHUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
       propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
@@ -1571,6 +1610,10 @@ PrefabInstance:
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
       propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: GetHUD
       objectReference: {fileID: 0}
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
       propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1597,6 +1640,10 @@ PrefabInstance:
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: RPG.UI.HideHUD, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
       propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
@@ -1609,6 +1656,10 @@ PrefabInstance:
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: RPG.UI.HideHUD, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
       propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
@@ -1618,6 +1669,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
       propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
@@ -1645,6 +1700,10 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[1].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
       propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -1654,6 +1713,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
       propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644079064594651323, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}
+      propertyPath: DropdownOptionsList.Array.data[2].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1693532933161355000, guid: d6a7a3d50112ca24a9ed73acb75df538, type: 3}

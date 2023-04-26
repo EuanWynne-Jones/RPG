@@ -7,10 +7,20 @@ namespace RPG.UI
     public class HideHUD : MonoBehaviour
     {
 
-        public GameObject[] hudElementsToHide; // an array of HUD elements to hide
+        public GameObject currentHUDToHide = null;
         public GameObject dialogueHud; // a reference to the dialogue HUD object
 
         private bool isDialogueActive = false; // the current state of the dialogue HUD
+
+        private void Awake()
+        {
+            GetHUD();
+        }
+
+        public void GetHUD()
+        {
+            currentHUDToHide = FindObjectOfType<HUDOptionUI>().gameObject;
+        }
 
         void Update()
         {
@@ -23,20 +33,11 @@ namespace RPG.UI
                 isDialogueActive = newDialogueState;
 
                 // Hide or show HUD elements based on the current state of the dialogue HUD
-                foreach (GameObject hudElement in hudElementsToHide)
-                {
-                    if (hudElement.activeInHierarchy == false) return;
-                    hudElement.SetActive(!isDialogueActive);
-                }
+                currentHUDToHide.SetActive(!isDialogueActive);
             }
             else if (!isDialogueActive)
             {
-                // Show HUD elements if the dialogue HUD is not active
-                foreach (GameObject hudElement in hudElementsToHide)
-                {
-                    if (hudElement.activeInHierarchy == false) return;
-                    hudElement.SetActive(true);
-                }
+                currentHUDToHide.SetActive(true);
             }
         }
     }
