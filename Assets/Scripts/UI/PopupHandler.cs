@@ -13,11 +13,24 @@ namespace RPG.UI
     {
 
         public DamageNumber popupPrefab;
+        [HideInInspector]
         public RectTransform rectParent;
+        SettingsHandler settingsHandler;
 
-        private void Start()
+        private void Awake()
         {
+            settingsHandler = FindObjectOfType<SettingsHandler>();
             rectParent = FindObjectOfType<NotificationSpawner>().GetComponent<RectTransform>();
+        }
+
+        //tutorial Popup Handling
+
+        public void spawnTutorialPopup(string tutorialText)
+        {
+            if (settingsHandler.GetTutorialsStatus() == false) return;
+            popupPrefab.leftText = tutorialText;
+            DamageNumber notifcation = popupPrefab.Spawn(Vector3.zero, popupPrefab.leftText);
+            notifcation.SetAnchoredPosition(rectParent, new Vector2(0, 0));
         }
 
         //Level Handling

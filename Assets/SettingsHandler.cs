@@ -10,10 +10,16 @@ namespace RPG.UI
         [Header("Options")]
         [SerializeField] public bool iconOptionEnabled = true;
 
+        [HideInInspector]
         [SerializeField] public bool e_HealthDisplay_OnHUD_OptionEnabled = true;
+        [HideInInspector]
         [SerializeField] public bool e_HealthDisplay_OnCHAR_OptionEnabled = true;
+        [HideInInspector]
         [SerializeField] public bool p_DamageNumbers_OptionEnabled = true;
+        [HideInInspector]
         [SerializeField] public bool e_DamageNumbers_OptionEnabled = true;
+
+        [SerializeField] public bool tutorial_OptionEnabled = true;
 
 
 
@@ -94,5 +100,21 @@ namespace RPG.UI
         {
             return e_DamageNumbers_OptionEnabled;
         }
+
+        //TutorialDisplay Options
+        public void EnableTutorials()
+        {
+            tutorial_OptionEnabled = true;
+        }
+        public void DisableTutorials()
+        {
+            tutorial_OptionEnabled = false;
+        }
+
+        public bool GetTutorialsStatus()
+        {
+            return tutorial_OptionEnabled;
+        }
+
     }
 }

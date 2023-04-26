@@ -581,8 +581,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropdown: {fileID: 8134373658264409343}
-  textBox: {fileID: 0}
   DropdownOptionsList: []
+  lastSelectedOptionIndex: 0
 --- !u!1 &3928259669242112597
 GameObject:
   m_ObjectHideFlags: 0
