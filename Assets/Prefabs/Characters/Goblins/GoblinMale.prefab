@@ -429,6 +429,7 @@ MonoBehaviour:
   health: {fileID: 105886727689216420}
   healthbar: {fileID: 2454129235751351524}
   healthbarRoot: {fileID: 3018888025572807832}
+  playerSettings: {fileID: 11400000, guid: b383d0a045965e948af5d1e0525f6d12, type: 2}
 --- !u!224 &2454129235751351524 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8457367607693307199, guid: 1b2c7fa201405ff4686b203551468670, type: 3}

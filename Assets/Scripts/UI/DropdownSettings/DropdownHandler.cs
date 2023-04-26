@@ -9,10 +9,13 @@ namespace RPG.UI
 {
     public class DropdownHandler : MonoBehaviour
     {
+
+        
         [SerializeField] private TMP_Dropdown dropdown;
         [SerializeField] private List<DropdownOptions> DropdownOptionsList = new List<DropdownOptions>();
         private string firstOption = null;
         private int lastSelectedOptionIndex = 0;
+        public PlayerSettings playerSettings;
 
         [System.Serializable]
         public class DropdownOptions
@@ -26,8 +29,12 @@ namespace RPG.UI
             }
         }
 
-        private void OnEnable()
+
+
+        private void Awake()
         {
+            dropdown = GetComponent<TMP_Dropdown>();
+            lastSelectedOptionIndex = GetLastValue();
             Setup();
             if (lastSelectedOptionIndex >= 0 && lastSelectedOptionIndex < DropdownOptionsList.Count)
             {
@@ -75,14 +82,26 @@ namespace RPG.UI
 
         private void DropdownItemSelected(int value)
         {
-            if (value != lastSelectedOptionIndex)
-            {
-                DropdownOptionsList[value].InvokeEvent();
-                lastSelectedOptionIndex = value;
-            }
-            dropdown.Hide();
+            //if (value != lastSelectedOptionIndex)
+            //{
+            //    DropdownOptionsList[value].InvokeEvent();
+            //    lastSelectedOptionIndex = value;
+            //}
+            //dropdown.Hide();
+
+            SetSettings(value);
+
         }
 
+        protected virtual void SetSettings(int value)
+        {
+
+        }
+
+        protected virtual int GetLastValue()
+        {
+            return 0;
+        }
 
     }
 }

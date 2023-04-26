@@ -26,7 +26,7 @@ namespace RPG.UI.Inventories
         [SerializeField] Sprite silverIcon;
         [SerializeField] Sprite copperIcon;
 
-        SettingsHandler settingsHandler;
+        public PlayerSettings playerSettings;
         // PUBLIC
 
         public void Setup(InventoryItem item)
@@ -42,12 +42,12 @@ namespace RPG.UI.Inventories
 
         private void SetupItemIcon(InventoryItem item)
         {
-            settingsHandler = FindObjectOfType<SettingsHandler>();
-            if (settingsHandler.GetIconOptionStatus() == true)
+            if (playerSettings.displayTooltipIcons)
             {
-                GameObject instantiatedIcon = Instantiate(itemIconPrefab, itemIconTransform);
-                instantiatedIcon.GetComponentInChildren<Image>().sprite = item.GetIcon();
-            }
+            GameObject instantiatedIcon = Instantiate(itemIconPrefab, itemIconTransform);
+            instantiatedIcon.GetComponentInChildren<Image>().sprite = item.GetIcon();
+            };
+            
         }
 
 

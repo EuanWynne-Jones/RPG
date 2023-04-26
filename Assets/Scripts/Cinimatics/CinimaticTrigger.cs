@@ -8,6 +8,7 @@ namespace RPG.Cinimatics
 {
     public class CinimaticTrigger : MonoBehaviour
     {
+  
         bool hasTriggered = false;
         private void OnTriggerEnter(Collider other)
         {
@@ -17,5 +18,8 @@ namespace RPG.Cinimatics
                 GetComponent<PlayableDirector>().Play();
             }
         }
+
+
+
     }
 }

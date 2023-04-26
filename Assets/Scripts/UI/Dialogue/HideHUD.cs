@@ -12,15 +12,7 @@ namespace RPG.UI
 
         private bool isDialogueActive = false; // the current state of the dialogue HUD
 
-        private void Awake()
-        {
-            GetHUD();
-        }
 
-        public void GetHUD()
-        {
-            currentHUDToHide = FindObjectOfType<HUDOptionUI>().gameObject;
-        }
 
         void Update()
         {

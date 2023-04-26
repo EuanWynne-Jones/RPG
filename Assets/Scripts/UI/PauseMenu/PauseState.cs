@@ -23,13 +23,11 @@ namespace RPG.UI
         private void OnEnable()
         {
            Time.timeScale = 0f;
-           //player.enabled = false;
         }
         private void OnDisable()
         {
             Time.timeScale = 1f;
             player.GetComponent<ActionSchedueler>().CancelCurrentAction();
-            //player.enabled = true;
         }
 
         public void SaveAndQuit()

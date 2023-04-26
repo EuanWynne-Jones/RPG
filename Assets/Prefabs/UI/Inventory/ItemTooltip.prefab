@@ -286,6 +286,7 @@ MonoBehaviour:
   goldIcon: {fileID: 21300000, guid: 5d7738b46adf4774cbc6829e120b2ffc, type: 3}
   silverIcon: {fileID: 21300000, guid: eef745a9ccaa40541ba95f7c74c31019, type: 3}
   copperIcon: {fileID: 21300000, guid: b245f475aaadb42408df77a8a539c6d4, type: 3}
+  playerSettings: {fileID: 11400000, guid: b383d0a045965e948af5d1e0525f6d12, type: 2}
 --- !u!114 &7814299557973692061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,9 +800,9 @@ RectTransform:
   m_Father: {fileID: 2312186334339742084}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 280, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 280, y: -119.25}
   m_SizeDelta: {x: 500, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1266319001604684510

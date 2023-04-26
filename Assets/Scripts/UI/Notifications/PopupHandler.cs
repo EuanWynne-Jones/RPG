@@ -12,14 +12,14 @@ namespace RPG.UI
     public class PopupHandler : MonoBehaviour
     {
 
+        public PlayerSettings playerSettings;
+
         public DamageNumber popupPrefab;
         [HideInInspector]
         public RectTransform rectParent;
-        SettingsHandler settingsHandler;
 
         private void Awake()
         {
-            settingsHandler = FindObjectOfType<SettingsHandler>();
             rectParent = FindObjectOfType<NotificationSpawner>().GetComponent<RectTransform>();
         }
 
@@ -27,7 +27,7 @@ namespace RPG.UI
 
         public void spawnTutorialPopup(string tutorialText)
         {
-            if (settingsHandler.GetTutorialsStatus() == false) return;
+            if (!playerSettings.displayTutorials) return;
             popupPrefab.leftText = tutorialText;
             DamageNumber notifcation = popupPrefab.Spawn(Vector3.zero, popupPrefab.leftText);
             notifcation.SetAnchoredPosition(rectParent, new Vector2(0, 0));

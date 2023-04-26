@@ -18,11 +18,8 @@ namespace RPG.UI
         private void OnTriggerEnter(Collider other)
         {
             popupHandler.spawnTutorialPopup(tutorialText);
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
             gameObject.SetActive(false);
         }
+
     }
 }

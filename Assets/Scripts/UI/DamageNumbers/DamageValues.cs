@@ -11,18 +11,13 @@ namespace RPG.UI
     {
 
         public DamageNumber numberPrefab;
-        SettingsHandler settingsHandler;
+        public PlayerSettings playerSettings;
 
-        private void Awake()
-        {
-            settingsHandler = FindObjectOfType<SettingsHandler>();
-        }
 
         public void SpawnDamageNumbers(float damage, Transform followedTransform)
         {
-            if (settingsHandler == null) settingsHandler = FindObjectOfType<SettingsHandler>();
-            if (gameObject.tag == "Player" && settingsHandler.GetPlayerDamageNumbersStatus() == false) return;
-            if (gameObject.tag != "Player" && settingsHandler.GetEnemyDamageNumbersStatus() == false) return;
+            if (gameObject.tag == "Player" && !playerSettings.displayDamageOnPlayer) return;
+            if (gameObject.tag != "Player" && !playerSettings.displayDamageOnNPCS) return;
             GetMaxMinDamage(followedTransform);
             DamageNumber damageNumber = numberPrefab.Spawn(transform.position, damage, followedTransform);
         }

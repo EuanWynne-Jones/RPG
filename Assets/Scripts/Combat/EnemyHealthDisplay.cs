@@ -16,7 +16,7 @@ namespace RPG.Combat
         [SerializeField] public Slider healthSlider;
         GameObject healthSliderGO = null;
         int healthIntValue;
-        SettingsHandler settingsHandler;
+        [SerializeField] PlayerSettings playerSettings;
 
         //[SerializeField] string ID;
 
@@ -24,7 +24,6 @@ namespace RPG.Combat
 
         private void Awake()
         {
-            settingsHandler = FindObjectOfType<SettingsHandler>();
             fighter = GameObject.FindGameObjectWithTag("Player").GetComponent<Fighter>();
             UpdateHealthDisplayUI();
 
@@ -60,8 +59,7 @@ namespace RPG.Combat
 
         private void Update()
         {
-            settingsHandler = FindObjectOfType<SettingsHandler>();
-            if (settingsHandler.GetEnemyHealthDisplayStatus() == false)
+            if (!playerSettings.displayEnemyHeathOnHUD)
             {
                 healthSliderGO.SetActive(false);
                 return;

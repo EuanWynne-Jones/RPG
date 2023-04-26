@@ -10,16 +10,11 @@ namespace RPG.Attributes
         [SerializeField] Health health = null;
         [SerializeField] RectTransform healthbar = null;
         [SerializeField] Canvas healthbarRoot = null;
-        SettingsHandler settingsHandler;
+        [SerializeField] public PlayerSettings playerSettings; 
 
-        private void OnEnable()
-        {
-            settingsHandler = FindObjectOfType<SettingsHandler>();
-        }
         private void Update()
         {
-            if(settingsHandler == null) settingsHandler = FindObjectOfType<SettingsHandler>();
-            if (settingsHandler.GetEnemyHealthOnCharDisplayStatus() == false)
+            if (!playerSettings.displayEnemyHeathOnCharacter)
             {
                 healthbarRoot.enabled = false;
                 return;

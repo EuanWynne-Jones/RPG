@@ -198,7 +198,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isDead: 0
-  inSpiritWorld: 0
+  isInSpiritRealm: 0
 --- !u!114 &3630728069893916002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,3 +274,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberPrefab: {fileID: 5300456196055757336, guid: 5d5e82e476f9640448356c2218fd2e4b, type: 3}
+  playerSettings: {fileID: 11400000, guid: b383d0a045965e948af5d1e0525f6d12, type: 2}
