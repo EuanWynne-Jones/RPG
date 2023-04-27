@@ -21,6 +21,7 @@ namespace RPG.Dialogue
         public bool isInDialogue = false;
         bool isChoosing;
         public event Action onConversationUpdated;
+        public CanvasGroup hudGroup;
 
         AIConversant currentConversant = null;
         CameraTransition cameraTransition;
@@ -55,6 +56,7 @@ namespace RPG.Dialogue
         {
 
             isInDialogue = true;
+            StartCoroutine(FadeOutHUD());
             actionSchedueler = GetComponent<ActionSchedueler>();
             actionSchedueler.CancelCurrentAction();
             GetComponent<PlayerController>().Cancel();
@@ -78,6 +80,7 @@ namespace RPG.Dialogue
         public void Quit()
         {
             isInDialogue = false;
+            StartCoroutine(FadeInHUD());
             GetComponent<PlayerController>().EnableMovement();
             cameraTransition = GetComponent<CameraTransition>();
             cameraTransition.SwitchCamera(cameraTransition.mainCamera);
@@ -190,7 +193,37 @@ namespace RPG.Dialogue
 
         }
 
+        IEnumerator FadeOutHUD()
+        {
+            float elapsedTime = 0f;
+            float fadeTime = 1f;
 
+            while (elapsedTime < fadeTime)
+            {
+                elapsedTime += Time.deltaTime;
+                float alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeTime);
+                hudGroup.alpha = alpha;
+                yield return null;
+            }
+
+            hudGroup.alpha = 0f;
+        }
+
+        IEnumerator FadeInHUD()
+        {
+            float elapsedTime = 0f;
+            float fadeTime = 1f;
+
+            while (elapsedTime < fadeTime)
+            {
+                elapsedTime += Time.deltaTime;
+                float alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeTime);
+                hudGroup.alpha = alpha;
+                yield return null;
+            }
+
+            hudGroup.alpha = 1f;
+        }
 
 
     }

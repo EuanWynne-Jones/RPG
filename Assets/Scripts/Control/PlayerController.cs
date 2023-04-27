@@ -40,10 +40,12 @@ namespace RPG.Control
         private void Update()
         {
             CheckSpecialAbilityKeys();
+            if (InteractWithUI()) return;
+
+
             if (InteractWithComponent()) return;
 
             
-            if (InteractWithUI()) return;
             
             if (health.IsDead())
             {

@@ -17,8 +17,11 @@ namespace RPG.UI
 
         private void OnTriggerEnter(Collider other)
         {
+            if (other.gameObject.tag == "Player")
+            {
             popupHandler.spawnTutorialPopup(tutorialText);
             gameObject.SetActive(false);
+            }
         }
 
     }

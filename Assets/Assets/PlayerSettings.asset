@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fileName: /config.cfg
   gamePresetOption: 0
-  hudDisplayOption: 1
-  displayEnemyHeathOnCharacter: 0
-  displayEnemyHeathOnHUD: 0
+  hudDisplayOption: 2
+  displayEnemyHeathOnCharacter: 1
+  displayEnemyHeathOnHUD: 1
   displayDamageOnPlayer: 1
   displayDamageOnNPCS: 1
-  displayTutorials: 0
-  displayTooltipIcons: 0
+  displayTutorials: 1
+  displayTooltipIcons: 1

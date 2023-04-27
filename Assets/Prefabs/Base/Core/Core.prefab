@@ -2081,6 +2081,10 @@ PrefabInstance:
       propertyPath: startingLevel
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8919545266357975652, guid: 69f2e59160e2d4b4dbe498cda7649f11, type: 3}
+      propertyPath: hudGroup
+      value: 
+      objectReference: {fileID: 2481026991535552170}
     m_RemovedComponents:
     - {fileID: 5610330048698132236, guid: 69f2e59160e2d4b4dbe498cda7649f11, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 69f2e59160e2d4b4dbe498cda7649f11, type: 3}
@@ -3954,7 +3958,7 @@ PrefabInstance:
     - target: {fileID: 4081175405012768198, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
       propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 245060492506130378}
+      objectReference: {fileID: 0}
     - target: {fileID: 4081175405012768198, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
       propertyPath: DropdownOptionsList.Array.data[0].onDropdownSelect.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
@@ -6514,18 +6518,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5925678723868612665, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
     - {fileID: 8992159485101700501, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
+    - {fileID: 6625450142735196044, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
---- !u!114 &245060492506130378 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6625450142735196044, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}
-  m_PrefabInstance: {fileID: 6382993706215389254}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7b3a844b1c809044923b13b0d3ba348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1357369726310260778 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5351026662384474220, guid: d2ae51bbc3840df4fb921e268c3a5113, type: 3}

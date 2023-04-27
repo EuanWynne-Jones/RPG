@@ -29,7 +29,22 @@ namespace RPG.UI
             }
         }
 
-
+        private void OnEnable()
+        {
+            lastSelectedOptionIndex = GetLastValue();
+            Setup();
+            if (lastSelectedOptionIndex >= 0 && lastSelectedOptionIndex < DropdownOptionsList.Count)
+            {
+                dropdown.captionText.text = DropdownOptionsList[lastSelectedOptionIndex].dropdownListItem;
+                dropdown.value = lastSelectedOptionIndex;
+            }
+            else if (firstOption != null)
+            {
+                dropdown.captionText.text = firstOption;
+                dropdown.value = 0;
+            }
+            dropdown.RefreshShownValue();
+        }
 
         private void Awake()
         {
