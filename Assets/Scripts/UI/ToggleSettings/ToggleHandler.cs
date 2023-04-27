@@ -24,6 +24,7 @@ namespace RPG.UI
         {
  
                 SetSettings(toggleOption.isOn);
+                playerSettings.Save();
         }
         protected virtual void SetSettings(bool value)
         {

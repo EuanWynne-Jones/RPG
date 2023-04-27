@@ -90,12 +90,13 @@ namespace RPG.UI
             //dropdown.Hide();
 
             SetSettings(value);
+            playerSettings.Save();
 
         }
 
         protected virtual void SetSettings(int value)
         {
-
+            
         }
 
         protected virtual int GetLastValue()

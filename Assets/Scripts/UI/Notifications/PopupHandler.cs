@@ -18,9 +18,11 @@ namespace RPG.UI
         [HideInInspector]
         public RectTransform rectParent;
 
-        private void Awake()
+
+        private void Start()
         {
             rectParent = FindObjectOfType<NotificationSpawner>().GetComponent<RectTransform>();
+            
         }
 
         //tutorial Popup Handling
