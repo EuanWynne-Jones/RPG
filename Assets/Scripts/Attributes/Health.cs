@@ -95,6 +95,11 @@ namespace RPG.Attributes
             return health.value / GetComponent<BaseStats>().GetStat(Stat.Health);
         }
 
+        public float GetMaxHealthBase()
+        {
+            return GetComponent<BaseStats>().GetStat(Stat.Health);
+        }
+
         private void AwardExperience(GameObject instigator)
         {
             Experience experience = instigator.GetComponent<Experience>();

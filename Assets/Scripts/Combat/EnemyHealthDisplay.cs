@@ -14,6 +14,7 @@ namespace RPG.Combat
         Fighter fighter;
         //[SerializeField] public TMP_Text healthText;
         [SerializeField] public Slider healthSlider;
+        [SerializeField] public TextMeshProUGUI healthText;
         GameObject healthSliderGO = null;
         int healthIntValue;
         [SerializeField] PlayerSettings playerSettings;
@@ -38,6 +39,7 @@ namespace RPG.Combat
         {
             healthSliderGO = FindObjectOfType<EnemyHealthUI>().gameObject;
             healthSlider = healthSliderGO.GetComponent<Slider>();
+            healthText = healthSliderGO.GetComponentInChildren<TextMeshProUGUI>();
         }
 
         //private void OnDestroy()
@@ -75,6 +77,7 @@ namespace RPG.Combat
                 healthSliderGO.SetActive(true);
                 healthIntValue = (int)Math.Round(health.GetPercentage());
                 healthSlider.value = healthIntValue;
+                healthText.text =Mathf.FloorToInt(health.GetHealth()) + "/" + health.GetMaxHealthBase();
 
                 if(fighter.GetTarget().GetComponent<Health>().isDead == true)
                 {
@@ -83,9 +86,8 @@ namespace RPG.Combat
 
            
                 // showing 40/50 for health
-                //healthText.GetComponent<TMP_Text>().text = String.Format("{0:0}/{1:00}", health.GetHealth(), health.GetMaxHealth());
-                //healthText.text = healthIntValue.ToString() + "%";
-                //healthText.text = String.Format("{0:0}%", health.GetPercentage());
+            //healthText.text = healthIntValue.ToString() + "%";
+            //healthText.text = String.Format("{0:0}%", health.GetPercentage());
         }
     }
 }

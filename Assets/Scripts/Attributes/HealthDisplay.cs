@@ -12,7 +12,9 @@ namespace RPG.Attributes
         Health health;
         //[SerializeField] public TMP_Text healthText;
         [SerializeField] public Slider healthSlider;
+        [SerializeField] public TextMeshProUGUI healthText;
         int healthIntValue;
+
 
         private void Awake()
         {
@@ -27,7 +29,7 @@ namespace RPG.Attributes
             healthSlider.value = healthIntValue;
 
             //showing 40/50 for health
-            //healthText.GetComponent<TMP_Text>().text = String.Format("{0:0}/{1:00}", health.GetHealth(), health.GetMaxHealth());
+            healthText.text = Mathf.FloorToInt(health.GetHealth()) + "/" + health.GetMaxHealthBase();
         }
     }
 }
