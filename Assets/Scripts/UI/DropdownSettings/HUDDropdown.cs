@@ -20,6 +20,7 @@ namespace RPG.UI
             if (playerSettings != null)
             {
                 playerSettings.hudDisplayOption = (PlayerSettings.HUDdisplayOptions)value;
+                
                 hudToggle.SetUI();
 
             }
