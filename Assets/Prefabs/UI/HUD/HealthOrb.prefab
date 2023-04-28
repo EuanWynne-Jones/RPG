@@ -183,6 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 5389683769228841696}
   healthText: {fileID: 1323595142454147340}
+  playerSettings: {fileID: 11400000, guid: b383d0a045965e948af5d1e0525f6d12, type: 2}
 --- !u!1 &2351673294352315260
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,7 +363,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 200/500
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 901474e6e0607be41b462f2f0e989554, type: 2}
   m_sharedMaterial: {fileID: 6094588799564112954, guid: 901474e6e0607be41b462f2f0e989554, type: 2}

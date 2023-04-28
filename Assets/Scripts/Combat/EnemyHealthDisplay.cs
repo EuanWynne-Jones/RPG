@@ -77,9 +77,14 @@ namespace RPG.Combat
                 healthSliderGO.SetActive(true);
                 healthIntValue = (int)Math.Round(health.GetPercentage());
                 healthSlider.value = healthIntValue;
-                healthText.text =Mathf.FloorToInt(health.GetHealth()) + "/" + health.GetMaxHealthBase();
+                if (playerSettings.displayHealthOnNPCS)
+                {
+                    healthText.gameObject.SetActive(true);
+                    healthText.text =Mathf.FloorToInt(health.GetHealth()) + "/" + health.GetMaxHealthBase();
+                }
+                if (!playerSettings.displayHealthOnNPCS) healthText.gameObject.SetActive(false);
 
-                if(fighter.GetTarget().GetComponent<Health>().isDead == true)
+            if (fighter.GetTarget().GetComponent<Health>().isDead == true)
                 {
                     healthSliderGO.SetActive(false);
                 }

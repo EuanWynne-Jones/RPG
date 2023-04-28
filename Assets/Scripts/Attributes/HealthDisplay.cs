@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using RPG.UI;
 
 namespace RPG.Attributes
 {
@@ -14,6 +15,7 @@ namespace RPG.Attributes
         [SerializeField] public Slider healthSlider;
         [SerializeField] public TextMeshProUGUI healthText;
         int healthIntValue;
+        public PlayerSettings playerSettings;
 
 
         private void Awake()
@@ -29,7 +31,12 @@ namespace RPG.Attributes
             healthSlider.value = healthIntValue;
 
             //showing 40/50 for health
-            healthText.text = Mathf.FloorToInt(health.GetHealth()) + "/" + health.GetMaxHealthBase();
+            if (playerSettings.displayHealthOnPlayer)
+            {
+                healthText.gameObject.SetActive(true);
+                healthText.text = Mathf.FloorToInt(health.GetHealth()) + "/" + health.GetMaxHealthBase();
+            }
+            if (!playerSettings.displayHealthOnPlayer) healthText.gameObject.SetActive(false); 
         }
     }
 }

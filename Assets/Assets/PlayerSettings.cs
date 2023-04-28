@@ -33,6 +33,10 @@ namespace RPG.UI
         public bool displayEnemyHeathOnCharacter;
         public bool displayEnemyHeathOnHUD;
 
+        //Health Number options
+        public bool displayHealthOnPlayer;
+        public bool displayHealthOnNPCS;
+
         //Damage Number Options
         public bool displayDamageOnPlayer;
         public bool displayDamageOnNPCS;
@@ -49,12 +53,20 @@ namespace RPG.UI
         public void SetData(PlayerSettings playerSettings)
         {
             gamePresetOption = playerSettings.gamePresetOption;
+
             hudDisplayOption = playerSettings.hudDisplayOption;
+
             displayEnemyHeathOnCharacter = playerSettings.displayEnemyHeathOnCharacter;
             displayEnemyHeathOnHUD = playerSettings.displayEnemyHeathOnHUD;
+
+            displayHealthOnPlayer = playerSettings.displayHealthOnPlayer;
+            displayHealthOnNPCS = playerSettings.displayHealthOnNPCS;
+
             displayDamageOnPlayer = playerSettings.displayDamageOnPlayer;
             displayDamageOnNPCS = playerSettings.displayDamageOnNPCS;
+
             displayTutorials = playerSettings.displayTutorials;
+
             displayTooltipIcons = playerSettings.displayTooltipIcons;
 
         }
@@ -65,8 +77,11 @@ namespace RPG.UI
             hudDisplayOption = playerSettings.hudDisplayOption;
             displayEnemyHeathOnCharacter = playerSettings.displayEnemyHeathOnCharacter;
             displayEnemyHeathOnHUD = playerSettings.displayEnemyHeathOnHUD;
+
             displayDamageOnPlayer = playerSettings.displayDamageOnPlayer;
             displayDamageOnNPCS = playerSettings.displayDamageOnNPCS;
+            displayHealthOnPlayer = playerSettings.displayHealthOnPlayer;
+            displayHealthOnNPCS = playerSettings.displayHealthOnNPCS;
             displayTutorials = playerSettings.displayTutorials;
             displayTooltipIcons = playerSettings.displayTooltipIcons;
 
@@ -86,6 +101,8 @@ namespace RPG.UI
                 displayEnemyHeathOnHUD = playerSettings.displayEnemyHeathOnHUD;
                 displayDamageOnPlayer = playerSettings.displayDamageOnPlayer;
                 displayDamageOnNPCS = playerSettings.displayDamageOnNPCS;
+                displayHealthOnPlayer = playerSettings.displayHealthOnPlayer;
+                displayHealthOnNPCS = playerSettings.displayHealthOnNPCS;
                 displayTutorials = playerSettings.displayTutorials;
                 displayTooltipIcons = playerSettings.displayTooltipIcons;
             }
@@ -98,6 +115,11 @@ namespace RPG.UI
             //Enemy Heath Display Options
             public bool displayEnemyHeathOnCharacter;
             public bool displayEnemyHeathOnHUD;
+
+
+            //Health Number options
+            public bool displayHealthOnPlayer;
+            public bool displayHealthOnNPCS;
 
             //Damage Number Options
             public bool displayDamageOnPlayer;

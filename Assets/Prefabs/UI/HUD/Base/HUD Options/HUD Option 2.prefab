@@ -390,6 +390,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7785194125202795366, guid: cbf2488da6a10b348a8d785f8ebf5fc2, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8419002291652756011, guid: cbf2488da6a10b348a8d785f8ebf5fc2, type: 3}
       propertyPath: m_Name
       value: HealthBar
@@ -432,6 +436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 418337001947164806}
   healthText: {fileID: 8952968394844735887}
+  playerSettings: {fileID: 11400000, guid: b383d0a045965e948af5d1e0525f6d12, type: 2}
 --- !u!114 &8952968394844735887 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7785194125202795366, guid: cbf2488da6a10b348a8d785f8ebf5fc2, type: 3}
