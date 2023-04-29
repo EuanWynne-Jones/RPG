@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Combat;
 using RPG.Control;
+using RPG.UI;
 
 namespace RPG.Core
 {
@@ -10,6 +11,7 @@ namespace RPG.Core
     {
         [Header("Config")]
         [SerializeField] SFXConfig config = null;
+        [SerializeField] AudioMixerHandler mixerHandler;
 
         [Header("Voice")]
         [SerializeField] private string VoiceSourceBoneName = "Head";
@@ -36,6 +38,10 @@ namespace RPG.Core
         private void Awake()
         {
             if (character == null) character = gameObject.GetComponent<Fighter>();
+            if(mixerHandler == null)
+            {
+            mixerHandler = FindObjectOfType<AudioMixerHandler>();
+            }
         }
         private void Start()
         {
@@ -293,6 +299,11 @@ namespace RPG.Core
                     }
                 }
             }
+
+            VoiceSource.outputAudioMixerGroup = mixerHandler.voice;
+            DeathVoiceSource.outputAudioMixerGroup = mixerHandler.voice;
+            BodySource.outputAudioMixerGroup = mixerHandler.effects;
+            FootstepSource.outputAudioMixerGroup = mixerHandler.effects;
 
             if (VoiceSource == null) Debug.LogError(name + " VoiceSource not set.");
             if (DeathVoiceSource == null) Debug.LogError(name + " DeathVoiceSource not set.");

@@ -1,3 +1,4 @@
+using RPG.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,9 +21,14 @@ namespace RPG.Combat
         [SerializeField] WeaponAudioOverrite audioOverrite = null;
 
         ProjectileSFXHandler projectileSFXHandler = null;
+        AudioMixerHandler mixerHandler;
 
         private void Awake()
         {
+            if(mixerHandler == null)
+            {
+                mixerHandler = FindObjectOfType<AudioMixerHandler>();
+            }
             projectileSFXHandler = GetComponent<ProjectileSFXHandler>();
             projectileSFXHandler.projectileSFX = gameObject.GetComponent<ProjectileSFX>();
             SetupAudioSources();
@@ -125,6 +131,7 @@ namespace RPG.Combat
                     projectileLaunchSource.spatialBlend = audioOverrite.spacialBlend;
                     projectileLaunchSource.maxDistance = audioOverrite.maxDistance;
                     projectileLaunchSource.volume = audioOverrite.weaponVolume;
+                    projectileLaunchSource.outputAudioMixerGroup = mixerHandler.effects;
 
                 }
 
@@ -134,7 +141,7 @@ namespace RPG.Combat
                     projectileImpactSource.spatialBlend = audioOverrite.spacialBlend;
                     projectileImpactSource.maxDistance = audioOverrite.maxDistance;
                     projectileImpactSource.volume = audioOverrite.weaponVolume;
-
+                    projectileImpactSource.outputAudioMixerGroup = mixerHandler.effects;
                 }
             }
 

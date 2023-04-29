@@ -1,7 +1,8 @@
+using RPG.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Audio;
 
 namespace RPG.Core
 {
@@ -10,6 +11,7 @@ namespace RPG.Core
 
         [SerializeField] public SoundscapeSetter soundscapeSetter;
         public WorldSFXConfig worldSFXConfig;
+        public AudioMixerHandler mixerHandler;
 
         public void GetSoundScape()
         {
@@ -52,6 +54,7 @@ namespace RPG.Core
                         else
                         {
                             worldSFXConfig.soundtrackSource = t.gameObject.AddComponent<AudioSource>();
+                            
                         }
                     }
 
@@ -64,6 +67,7 @@ namespace RPG.Core
                         else
                         {
                             worldSFXConfig.ambienceSource = t.gameObject.AddComponent<AudioSource>();
+                            
                         }
                     }
 
@@ -76,11 +80,15 @@ namespace RPG.Core
                         else
                         {
                             worldSFXConfig.weatherSource = t.gameObject.AddComponent<AudioSource>();
+                            
                         }
                     }
 
                 }
             }
+            worldSFXConfig.soundtrackSource.outputAudioMixerGroup = mixerHandler.soundtrack;
+            worldSFXConfig.ambienceSource.outputAudioMixerGroup = mixerHandler.ambience;
+            worldSFXConfig.weatherSource.outputAudioMixerGroup = mixerHandler.ambience;
 
             if (worldSFXConfig.soundtrackSource == null) Debug.LogError(name + " soundtrackSource not set.");
             if (worldSFXConfig.ambienceSource == null) Debug.LogError(name + " ambienceSource not set.");

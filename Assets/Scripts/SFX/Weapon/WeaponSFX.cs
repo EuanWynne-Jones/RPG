@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Control;
+using RPG.UI;
 
 namespace RPG.Combat
 {
@@ -23,7 +24,15 @@ namespace RPG.Combat
         [SerializeField] WeaponAudioOverrite audioOverrite = null;
 
         SFXHandler SFXHandler = null;
+        AudioMixerHandler mixerHandler;
 
+        private void Awake()
+        {
+            if(mixerHandler == null)
+            {
+                mixerHandler = FindObjectOfType<AudioMixerHandler>();
+            }
+        }
         private void Start()
         {
             SFXHandler = GetComponentInParent<SFXHandler>();
@@ -141,6 +150,8 @@ namespace RPG.Combat
 
                 }
             }
+            weaponAttackSource.outputAudioMixerGroup = mixerHandler.effects;
+            weaponImpactSource.outputAudioMixerGroup = mixerHandler.effects;
 
         }
 

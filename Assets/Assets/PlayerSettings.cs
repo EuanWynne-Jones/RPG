@@ -10,6 +10,8 @@ namespace RPG.UI
     public class PlayerSettings : ScriptableObject  
     {
         [SerializeField] private string fileName = "/config.json";
+
+        //GAMEPLAY SETTINGS
         //GamePreset Options
         public enum GamePresets
         {
@@ -47,6 +49,14 @@ namespace RPG.UI
         //Item ToolTip Icon Options
         public bool displayTooltipIcons;
 
+        //SOUND SETTINGS
+        public float masterVolume;
+        public float effectsVolume;
+        public float voiceVolume;
+        public float interfaceVolume;
+        public float soundtrackVolume;
+        public float ambienceVolume;
+
 
 
         //Setting of saved data
@@ -69,6 +79,13 @@ namespace RPG.UI
 
             displayTooltipIcons = playerSettings.displayTooltipIcons;
 
+
+            masterVolume = playerSettings.masterVolume;
+            effectsVolume = playerSettings.effectsVolume;
+            voiceVolume = playerSettings.voiceVolume;
+            interfaceVolume = playerSettings.interfaceVolume;
+            soundtrackVolume = playerSettings.soundtrackVolume;
+            ambienceVolume = playerSettings.ambienceVolume;
         }
 
         private void SetData(SettingsSaveWrapper playerSettings)
@@ -84,6 +101,13 @@ namespace RPG.UI
             displayHealthOnNPCS = playerSettings.displayHealthOnNPCS;
             displayTutorials = playerSettings.displayTutorials;
             displayTooltipIcons = playerSettings.displayTooltipIcons;
+
+            masterVolume = playerSettings.masterVolume;
+            effectsVolume = playerSettings.effectsVolume;
+            voiceVolume = playerSettings.voiceVolume;
+            interfaceVolume = playerSettings.interfaceVolume;
+            soundtrackVolume = playerSettings.soundtrackVolume;
+            ambienceVolume = playerSettings.ambienceVolume;
 
         }
 
@@ -105,6 +129,12 @@ namespace RPG.UI
                 displayHealthOnNPCS = playerSettings.displayHealthOnNPCS;
                 displayTutorials = playerSettings.displayTutorials;
                 displayTooltipIcons = playerSettings.displayTooltipIcons;
+                masterVolume = playerSettings.masterVolume;
+                effectsVolume = playerSettings.effectsVolume;
+                voiceVolume = playerSettings.voiceVolume;
+                interfaceVolume = playerSettings.interfaceVolume;
+                soundtrackVolume = playerSettings.soundtrackVolume;
+                ambienceVolume = playerSettings.ambienceVolume;
             }
             
             public GamePresets gamePresetOption;
@@ -131,7 +161,13 @@ namespace RPG.UI
             //Item ToolTip Icon Options
             public bool displayTooltipIcons;
 
-
+            //Sound options
+            public float masterVolume;
+            public float effectsVolume;
+            public float voiceVolume;
+            public float interfaceVolume;
+            public float soundtrackVolume;
+            public float ambienceVolume;
 
         }
 
