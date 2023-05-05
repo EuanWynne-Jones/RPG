@@ -22,7 +22,7 @@ namespace RPG.Control
         private void Update()
         {
             float dist = GetDistancetoObject();
-            if (dist <= .5f && pickup.ableToPickup == true && player.GetComponent<Health>().isInSpiritRealm == false)
+            if (dist <= .5f && pickup.pickupIntention == true && player.GetComponent<Health>().isInSpiritRealm == false)
             {
                 player.GetComponent<ActionSchedueler>().CancelCurrentAction();
                 TriggerLooting(player.gameObject);

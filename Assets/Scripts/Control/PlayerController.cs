@@ -33,8 +33,9 @@ namespace RPG.Control
         bool isDraggingUI = false;
         bool CanInteractWithMovement = true;
 
-        [HideInInspector]
         public GameObject currentHitObject = null;
+        public GameObject previousHitPickup = null;
+        private Transform previousHitObject = null;
 
         private void Awake()
         {
@@ -75,25 +76,8 @@ namespace RPG.Control
                 foreach (RaycastHit hit in hits)
                 {
                     IRaycastable[] raycastables = hit.transform.GetComponents<IRaycastable>();
-
-                    // Check if the hit object has an Outline component
-                    Outline outline = hit.transform.GetComponent<Outline>();
-
-                    // Turn off the outline for the previous hit object
-                    if (currentHitObject != null && currentHitObject != hit.transform.gameObject)
-                    {
-                        Outline previousOutline = currentHitObject.GetComponent<Outline>();
-                        if (previousOutline != null) previousOutline.enabled = false;
-                    }
-
-                    // Turn on the outline for the current hit object
-                    if (outline != null)
-                    {
-                        outline.enabled = true;
-                        currentHitObject = hit.transform.gameObject;
-                    }
-
-                    // Handle the raycastable object as before
+                    HandleOutline(hit);
+                    HandlePickup(hit);
                     foreach (IRaycastable raycastable in raycastables)
                     {
                         if (raycastable.HandleRaycast(this))
@@ -103,13 +87,68 @@ namespace RPG.Control
                         }
                     }
                 }
-                if (hits.Length == 0 && currentHitObject != null)
-                    {
-                        Outline previousOutline = currentHitObject.GetComponent<Outline>();
-                        if (previousOutline != null) previousOutline.enabled = false;
-                    }
+                HandleOutlineReset(hits);
+                HandlePickupReset();
             }
             return false;
+        }
+
+        private void HandlePickup(RaycastHit hit)
+        {
+            Pickup pickup = hit.transform.GetComponent<Pickup>();
+            if (pickup != null)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    pickup.pickupIntention = true;
+                    previousHitObject = hit.transform;
+                }
+            }
+        }
+
+        private void HandlePickupReset()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                    if (previousHitObject != null && previousHitObject.GetComponent<Pickup>() != null)
+                {
+                    ResetPreviousPickup();
+                }
+                
+            }
+        }
+
+        private void ResetPreviousPickup()
+        {
+            previousHitObject.GetComponent<Pickup>().pickupIntention = false;
+            previousHitObject = null;
+        }
+
+        private void HandleOutlineReset(RaycastHit[] hits)
+        {
+            if (hits.Length == 0 && currentHitObject != null)
+            {
+                Outline previousOutline = currentHitObject.GetComponent<Outline>();
+                if (previousOutline != null) previousOutline.enabled = false;
+            }
+        }
+
+        private void HandleOutline(RaycastHit hit)
+        {
+            Outline outline = hit.transform.GetComponent<Outline>();
+
+
+            if (currentHitObject != null && currentHitObject != hit.transform.gameObject)
+            {
+                Outline previousOutline = currentHitObject.GetComponent<Outline>();
+                if (previousOutline != null) previousOutline.enabled = false;
+            }
+
+            if (outline != null)
+            {
+                outline.enabled = true;
+                currentHitObject = hit.transform.gameObject;
+            }
         }
 
         RaycastHit[] RayCastAllSorted()

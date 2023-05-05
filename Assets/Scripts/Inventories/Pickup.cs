@@ -16,6 +16,7 @@ namespace RPG.Inventories
         public InventoryItem item;
 
         public bool ableToPickup = false;
+        public bool pickupIntention = false;
         int number = 1;
 
         // CACHED REFERENCE
@@ -27,7 +28,7 @@ namespace RPG.Inventories
         {
             var player = GameObject.FindGameObjectWithTag("Player");
             inventory = player.GetComponent<Inventory>();
-            StartCoroutine(ChangeHasJustDropped(canPickupTime));
+            //StartCoroutine(ChangeHasJustDropped(canPickupTime));
         }
 
 
