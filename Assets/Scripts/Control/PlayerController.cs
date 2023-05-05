@@ -69,7 +69,7 @@ namespace RPG.Control
 
         private bool InteractWithComponent()
         {
-            if (GetComponent<Health>().isInSpiritRealm) return false;
+            bool isInSpiritRealm = GetComponent<Health>().isInSpiritRealm;
             if (!GetComponent<PlayerConversant>().isInDialogue)
             {
                 RaycastHit[] hits = RayCastAllSorted();
@@ -78,6 +78,22 @@ namespace RPG.Control
                     IRaycastable[] raycastables = hit.transform.GetComponents<IRaycastable>();
                     HandleOutline(hit);
                     HandlePickup(hit);
+                    AIConversant aIConversant = hit.transform.GetComponent<AIConversant>();
+                    if(aIConversant != null && aIConversant.undeadSpeaker)
+                    {
+                        foreach (IRaycastable raycastable in raycastables)
+                        {
+                            if (raycastable.HandleRaycast(this))
+                            {
+                                SetCursor(raycastable.GetCursorType());
+                                return true;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (isInSpiritRealm) return false;
+                    }
                     foreach (IRaycastable raycastable in raycastables)
                     {
                         if (raycastable.HandleRaycast(this))
@@ -95,6 +111,7 @@ namespace RPG.Control
 
         private void HandlePickup(RaycastHit hit)
         {
+            if (GetComponent<Health>().isInSpiritRealm) return;
             Pickup pickup = hit.transform.GetComponent<Pickup>();
             if (pickup != null)
             {
@@ -114,7 +131,6 @@ namespace RPG.Control
                 {
                     ResetPreviousPickup();
                 }
-                
             }
         }
 
@@ -135,9 +151,8 @@ namespace RPG.Control
 
         private void HandleOutline(RaycastHit hit)
         {
+            if (GetComponent<Health>().isInSpiritRealm) return;
             Outline outline = hit.transform.GetComponent<Outline>();
-
-
             if (currentHitObject != null && currentHitObject != hit.transform.gameObject)
             {
                 Outline previousOutline = currentHitObject.GetComponent<Outline>();

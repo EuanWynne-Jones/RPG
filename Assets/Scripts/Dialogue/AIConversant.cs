@@ -17,6 +17,7 @@ namespace RPG.Dialogue
         [SerializeField] public Dialogue NPCDialogue = null;
         [SerializeField] public Transform conversantHead;
         [SerializeField] float dialogueTriggerDistance = 3.5f;
+        [SerializeField]public bool undeadSpeaker = false;
 
         PlayerController player;
         bool dialogueIntention;

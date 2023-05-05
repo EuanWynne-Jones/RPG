@@ -388,6 +388,7 @@ MonoBehaviour:
   NPCDialogue: {fileID: 11400000, guid: 3dd6234566c6e7f4ab2f2e2dbbc83353, type: 2}
   conversantHead: {fileID: 0}
   dialogueTriggerDistance: 3.5
+  undeadSpeaker: 1
 --- !u!114 &6517333651199425072
 MonoBehaviour:
   m_ObjectHideFlags: 0
