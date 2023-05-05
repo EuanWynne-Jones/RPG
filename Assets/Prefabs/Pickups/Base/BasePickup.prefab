@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6997811445119991105}
   - component: {fileID: 6494234044896430859}
   - component: {fileID: 1478897689618628150}
+  - component: {fileID: 2494305974755621306}
   m_Layer: 0
   m_Name: BasePickup
   m_TagString: Untagged
@@ -76,6 +77,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03eec878f4d74164d8a9d6ce66901260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2494305974755621306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222577395524571727}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.88272613, b: 0.514151, a: 0.5019608}
+  outlineWidth: 2
+  precomputeOutline: 1
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &4238732584681420870
 PrefabInstance:
   m_ObjectHideFlags: 0

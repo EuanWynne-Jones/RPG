@@ -40,11 +40,11 @@ namespace RPG.Core
             if (character == null) character = gameObject.GetComponent<Fighter>();
             if(mixerHandler == null)
             {
-            mixerHandler = FindObjectOfType<AudioMixerHandler>();
             }
         }
         private void Start()
         {
+            mixerHandler = FindObjectOfType<AudioMixerHandler>();
             SetupAudioSources();
 
             if (VoiceSource != null)

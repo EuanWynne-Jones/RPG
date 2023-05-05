@@ -54,12 +54,13 @@ namespace RPG.Dialogue
         }
         public void StartDialogue(AIConversant newConversant, Dialogue newDialogue)
         {
-
+            PlayerController playerController = GetComponent<PlayerController>();
             isInDialogue = true;
             StartCoroutine(FadeOutHUD());
             actionSchedueler = GetComponent<ActionSchedueler>();
             actionSchedueler.CancelCurrentAction();
-            GetComponent<PlayerController>().Cancel();
+            playerController.Cancel();
+            playerController.currentHitObject = null;
             cameraTransition = GetComponent<CameraTransition>();
             cameraTransition.dialogueCamera.LookAt = newConversant.conversantHead;
             cameraTransition.SwitchCamera(cameraTransition.dialogueCamera);

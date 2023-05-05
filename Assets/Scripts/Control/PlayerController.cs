@@ -33,6 +33,9 @@ namespace RPG.Control
         bool isDraggingUI = false;
         bool CanInteractWithMovement = true;
 
+        [HideInInspector]
+        public GameObject currentHitObject = null;
+
         private void Awake()
         {
             health = GetComponent<Health>();
@@ -72,21 +75,40 @@ namespace RPG.Control
                 foreach (RaycastHit hit in hits)
                 {
                     IRaycastable[] raycastables = hit.transform.GetComponents<IRaycastable>();
-                    {
-                        foreach(IRaycastable raycastable in raycastables)
-                        {
-                            if (raycastable.HandleRaycast(this))
-                            {
-                            
-                                SetCursor(raycastable.GetCursorType());
 
-                                return true;
-                            }
+                    // Check if the hit object has an Outline component
+                    Outline outline = hit.transform.GetComponent<Outline>();
+
+                    // Turn off the outline for the previous hit object
+                    if (currentHitObject != null && currentHitObject != hit.transform.gameObject)
+                    {
+                        Outline previousOutline = currentHitObject.GetComponent<Outline>();
+                        if (previousOutline != null) previousOutline.enabled = false;
+                    }
+
+                    // Turn on the outline for the current hit object
+                    if (outline != null)
+                    {
+                        outline.enabled = true;
+                        currentHitObject = hit.transform.gameObject;
+                    }
+
+                    // Handle the raycastable object as before
+                    foreach (IRaycastable raycastable in raycastables)
+                    {
+                        if (raycastable.HandleRaycast(this))
+                        {
+                            SetCursor(raycastable.GetCursorType());
+                            return true;
                         }
                     }
                 }
+                if (hits.Length == 0 && currentHitObject != null)
+                    {
+                        Outline previousOutline = currentHitObject.GetComponent<Outline>();
+                        if (previousOutline != null) previousOutline.enabled = false;
+                    }
             }
-            
             return false;
         }
 

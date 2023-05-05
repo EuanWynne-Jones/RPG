@@ -83,7 +83,8 @@ PrefabInstance:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: fd7d68a65822e4a44a9ef78850e64cfc, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4044384205582577153, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5ee468b9067046a48a3356c17f207143, type: 3}
 --- !u!4 &6692480247875757478 stripped
 Transform:
