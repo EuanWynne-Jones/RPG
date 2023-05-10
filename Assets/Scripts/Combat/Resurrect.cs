@@ -77,6 +77,7 @@ namespace RPG.Combat
             StartCoroutine(WaitToResurrect(2.2f));
             RestoreOriginalMaterials();
             Instantiate(resurrectionFX, player.transform.position, Quaternion.identity);
+            
         }
         public void onReviveButton()
         {
@@ -248,6 +249,7 @@ namespace RPG.Combat
             EnableComponents();
             Destroy(playerDeadBody);
             EnableControl();
+            spiritGuardian.SetActive(false);
 
         }
     }

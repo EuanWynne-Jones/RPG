@@ -353,7 +353,7 @@ MonoBehaviour:
   nodePosition:
     serializedVersion: 2
     x: 341
-    y: 278
+    y: 276
     width: 200
     height: 100
   onEntryAction: 
