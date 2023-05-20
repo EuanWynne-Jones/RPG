@@ -170,11 +170,14 @@ namespace RPG.Control
         {
             RaycastHit[] hits = Physics.SphereCastAll(GetMouseRay(), raycastRadius);
             float[] distances = new float[hits.Length];
+
             for (int i = 0; i < hits.Length; i ++)
             {
                 distances[i] = hits[i].distance;
             }
+
             Array.Sort(distances, hits);
+
             return hits;
         }
 
@@ -184,6 +187,7 @@ namespace RPG.Control
             {
                 isDraggingUI = false;
             }
+
             if (EventSystem.current.IsPointerOverGameObject())
             {
                 if (Input.GetMouseButtonDown(0))
@@ -193,10 +197,12 @@ namespace RPG.Control
                 SetCursor(CursorType.UI);
                 return true;
             }
+
             if (isDraggingUI)
             {
                 return true;
             }
+
             return false;
             
         }
@@ -243,7 +249,27 @@ namespace RPG.Control
         private void SetCursor(CursorType cursor)
         {
             CursorMapping mapping = GetCursorMapping(cursor);
-            Cursor.SetCursor(mapping.texture, mapping.hotspot, CursorMode.Auto);
+            Vector2 hotspot = new Vector2();
+
+            // :TODO: Aiden Mazik 2023-05-20
+            // Fixing edge cases like this is bad code, should probably
+            // do this a different way but its fine for now.
+            if (cursor == CursorType.UI)
+            {
+                hotspot.x = mapping.texture.width * 0.3f;
+                hotspot.y = mapping.texture.width * 0.07f;
+            }
+            else if(cursor == CursorType.Movement)
+            {
+                hotspot.x = mapping.texture.width * 0.5f;
+                hotspot.y = mapping.texture.width * 0.5f;
+            }
+            else
+            {
+                hotspot = mapping.hotspot;
+            }
+
+            Cursor.SetCursor(mapping.texture, hotspot, CursorMode.Auto);
         }
 
         private void CheckSpecialAbilityKeys()
