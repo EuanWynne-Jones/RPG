@@ -239,8 +239,6 @@ namespace RPG.Control
 
             target = navMeshHit.position;
 
-
-
             return true;
         }
 

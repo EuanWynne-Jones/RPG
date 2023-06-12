@@ -25,16 +25,15 @@ namespace RPG.Stats
             //Debug.Log("CurrentEXP: " + experiencePoints);
             UpdateStoredEXP();
         }
+
         public void GainExperience(float experience)
         {
             experiencePoints += experience;
             //GetNumberRemaining(experiencePoints);
-
             
             if (experiencePoints > baseStats.GetStat(Stat.ExperienceToLevelUp))
             {
                 GetNumberRemaining(experiencePoints);
-                //Debug.Log("StoredEXP: " + StoredExperiencePoints);
             }
 
             onExperienceGained();
@@ -55,10 +54,12 @@ namespace RPG.Stats
             experiencePoints += ExperienceToGainAfterLevel;
             onExperienceGained();
         }
+
         public float GetPercentage()
         {
             return 100 * GetFraction();
         }
+
         public float GetFraction()
         {
             return experiencePoints / baseStats.GetStat(Stat.ExperienceToLevelUp);
@@ -66,6 +67,9 @@ namespace RPG.Stats
 
         public float GetNumberRemaining(float experience)
         {
+            // :TODO: Aiden Mazik 2023-05-20
+            // This could be simplified to just the return statement in the if.
+            // Is their a reason they're split?
             if (experience > baseStats.GetStat(Stat.ExperienceToLevelUp))
             {
                 return StoredExperiencePoints = Math.Abs(experience - baseStats.GetStat(Stat.ExperienceToLevelUp));
@@ -75,17 +79,19 @@ namespace RPG.Stats
                return StoredExperiencePoints = 0f;
             }
         }
+
         public float GetPercentRemaining()
         {
             float percentageToLevelUp = ((float)experiencePoints / baseStats.GetStat(Stat.ExperienceToLevelUp) * 100f);
             return percentageToLevelUp; 
         }
+
         public object CaptureState()
         {
             return experiencePoints;
         }
 
-            public void RestoreState(object state)
+        public void RestoreState(object state)
         {
             experiencePoints = (float)state;
         }
