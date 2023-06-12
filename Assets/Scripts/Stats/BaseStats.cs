@@ -60,7 +60,9 @@ namespace RPG.Stats
         public void UpdateLevel()
         {
             int newLevel = CalculateLevel();
-            
+
+
+
             if(newLevel > currentLevel.value)
             {
                 currentLevel.value = newLevel;
@@ -135,8 +137,6 @@ namespace RPG.Stats
             return currentLevel.value;
         }
 
-        
-
         public int CalculateLevel()
         {
             Experience experience = GetComponent<Experience>();
@@ -144,14 +144,21 @@ namespace RPG.Stats
 
             float currentEXP = experience.experiencePoints;
             int penultimateLevel = progression.GetLevels(Stat.ExperienceToLevelUp, characterClass);
+
+            float experienceToLevelUpCount = 0;
+
             for (int level = 1; level <= penultimateLevel; level++)
             {
                 float EXPtoLevelUP = progression.GetStat(Stat.ExperienceToLevelUp, characterClass, level);
-                if(EXPtoLevelUP > currentEXP)
+
+                experienceToLevelUpCount += EXPtoLevelUP;
+                
+                if (experienceToLevelUpCount >= currentEXP)
                 {
                     return level;
                 }
             }
+
             return penultimateLevel + 1;
         }
 
