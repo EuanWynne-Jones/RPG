@@ -9,6 +9,7 @@ TagManager:
   - DialogueLookAt
   - PlayerPreview
   - SpiritGuardian
+  - QuestListener
   layers:
   - Default
   - TransparentFX

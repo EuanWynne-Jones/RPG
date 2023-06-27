@@ -17,9 +17,13 @@ namespace RPG.Quests
         List<QuestStatus> questStatuses = new List<QuestStatus>();
         public event Action onQuestListUpdated;
         PopupHandler popupHandler = null;
+
         private void Awake()
         {
             popupHandler = GetComponent<PopupHandler>();
+
+            GameObject.FindGameObjectWithTag("QuestListener")
+                .GetComponent<QuestListener>().AttachQuestList(this);
         }
 
         
@@ -32,7 +36,7 @@ namespace RPG.Quests
             popupHandler.SpawnQuestStartedPopup(quest.name);
             if (onQuestListUpdated != null)
             {
-            onQuestListUpdated();
+                onQuestListUpdated();
             }
         }
 
@@ -45,22 +49,22 @@ namespace RPG.Quests
                 popupHandler.SpawnQuestFailedPopup(quest.name);
                 quest.FailQuest(quest);
                 onQuestListUpdated();
-                
             }
         }
 
-        private void Update()
+/*        private void Update()
         {
             CompleteObjectivesByPredicates();
-        }
+        }*/
 
         public void CompleteObjective(Quest quest, string objective)
         {
             QuestStatus questStatus = GetQuestStatus(quest);
             questStatus.CompleteObjective(objective);
+
             if (!questStatus.IsComplete())
             {
-            popupHandler.SpawnObjectiveCompletePopup(GetCompletedObjectiveDescriptor(GetQuestStatus(quest)));
+                popupHandler.SpawnObjectiveCompletePopup(GetCompletedObjectiveDescriptor(GetQuestStatus(quest)));
             }
             
             if (questStatus.IsComplete())
@@ -155,12 +159,9 @@ namespace RPG.Quests
 
                 }
             }
-
-
-
         }
 
-        private void CompleteObjectivesByPredicates()
+        public void CompleteObjectivesByPredicates()
         {
             foreach (QuestStatus status in questStatuses)
             {
@@ -194,6 +195,7 @@ namespace RPG.Quests
                     if (teststatus == null) return false;
                     return teststatus.IsObjectiveComplete(parameters[1]);
             }
+
             return null;
         }
 

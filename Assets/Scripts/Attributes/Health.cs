@@ -26,6 +26,7 @@ namespace RPG.Attributes
         public bool isInSpiritRealm = false;
 
         LazyValue<float> health;
+        
         private void Awake()
         {
             health = new LazyValue<float>(GetInitialHealth);
@@ -57,7 +58,6 @@ namespace RPG.Attributes
 
         public void TakeDamage(GameObject instigator, float damage)
         {
-           
             //print(gameObject.name + "Took Damage:" + damage);
             health.value = Mathf.Max(health.value - damage, 0);
             TakenDamage.Invoke();
@@ -75,13 +75,11 @@ namespace RPG.Attributes
             { 
                 DeathBehaviour();
                 AwardExperience(instigator);
-                
             }
         }
 
         public void Heal(float amountToHeal)
         {
-            
             health.value = Mathf.Min(health.value + amountToHeal, GetMaxHealth());
         }
 
@@ -152,6 +150,7 @@ namespace RPG.Attributes
             GetComponent<Animator>().SetTrigger("Death");
             GetComponent<CharacterSFX>().PlayDeathScream();
             GetComponent<ActionSchedueler>().CancelCurrentAction();
+            GameObject.FindGameObjectWithTag("QuestListener").GetComponent<QuestListener>().EntityKilled();
             OnDie.Invoke();
         }
 
