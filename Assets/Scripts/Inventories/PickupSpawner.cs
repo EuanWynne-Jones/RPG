@@ -51,9 +51,6 @@ namespace RPG.Inventories
             spawnedPickup.transform.SetParent(transform);
         }
 
-
-
-
         private void DestroyPickup()
         {
             if (GetPickup())

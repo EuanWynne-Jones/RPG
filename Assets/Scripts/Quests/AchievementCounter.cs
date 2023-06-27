@@ -16,12 +16,16 @@ namespace RPG.Quests
             if (!counts.ContainsKey(token))
             {
                 if (onlyIfExists) return 0;
+
                 counts[token] = amount;
                 onCountChanged?.Invoke();
+            
                 return amount;
             }
+
             counts[token] += amount;
             onCountChanged?.Invoke();
+            
             return counts[token];
         }
 
@@ -32,12 +36,14 @@ namespace RPG.Quests
                 counts[token] = 0;
                 onCountChanged?.Invoke();
             }
+
             return counts[token];
         }
 
         public int GetCounterValue(string token)
         {
             if (!counts.ContainsKey(token)) return 0;
+
             return counts[token];
         }
 
@@ -59,12 +65,14 @@ namespace RPG.Quests
                 if (int.TryParse(parameters[1], out int intParameter))
                 {
                     RegisterCounter(parameters[0]);
+                
                     return counts[parameters[0]] >= intParameter;
                 }
+            
                 return false;
             }
+
             return null;
         }
-
     }
 }

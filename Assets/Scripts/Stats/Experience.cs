@@ -25,6 +25,7 @@ namespace RPG.Stats
             //Debug.Log("CurrentEXP: " + experiencePoints);
             UpdateStoredEXP();
         }
+
         public void GainExperience(float experience)
         {
             experiencePoints += experience;
@@ -85,7 +86,7 @@ namespace RPG.Stats
             return experiencePoints;
         }
 
-            public void RestoreState(object state)
+        public void RestoreState(object state)
         {
             experiencePoints = (float)state;
         }

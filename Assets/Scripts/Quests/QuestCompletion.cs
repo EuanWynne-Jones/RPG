@@ -12,17 +12,19 @@ namespace RPG.Quests
 
         public void CompleteObjective()
         {
-            if(objectiveToComplete == "")
+            if(objectiveToComplete == string.Empty)
             {
                 Debug.Log("Objective in QuestCompletion is Not Set!");
+
                 return;
             }
+            
             QuestList questList = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestList>();
+            
             if (questList.HasQuest(quest) && !quest.GetIsFailed(quest))
             {
-            questList.CompleteObjective(quest, objectiveToComplete);
+                questList.CompleteObjective(quest, objectiveToComplete);
             }
-            
             else
             {
                 return;
