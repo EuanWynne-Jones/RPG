@@ -64,8 +64,11 @@ namespace RPG.Quests
             {
                 if (int.TryParse(parameters[1], out int intParameter))
                 {
+                    // why is an int being returned here???
                     RegisterCounter(parameters[0]);
-                
+
+                    counts[parameters[0]]++;
+
                     return counts[parameters[0]] >= intParameter;
                 }
             
