@@ -12,7 +12,7 @@ namespace RPG.Quests
 
         public void CompleteObjective()
         {
-            if(objectiveToComplete == string.Empty)
+            /*if(objectiveToComplete == string.Empty)
             {
                 Debug.Log("Objective in QuestCompletion is Not Set!");
 
@@ -28,7 +28,7 @@ namespace RPG.Quests
             else
             {
                 return;
-            }
+            }*/
             
         }
     }
