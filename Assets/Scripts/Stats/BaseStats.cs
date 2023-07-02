@@ -13,7 +13,6 @@ namespace RPG.Stats
         [Range(1,10)]
         [SerializeField] int startingLevel = 1;
 
-
         [SerializeField] CharacterClass characterClass;
         [SerializeField] public Progression progression = null;
         [SerializeField] GameObject levelUpEffect = null;
@@ -25,8 +24,6 @@ namespace RPG.Stats
 
         GameObject player;
 
-
-       
         private void Awake()
         {
             player = GameObject.FindGameObjectWithTag("Player");
@@ -34,12 +31,10 @@ namespace RPG.Stats
             experience = GetComponent<Experience>();
         }
 
-
         private void Start()
         {
             currentLevel.ForceInit();
         }
-
 
         private void OnEnable()
         {
@@ -84,11 +79,8 @@ namespace RPG.Stats
             }
         }
 
-
-
         private void LevelUpEffect()
         {
-            
             Instantiate(levelUpEffect, transform);
         }
 
@@ -171,6 +163,7 @@ namespace RPG.Stats
                     return currentLevel.value >= testLevel;
                 }
             }
+
             return null;
         }
     }

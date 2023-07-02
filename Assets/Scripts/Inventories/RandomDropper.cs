@@ -20,12 +20,11 @@ namespace RPG.Inventories
         {
             var baseStats = GetComponent<BaseStats>();
             
-                var drops = dropLibary.GetRandomDrops(baseStats.GetLevel());
+            var drops = dropLibary.GetRandomDrops(baseStats.GetLevel());
             foreach (var drop in drops)
             {
                 DropItem(drop.item, drop.number);
             }
-            
         }
         protected override Vector3 GetDropLocation()
         {
