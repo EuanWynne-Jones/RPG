@@ -22,7 +22,7 @@ namespace RPG.Stats
             return levels[level -1];
         }
 
-        private  void BuildLookup()
+        private void BuildLookup()
         {
             if (lookuptable != null) return;
             lookuptable = new Dictionary<CharacterClass, Dictionary<Stat, float[]>>();
@@ -53,20 +53,13 @@ namespace RPG.Stats
         {
             public CharacterClass characterClass;
             public ProgressionStat[] stats;
-             
-
-
         }
+
         [System.Serializable]
         public class ProgressionStat
         {
             public Stat stat;
             public float[] Levels;
         }
-
-        
-
-
-
     }
 }
