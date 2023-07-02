@@ -169,6 +169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 8584064294123646345}
+  healthText: {fileID: 0}
+  playerSettings: {fileID: 0}
 --- !u!1 &343490574930300263
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3557499ce503c9547948984899a2559b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsScriptableObject: {fileID: 11400000, guid: b383d0a045965e948af5d1e0525f6d12, type: 2}
+  playerSettings: {fileID: 0}
   centerBottomHUD: {fileID: 4871774650012510575}
   outerBottomHUD: {fileID: 8821260587299005044}
   topLeftHUD: {fileID: 6974982049919923036}
@@ -1540,7 +1542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3292189078911283190, guid: e53c41345c587be4a9eac75ed34f5dea, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3402695395658834374, guid: e53c41345c587be4a9eac75ed34f5dea, type: 3}
       propertyPath: m_SizeDelta.y

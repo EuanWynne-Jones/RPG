@@ -9,6 +9,11 @@ namespace RPG.Combat
         public WeaponSFX weaponSFX = null;
         public AudioSource PickupSFX = null;
 
+        private void Awake()
+        {
+            PickupSFX = GetComponent<AudioSource>();
+        }
+
         public void PlayPickupSFX()
         {
             PickupSFX.Play();

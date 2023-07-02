@@ -121,6 +121,7 @@ namespace RPG.Quests
         }
         private void GiveReward(Quest quest)
         {
+            GiveExpReward(quest);
             foreach (Quest.Reward reward in quest.GetItemRewards())
             {
                 if (!reward.item.IsStackable())

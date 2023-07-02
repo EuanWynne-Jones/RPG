@@ -382,12 +382,12 @@ MonoBehaviour:
   - 74c3fe16-80bd-40a6-a7b1-3e48d60976fb
   nodePosition:
     serializedVersion: 2
-    x: 949
-    y: 721
+    x: 954
+    y: 734
     width: 200
     height: 100
   onEntryAction: 
-  onExitAction: 
+  onExitAction: Comp
   condition:
     and:
     - or:

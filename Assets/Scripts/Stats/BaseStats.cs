@@ -60,17 +60,17 @@ namespace RPG.Stats
 
             if(newLevel > currentLevel.value)
             {
-                currentLevel.value = newLevel;
-                GetComponent<PopupHandler>().SpawnLevelPopup(newLevel.ToString());
-                if (experience.StoredExperiencePoints > 0)
-                {
-                    experience.experiencePoints = 0 + experience.StoredExperiencePoints;
-                    experience.StoredExperiencePoints = 0;
-                }
-                else
-                {
-                    experience.experiencePoints = 0;
-                }
+                //currentLevel.value = newLevel;
+                //GetComponent<PopupHandler>().SpawnLevelPopup(newLevel.ToString());
+                //if (experience.StoredExperiencePoints > 0)
+                //{
+                //    experience.experiencePoints = 0 + experience.StoredExperiencePoints;
+                //    experience.StoredExperiencePoints = 0;
+                //}
+                //else
+                //{
+                //    experience.experiencePoints = 0;
+                //}
                 //Debug.Log("Experience Points on next Level:" + experience.experiencePoints);
                 LevelUpEffect();
                 

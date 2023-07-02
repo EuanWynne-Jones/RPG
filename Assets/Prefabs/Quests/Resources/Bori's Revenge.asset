@@ -27,7 +27,7 @@ MonoBehaviour:
         - predicate: 9
           parameters:
           - EnemyCharacter
-          - 1
+          - 2
           negate: 0
   - description: Return to Bori for a reward
     reference: Return
@@ -44,7 +44,13 @@ MonoBehaviour:
         - predicate: 2
           parameters:
           - Bori's Revenge
-          - KillGoblins
+          - Kill
+          negate: 0
+      - or:
+        - predicate: 2
+          parameters:
+          - Bori's Revenge
+          - Return
           negate: 0
   rewards:
   - item: {fileID: 11400000, guid: 59dc1b75514f69048a3dd964754be707, type: 2}
@@ -58,6 +64,6 @@ MonoBehaviour:
     amount: 9
   - currencyType: 2
     amount: 23
-  experienceReward: 900
+  experienceReward: 230
   isComplete: 0
-  isFailed: 1
+  isFailed: 0
