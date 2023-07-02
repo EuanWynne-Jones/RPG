@@ -5,6 +5,7 @@ using RPG.Movement;
 using System.Collections;
 using RPG.Core;
 using RPG.Attributes;
+using RPG.Combat;
 
 namespace RPG.Control
 {
@@ -27,6 +28,7 @@ namespace RPG.Control
                 player.GetComponent<ActionSchedueler>().CancelCurrentAction();
                 TriggerLooting(player.gameObject);
                 pickup.PickupItem();
+                player.GetComponent<SFXHandler>().PlayPickupSFX();
                 StartCoroutine(WaitForAnim(1.6f));
                 player.GetComponent<PlayerController>().enabled = true;
             }
@@ -60,6 +62,7 @@ namespace RPG.Control
         {
             player.GetComponent<PlayerController>().enabled = false;
             player.GetComponent<Animator>().SetTrigger("Loot");
+            
         }
 
         public bool HandleRaycast(PlayerController callingController)

@@ -7,6 +7,12 @@ namespace RPG.Combat
     public class SFXHandler : MonoBehaviour
     {
         public WeaponSFX weaponSFX = null;
+        public AudioSource PickupSFX = null;
+
+        public void PlayPickupSFX()
+        {
+            PickupSFX.Play();
+        }
 
         public void PlayAttacking()
         {
