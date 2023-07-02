@@ -12,8 +12,10 @@ namespace RPG.Stats
         [SerializeField] public float experiencePoints = 0;
         public float StoredExperiencePoints = 0;
 
+
         public event Action onExperienceGained;
-        BaseStats baseStats;
+        public float percentageToLevelUp;
+        private BaseStats baseStats;
 
         private void Awake()
         {
@@ -23,7 +25,7 @@ namespace RPG.Stats
         private void Update()
         {
             //Debug.Log("CurrentEXP: " + experiencePoints);
-            UpdateStoredEXP();
+            //UpdateStoredEXP();
         }
 
         public void GainExperience(float experience)
@@ -82,7 +84,7 @@ namespace RPG.Stats
 
         public float GetPercentRemaining()
         {
-            float percentageToLevelUp = ((float)experiencePoints / baseStats.GetStat(Stat.ExperienceToLevelUp) * 100f);
+            percentageToLevelUp = (experiencePoints / baseStats.GetStat(Stat.ExperienceToLevelUp) * 100f);
             return percentageToLevelUp; 
         }
 

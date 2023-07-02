@@ -1,4 +1,5 @@
 using RPG.Quests;
+using RPG.UI;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,9 +7,12 @@ public class QuestListener : MonoBehaviour
 {
     private UnityEvent entityKilled = new UnityEvent();
 
+    private PopupHandler popupHandler;
+
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        popupHandler = FindObjectOfType<PopupHandler>();
+        //DontDestroyOnLoad(this.gameObject);
     }
 
     public void AttachQuestList(QuestList questList)

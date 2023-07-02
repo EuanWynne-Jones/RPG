@@ -23,7 +23,6 @@ namespace RPG.Stats
 
         private void Update()
         {
-
             experienceText.text = experience.experiencePoints.ToString() + "/ " + baseStats.GetStat(Stat.ExperienceToLevelUp).ToString() + " ("+ experience.GetPercentRemaining().ToString() + "%)";
             experienceSlider.value = experience.GetPercentRemaining();
         }

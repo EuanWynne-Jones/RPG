@@ -60,6 +60,7 @@ namespace RPG.Stats
 
             if(newLevel > currentLevel.value)
             {
+                
                 //currentLevel.value = newLevel;
                 //GetComponent<PopupHandler>().SpawnLevelPopup(newLevel.ToString());
                 //if (experience.StoredExperiencePoints > 0)
@@ -77,6 +78,7 @@ namespace RPG.Stats
                 onLevelUp();
                //Debug.Log("Player Level:" + currentLevel.value);
             }
+            experience.percentageToLevelUp = 0;
         }
 
         private void LevelUpEffect()

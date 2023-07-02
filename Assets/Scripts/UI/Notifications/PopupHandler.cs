@@ -64,6 +64,13 @@ namespace RPG.UI
             notifcation.SetAnchoredPosition(rectParent, new Vector2(0, 0));
         }
 
+        public void SpawnQuestMultipleConditionObjectivePopup(string Objective, int CurrentAmount, int NeededAmount)
+        {
+            popupPrefab.leftText = Objective + CurrentAmount + "/" + NeededAmount;
+            DamageNumber notifcation = popupPrefab.Spawn(Vector3.zero, popupPrefab.leftText);
+            notifcation.SetAnchoredPosition(rectParent, new Vector2(0, 0));
+        }
+
         public void SpawnQuestFailedPopup(string quest)
         {
             popupPrefab.leftText = "Failed: " + quest;

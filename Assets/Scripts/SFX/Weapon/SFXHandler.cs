@@ -11,6 +11,7 @@ namespace RPG.Combat
 
         private void Awake()
         {
+
             PickupSFX = GetComponent<AudioSource>();
         }
 
