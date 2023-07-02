@@ -9,17 +9,17 @@ namespace RPG.Core
     {
         [Header("SoundTrack")]
         [SerializeField] public string sountrackSourceName = "Soundtrack";
-        [SerializeField] public AudioSource soundtrackSource;
+        [HideInInspector] [SerializeField] public AudioSource soundtrackSource;
         [SerializeField] private List<AudioClip> soundtrackClips;
 
         [Header("Ambience")]
         [SerializeField] public string ambienceSourceName = "Ambience";
-        [SerializeField] public AudioSource ambienceSource;
+        [HideInInspector][SerializeField] public AudioSource ambienceSource;
         [SerializeField] private List<AudioClip> ambienceClips;
 
         [Header("Weather")]
         [SerializeField] public string weatherSourceName = "Weather";
-        [SerializeField] public AudioSource weatherSource;
+        [HideInInspector] [SerializeField] public AudioSource weatherSource;
         [SerializeField] private List<AudioClip> weatherClips;
 
 

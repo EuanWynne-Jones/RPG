@@ -92,15 +92,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
   dialogueText: Thats awful, I must get to him right away
-  dialogueChildren: []
+  dialogueChildren:
+  - 0df525f5-92cf-4f17-89e2-0de6814ac41a
   nodePosition:
     serializedVersion: 2
-    x: 683
-    y: 121
+    x: 680
+    y: 116
     width: 200
     height: 100
   onEntryAction: 
-  onExitAction: MoveToObjectiveComplete
+  onExitAction: 
   condition:
     and: []
 --- !u!114 &-260669781556142800
@@ -149,6 +150,7 @@ MonoBehaviour:
   - {fileID: -937165188969670993}
   - {fileID: -260669781556142800}
   - {fileID: -7669411731871322012}
+  - {fileID: 8544405830774641084}
   newNodeOffset: {x: 250, y: 0}
 --- !u!114 &2210240885201285512
 MonoBehaviour:
@@ -214,3 +216,28 @@ MonoBehaviour:
         - Bori's Revenge
         - Bori's Revenge
         negate: 1
+--- !u!114 &8544405830774641084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddeecfb207224f4f990e011bd87742a, type: 3}
+  m_Name: 0df525f5-92cf-4f17-89e2-0de6814ac41a
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  dialogueText: Goodbye
+  dialogueChildren: []
+  nodePosition:
+    serializedVersion: 2
+    x: 931
+    y: 116
+    width: 200
+    height: 100
+  onEntryAction: MoveToPositiveOutcome
+  onExitAction: CompleteObjective
+  condition:
+    and: []
