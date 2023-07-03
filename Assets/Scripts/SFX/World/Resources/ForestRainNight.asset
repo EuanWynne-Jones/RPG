@@ -26,3 +26,4 @@ MonoBehaviour:
   weatherSource: {fileID: 0}
   weatherClips:
   - {fileID: 8300000, guid: c929acc9d27902341b228776543df7e7, type: 3}
+  - {fileID: 8300000, guid: 48b4265eef1aa7744b0281d14049ab00, type: 3}
