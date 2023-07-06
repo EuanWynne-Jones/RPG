@@ -18,14 +18,20 @@ namespace RPG.Combat
                 if(target != null)
                 {
                     target.enabled = shouldActivate;
+                    if (agressiveNPC.TryGetComponent<Fighter>(out Fighter targetFigher))
+                    {
+                        targetFigher.enabled = shouldActivate;
+                    }
                 }
                 else if(target == null)
                 {
                     agressiveNPC.gameObject.AddComponent<CombatTarget>();
                 }
                 agressiveNPC.enabled = shouldActivate;
-                AIConversant conversant = agressiveNPC.GetComponent<AIConversant>();
+                if(agressiveNPC.TryGetComponent<AIConversant>(out AIConversant conversant))
+                {
                 conversant.enabled = !shouldActivate;
+                }
             }
                 
             

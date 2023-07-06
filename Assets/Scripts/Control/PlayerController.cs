@@ -152,6 +152,7 @@ namespace RPG.Control
         private void HandleOutline(RaycastHit hit)
         {
             if (GetComponent<Health>().isInSpiritRealm) return;
+            if (hit.transform.gameObject.GetComponent<Fighter>() !=null && hit.transform.gameObject.GetComponent<Fighter>().enabled == false) return;
             Outline outline = hit.transform.GetComponent<Outline>();
             if (currentHitObject != null && currentHitObject != hit.transform.gameObject)
             {

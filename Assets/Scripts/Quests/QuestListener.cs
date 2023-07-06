@@ -12,7 +12,6 @@ public class QuestListener : MonoBehaviour
     private void Awake()
     {
         popupHandler = FindObjectOfType<PopupHandler>();
-        //DontDestroyOnLoad(this.gameObject);
     }
 
     public void AttachQuestList(QuestList questList)

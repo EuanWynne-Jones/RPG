@@ -42,6 +42,7 @@ namespace RPG.Quests
 
         public void RemoveQuest(Quest quest)
         {
+            if (HasQuest(quest) == false) return;
             if (HasQuest(quest))
             {
                 QuestStatus questStatus = new QuestStatus(quest);
