@@ -16,7 +16,7 @@ namespace RPG.Inventories
     {
         // CONFIG DATA
         [Tooltip("Does an instance of this item get consumed every time it's used.")]
-        [SerializeField] bool consumable = false;
+        [SerializeField] public bool consumable = false;
 
         // PUBLIC
 
