@@ -47,7 +47,7 @@ namespace RPG.Inventories
         /// <returns>The location the drop should be spawned.</returns>
         protected virtual Vector3 GetDropLocation()
         {
-            return transform.position;
+            return new Vector3(transform.position.x, transform.position.y + 1, transform.position.z+ 0.5f);
         }
 
         // PRIVATE

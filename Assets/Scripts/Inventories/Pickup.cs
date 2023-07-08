@@ -19,6 +19,10 @@ namespace RPG.Inventories
         public bool pickupIntention = false;
         int number = 1;
 
+        float time = 0;
+        float timeToKinimatic = 2;
+        bool isKinimatic = false;
+
         // CACHED REFERENCE
         Inventory inventory;
 
@@ -30,6 +34,22 @@ namespace RPG.Inventories
             inventory = player.GetComponent<Inventory>();
             //StartCoroutine(ChangeHasJustDropped(canPickupTime));
         }
+
+
+        private void Update()
+        {
+            if (!isKinimatic)
+            {
+                time += Time.deltaTime;
+                if(time > timeToKinimatic)
+                {
+                    GetComponent<Rigidbody>().isKinematic = true;
+                    isKinimatic = true;
+                }
+            }
+        }
+
+
 
 
         private IEnumerator ChangeHasJustDropped(float waitTime)

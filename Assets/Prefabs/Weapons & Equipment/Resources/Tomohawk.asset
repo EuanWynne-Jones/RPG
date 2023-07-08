@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bdaf4e851b99eb43a812b25545f324c, type: 3}
+  m_Name: Tomohawk
+  m_EditorClassIdentifier: 
+  itemID: 332d9c18-d9d9-46cc-8ff0-f704a2f3a304
+  displayName: Tomohawk
+  icon: {fileID: 21300000, guid: 65d466afcff75fa428a0b237f81846d6, type: 3}
+  Quality: 3
+  description: Hawk!
+  pickup: {fileID: 3025367871609457025, guid: 61c8aca0193f967478fc02725d1cdd3a, type: 3}
+  goldValue: 1
+  silverValue: 0
+  copperValue: 0
+  stackable: 0
+  allowedEquipLocation: 5
+  equiptPrefab: {fileID: 2331482959910858808, guid: 6e6efbf0ec7bb214fa35572b72e430c9, type: 3}
+  dropPrefab: {fileID: 7145828123963003077, guid: 61c8aca0193f967478fc02725d1cdd3a, type: 3}
+  minWeaponDamage: 4.33
+  maxWeaponDamage: 11.15
+  PercentageBonus: 0
+  weaponRange: 0.5
+  isRightHanded: 1
+  projectile: {fileID: 0}
+  WeaponOverriteController: {fileID: 22100000, guid: 0737ef7438298864e9cbbf43a74025c6, type: 2}
+  AdditionalAttackOverrites:
+  - {fileID: 22100000, guid: 0737ef7438298864e9cbbf43a74025c6, type: 2}
