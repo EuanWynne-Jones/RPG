@@ -20,13 +20,13 @@ namespace RPG.Inventories
         [SerializeField] string itemID = null;
         [Header("In-Game Item Details")]
         [Tooltip("Item name to be displayed in UI.")]
-        [SerializeField] string displayName = null;
+        [SerializeField] public string displayName = null;
         [Tooltip("The UI icon to represent this item in the inventory.")]
-        [SerializeField] Sprite icon = null;
+        [SerializeField] public Sprite icon = null;
         [Tooltip("The Quality of the item")]
-        [SerializeField] EItemQuality Quality;
+        [SerializeField] public EItemQuality Quality;
         [Tooltip("Item description to be displayed in UI.")]
-        [SerializeField][TextArea] string description = null;
+        [SerializeField][TextArea] public string description = null;
 
         [Header("Pickup settings")]
         [Tooltip("The prefab that should be spawned when this item is dropped.")]
@@ -42,7 +42,7 @@ namespace RPG.Inventories
 
         [Header("Additional Options")]
         [Tooltip("If true, multiple items of this type can be stacked in the same inventory slot.")]
-        [SerializeField] bool stackable = false;
+        [SerializeField] public bool stackable = false;
 
 
 
