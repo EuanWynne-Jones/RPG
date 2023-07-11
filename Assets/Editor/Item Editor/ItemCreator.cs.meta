@@ -3,7 +3,11 @@ guid: ac0902078297b6b4d80a8ea5dd0f6797
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - basePickup: {fileID: 1222577395524571727, guid: ab73185f2dadf4445ae07e78eb669c1f, type: 3}
+  - baseWeapon: {fileID: 2095157066972700068, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}
+  - weaponAudioOverrite: {fileID: 11400000, guid: a5c589246408f7042bed9d9d0a267ff8, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

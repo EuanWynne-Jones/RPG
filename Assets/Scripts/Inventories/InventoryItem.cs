@@ -30,7 +30,7 @@ namespace RPG.Inventories
 
         [Header("Pickup settings")]
         [Tooltip("The prefab that should be spawned when this item is dropped.")]
-        [SerializeField] Pickup pickup = null;
+        [SerializeField] public Pickup pickup = null;
 
 
         [Header("Item Value")]

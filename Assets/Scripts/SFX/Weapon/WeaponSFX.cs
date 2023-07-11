@@ -21,7 +21,7 @@ namespace RPG.Combat
         [SerializeField] public List<AudioClip> impactSounds;
 
         [Header("AudioSourceOverrite")]
-        [SerializeField] WeaponAudioOverrite audioOverrite = null;
+        [SerializeField] public WeaponAudioOverrite audioOverrite = null;
 
         SFXHandler SFXHandler = null;
         AudioMixerHandler mixerHandler;

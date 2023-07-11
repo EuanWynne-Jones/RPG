@@ -8,10 +8,15 @@ using UnityEditor.UIElements;
 using UnityEditor.PackageManager.UI;
 using RPG.Combat;
 using RPG.Saving;
+using RPG.Control;
 
 public class ItemCreator : EditorWindow
 {
-    WeaponAudioOverrite weaponAudioOverrite;
+    public GameObject basePickup;
+
+    public GameObject baseWeapon;
+
+    public WeaponAudioOverrite weaponAudioOverrite;
 
     public enum ItemType
     {
@@ -23,14 +28,15 @@ public class ItemCreator : EditorWindow
 
     ItemType type;
 
-    InventoryItem basicItem = new InventoryItem();
-    EquipableItem equipableItem = new EquipableItem();
-    WeaponConfig weaponItem = new WeaponConfig();
-    ActionItem usableItem = new ActionItem();
+    InventoryItem basicItem;
+    EquipableItem equipableItem;
+    WeaponConfig weaponItem;
+    ActionItem usableItem;
 
-    GameObject weaponObjectInstance = new GameObject();
-    GameObject weaponObject = new GameObject();
-    GameObject pickupObject = new GameObject();
+    GameObject weaponObjectInstance;
+    GameObject weaponObject;
+    GameObject pickupObjectInstance;
+    GameObject pickupObject;
 
     GameObject objectModel = null; 
 
@@ -132,7 +138,7 @@ public class ItemCreator : EditorWindow
 
                     EditorGUILayout.BeginHorizontal();
                     EditorGUILayout.PrefixLabel("Icon");
-                    weaponItem.icon = (Sprite)EditorGUILayout.ObjectField(weaponItem.icon, typeof(Sprite), allowSceneObjects: false, GUILayout.Width(455));
+                    weaponItem.icon = (Sprite)EditorGUILayout.ObjectField(weaponItem.icon, typeof(Sprite), allowSceneObjects: false, GUILayout.Width(305));
                     EditorGUILayout.EndHorizontal();
                     EditorGUILayout.LabelField("The icon used in UI for the item.", EditorStyles.miniLabel);
 
@@ -214,7 +220,7 @@ public class ItemCreator : EditorWindow
 
                     EditorGUILayout.BeginHorizontal();
                     EditorGUILayout.PrefixLabel("Icon");
-                    equipableItem.icon = (Sprite)EditorGUILayout.ObjectField(equipableItem.icon, typeof(Sprite), allowSceneObjects: false, GUILayout.Width(455));
+                    equipableItem.icon = (Sprite)EditorGUILayout.ObjectField(equipableItem.icon, typeof(Sprite), allowSceneObjects: false, GUILayout.Width(305));
                     EditorGUILayout.EndHorizontal();
                     EditorGUILayout.LabelField("The icon used in UI for the item.", EditorStyles.miniLabel);
 
@@ -260,7 +266,7 @@ public class ItemCreator : EditorWindow
 
                     EditorGUILayout.BeginHorizontal();
                     EditorGUILayout.PrefixLabel("Icon");
-                    usableItem.icon = (Sprite)EditorGUILayout.ObjectField(usableItem.icon, typeof(Sprite), allowSceneObjects: false, GUILayout.Width(455));
+                    usableItem.icon = (Sprite)EditorGUILayout.ObjectField(usableItem.icon, typeof(Sprite), allowSceneObjects: false, GUILayout.Width(305));
                     EditorGUILayout.EndHorizontal();
                     EditorGUILayout.LabelField("The icon used in UI for the item.", EditorStyles.miniLabel);
 
@@ -309,7 +315,7 @@ public class ItemCreator : EditorWindow
 
                     EditorGUILayout.BeginHorizontal();
                     EditorGUILayout.PrefixLabel("Icon");
-                    basicItem.icon = (Sprite)EditorGUILayout.ObjectField(basicItem.icon, typeof(Sprite), allowSceneObjects: false, GUILayout.Width(455));
+                    basicItem.icon = (Sprite)EditorGUILayout.ObjectField(basicItem.icon, typeof(Sprite), allowSceneObjects: false, GUILayout.Width(305));
                     EditorGUILayout.EndHorizontal();
                     EditorGUILayout.LabelField("The icon used in UI for the item.", EditorStyles.miniLabel);
 
@@ -368,35 +374,60 @@ public class ItemCreator : EditorWindow
 
                         string newWeaponPath = newFolderPath + "/" + weaponItem.displayName + "/" + weaponItem.displayName + "Weapon.prefab";
 
-                        weaponObjectInstance = new GameObject();
-                        weaponObjectInstance.name = weaponItem.displayName;
+                        weaponObject = PrefabUtility.InstantiatePrefab(baseWeapon) as GameObject;
 
-                        Instantiate(objectModel, weaponObjectInstance.transform);
+                        Instantiate(objectModel, weaponObject.transform);
 
-                        GameObject attack = new GameObject();
-                        attack.name = "Attack";
-                        attack.transform.SetParent(weaponObjectInstance.transform);
+                        if (!isRangedWeapon)
+                        {
+                            MeshCollider coller = weaponObject.transform.GetChild(2).gameObject.AddComponent<MeshCollider>();
+                            coller.convex = true;
+                        }
 
-                        GameObject impact = new GameObject();
-                        impact.name = "Impact";
-                        impact.transform.SetParent(weaponObjectInstance.transform);
+                        PrefabUtility.SaveAsPrefabAsset(weaponObject, newWeaponPath);
 
-                        weaponObject = PrefabUtility.SaveAsPrefabAssetAndConnect(weaponObjectInstance, newWeaponPath, InteractionMode.UserAction);
+                        DestroyImmediate(weaponObject);
 
-                        weaponObject.AddComponent<Weapon>();
-                        WeaponSFX sfx = weaponObject.AddComponent<WeaponSFX>();
-                        weaponObject.AddComponent<SaveableEntity>();
+                        string newPickupPath = newFolderPath + "/" + weaponItem.displayName + "/" + weaponItem.displayName + "Pickup.prefab";
 
-                        AudioSource source1 = weaponObject.transform.GetChild(0).gameObject.AddComponent<AudioSource>();
-                        AudioSource source2 = weaponObject.transform.GetChild(1).gameObject.AddComponent<AudioSource>();
-                        sfx.weaponAttackSource = source1;
-                        sfx.weaponImpactSource = source2;
+                        pickupObject = PrefabUtility.InstantiatePrefab(basePickup) as GameObject;
 
-                        PrefabUtility.SavePrefabAsset(weaponObject);
+                        Instantiate(objectModel, pickupObject.transform);
 
-                        DestroyImmediate(weaponObjectInstance);
+                        pickupObject.transform.localRotation = new Quaternion(0f, 0f, 90f, 90f);
 
-                        creatingWeapon = true;
+                        MeshCollider collider = pickupObject.GetComponent<MeshCollider>();
+                        
+                        Mesh mesh = new Mesh();
+                        foreach(Transform child in pickupObject.transform)
+                        {
+                            if(child.TryGetComponent<MeshFilter>(out MeshFilter _mesh))
+                            {
+                                mesh = _mesh.sharedMesh;
+                            }
+                            else if(child.TryGetComponent<SkinnedMeshRenderer>(out SkinnedMeshRenderer skinMesh))
+                            {
+                                mesh = skinMesh.sharedMesh;
+                            }
+                        }
+
+                        collider.convex = true;
+                        collider.sharedMesh = mesh;
+
+                        PrefabUtility.SaveAsPrefabAsset(pickupObject, newPickupPath);
+
+                        GameObject pickPrefab = (GameObject)AssetDatabase.LoadAssetAtPath(newPickupPath, typeof(GameObject));
+
+                        GameObject wepPrefab = (GameObject)AssetDatabase.LoadAssetAtPath(newWeaponPath, typeof(GameObject));
+
+                        weaponItem.dropPrefab = pickPrefab;
+                        weaponItem.equiptPrefab = wepPrefab.GetComponent<Weapon>();
+
+                        AssetDatabase.SaveAssets();
+
+                        DestroyImmediate(pickupObject);
+
+
                         break;
 
                     case ItemType.equipable:
@@ -411,7 +442,40 @@ public class ItemCreator : EditorWindow
                         AssetDatabase.SaveAssets();
                         AssetDatabase.Refresh();
 
-                        creatingPickup = true;
+                        string newPickupPath1 = newFolderPath1 + "/" + equipableItem.displayName + "/" + equipableItem.displayName + "Pickup.prefab";
+
+                        pickupObject = PrefabUtility.InstantiatePrefab(basePickup) as GameObject;
+
+                        Instantiate(objectModel, pickupObject.transform);
+
+                        MeshCollider collider1 = pickupObject.GetComponent<MeshCollider>();
+
+                        Mesh mesh1 = new Mesh();
+                        foreach (Transform child in pickupObject.transform)
+                        {
+                            if (child.TryGetComponent<MeshFilter>(out MeshFilter _mesh))
+                            {
+                                mesh1 = _mesh.sharedMesh;
+                            }
+                            else if (child.TryGetComponent<SkinnedMeshRenderer>(out SkinnedMeshRenderer skinMesh))
+                            {
+                                mesh1 = skinMesh.sharedMesh;
+                            }
+                        }
+
+                        collider1.convex = true;
+                        collider1.sharedMesh = mesh1;
+
+                        PrefabUtility.SaveAsPrefabAsset(pickupObject, newPickupPath1);
+
+                        GameObject pickPrefab1 = (GameObject)AssetDatabase.LoadAssetAtPath(newPickupPath1, typeof(GameObject));
+
+                        equipableItem.pickup = pickPrefab1.GetComponent<Pickup>();
+
+                        AssetDatabase.SaveAssets();
+
+                        DestroyImmediate(pickupObject);
+
                         break;
 
                     case ItemType.usable:
@@ -426,7 +490,40 @@ public class ItemCreator : EditorWindow
                         AssetDatabase.SaveAssets();
                         AssetDatabase.Refresh();
 
-                        creatingPickup = true;
+                        string newPickupPath2 = newFolderPath2 + "/" + usableItem.displayName + "/" + usableItem.displayName + "Pickup.prefab";
+
+                        pickupObject = PrefabUtility.InstantiatePrefab(basePickup) as GameObject;
+
+                        Instantiate(objectModel, pickupObject.transform);
+
+                        MeshCollider collider2 = pickupObject.GetComponent<MeshCollider>();
+
+                        Mesh mesh2 = new Mesh();
+                        foreach (Transform child in pickupObject.transform)
+                        {
+                            if (child.TryGetComponent<MeshFilter>(out MeshFilter _mesh))
+                            {
+                                mesh2 = _mesh.sharedMesh;
+                            }
+                            else if (child.TryGetComponent<SkinnedMeshRenderer>(out SkinnedMeshRenderer skinMesh))
+                            {
+                                mesh2 = skinMesh.sharedMesh;
+                            }
+                        }
+
+                        collider2.convex = true;
+                        collider2.sharedMesh = mesh2;
+
+                        PrefabUtility.SaveAsPrefabAsset(pickupObject, newPickupPath2);
+
+                        GameObject pickPrefab2 = (GameObject)AssetDatabase.LoadAssetAtPath(newPickupPath2, typeof(GameObject));
+
+                        usableItem.pickup = pickPrefab2.GetComponent<Pickup>();
+
+                        AssetDatabase.SaveAssets();
+
+                        DestroyImmediate(pickupObject);
+
                         break;
 
                     case ItemType.basic:
@@ -441,9 +538,44 @@ public class ItemCreator : EditorWindow
                         AssetDatabase.SaveAssets();
                         AssetDatabase.Refresh();
 
-                        creatingPickup = true;
+                        string newPickupPath3 = newFolderPath3 + "/" + basicItem.displayName + "/" + basicItem.displayName + "Pickup.prefab";
+
+                        pickupObject = PrefabUtility.InstantiatePrefab(basePickup) as GameObject;
+
+                        Instantiate(objectModel, pickupObject.transform);
+
+                        MeshCollider collider3 = pickupObject.GetComponent<MeshCollider>();
+
+                        Mesh mesh3 = new Mesh();
+                        foreach (Transform child in pickupObject.transform)
+                        {
+                            if (child.TryGetComponent<MeshFilter>(out MeshFilter _mesh))
+                            {
+                                mesh3 = _mesh.sharedMesh;
+                            }
+                            else if (child.TryGetComponent<SkinnedMeshRenderer>(out SkinnedMeshRenderer skinMesh))
+                            {
+                                mesh3 = skinMesh.sharedMesh;
+                            }
+                        }
+
+                        collider3.convex = true;
+                        collider3.sharedMesh = mesh3;
+
+                        PrefabUtility.SaveAsPrefabAsset(pickupObject, newPickupPath3);
+
+                        GameObject pickPrefab3 = (GameObject)AssetDatabase.LoadAssetAtPath(newPickupPath3, typeof(GameObject));
+
+                        basicItem.pickup = pickPrefab3.GetComponent<Pickup>();
+
+                        AssetDatabase.SaveAssets();
+
+                        DestroyImmediate(pickupObject);
+
                         break;
                 }
+
+                EditorWindow.GetWindow<ItemCreator>("Item Creator").Close();
 
                 customisingScriptable = false;
             }
