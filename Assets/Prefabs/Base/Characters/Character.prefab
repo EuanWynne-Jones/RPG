@@ -263,6 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponSFX: {fileID: 0}
+  PickupSFX: {fileID: 0}
 --- !u!114 &419715518947330946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,7 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 1
   outlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
-  outlineWidth: 3
+  outlineWidth: 3.5
   precomputeOutline: 1
   bakeKeys: []
   bakeValues: []
