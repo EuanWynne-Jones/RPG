@@ -104,7 +104,7 @@ public class ItemCreator : EditorWindow
                     case ItemType.weapon:
                         weaponItem = ScriptableObject.CreateInstance<WeaponConfig>();
                         weaponItem.allowedEquipLocation = EquipLocation.Weapon;
-                        weaponItem.weaponRange = 0.5f;
+                        weaponItem.weaponRange = 1.5f;
                         break;
                     case ItemType.equipable:
                         equipableItem = ScriptableObject.CreateInstance<EquipableItem>(); 
@@ -376,6 +376,8 @@ public class ItemCreator : EditorWindow
 
                         weaponObject = PrefabUtility.InstantiatePrefab(baseWeapon) as GameObject;
 
+                        weaponObject.name = weaponItem.displayName;
+
                         Instantiate(objectModel, weaponObject.transform);
 
                         if (!isRangedWeapon)
@@ -391,6 +393,8 @@ public class ItemCreator : EditorWindow
                         string newPickupPath = newFolderPath + "/" + weaponItem.displayName + "/" + weaponItem.displayName + "Pickup.prefab";
 
                         pickupObject = PrefabUtility.InstantiatePrefab(basePickup) as GameObject;
+
+                        pickupObject.name = weaponItem.displayName;
 
                         Instantiate(objectModel, pickupObject.transform);
 
@@ -420,6 +424,7 @@ public class ItemCreator : EditorWindow
 
                         GameObject wepPrefab = (GameObject)AssetDatabase.LoadAssetAtPath(newWeaponPath, typeof(GameObject));
 
+                        weaponItem.pickup = pickPrefab.GetComponent<Pickup>();
                         weaponItem.dropPrefab = pickPrefab;
                         weaponItem.equiptPrefab = wepPrefab.GetComponent<Weapon>();
 
@@ -445,6 +450,8 @@ public class ItemCreator : EditorWindow
                         string newPickupPath1 = newFolderPath1 + "/" + equipableItem.displayName + "/" + equipableItem.displayName + "Pickup.prefab";
 
                         pickupObject = PrefabUtility.InstantiatePrefab(basePickup) as GameObject;
+
+                        pickupObject.name = equipableItem.displayName;
 
                         Instantiate(objectModel, pickupObject.transform);
 
@@ -494,6 +501,8 @@ public class ItemCreator : EditorWindow
 
                         pickupObject = PrefabUtility.InstantiatePrefab(basePickup) as GameObject;
 
+                        pickupObject.name = usableItem.displayName;
+
                         Instantiate(objectModel, pickupObject.transform);
 
                         MeshCollider collider2 = pickupObject.GetComponent<MeshCollider>();
@@ -541,6 +550,8 @@ public class ItemCreator : EditorWindow
                         string newPickupPath3 = newFolderPath3 + "/" + basicItem.displayName + "/" + basicItem.displayName + "Pickup.prefab";
 
                         pickupObject = PrefabUtility.InstantiatePrefab(basePickup) as GameObject;
+
+                        pickupObject.name = basicItem.displayName;
 
                         Instantiate(objectModel, pickupObject.transform);
 
