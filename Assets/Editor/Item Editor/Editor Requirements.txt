@@ -1,5 +1,0 @@
-Create Inventory Item
-Change Inventory Item to be the specific Type eg. Equipable, Consumable, Junk
-Set all settings for that scriptable
-Create Item
-Create Pickup Version
