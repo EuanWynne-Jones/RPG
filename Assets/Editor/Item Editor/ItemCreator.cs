@@ -33,22 +33,16 @@ public class ItemCreator : EditorWindow
     WeaponConfig weaponItem;
     ActionItem usableItem;
 
-    GameObject weaponObjectInstance;
     GameObject weaponObject;
-    GameObject pickupObjectInstance;
     GameObject pickupObject;
 
     GameObject objectModel = null; 
 
     bool hasChosenItemType = false;
     bool customisingScriptable = false;
-    bool creatingWeapon = false;
-    bool creatingPickup = false;
 
 
     bool isRangedWeapon = false;
-
-    string currentFileName;
 
     Vector2 scrollPos;
 
@@ -401,18 +395,34 @@ public class ItemCreator : EditorWindow
                         pickupObject.transform.localRotation = new Quaternion(0f, 0f, 90f, 90f);
 
                         MeshCollider collider = pickupObject.GetComponent<MeshCollider>();
-                        
+
+                        MeshRenderer meshRenderer = null;
+
+                        SkinnedMeshRenderer skinnedMeshRenderer = null;
+
                         Mesh mesh = new Mesh();
                         foreach(Transform child in pickupObject.transform)
                         {
                             if(child.TryGetComponent<MeshFilter>(out MeshFilter _mesh))
                             {
                                 mesh = _mesh.sharedMesh;
+                                meshRenderer = child.GetComponent<MeshRenderer>();
                             }
                             else if(child.TryGetComponent<SkinnedMeshRenderer>(out SkinnedMeshRenderer skinMesh))
                             {
                                 mesh = skinMesh.sharedMesh;
+                                skinnedMeshRenderer = skinMesh;
                             }
+                        }
+
+                        var sh = pickupObject.GetComponentInChildren<ParticleSystem>().shape;
+                        if(meshRenderer != null)
+                        {
+                            sh.meshRenderer = meshRenderer;
+                        }
+                        else
+                        {
+                            sh.skinnedMeshRenderer = skinnedMeshRenderer;
                         }
 
                         collider.convex = true;
@@ -457,17 +467,33 @@ public class ItemCreator : EditorWindow
 
                         MeshCollider collider1 = pickupObject.GetComponent<MeshCollider>();
 
+                        MeshRenderer meshRenderer1 = null;
+
+                        SkinnedMeshRenderer skinnedMeshRenderer1 = null;
+
                         Mesh mesh1 = new Mesh();
                         foreach (Transform child in pickupObject.transform)
                         {
                             if (child.TryGetComponent<MeshFilter>(out MeshFilter _mesh))
                             {
                                 mesh1 = _mesh.sharedMesh;
+                                meshRenderer1 = child.GetComponent<MeshRenderer>();
                             }
                             else if (child.TryGetComponent<SkinnedMeshRenderer>(out SkinnedMeshRenderer skinMesh))
                             {
                                 mesh1 = skinMesh.sharedMesh;
+                                skinnedMeshRenderer1 = skinMesh;
                             }
+                        }
+
+                        var sh1 = pickupObject.GetComponentInChildren<ParticleSystem>().shape;
+                        if (meshRenderer1 != null)
+                        {
+                            sh1.meshRenderer = meshRenderer1;
+                        }
+                        else
+                        {
+                            sh1.skinnedMeshRenderer = skinnedMeshRenderer1;
                         }
 
                         collider1.convex = true;
@@ -507,17 +533,33 @@ public class ItemCreator : EditorWindow
 
                         MeshCollider collider2 = pickupObject.GetComponent<MeshCollider>();
 
+                        MeshRenderer meshRenderer2 = null;
+
+                        SkinnedMeshRenderer skinnedMeshRenderer2 = null;
+
                         Mesh mesh2 = new Mesh();
                         foreach (Transform child in pickupObject.transform)
                         {
                             if (child.TryGetComponent<MeshFilter>(out MeshFilter _mesh))
                             {
                                 mesh2 = _mesh.sharedMesh;
+                                meshRenderer2 = child.GetComponent<MeshRenderer>();
                             }
                             else if (child.TryGetComponent<SkinnedMeshRenderer>(out SkinnedMeshRenderer skinMesh))
                             {
                                 mesh2 = skinMesh.sharedMesh;
+                                skinnedMeshRenderer2 = skinMesh;
                             }
+                        }
+
+                        var sh2 = pickupObject.GetComponentInChildren<ParticleSystem>().shape;
+                        if (meshRenderer2 != null)
+                        {
+                            sh2.meshRenderer = meshRenderer2;
+                        }
+                        else
+                        {
+                            sh2.skinnedMeshRenderer = skinnedMeshRenderer2;
                         }
 
                         collider2.convex = true;
@@ -557,17 +599,33 @@ public class ItemCreator : EditorWindow
 
                         MeshCollider collider3 = pickupObject.GetComponent<MeshCollider>();
 
+                        MeshRenderer meshRenderer3 = null;
+
+                        SkinnedMeshRenderer skinnedMeshRenderer3 = null;
+
                         Mesh mesh3 = new Mesh();
                         foreach (Transform child in pickupObject.transform)
                         {
                             if (child.TryGetComponent<MeshFilter>(out MeshFilter _mesh))
                             {
                                 mesh3 = _mesh.sharedMesh;
+                                meshRenderer3 = child.GetComponent<MeshRenderer>();
                             }
                             else if (child.TryGetComponent<SkinnedMeshRenderer>(out SkinnedMeshRenderer skinMesh))
                             {
                                 mesh3 = skinMesh.sharedMesh;
+                                skinnedMeshRenderer3 = skinMesh;
                             }
+                        }
+
+                        var sh3 = pickupObject.GetComponentInChildren<ParticleSystem>().shape;
+                        if (meshRenderer3 != null)
+                        {
+                            sh3.meshRenderer = meshRenderer3;
+                        }
+                        else
+                        {
+                            sh3.skinnedMeshRenderer = skinnedMeshRenderer3;
                         }
 
                         collider3.convex = true;
