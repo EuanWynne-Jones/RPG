@@ -348,6 +348,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8446726270192434182}
     - target: {fileID: 8074516040036319967, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}
+      propertyPath: weaponAttackSource
+      value: 
+      objectReference: {fileID: 4585653689595963177}
+    - target: {fileID: 8074516040036319967, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}
+      propertyPath: weaponImpactSource
+      value: 
+      objectReference: {fileID: 8446726270192434182}
+    - target: {fileID: 8074516040036319967, guid: c7d7ce03923fa5f4b8adc0379ff8f4de, type: 3}
       propertyPath: AttackSounds.Array.size
       value: 4
       objectReference: {fileID: 0}

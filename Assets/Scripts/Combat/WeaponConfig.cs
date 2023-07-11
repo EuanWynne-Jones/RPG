@@ -24,13 +24,13 @@ namespace RPG.Combat
         [SerializeField] public float PercentageBonus = 0f;
 
         [Header("Weapon Range")]
-        [SerializeField] float weaponRange = .5f;
+        [SerializeField] public float weaponRange = .5f;
 
         [Header("Equip Hand")]
         [SerializeField] public bool isRightHanded = true;
 
         [Header("Projectile if applicable")]
-        [SerializeField] Projectile projectile = null;
+        [SerializeField] public Projectile projectile = null;
 
         [Header("Animations")]
         [SerializeField] public AnimatorOverrideController WeaponOverriteController = null;
