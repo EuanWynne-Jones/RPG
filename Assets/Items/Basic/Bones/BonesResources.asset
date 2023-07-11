@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dc047c233344664c9996be4c36379e2, type: 3}
   m_Name: BonesResources
   m_EditorClassIdentifier: 
-  itemID: 0ae0714c-efe3-4d25-ab7f-e00ffde1e082
+  itemID: 956383ce-3ed8-43ab-87b1-fdb897df2816
   displayName: Bones
-  icon: {fileID: 21300000, guid: 40bb5a7caa019474e9f94a34dc57d844, type: 3}
-  Quality: 0
-  description: A  Pile of Bones
-  pickup: {fileID: 0}
+  icon: {fileID: 21300000, guid: 54491c1103407bb4dbd9da52babff718, type: 3}
+  Quality: 1
+  description: A Pile of Bones
+  pickup: {fileID: 2107367690977544376, guid: 019bb6617fb15ba4481292a1ff839a7a, type: 3}
   goldValue: 0
   silverValue: 0
-  copperValue: 30
+  copperValue: 20
   stackable: 1
