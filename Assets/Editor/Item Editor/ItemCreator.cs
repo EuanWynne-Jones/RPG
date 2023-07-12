@@ -9,6 +9,7 @@ using UnityEditor.PackageManager.UI;
 using RPG.Combat;
 using RPG.Saving;
 using RPG.Control;
+using System.IO;
 
 public class ItemCreator : EditorWindow
 {
@@ -403,6 +404,11 @@ public class ItemCreator : EditorWindow
                         Mesh mesh = new Mesh();
                         foreach(Transform child in pickupObject.transform)
                         {
+                            if(child.TryGetComponent<MeshCollider>(out MeshCollider col))
+                            {
+                                Destroy(col);
+                            }
+
                             if(child.TryGetComponent<MeshFilter>(out MeshFilter _mesh))
                             {
                                 mesh = _mesh.sharedMesh;
@@ -474,6 +480,11 @@ public class ItemCreator : EditorWindow
                         Mesh mesh1 = new Mesh();
                         foreach (Transform child in pickupObject.transform)
                         {
+                            if (child.TryGetComponent<MeshCollider>(out MeshCollider col))
+                            {
+                                Destroy(col);
+                            }
+
                             if (child.TryGetComponent<MeshFilter>(out MeshFilter _mesh))
                             {
                                 mesh1 = _mesh.sharedMesh;
@@ -540,6 +551,11 @@ public class ItemCreator : EditorWindow
                         Mesh mesh2 = new Mesh();
                         foreach (Transform child in pickupObject.transform)
                         {
+                            if (child.TryGetComponent<MeshCollider>(out MeshCollider col))
+                            {
+                                Destroy(col);
+                            }
+
                             if (child.TryGetComponent<MeshFilter>(out MeshFilter _mesh))
                             {
                                 mesh2 = _mesh.sharedMesh;
@@ -606,6 +622,11 @@ public class ItemCreator : EditorWindow
                         Mesh mesh3 = new Mesh();
                         foreach (Transform child in pickupObject.transform)
                         {
+                            if (child.TryGetComponent<MeshCollider>(out MeshCollider col))
+                            {
+                                Destroy(col);
+                            }
+
                             if (child.TryGetComponent<MeshFilter>(out MeshFilter _mesh))
                             {
                                 mesh3 = _mesh.sharedMesh;
