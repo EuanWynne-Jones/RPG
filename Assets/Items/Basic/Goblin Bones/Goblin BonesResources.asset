@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dc047c233344664c9996be4c36379e2, type: 3}
+  m_Name: Goblin BonesResources
+  m_EditorClassIdentifier: 
+  itemID: c9a8c48a-7913-4626-a8db-a3620909d920
+  displayName: Goblin Bones
+  icon: {fileID: 21300000, guid: 54491c1103407bb4dbd9da52babff718, type: 3}
+  Quality: 0
+  description: A Pile of bones
+  pickup: {fileID: 0}
+  goldValue: 0
+  silverValue: 0
+  copperValue: 30
+  stackable: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Human Drop Library
   m_EditorClassIdentifier: 
   potentialDrops:
-  - item: {fileID: 11400000, guid: e6449db131d2ec24fbb6b9694a917d97, type: 2}
+  - item: {fileID: 11400000, guid: de5b20e0b7654544284db828af9dc08a, type: 2}
     relativeChance:
     - 100
     minNumber: 0100000001000000010000000100000001000000

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bdaf4e851b99eb43a812b25545f324c, type: 3}
+  m_Name: Spiked Bone AxeResources
+  m_EditorClassIdentifier: 
+  itemID: e69f2a2e-c272-4bd0-b04c-6386d8840e42
+  displayName: Spiked Bone Axe
+  icon: {fileID: 21300000, guid: d96e56c676f1bef45912f308abfeeb6c, type: 3}
+  Quality: 1
+  description: 2 Spikes protrude menacingly from the head of this axe. Can do some
+    serious damage...
+  pickup: {fileID: 4065261298177666112, guid: 4063e390ccf5cd54dac8a9c703c5bf61, type: 3}
+  goldValue: 0
+  silverValue: 50
+  copperValue: 0
+  stackable: 0
+  allowedEquipLocation: 5
+  equiptPrefab: {fileID: 4563555044495013516, guid: 8d032bfef34ad0248a119e88cbdf11fc, type: 3}
+  dropPrefab: {fileID: 8268016562315932932, guid: 4063e390ccf5cd54dac8a9c703c5bf61, type: 3}
+  minWeaponDamage: 3
+  maxWeaponDamage: 7
+  PercentageBonus: 5
+  weaponRange: 1.5
+  isRightHanded: 1
+  projectile: {fileID: 0}
+  WeaponOverriteController: {fileID: 22100000, guid: 0737ef7438298864e9cbbf43a74025c6, type: 2}
+  AdditionalAttackOverrites:
+  - {fileID: 22100000, guid: 7d192b93f5c8f9a4fbd5c22b711ee399, type: 2}
+  - {fileID: 22100000, guid: 0737ef7438298864e9cbbf43a74025c6, type: 2}

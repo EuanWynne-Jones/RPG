@@ -28,7 +28,7 @@ MonoBehaviour:
   minWeaponDamage: 4.33
   maxWeaponDamage: 11.15
   PercentageBonus: 0
-  weaponRange: 0.5
+  weaponRange: 1.5
   isRightHanded: 1
   projectile: {fileID: 0}
   WeaponOverriteController: {fileID: 22100000, guid: 0737ef7438298864e9cbbf43a74025c6, type: 2}
